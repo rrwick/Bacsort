@@ -14,4 +14,4 @@ wc -l tree/distances.tab.temp | awk '"[0-9]+ errors" {sum += $1}; END {print sum
 cat tree/distances.ndist tree/distances.tab.temp > tree/distances.phylip  # write matrix
 
 # make tree from phylip distance matrix
-quicktree -in m tree/distances.phylip > tree/tree_1.newick
+quicktree -in m tree/distances.phylip > tree/tree.newick
