@@ -68,18 +68,7 @@ def main():
         if score == 1.0 and clade.name is None:
             clade.name = species
     
-    Phylo.write(tree, 'tree/tree_with_species.newick', 'newick')
-
-
-def load_cluster_accessions():
-    cluster_accessions = {}
-    with open('clusters/cluster_accessions', 'rt') as accessions_file:
-        for line in accessions_file:
-            parts = line.split('\t')
-            cluster_name = parts[0]
-            accessions = [x[:-7] for x in parts[1].split(',')]
-            cluster_accessions[cluster_name] = accessions
-    return cluster_accessions
+    Phylo.write(tree, 'tree_with_species.newick', 'newick')
 
 
 def load_accession_species():
@@ -159,7 +148,7 @@ def score_clade_for_species(species, clade_species_counts, all_species_counts):
 
 def load_cluster_accessions():
     cluster_accessions = {}
-    with open('clusters/cluster_accessions', 'rt') as accessions_file:
+    with open('cluster_accessions', 'rt') as accessions_file:
         for line in accessions_file:
             parts = line.split('\t')
             cluster_name = parts[0]

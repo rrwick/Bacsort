@@ -31,7 +31,7 @@ def main():
         print()
         cluster_num_digits = len(str(len(clusters)))
         cluster_num_format = '%0' + str(cluster_num_digits) + 'd'
-        with open('clusters/cluster_accessions', 'at') as cluster_accessions_file:
+        with open('cluster_accessions', 'at') as cluster_accessions_file:
             for num, assemblies in clusters.items():
                 cluster_name = genus + '_' + (cluster_num_format % num)
 
