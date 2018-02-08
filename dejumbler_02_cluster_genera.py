@@ -12,15 +12,17 @@ threshold = 0.0025
 
 def main():
     genera = sys.argv[1].split()
-    print()
 
     for genus in genera:
+        print()
         print('Clustering ' + genus)
         print('------------------------------------------------')
 
         distance_filename = 'assemblies/' + genus + '/mash_distances'
         if not Path(distance_filename).is_file():
-            sys.exit('Error: could not find pairwise distances file')
+            print('Could not find pairwise distances file - skipping genus')
+            print()
+            continue
 
         assemblies, graph = create_graph_from_distances(distance_filename)
         clusters = cluster_assemblies(assemblies, graph, threshold)
@@ -55,7 +57,7 @@ def main():
             # Delete the assemblies (to save disk space)
             pass
 
-        print('\n')
+        print()
 
 
 
