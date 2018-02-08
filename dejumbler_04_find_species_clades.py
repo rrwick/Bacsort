@@ -126,7 +126,8 @@ def get_tip_names(clade):
 
 def colour_clade_recursively(clade, colour):
     clade.color = colour
-    clade.properties = [Phylo.PhyloXML.Property(colour.to_hex(), 'style:font_color', 'node', 'xsd:token')]
+    if len(clade) == 0:  # is a tip
+        clade.properties = [Phylo.PhyloXML.Property(colour.to_hex(), 'style:font_color', 'node', 'xsd:token')]
     for child in clade:
         colour_clade_recursively(child, colour)
 
