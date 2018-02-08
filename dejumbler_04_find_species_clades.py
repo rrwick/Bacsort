@@ -4,6 +4,7 @@ import sys
 from Bio import Phylo
 from pathlib import Path
 import collections
+import random
 
 
 def main():
@@ -11,6 +12,7 @@ def main():
     accession_species = load_accession_species()
 
     tree = Phylo.read('tree/tree.newick', 'newick')
+    tree = tree.as_phyloxml()
     tree.root_at_midpoint()
 
     for clade in tree.find_clades():
@@ -65,10 +67,13 @@ def main():
         print('score = ' + ('%.4f' % score))
         print(', '.join(accessions))
         print()
-        if score == 1.0 and clade.name is None:
-            clade.name = species
-    
+        if score == 1.0:
+            colour_clade_recursively(clade, get_random_colour())
+            if clade.name is None:
+                clade.name = species
+
     Phylo.write(tree, 'tree_with_species.newick', 'newick')
+    Phylo.write(tree, 'tree_with_species.xml', 'phyloxml')
 
 
 def load_accession_species():
@@ -119,6 +124,13 @@ def get_tip_names(clade):
     return tip_names
 
 
+def colour_clade_recursively(clade, colour):
+    clade.color = colour
+    clade.properties = [Phylo.PhyloXML.Property(colour.to_hex(), 'style:font_color', 'node', 'xsd:token')]
+    for child in clade:
+        colour_clade_recursively(child, colour)
+
+
 def get_species_counts_from_tip_names(tip_names):
     count_texts = []
     for tip_name in tip_names:
@@ -155,6 +167,56 @@ def load_cluster_accessions():
             accessions = [x[:-7] for x in parts[1].split(',')]
             cluster_accessions[cluster_name] = accessions
     return cluster_accessions
+
+
+def get_random_colour():
+    while True:
+        r, g, b = random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)
+        h, s, l = rgb_to_hsl(r, g, b)
+        if 0.4 < l < 0.9 and s > 0.3:
+            return Phylo.BaseTree.BranchColor(r, g, b)
+
+
+def rgb_to_hsv(r, g, b):
+    r, g, b = r / 255, g / 255, b / 255
+    mx = max(r, g, b)
+    mn = min(r, g, b)
+    df = mx - mn
+    if mx == mn:
+        h = 0
+    elif mx == r:
+        h = (60 * ((g - b) / df) + 360) % 360
+    elif mx == g:
+        h = (60 * ((b - r) / df) + 120) % 360
+    elif mx == b:
+        h = (60 * ((r - g) / df) + 240) % 360
+    if mx == 0:
+        s = 0
+    else:
+        s = df / mx
+    v = mx
+    return h, s, v
+
+
+def rgb_to_hsl(r, g, b):
+    r, g, b = r / 255, g / 255, b / 255
+    high = max(r, g, b)
+    low = min(r, g, b);
+    h, s, l = ((high + low) / 2,) * 3
+    if high == low:
+        h = 0.0
+        s = 0.0
+    else:
+        d = high - low
+        s = d / (2 - high - low) if l > 0.5 else d / (high + low)
+        if r == high:
+            h = (g - b) / d + (6 if g < b else 0)
+        elif g == high:
+            h = (b - r) / d + 2
+        elif b == high:
+            h = (r - g) / d + 4
+        h /= 6;
+    return h, s, l
 
 
 if __name__ == '__main__':
