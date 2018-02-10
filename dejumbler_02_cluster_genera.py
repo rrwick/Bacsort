@@ -75,11 +75,11 @@ def create_graph_from_distances(distance_filename):
             assembly_2 = parts[1]
             distance = float(parts[2])
 
-            if assembly_1 == assembly_2:
-                continue
-
             assemblies.add(assembly_1)
             assemblies.add(assembly_2)
+
+            if assembly_1 == assembly_2:
+                continue
 
             all_connections[assembly_1].add(assembly_2)
             all_connections[assembly_2].add(assembly_1)
