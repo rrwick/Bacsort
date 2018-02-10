@@ -21,8 +21,6 @@ mash_sketch_size=10000
 threads=16
 
 printf "\n"
-
-
 echo "Checking for Mash"
 echo "------------------------------------------------"
 if command -v mash; then
