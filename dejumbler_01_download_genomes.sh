@@ -18,6 +18,7 @@
 
 genera=$1
 mash_sketch_size=10000
+threads=16
 
 printf "\n"
 
@@ -64,8 +65,8 @@ for genus in $genera; do
 
         echo "Finding pairwise distances for "$genus
         echo "------------------------------------------------"
-        mash sketch -o mash -s $mash_sketch_size *.fna.gz
-        mash dist mash.msh mash.msh > mash_distances
+        mash sketch -p $threads -o mash -s $mash_sketch_size *.fna.gz
+        mash dist -p $threads mash.msh mash.msh > mash_distances
         cd ../..
     else
         echo "No assemblies downloaded for "$genus

@@ -15,14 +15,15 @@
 # Public License for more details. You should have received a copy of the GNU General Public
 # License along with Dejumbler. If not, see <http://www.gnu.org/licenses/>.
 
+threads=16
 
 mkdir -p tree
 
 # create a distance matrix
 cd clusters
-mash sketch -o ../tree/reference -s 100000 *.fna.gz
+mash sketch -p $threads -o ../tree/reference -s 100000 *.fna.gz
 cd ..
-mash dist tree/reference.msh tree/reference.msh -t > tree/distances.tab
+mash dist -p $threads tree/reference.msh tree/reference.msh -t > tree/distances.tab
 
 # create phylip format file of the distance matrix
 tail -n +2 tree/distances.tab > tree/distances.tab.temp  # remove first line
