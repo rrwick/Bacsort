@@ -1,4 +1,21 @@
 #!/usr/bin/env python3
+"""
+Copyright 2018 Ryan Wick (rrwick@gmail.com)
+https://github.com/rrwick/Dejumbler
+
+This script is the fourth step of Dejumbler. It takes no arguments. When run, it loads the tree
+and searches for clades which best describe each species. It outputs to stdout the best clade for
+each species, in order of best to worst. It also saves to file the tree with species clades
+coloured for viewing in Archaeopteryx.
+
+This file is part of Dejumbler. Dejumbler is free software: you can redistribute it and/or
+modify it under the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later version. Dejumbler is
+distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the
+implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General
+Public License for more details. You should have received a copy of the GNU General Public
+License along with Dejumbler. If not, see <http://www.gnu.org/licenses/>.
+"""
 
 import sys
 from Bio import Phylo
