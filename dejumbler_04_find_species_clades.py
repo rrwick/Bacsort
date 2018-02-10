@@ -35,7 +35,7 @@ def main():
     for clade in tree.find_clades():
         if clade.name is None:
             continue
-        cluster_name = clade.name[:-7]
+        cluster_name = clade.name.split('.fna.gz')[0]
         accessions = cluster_accessions[cluster_name]
         species = [accession_species[a] for a in accessions]
         species_counts = collections.Counter(species)
@@ -182,7 +182,7 @@ def load_cluster_accessions():
         for line in accessions_file:
             parts = line.split('\t')
             cluster_name = parts[0]
-            accessions = [x[:-7] for x in parts[1].split(',')]
+            accessions = [x.split('.fna.gz')[0] for x in parts[1].split(',')]
             cluster_accessions[cluster_name] = accessions
     return cluster_accessions
 
