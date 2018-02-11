@@ -118,7 +118,7 @@ def load_accession_species():
             for line in user_species:
                 if not line.startswith('GCF'):
                     continue
-                parts = line.split('\t')
+                parts = line.strip().split('\t')
                 if parts[0] == 'Accession':
                     continue
                 if len(parts) < 2:
