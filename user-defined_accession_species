@@ -363,12 +363,12 @@ GCF_002109985.1	Escherichia marmotae
 
 
 
+# The Buttiauxella genus doesn't have many representatives, but I think that
+# GCF_000737905 is misnamed based on the trees in Alnajar 2017.
+GCF_000737905.1	Buttiauxella noackiae
 
 
 
-
-
-
-
-
-
+# This change is pretty straight forward and is backed by the phylogeny in
+# Jackson 2015.
+GCF_000485925.1	Siccibacter turicensis
