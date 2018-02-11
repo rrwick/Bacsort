@@ -25,6 +25,7 @@ GCF_000214805.1	Serratia plymuthica
 GCF_000800945.1	Plesiomonas shigelloides
 GCF_000611875.2	Tatumella ptyseos
 GCF_002843235.1	Providencia rettgeri
+GCF_002215245.1	Pantoea ananatis
 
 
 
@@ -373,3 +374,16 @@ GCF_000737905.1	Buttiauxella noackiae
 # Jackson 2015.
 GCF_000485925.1	Siccibacter turicensis
 GCF_000486025.1	Siccibacter turicensis
+
+
+
+# Walterson 2015 provides a nice overview of Pantoea, which I used to guide
+# renaming of this genus.
+GCF_001641135.1	Pantoea allii
+GCF_000731025.2	Pantoea brenneri
+GCF_001743465.1	Pantoea brenneri
+GCF_002233725.1	Pantoea brenneri
+GCF_000255315.1	Pantoea anthophila
+GCF_000784875.1	Pantoea eucrina
+GCF_001881025.1	Pantoea eucrina
+GCF_002207995.1	Pantoea dispersa
