@@ -1,0 +1,374 @@
+# Some species assignments are clear based on the tree structure, and I've
+# assigned names without checking the literature.
+GCF_001281565.1	Proteus mirabilis
+GCF_001808035.1	Proteus mirabilis
+GCF_000512315.2	Morganella morganii
+GCF_001807955.1	Morganella morganii
+GCF_900075225.1	Klebsiella aerogenes
+GCF_900077035.1	Klebsiella aerogenes
+GCF_900083685.1	Raoultella ornithinolytica
+GCF_900083755.1	Raoultella planticola
+GCF_000648315.1	Raoultella planticola
+GCF_001049875.1	Raoultella planticola
+GCF_002108615.1	Raoultella planticola
+GCF_900083925.1	Serratia marcescens
+GCF_900083935.1	Escherichia coli
+GCF_001286085.1	Escherichia albertii
+GCF_002035305.1	Salmonella enterica
+GCF_000408845.1	Escherichia coli
+GCF_000157115.2	Escherichia coli
+GCF_000159895.2	Escherichia coli
+GCF_000158415.2	Escherichia coli
+GCF_000336365.1	Serratia plymuthica
+GCF_000214195.1	Serratia plymuthica
+GCF_000214805.1	Serratia plymuthica
+GCF_000800945.1	Plesiomonas shigelloides
+GCF_000611875.2	Tatumella ptyseos
+GCF_002843235.1	Providencia rettgeri
+
+
+
+# Klebsiella pneumoniae and related species are defined well in Brisse 2014
+# and Holt 2015. Many isolates are misnamed because previously the entire
+# group was called K. pneumoniae. More recently, Long 2017 defined a new
+# species, quasivariicola. A significant clade without a species name remains,
+# which I currently call Kp5 (Blin 2017). This may end up being a subspecies
+# of K. variicola or perhaps its own species.
+GCF_000349245.1	Klebsiella quasipneumoniae
+GCF_000367165.1	Klebsiella quasipneumoniae
+GCF_000827665.1	Klebsiella quasipneumoniae
+GCF_001033805.1	Klebsiella quasipneumoniae
+GCF_001033915.1	Klebsiella quasipneumoniae
+GCF_001034125.1	Klebsiella quasipneumoniae
+GCF_001278905.1	Klebsiella quasipneumoniae
+GCF_001280925.1	Klebsiella quasipneumoniae
+GCF_900113365.1	Klebsiella quasipneumoniae
+GCF_900119505.1	Klebsiella quasipneumoniae
+GCF_900119585.1	Klebsiella quasipneumoniae
+GCF_900176555.1	Klebsiella quasipneumoniae
+GCF_900100145.1	Klebsiella quasipneumoniae
+GCF_900102285.1	Klebsiella quasipneumoniae
+GCF_900102775.1	Klebsiella quasipneumoniae
+GCF_900104465.1	Klebsiella quasipneumoniae
+GCF_900107525.1	Klebsiella quasipneumoniae
+GCF_900109625.1	Klebsiella quasipneumoniae
+GCF_900114145.1	Klebsiella quasipneumoniae
+GCF_900119545.1	Klebsiella quasipneumoniae
+GCF_900119605.1	Klebsiella quasipneumoniae
+GCF_900099865.1	Klebsiella quasipneumoniae
+GCF_900101145.1	Klebsiella quasipneumoniae
+GCF_900101155.1	Klebsiella quasipneumoniae
+GCF_900101255.1	Klebsiella quasipneumoniae
+GCF_900101775.1	Klebsiella quasipneumoniae
+GCF_900103095.1	Klebsiella quasipneumoniae
+GCF_900103465.1	Klebsiella quasipneumoniae
+GCF_900107085.1	Klebsiella quasipneumoniae
+GCF_900107425.1	Klebsiella quasipneumoniae
+GCF_900107805.1	Klebsiella quasipneumoniae
+GCF_900108445.1	Klebsiella quasipneumoniae
+GCF_900109975.1	Klebsiella quasipneumoniae
+GCF_900110325.1	Klebsiella quasipneumoniae
+GCF_900110725.1	Klebsiella quasipneumoniae
+GCF_900111335.1	Klebsiella quasipneumoniae
+GCF_900113165.1	Klebsiella quasipneumoniae
+GCF_900113475.1	Klebsiella quasipneumoniae
+GCF_900114985.1	Klebsiella quasipneumoniae
+GCF_900115525.1	Klebsiella quasipneumoniae
+GCF_900119465.1	Klebsiella quasipneumoniae
+GCF_002288845.1	Klebsiella quasipneumoniae
+GCF_002752865.1	Klebsiella quasipneumoniae
+GCF_900093045.1	Klebsiella quasipneumoniae
+GCF_900093195.1	Klebsiella quasipneumoniae
+GCF_900093365.1	Klebsiella quasipneumoniae
+GCF_900093375.1	Klebsiella quasipneumoniae
+GCF_900093395.1	Klebsiella quasipneumoniae
+GCF_900093405.1	Klebsiella quasipneumoniae
+GCF_900173195.1	Klebsiella quasipneumoniae
+GCF_900173205.1	Klebsiella quasipneumoniae
+GCF_900173215.1	Klebsiella quasipneumoniae
+GCF_900173225.1	Klebsiella quasipneumoniae
+GCF_900173255.1	Klebsiella quasipneumoniae
+GCF_900173535.1	Klebsiella quasipneumoniae
+GCF_900173555.1	Klebsiella quasipneumoniae
+GCF_900174385.1	Klebsiella quasipneumoniae
+GCF_900174395.1	Klebsiella quasipneumoniae
+GCF_900174425.1	Klebsiella quasipneumoniae
+GCF_900173815.1	Klebsiella quasipneumoniae
+GCF_900173845.1	Klebsiella quasipneumoniae
+GCF_900173855.1	Klebsiella quasipneumoniae
+GCF_900173865.1	Klebsiella quasipneumoniae
+GCF_900173875.1	Klebsiella quasipneumoniae
+GCF_900174325.1	Klebsiella quasipneumoniae
+GCF_001373075.1	Klebsiella quasipneumoniae
+GCF_001463185.1	Klebsiella quasipneumoniae
+GCF_001466765.1	Klebsiella quasipneumoniae
+GCF_900084845.1	Klebsiella quasipneumoniae
+GCF_900084875.1	Klebsiella quasipneumoniae
+GCF_900084895.1	Klebsiella quasipneumoniae
+GCF_900085235.1	Klebsiella quasipneumoniae
+GCF_900085435.1	Klebsiella quasipneumoniae
+GCF_900086305.1	Klebsiella quasipneumoniae
+GCF_900086455.1	Klebsiella quasipneumoniae
+GCF_900092845.1	Klebsiella quasipneumoniae
+GCF_900093305.1	Klebsiella quasipneumoniae
+GCF_900171795.1	Klebsiella quasipneumoniae
+GCF_900172505.1	Klebsiella quasipneumoniae
+GCF_900172515.1	Klebsiella quasipneumoniae
+GCF_900172535.1	Klebsiella quasipneumoniae
+GCF_900172595.1	Klebsiella quasipneumoniae
+GCF_900172635.1	Klebsiella quasipneumoniae
+GCF_001052595.1	Klebsiella pneumoniae
+GCF_001054225.1	Klebsiella pneumoniae
+GCF_900092915.1	Klebsiella pneumoniae
+GCF_900093145.1	Klebsiella pneumoniae
+GCF_000195655.1	Klebsiella pneumoniae
+GCF_001308905.1	Klebsiella pneumoniae
+GCF_000238715.1	Klebsiella pneumoniae
+GCF_001030715.1	Klebsiella pneumoniae
+GCF_001030745.1	Klebsiella pneumoniae
+GCF_900084675.1	Klebsiella pneumoniae
+GCF_001443245.1	Klebsiella pneumoniae
+GCF_001717795.1	Klebsiella pneumoniae
+GCF_001808265.1	Klebsiella pneumoniae
+GCF_900084925.1	Klebsiella pneumoniae
+GCF_002850275.1	Klebsiella pneumoniae
+GCF_900083665.1	Klebsiella pneumoniae
+GCF_900084005.1	Klebsiella pneumoniae
+GCF_900084685.1	Klebsiella pneumoniae
+GCF_900085055.1	Klebsiella pneumoniae
+GCF_001052475.1	Klebsiella pneumoniae
+GCF_001557575.1	Klebsiella pneumoniae
+GCF_001006625.1	Klebsiella variicola
+GCF_000019565.1	Klebsiella variicola
+GCF_000163075.1	Klebsiella variicola
+GCF_000398905.1	Klebsiella variicola
+GCF_000786375.2	Klebsiella variicola
+GCF_000986855.1	Klebsiella variicola
+GCF_001006575.1	Klebsiella variicola
+GCF_001033825.1	Klebsiella variicola
+GCF_001317095.1	Klebsiella variicola
+GCF_001463685.1	Klebsiella variicola
+GCF_001549975.1	Klebsiella variicola
+GCF_001620885.1	Klebsiella variicola
+GCF_001807645.1	Klebsiella variicola
+GCF_001807705.1	Klebsiella variicola
+GCF_001808325.1	Klebsiella variicola
+GCF_002156765.1	Klebsiella variicola
+GCF_002724035.1	Klebsiella variicola
+GCF_002810575.1	Klebsiella variicola
+GCF_002810595.1	Klebsiella variicola
+GCF_002837625.1	Klebsiella variicola
+GCF_900084135.1	Klebsiella variicola
+GCF_900085165.1	Klebsiella variicola
+GCF_900084205.1	Klebsiella variicola
+GCF_900084295.1	Klebsiella variicola
+GCF_900084765.1	Klebsiella variicola
+GCF_900084775.1	Klebsiella variicola
+GCF_900084795.1	Klebsiella variicola
+GCF_900084995.1	Klebsiella variicola
+GCF_900085015.1	Klebsiella variicola
+GCF_900085175.1	Klebsiella variicola
+GCF_900085185.1	Klebsiella variicola
+GCF_900085825.1	Klebsiella variicola
+GCF_900086175.1	Klebsiella variicola
+GCF_900086385.1	Klebsiella variicola
+GCF_900171785.1	Klebsiella variicola
+GCF_900171975.1	Klebsiella variicola
+GCF_900171985.1	Klebsiella variicola
+GCF_900173285.1	Klebsiella variicola
+GCF_900173315.1	Klebsiella variicola
+GCF_900174165.1	Klebsiella variicola
+GCF_900174175.1	Klebsiella variicola
+GCF_900173385.1	Klebsiella variicola
+GCF_900173565.1	Klebsiella variicola
+GCF_900174345.1	Klebsiella variicola
+GCF_900174355.1	Klebsiella variicola
+GCF_900174375.1	Klebsiella variicola
+GCF_900173705.1	Klebsiella variicola
+GCF_900173715.1	Klebsiella variicola
+GCF_900174035.1	Klebsiella variicola
+GCF_900174115.1	Klebsiella variicola
+GCF_900175105.1	Klebsiella variicola
+GCF_002837615.1	Klebsiella variicola
+GCF_001548315.1	Klebsiella Kp5
+GCF_002806645.1	Klebsiella Kp5
+GCF_002806655.1	Klebsiella Kp5
+GCF_002806695.1	Klebsiella Kp5
+GCF_002810615.1	Klebsiella Kp5
+GCF_002810635.1	Klebsiella Kp5
+GCF_002837655.1	Klebsiella Kp5
+GCF_002810475.1	Klebsiella Kp5
+GCF_002810535.1	Klebsiella Kp5
+GCF_002810545.1	Klebsiella Kp5
+GCF_002810495.1	Klebsiella Kp5
+GCF_002810515.1	Klebsiella Kp5
+GCF_900087855.1	Klebsiella Kp5
+GCF_000523395.1	Klebsiella quasivariicola
+GCF_002186515.1	Klebsiella quasivariicola
+GCF_900172085.1	Klebsiella quasivariicola
+GCF_900174015.1	Klebsiella quasivariicola
+
+
+
+# This assembly does not fit in well with any other Klebsiella, so I've
+# redefined it as 'unknown'. I suspect it may be a cross-species hybrid.
+GCF_002264315.1	Klebsiella unknown
+
+
+
+# Klebsiella oxytoca and its related species were recently defined in Passet
+# 2017. One unnamed clade remains, which here I have left as 'unknown'. It may
+# become either a subspecies of grimontii or its own species.
+GCF_001809025.1	Klebsiella oxytoca
+GCF_001808475.1	Klebsiella oxytoca
+GCF_000427015.1	Klebsiella grimontii
+GCF_000733495.1	Klebsiella grimontii
+GCF_001052235.1	Klebsiella grimontii
+GCF_001052825.1	Klebsiella grimontii
+GCF_001053665.1	Klebsiella grimontii
+GCF_001060405.1	Klebsiella grimontii
+GCF_001054995.1	Klebsiella grimontii
+GCF_001070955.1	Klebsiella grimontii
+GCF_001072735.1	Klebsiella grimontii
+GCF_001072835.1	Klebsiella grimontii
+GCF_001076805.1	Klebsiella grimontii
+GCF_001065765.1	Klebsiella grimontii
+GCF_001066775.1	Klebsiella grimontii
+GCF_001548355.1	Klebsiella grimontii
+GCF_001633115.1	Klebsiella grimontii
+GCF_002090195.1	Klebsiella grimontii
+GCF_002080105.1	Klebsiella grimontii
+GCF_002556465.1	Klebsiella grimontii
+GCF_002559635.1	Klebsiella grimontii
+GCF_002856195.1	Klebsiella grimontii
+GCF_002880715.1	Klebsiella grimontii
+GCF_900083595.1	Klebsiella grimontii
+GCF_900083605.1	Klebsiella grimontii
+GCF_900200035.1	Klebsiella grimontii
+GCF_000247915.1	Klebsiella unknown
+GCF_001057685.1	Klebsiella unknown
+GCF_002186735.1	Klebsiella unknown
+GCF_001065705.1	Klebsiella unknown
+GCF_900083805.1	Klebsiella michiganensis
+GCF_900083835.1	Klebsiella michiganensis
+GCF_900083695.1	Klebsiella michiganensis
+GCF_000293135.1	Klebsiella michiganensis
+GCF_000524315.1	Klebsiella michiganensis
+GCF_000714655.1	Klebsiella michiganensis
+GCF_001022195.1	Klebsiella michiganensis
+GCF_001753185.1	Klebsiella michiganensis
+GCF_001970835.1	Klebsiella michiganensis
+GCF_002072655.1	Klebsiella michiganensis
+GCF_002111445.1	Klebsiella michiganensis
+GCF_002906395.1	Klebsiella michiganensis
+GCF_002906415.1	Klebsiella michiganensis
+GCF_002906435.1	Klebsiella michiganensis
+GCF_900083565.1	Klebsiella michiganensis
+GCF_900083575.1	Klebsiella michiganensis
+GCF_900083635.1	Klebsiella michiganensis
+GCF_900083825.1	Klebsiella michiganensis
+GCF_900083885.1	Klebsiella michiganensis
+GCF_900083915.1	Klebsiella michiganensis
+GCF_900084035.1	Klebsiella michiganensis
+GCF_001807845.1	Klebsiella michiganensis
+
+
+
+# Raoultella terrigena (sometimes called Klebsiella terrigena) is a bit
+# unclear, though Drancount 2001 sheds some light on its relationship to other
+# Raoultella species. There is an outgroup to the rest of terrigena
+# (GCF_002270295) which I've here called 'unknown', but should perhaps be
+# included with terrigena.
+GCF_000829965.1	Raoultella terrigena
+GCF_002270295.1	Raoultella unknown
+
+
+
+# Kluyvera georgiana doesn't have many representatives, but based on the
+# phylogeny in Pavan 2005, I'm confident in renaming this one ascorbata
+# assembly as georgiana.
+GCF_001682915.1	Kluyvera georgiana	Pavan 2005
+
+
+
+# This assembly, named Klebsiella aerogenes in NCBI, is very close to an
+# Atlantibacter hermannii assembly. Based on the relationships in Hata 2016,
+# I think this assembly should also be hermannii, as the other Atlantibacter
+# species (subterranea) is much more distantly related.
+GCF_000878365.1	Atlantibacter hermannii
+
+
+
+# Cedecea is an odd genus. The species davisae and neteri form a clade, but
+# the third species (lapagei) was only represented by one species very distant
+# in the tree. It is in a clade of mostly Lelliottia, which makes me think it
+# is mislabelled, so I've changed that one to 'Lelliottia unknown'. What I've
+# currently defined as neteri has some very deep branches, so I wonder if the
+# real lapagei is in there.
+GCF_900177785.1	Cedecea neteri	see notes file
+GCF_000277545.1	Cedecea neteri	see notes file
+GCF_000963575.1	Cedecea neteri	see notes file
+GCF_002811785.1	Lelliottia unknown	see notes file
+
+
+
+# Walk 2009 and Luo 2011 described five 'crytic' lineages of E. coli, which
+# aren't part of E. coli, called clades I-V. Liu 2015 named clade V as
+# Escherichia marmotae, which I've gone with here.
+GCF_000190955.1	Escherichia clade-1
+GCF_001650555.1	Escherichia clade-1
+GCF_002133995.1	Escherichia clade-1
+GCF_002134215.1	Escherichia clade-1
+GCF_002531355.1	Escherichia clade-1
+GCF_000190995.1	Escherichia clade-1
+GCF_000208545.1	Escherichia clade-1
+GCF_001910995.1	Escherichia clade-1
+GCF_001911065.1	Escherichia clade-1
+GCF_001911405.1	Escherichia clade-1
+GCF_001912385.1	Escherichia clade-1
+GCF_001912565.1	Escherichia clade-1
+GCF_000194175.1	Escherichia clade-1
+GCF_000194575.1	Escherichia clade-1
+GCF_002133425.1	Escherichia clade-1
+GCF_000208485.1	Escherichia clade-1
+GCF_000687125.1	Escherichia clade-1
+GCF_000703725.1	Escherichia clade-1
+GCF_000812765.1	Escherichia clade-1
+GCF_001264195.1	Escherichia clade-1
+GCF_001911145.1	Escherichia clade-1
+GCF_001912235.1	Escherichia clade-1
+GCF_001912525.1	Escherichia clade-1
+GCF_002207125.1	Escherichia clade-1
+GCF_002810695.1	Escherichia clade-1
+GCF_002901325.1	Escherichia clade-1
+GCF_001660175.1	Escherichia clade-2
+GCF_000208445.1	Escherichia clade-3
+GCF_000208465.1	Escherichia clade-3
+GCF_000398885.1	Escherichia clade-3
+GCF_000407925.1	Escherichia clade-3
+GCF_000407765.1	Escherichia clade-3
+GCF_000459855.1	Escherichia clade-3
+GCF_000208525.1	Escherichia clade-4
+GCF_000601195.1	Escherichia clade-4
+GCF_002110245.1	Escherichia clade-4
+GCF_000208565.1	Escherichia marmotae
+GCF_000350705.1	Escherichia marmotae
+GCF_000408525.1	Escherichia marmotae
+GCF_002573245.1	Escherichia marmotae
+GCF_002573255.1	Escherichia marmotae
+GCF_000408325.1	Escherichia marmotae
+GCF_000408805.1	Escherichia marmotae
+GCF_001561675.1	Escherichia marmotae
+GCF_002109985.1	Escherichia marmotae
+
+
+
+
+
+
+
+
+
+
+
+

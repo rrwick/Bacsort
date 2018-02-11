@@ -116,6 +116,8 @@ def load_accession_species():
     if Path('user-defined_accession_species').is_file():
         with open('user-defined_accession_species', 'rt') as user_species:
             for line in user_species:
+                if not line.startswith('GCF'):
+                    continue
                 parts = line.split('\t')
                 if parts[0] == 'Accession':
                     continue
