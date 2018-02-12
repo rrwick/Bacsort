@@ -26,6 +26,25 @@ GCF_000800945.1	Plesiomonas shigelloides
 GCF_000611875.2	Tatumella ptyseos
 GCF_002843235.1	Providencia rettgeri
 GCF_002215245.1	Pantoea ananatis
+GCF_001537385.1	Serratia marcescens
+GCF_001537265.1	Serratia marcescens
+GCF_001808215.1	Serratia marcescens
+GCF_001011075.1	Serratia marcescens
+GCF_000747565.1	Serratia marcescens
+GCF_002751935.1	Serratia marcescens
+GCF_001714765.1	Serratia marcescens
+GCF_900215455.1	Serratia marcescens
+GCF_001642805.2	Serratia marcescens
+GCF_002752455.1	Serratia marcescens
+GCF_002752475.1	Serratia marcescens
+GCF_000695995.1	Serratia marcescens
+GCF_900215445.1	Serratia marcescens
+GCF_002797215.1	Serratia marcescens
+GCF_001060475.1	Serratia marcescens
+GCF_001060695.1	Serratia marcescens
+GCF_001062045.1	Serratia marcescens
+GCF_001984565.1	Serratia marcescens
+GCF_001066285.1	Serratia marcescens
 
 
 
@@ -427,3 +446,12 @@ GCF_900068845.1	Pantoea unknown
 
 
 
+# There were a couple odd Serratia species in the tree: ureilytica and
+# nematodiphila. These were both clearly within the marcescens clade, so I've
+# renamed them to marcescens.
+GCF_000988045.1	Serratia marcescens
+GCF_000738675.1	Serratia marcescens
+GCF_900101535.1	Serratia marcescens
+GCF_002082115.1	Serratia marcescens
+GCF_002185265.1	Serratia marcescens
+GCF_900005125.1	Serratia marcescens
