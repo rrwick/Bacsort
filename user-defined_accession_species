@@ -60,6 +60,7 @@ GCF_002752495.1	Serratia marcescens
 GCF_001076875.1	Serratia marcescens
 GCF_000330865.1	Serratia rubidaea
 GCF_001692375.1	Serratia fonticola
+GCF_001808015.1	Citrobacter koseri
 
 
 
@@ -479,3 +480,23 @@ GCF_900005125.1	Serratia marcescens
 # branch and may later be redefined as two species.
 GCF_000347995.1	Serratia proteamaculans
 GCF_002607755.1	Serratia proteamaculans
+
+
+
+# Ribeiro 2015 and Ribeiro 2017 provided nice phylogenies of Citrobacter.
+GCF_000208765.1	Citrobacter braakii
+GCF_000398845.1	Citrobacter braakii
+GCF_000398865.1	Citrobacter braakii
+GCF_000972645.1	Citrobacter braakii
+GCF_001273815.1	Citrobacter braakii
+GCF_001689745.1	Citrobacter braakii
+GCF_002289385.1	Citrobacter braakii
+GCF_002850715.1	Citrobacter braakii
+GCF_002903215.1	Citrobacter braakii
+GCF_900169625.1	Citrobacter braakii
+GCF_001022685.1	Citrobacter braakii
+GCF_000692115.1	Citrobacter europaeus
+GCF_000783995.2	Citrobacter europaeus
+GCF_001922445.1	Citrobacter europaeus
+GCF_002073755.1	Citrobacter europaeus
+GCF_002786865.1	Citrobacter europaeus
