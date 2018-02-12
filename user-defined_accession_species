@@ -31,7 +31,6 @@ GCF_001537265.1	Serratia marcescens
 GCF_001808215.1	Serratia marcescens
 GCF_001011075.1	Serratia marcescens
 GCF_000747565.1	Serratia marcescens
-GCF_002751935.1	Serratia marcescens
 GCF_001714765.1	Serratia marcescens
 GCF_900215455.1	Serratia marcescens
 GCF_001642805.2	Serratia marcescens
@@ -45,6 +44,22 @@ GCF_001060695.1	Serratia marcescens
 GCF_001062045.1	Serratia marcescens
 GCF_001984565.1	Serratia marcescens
 GCF_001066285.1	Serratia marcescens
+GCF_002751955.1	Serratia marcescens
+GCF_002751935.1	Serratia marcescens
+GCF_002752085.1	Serratia marcescens
+GCF_002752255.1	Serratia marcescens
+GCF_002752235.1	Serratia marcescens
+GCF_002752095.1	Serratia marcescens
+GCF_002752135.1	Serratia marcescens
+GCF_002752155.1	Serratia marcescens
+GCF_002752265.1	Serratia marcescens
+GCF_002752195.1	Serratia marcescens
+GCF_002752535.1	Serratia marcescens
+GCF_002752435.1	Serratia marcescens
+GCF_002752495.1	Serratia marcescens
+GCF_001076875.1	Serratia marcescens
+GCF_000330865.1	Serratia rubidaea
+GCF_001692375.1	Serratia fonticola
 
 
 
@@ -455,3 +470,12 @@ GCF_900101535.1	Serratia marcescens
 GCF_002082115.1	Serratia marcescens
 GCF_002185265.1	Serratia marcescens
 GCF_900005125.1	Serratia marcescens
+
+
+
+# There were two assemblies names Serratia proteamaculans, which formed a
+# clade with two unknown Serratia. I opted to put all four together in a
+# single clade under the name proteamaculans, but this clade has a very deep
+# branch and may later be redefined as two species.
+GCF_000347995.1	Serratia proteamaculans
+GCF_002607755.1	Serratia proteamaculans
