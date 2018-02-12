@@ -483,7 +483,10 @@ GCF_002607755.1	Serratia proteamaculans
 
 
 
-# Ribeiro 2015 and Ribeiro 2017 provided nice phylogenies of Citrobacter.
+# Ribeiro 2015 and Ribeiro 2017 (2 papers) provided nice phylogenies of
+# Citrobacter. Strain A316 was odd - in one of the papers, Riberio put it as
+# an outgroup of freundii, but in my tree it looked like an outgroup of
+# portucalensis instead, so I've left it as unknown.
 GCF_000208765.1	Citrobacter braakii
 GCF_000398845.1	Citrobacter braakii
 GCF_000398865.1	Citrobacter braakii
@@ -494,9 +497,44 @@ GCF_002289385.1	Citrobacter braakii
 GCF_002850715.1	Citrobacter braakii
 GCF_002903215.1	Citrobacter braakii
 GCF_900169625.1	Citrobacter braakii
+GCF_900169695.1	Citrobacter braakii
 GCF_001022685.1	Citrobacter braakii
 GCF_000692115.1	Citrobacter europaeus
 GCF_000783995.2	Citrobacter europaeus
 GCF_001922445.1	Citrobacter europaeus
 GCF_002073755.1	Citrobacter europaeus
 GCF_002786865.1	Citrobacter europaeus
+GCF_000692135.1	Citrobacter amalonaticus
+GCF_000809165.1	Citrobacter amalonaticus
+GCF_001297795.1	Citrobacter amalonaticus
+GCF_900112055.1	Citrobacter amalonaticus
+GCF_000158355.2	Citrobacter portucalensis
+GCF_000521945.1	Citrobacter portucalensis
+GCF_001037485.1	Citrobacter portucalensis
+GCF_001037515.1	Citrobacter portucalensis
+GCF_001037585.1	Citrobacter portucalensis
+GCF_001281005.1	Citrobacter portucalensis
+GCF_001317135.2	Citrobacter portucalensis
+GCF_001317155.2	Citrobacter portucalensis
+GCF_001867255.1	Citrobacter portucalensis
+GCF_001880775.1	Citrobacter portucalensis
+GCF_002796485.1	Citrobacter portucalensis
+GCF_002903305.1	Citrobacter portucalensis
+GCF_000648515.1	Citrobacter werkmanii
+GCF_001721255.1	Citrobacter werkmanii
+GCF_001570325.1	Citrobacter werkmanii
+GCF_001570345.1	Citrobacter werkmanii
+GCF_000277565.1	Citrobacter freundii
+GCF_000313895.1	Citrobacter freundii
+GCF_000398825.1	Citrobacter freundii
+GCF_001034445.1	Citrobacter freundii
+GCF_001034475.1	Citrobacter freundii
+GCF_001034485.1	Citrobacter freundii
+GCF_001037505.1	Citrobacter freundii
+GCF_001037575.1	Citrobacter freundii
+GCF_001586835.1	Citrobacter freundii
+GCF_001586845.1	Citrobacter freundii
+GCF_000238735.1	Citrobacter unknown
+GCF_900077125.1	Citrobacter unknown
+GCF_000739675.1	Citrobacter murliniae
+GCF_001037495.1	Citrobacter murliniae
