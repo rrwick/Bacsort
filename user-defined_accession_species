@@ -378,7 +378,10 @@ GCF_000486025.1	Siccibacter turicensis
 
 
 # Walterson 2015 provides a nice overview of Pantoea, which I used to guide
-# renaming of this genus.
+# renaming of this genus. Some of the species in that paper were not in the
+# tree: wallisii, gavinae and deleyi. Some species were in the tree in two
+# incompatible locations (e.g. rodasii was in two very separate branches), so
+# I've renamed the ones incompatible with the type strains as 'unknown'.
 GCF_001641135.1	Pantoea allii
 GCF_000731025.2	Pantoea brenneri
 GCF_001743465.1	Pantoea brenneri
@@ -387,3 +390,23 @@ GCF_000255315.1	Pantoea anthophila
 GCF_000784875.1	Pantoea eucrina
 GCF_001881025.1	Pantoea eucrina
 GCF_002207995.1	Pantoea dispersa
+GCF_000220605.1	Pantoea agglomerans
+GCF_000952095.1	Pantoea agglomerans
+GCF_001238615.1	Pantoea agglomerans
+GCF_001264395.1	Pantoea agglomerans
+GCF_900068865.1	Pantoea agglomerans
+GCF_000745295.1	Pantoea vagans
+GCF_001558735.1	Pantoea vagans
+GCF_002554555.1	Pantoea vagans
+GCF_000179655.1	Pantoea eucalypti
+GCF_000330765.1	Pantoea eucalypti
+GCF_000816655.1	Pantoea eucalypti
+GCF_900167425.1	Pantoea eucalypti
+GCF_000784965.1	Pantoea calida
+GCF_000738765.1	Pantoea septica
+GCF_001067555.1	Pantoea septica
+GCF_002313185.2	Pantoea septica
+GCF_000759475.1	Pantoea unknown
+GCF_000773965.1	Pantoea unknown
+GCF_000801085.1	Pantoea unknown
+GCF_001506165.1	Pantoea unknown
