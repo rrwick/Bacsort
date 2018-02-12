@@ -64,6 +64,13 @@ GCF_001808015.1	Citrobacter koseri
 
 
 
+# This assembly was labelled 'Salmonella enterica', but it was an outgroup to
+# the rest of enterica and had an oddly short branch length. I excluded it in
+# case there's something wrong with it.
+GCF_002053395.1	Salmonella unknown
+
+
+
 # Klebsiella pneumoniae and related species are defined well in Brisse 2014
 # and Holt 2015. Many isolates are misnamed because previously the entire
 # group was called K. pneumoniae. More recently, Long 2017 defined a new
@@ -545,6 +552,11 @@ GCF_001034465.1	Citrobacter youngae
 GCF_001559235.1	Citrobacter youngae
 GCF_002151815.1	Citrobacter youngae
 GCF_002863945.1	Citrobacter youngae
+GCF_001463265.1	Citrobacter sedlakii
 GCF_000238735.1	Citrobacter unknown
 GCF_900077125.1	Citrobacter unknown
 GCF_000155975.1	Citrobacter unknown
+GCF_000981805.1	Citrobacter unknown
+GCF_001559075.1	Citrobacter unknown
+GCF_002880615.1	Citrobacter unknown
+
