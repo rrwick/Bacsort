@@ -395,6 +395,7 @@ GCF_000952095.1	Pantoea agglomerans
 GCF_001238615.1	Pantoea agglomerans
 GCF_001264395.1	Pantoea agglomerans
 GCF_900068865.1	Pantoea agglomerans
+GCF_002082355.1	Pantoea agglomerans
 GCF_000745295.1	Pantoea vagans
 GCF_001558735.1	Pantoea vagans
 GCF_002554555.1	Pantoea vagans
@@ -410,3 +411,19 @@ GCF_000759475.1	Pantoea unknown
 GCF_000773965.1	Pantoea unknown
 GCF_000801085.1	Pantoea unknown
 GCF_001506165.1	Pantoea unknown
+GCF_002749715.1	Pantoea unknown
+GCF_900215435.1	Pantoea unknown
+GCF_900068835.1	Pantoea unknown
+GCF_900068855.1	Pantoea unknown
+GCF_900068845.1	Pantoea unknown
+
+
+
+# GCF_001691555.1 is interesting - it was labelled as Pantoea eucrina, and it
+# does form a clade with the rest of eucrina, but it is quite separate from
+# the others. I left it as eucrina, but wouldn't be surprised if it gets a
+# separate species name in the future.
+
+
+
+
