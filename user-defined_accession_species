@@ -260,8 +260,13 @@ GCF_002264315.1	Klebsiella unknown
 
 
 # Klebsiella oxytoca and its related species were recently defined in Passet
-# 2017. One unnamed clade remains, which here I have left as 'unknown'. It may
-# become either a subspecies of grimontii or its own species.
+# 2017. One unnamed clade remains, which here I have left as 'unknown'.
+# The remaining clade I called Ko4 based on the sequences from the
+# phylogenetic groups given in Fevre 2005. It may become either a subspecies
+# of grimontii or its own species.
+# FYI: phylogroup Ko1 is now michiganensis, Ko2 is now oxytoca and Ko6 is now
+# grimontii. I haven't seen Ko3 in full genomes, and I don't have a reference
+# sequence for Ko5.
 GCF_001809025.1	Klebsiella oxytoca
 GCF_001808475.1	Klebsiella oxytoca
 GCF_000427015.1	Klebsiella grimontii
@@ -288,10 +293,6 @@ GCF_002880715.1	Klebsiella grimontii
 GCF_900083595.1	Klebsiella grimontii
 GCF_900083605.1	Klebsiella grimontii
 GCF_900200035.1	Klebsiella grimontii
-GCF_000247915.1	Klebsiella unknown
-GCF_001057685.1	Klebsiella unknown
-GCF_002186735.1	Klebsiella unknown
-GCF_001065705.1	Klebsiella unknown
 GCF_900083805.1	Klebsiella michiganensis
 GCF_900083835.1	Klebsiella michiganensis
 GCF_900083695.1	Klebsiella michiganensis
@@ -314,6 +315,10 @@ GCF_900083885.1	Klebsiella michiganensis
 GCF_900083915.1	Klebsiella michiganensis
 GCF_900084035.1	Klebsiella michiganensis
 GCF_001807845.1	Klebsiella michiganensis
+GCF_000247915.1	Klebsiella Ko4
+GCF_001057685.1	Klebsiella Ko4
+GCF_002186735.1	Klebsiella Ko4
+GCF_001065705.1	Klebsiella Ko4
 
 
 
@@ -468,7 +473,6 @@ GCF_900068845.1	Pantoea unknown
 
 
 
-
 # There were a couple odd Serratia species in the tree: ureilytica and
 # nematodiphila. These were both clearly within the marcescens clade, so I've
 # renamed them to marcescens.
@@ -560,3 +564,19 @@ GCF_000981805.1	Citrobacter unknown
 GCF_001559075.1	Citrobacter unknown
 GCF_002880615.1	Citrobacter unknown
 
+
+
+# For Hafnia, the genus seems to originally have had one species, alvei, but
+# this was later split into two species: alvei and paralvei (Huys 2010).
+# 'Obesumbacterium proteus' appeared within the alvei clade, but based on
+# The phylogeny and comments seen on some websites, I've reclassified it as
+# Hafnia alvei:
+# http://www.tgw1916.net/Enterobacteria/Obesumbacterium.html
+# http://www.bacterio.net/obesumbacterium.html
+GCF_000185685.2	Hafnia paralvei
+GCF_000239255.1	Hafnia paralvei
+GCF_001559255.1	Hafnia paralvei
+GCF_001816025.1	Hafnia paralvei
+GCF_002355555.1	Hafnia alvei
+GCF_001586165.1	Hafnia alvei
+GCF_001655035.1	Hafnia alvei
