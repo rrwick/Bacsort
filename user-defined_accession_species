@@ -484,9 +484,13 @@ GCF_002607755.1	Serratia proteamaculans
 
 
 # Ribeiro 2015 and Ribeiro 2017 (2 papers) provided nice phylogenies of
-# Citrobacter. Strain A316 was odd - in one of the papers, Riberio put it as
-# an outgroup of freundii, but in my tree it looked like an outgroup of
-# portucalensis instead, so I've left it as unknown.
+# Citrobacter.
+# Strain A316 was odd - in one of the papers, Riberio put it as an outgroup
+# of freundii, but in my tree it looked like an outgroup of portucalensis
+# instead, so I've left it as unknown.
+# Citrobacter youngae was also a problem. The strain ATCC 29220 which was
+# labelled as youngae was very different from the youngae defined in Ribeiro's
+# papers. I went with Ribeiro's and changed ATCC 29220 to Citrobacter unknown.
 GCF_000208765.1	Citrobacter braakii
 GCF_000398845.1	Citrobacter braakii
 GCF_000398865.1	Citrobacter braakii
@@ -534,7 +538,13 @@ GCF_001037505.1	Citrobacter freundii
 GCF_001037575.1	Citrobacter freundii
 GCF_001586835.1	Citrobacter freundii
 GCF_001586845.1	Citrobacter freundii
-GCF_000238735.1	Citrobacter unknown
-GCF_900077125.1	Citrobacter unknown
 GCF_000739675.1	Citrobacter murliniae
 GCF_001037495.1	Citrobacter murliniae
+GCF_002386385.1	Citrobacter gillenii
+GCF_001034465.1	Citrobacter youngae
+GCF_001559235.1	Citrobacter youngae
+GCF_002151815.1	Citrobacter youngae
+GCF_002863945.1	Citrobacter youngae
+GCF_000238735.1	Citrobacter unknown
+GCF_900077125.1	Citrobacter unknown
+GCF_000155975.1	Citrobacter unknown
