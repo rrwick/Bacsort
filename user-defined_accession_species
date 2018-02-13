@@ -61,6 +61,7 @@ GCF_001076875.1	Serratia marcescens
 GCF_000330865.1	Serratia rubidaea
 GCF_001692375.1	Serratia fonticola
 GCF_001808015.1	Citrobacter koseri
+GCF_001275405.1	Xenorhabdus griffiniae
 
 
 
@@ -593,7 +594,39 @@ GCF_001049955.1	Proteus penneri
 GCF_001939795.1	Proteus cibarius
 GCF_002749905.1	Proteus cibarius
 GCF_001722135.1	Proteus unknown
+GCF_001742985.1	Proteus unknown
 GCF_001049975.1	Proteus unknown
 GCF_000497855.1	Proteus unknown
 GCF_002206145.2	Proteus unknown
 GCF_002591155.1	Proteus unknown
+
+
+
+# Providencia was mostly straightforward, except for one odd assembly:
+# GCF_001853385. This was labelled as 'stuartii' and there is a paper
+# describing its genome sequence: Yuan 2017. However, it is very distant from
+# the other stuartii genomes, sufficiently so to be a different species, so
+# here I label it as 'unknown'.
+GCF_001853385.1	Providencia unknown
+
+
+
+# Xenorhabdus has a lot of species, but there was relatively little conflict
+# to sort out. The assembly of 'Xenorhabdus stockiae' had two moderately close
+# relatives, which I've relabelled as stockiae here. However, the more distant
+# of the two (GCF_002632765) might be considered a different species, so this
+# could change. Only one assembly (GCF_000798625, strain NBAII XenSa04)
+# remains unnamed.
+GCF_002632865.1	Xenorhabdus stockiae
+GCF_002632765.1	Xenorhabdus stockiae
+
+
+
+# Edwardsiella had some recent species definitions. I went with the ones given
+# in Bujan 2017.
+GCF_000020865.1	Edwardsiella piscicida
+GCF_000146305.1	Edwardsiella piscicida
+GCF_000804515.1	Edwardsiella piscicida
+GCF_001186215.1	Edwardsiella anguillarum
+GCF_000711175.1	Edwardsiella anguillarum
+GCF_000800725.1	Edwardsiella anguillarum
