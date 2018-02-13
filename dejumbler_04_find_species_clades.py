@@ -110,11 +110,6 @@ def load_accession_species():
                 if species_parts[1] == 'sp.':
                     species_parts[1] = 'unknown'
                 species = ' '.join(species_parts)
-
-                # Shigella and E. coli are grouped together.
-                if species == 'Escherichia coli' or species.startswith('Shigella '):
-                    species = 'Escherichia coli/Shigella'
-
                 accession_species[accession] = species
 
     # ...and then load from the user-defined file, so they can overwrite NCBI species.
@@ -130,6 +125,11 @@ def load_accession_species():
                     continue
                 accession, species = parts[0], parts[1]
                 accession_species[accession] = species
+
+    # Shigella and E. coli are grouped together.
+    for accession, species in accession_species.items():
+        if species == 'Escherichia coli' or species.startswith('Shigella '):
+            accession_species[accession] = 'Escherichia coli/Shigella'
 
     # If the user-defined file doesn't exist yet, make an empty one.
     else:
