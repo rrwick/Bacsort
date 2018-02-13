@@ -586,8 +586,9 @@ GCF_001655035.1	Hafnia alvei
 # The Proteus genus was quite messy. Proteus mirabilis was clear, but
 # vulgaris/hauseri/columbiae were all mixed up. I used O’Hara 2000 to sort out
 # some of the classifications. Hyun 2016 and Dai 2018 helped with some of the
-# more recently named species.
+# more recently named species. Proteus terrae and inconstans weren't present
+# in the assemblies, and many unnamed clades remain.
 GCF_002184635.1	Proteus vulgaris
 GCF_001049955.1	Proteus penneri
-GCF_001939795.1	Proteus terrae
-GCF_002749905.1	Proteus terrae
+GCF_001939795.1	Proteus cibarius
+GCF_002749905.1	Proteus cibarius
