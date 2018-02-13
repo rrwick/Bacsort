@@ -1094,7 +1094,6 @@ GCF_900077135.1	Enterobacter hormaechei
 GCF_900077145.1	Enterobacter hormaechei
 GCF_900077175.1	Enterobacter hormaechei
 GCF_900077525.1	Enterobacter hormaechei
-GCF_900077215.1	Enterobacter hormaechei
 GCF_900077325.1	Enterobacter hormaechei
 GCF_900077335.1	Enterobacter hormaechei
 GCF_900077755.1	Enterobacter hormaechei
@@ -1129,6 +1128,8 @@ GCF_900076565.1	Enterobacter hormaechei
 GCF_900076735.1	Enterobacter hormaechei
 GCF_900083845.1	Enterobacter hormaechei
 GCF_000694955.1	Enterobacter hormaechei
+GCF_900075725.1	Enterobacter hormaechei
+GCF_900077195.1	Enterobacter hormaechei
 GCF_000239975.1	Enterobacter ludwigii
 GCF_000422225.1	Enterobacter ludwigii
 GCF_000512375.1	Enterobacter ludwigii
@@ -1143,6 +1144,7 @@ GCF_002148625.1	Enterobacter ludwigii
 GCF_002151875.1	Enterobacter ludwigii
 GCF_900075145.1	Enterobacter ludwigii
 GCF_900075935.1	Enterobacter ludwigii
+GCF_900077925.1	Enterobacter ludwigii
 GCF_900076575.1	Enterobacter ludwigii
 GCF_900077345.1	Enterobacter ludwigii
 GCF_900142835.1	Enterobacter ludwigii
@@ -1181,6 +1183,7 @@ GCF_900129625.1	Enterobacter asburiae
 GCF_000493035.1	Enterobacter kobei
 GCF_000493055.1	Enterobacter kobei
 GCF_000534275.1	Enterobacter kobei
+GCF_000692355.1	Enterobacter kobei
 GCF_000692255.1	Enterobacter kobei
 GCF_000798855.1	Enterobacter kobei
 GCF_000952375.1	Enterobacter kobei
@@ -1246,6 +1249,7 @@ GCF_001742765.1	Enterobacter cloacae
 GCF_900110475.1	Enterobacter cloacae
 GCF_001038925.1	Enterobacter cloacae
 GCF_001043635.1	Enterobacter cloacae
+GCF_002072125.1	Enterobacter cloacae
 GCF_000515295.1	Enterobacter bugandensis
 GCF_000534375.1	Enterobacter bugandensis
 GCF_000957065.1	Enterobacter bugandensis
