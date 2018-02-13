@@ -630,3 +630,17 @@ GCF_000804515.1	Edwardsiella piscicida
 GCF_001186215.1	Edwardsiella anguillarum
 GCF_000711175.1	Edwardsiella anguillarum
 GCF_000800725.1	Edwardsiella anguillarum
+
+
+
+# There are only two species in Trabulsiella, but it still proved difficult.
+# Trabulsiella odontotermitis was first described in Chou 2007. Then in 2015,
+# Sapountzis sequenced two more isolates that they called odontotermitis, but
+# these are quite distinct from other odontotermitis isolates. There appears
+# to be three species: guamensis and two separate groups both named
+# odontotermitis. I have left the name odontotermitis on the assemblies which
+# match the Chou 2007 odontotermitis and changed the more recently described
+# Sapountzis 2015 isolates to 'unknown' - they probably deserve a species
+# name of their own.
+GCF_001188485.1	Trabulsiella unknown
+GCF_001188495.1	Trabulsiella unknown
