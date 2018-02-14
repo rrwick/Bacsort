@@ -65,6 +65,13 @@ GCF_001275405.1	Xenorhabdus griffiniae
 
 
 
+# Some assemblies lacked a species name and any moderately close relatives, so
+# I couldn't place them into a genus.
+GCF_000330845.1	Unknown unknown
+GCF_000302695.1	Unknown unknown
+GCF_000307305.1	Unknown unknown
+
+
 # This assembly was labelled 'Salmonella enterica', but it was an outgroup to
 # the rest of enterica and had an oddly short branch length. I excluded it in
 # case there's something wrong with it.
@@ -648,7 +655,7 @@ GCF_001188495.1	Trabulsiella unknown
 
 
 # Enterobacter is a particularly messy genus. I used Paauw 2008 to guide my
-# species assignments:
+# species assignments for the Enterobacter cloacae complex:
 #   cluster 1 -> hormaechei
 #   cluster 2 -> hormaechei
 #   cluster 4 -> ludwigii
@@ -657,8 +664,10 @@ GCF_001188495.1	Trabulsiella unknown
 # The remaining clusters (3 and 7) as well as other unnamed clades in the
 # cloacae complex were left as Enterobacter cloacae, making that a
 # polyphyletic group.
-GCF_002785605.1	Enterobacter mori
-GCF_000224675.1	Enterobacter soli
+# I found assemblies labelled as 'Enterobacter xiangfangensis' to be scattered
+# throughout the cloacae complex, so I did not use that species name.
+# 'Enterobacter nickellidurans' best matched to within the asburiae clade, so
+# I didn't use that name either.
 GCF_000315775.1	Enterobacter hormaechei
 GCF_000492455.1	Enterobacter hormaechei
 GCF_001469415.1	Enterobacter hormaechei
@@ -1279,3 +1288,16 @@ GCF_900075815.1	Enterobacter bugandensis
 GCF_900078165.1	Enterobacter bugandensis
 GCF_002848105.1	Enterobacter bugandensis
 GCF_002860705.1	Enterobacter bugandensis
+
+
+
+# Enterobacter outside of the the cloacae complex are much less abundant and
+# often much easier to define. I didn't see Enterobacter tabaci or
+# Enterobacter nickellidurans in the assemblies. I also wasn't able to pin
+# down Enterobacter siamensis, as only 16S sequences were available and they
+# matched to multiple clades.
+GCF_002785605.1	Enterobacter mori
+GCF_000224675.1	Enterobacter soli
+GCF_900185885.1	Enterobacter unknown
+GCF_000755535.1	Enterobacter unknown
+GCF_001006635.1	Enterobacter unknown
