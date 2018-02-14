@@ -1310,6 +1310,7 @@ GCF_000347995.1	Serratia quinivorans
 GCF_002607755.1	Serratia proteamaculans
 
 
+
 # Kosakonia is mostly sorted out (I used Li 2017), but two strains of oryzae
 # (Ola 51 and KO348) do not make a clade. I went with Ola 51 as oryzae and
 # left the other clade (containing KO348) as 'unknown'. A few other unknown
@@ -1331,3 +1332,16 @@ GCF_000410515.1	Kosakonia unknown
 GCF_000958895.1	Kosakonia unknown
 GCF_002510275.1	Kosakonia unknown
 GCF_000814905.1	Kosakonia unknown
+
+
+
+# Marrero 2013 and Tian 2016 helped to sort out Dickeya.
+GCF_000406085.2	Dickeya aquatica
+GCF_000406285.1	Dickeya aquatica
+GCF_000406205.1	Dickeya fangzhongdai
+GCF_000406305.1	Dickeya fangzhongdai
+GCF_001187975.1	Dickeya fangzhongdai
+GCF_000758345.1	Dickeya fangzhongdai
+GCF_000774065.1	Dickeya fangzhongdai
+GCF_000803195.1	Dickeya fangzhongdai
+GCF_001187965.1	Dickeya fangzhongdai
