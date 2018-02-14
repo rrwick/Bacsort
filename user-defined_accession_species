@@ -493,15 +493,6 @@ GCF_900005125.1	Serratia marcescens
 
 
 
-# There were two assemblies names Serratia proteamaculans, which formed a
-# clade with two unknown Serratia. I opted to put all four together in a
-# single clade under the name proteamaculans, but this clade has a very deep
-# branch and may later be redefined as two species.
-GCF_000347995.1	Serratia proteamaculans
-GCF_002607755.1	Serratia proteamaculans
-
-
-
 # Ribeiro 2015 and Ribeiro 2017 (2 papers) provided nice phylogenies of
 # Citrobacter.
 # Strain A316 was odd - in one of the papers, Riberio put it as an outgroup
@@ -1301,3 +1292,42 @@ GCF_000224675.1	Enterobacter soli
 GCF_900185885.1	Enterobacter unknown
 GCF_000755535.1	Enterobacter unknown
 GCF_001006635.1	Enterobacter unknown
+
+
+
+# I used Brady 2013 to sort out Lelliottia. There were only two species
+# defined, amnigena and nimipressuralis, and many unnamed branches remain.
+# This paper also helped with Serratia and Kosakonia.
+GCF_002811785.1	Lelliottia nimipressuralis
+GCF_002869975.1	Lelliottia nimipressuralis
+GCF_002870005.1	Lelliottia nimipressuralis
+GCF_002870015.1	Lelliottia nimipressuralis
+GCF_000016325.1	Lelliottia unknown
+GCF_001652505.2	Lelliottia unknown
+GCF_000813585.1	Leclercia unknown
+GCF_000018085.1	Serratia quinivorans
+GCF_000347995.1	Serratia quinivorans
+GCF_002607755.1	Serratia proteamaculans
+
+
+# Kosakonia is mostly sorted out (I used Li 2017), but two strains of oryzae
+# (Ola 51 and KO348) do not make a clade. I went with Ola 51 as oryzae and
+# left the other clade (containing KO348) as 'unknown'. A few other unknown
+# clades remain in this genus.
+GCF_000496775.1	Kosakonia cowanii
+GCF_000333535.1	Kosakonia cowanii
+GCF_001975225.1	Kosakonia cowanii
+GCF_002250015.1	Kosakonia cowanii
+GCF_001582075.1	Kosakonia oryzendophytica
+GCF_900111655.1	Kosakonia radicincitans
+GCF_900112805.1	Kosakonia radicincitans
+GCF_900115965.1	Kosakonia radicincitans
+GCF_900116465.1	Kosakonia radicincitans
+GCF_900119515.1	Kosakonia radicincitans
+GCF_900168185.1	Kosakonia radicincitans
+GCF_000877295.1	Kosakonia oryzae
+GCF_900109485.1	Kosakonia unknown
+GCF_000410515.1	Kosakonia unknown
+GCF_000958895.1	Kosakonia unknown
+GCF_002510275.1	Kosakonia unknown
+GCF_000814905.1	Kosakonia unknown
