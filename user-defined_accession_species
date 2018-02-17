@@ -1345,3 +1345,30 @@ GCF_000758345.1	Dickeya fangzhongdai
 GCF_000774065.1	Dickeya fangzhongdai
 GCF_000803195.1	Dickeya fangzhongdai
 GCF_001187965.1	Dickeya fangzhongdai
+
+
+
+# Rahnella was tough one. While there were a few named species (Brady 2017 was
+# helpful), only two appeared in the tree.
+GCF_001422575.1	Rahnella unknown
+GCF_000255535.1	Rahnella unknown
+
+
+
+# Waleron 2017 was good for Pectobacterium. The species carotovorum is a bit
+# if a polyphyletic mess, with many deep branches. I went with the newly
+# proposed polaris species for one branch, but others probably also deserve
+# their own species names.
+GCF_001039065.1	Pectobacterium peruviense
+GCF_000749915.1	Pectobacterium polaris
+GCF_000803215.1	Pectobacterium unknown
+GCF_000023605.1	Pectobacterium unknown
+GCF_000803315.1	Pectobacterium unknown
+GCF_001984525.1	Pectobacterium unknown
+GCF_001984535.1	Pectobacterium unknown
+
+
+
+# Brady 2017 also helped with Brenneria. Again, there were lots of defined
+# species, but only two were in the tree.
+GCF_000225565.1	Brenneria_nigrifluens
