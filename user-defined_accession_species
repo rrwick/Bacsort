@@ -62,6 +62,7 @@ GCF_000330865.1	Serratia rubidaea
 GCF_001692375.1	Serratia fonticola
 GCF_001808015.1	Citrobacter koseri
 GCF_001275405.1	Xenorhabdus griffiniae
+GCF_001422565.1	Rouxiella silvae
 
 
 
@@ -471,7 +472,7 @@ GCF_900215435.1	Pantoea unknown
 GCF_900068835.1	Pantoea unknown
 GCF_900068855.1	Pantoea unknown
 GCF_900068845.1	Pantoea unknown
-
+GCF_002837195.1	Pantoea unknown
 
 
 # GCF_001691555.1 is interesting - it was labelled as Pantoea eucrina, and it
@@ -1372,3 +1373,62 @@ GCF_001984535.1	Pectobacterium unknown
 # Brady 2017 also helped with Brenneria. Again, there were lots of defined
 # species, but only two were in the tree.
 GCF_000225565.1	Brenneria_nigrifluens
+
+
+
+# There are only three named species in Mangrovibacter (Behera 2017), and one
+# of the two assemblies (GCF_000705335.1) isn't a great match for either. I've
+# tentatively put it in Mangrovibacter plantisponsor, but it is only about a
+# 99% identity match to references sequences for that species.
+GCF_000705335.1	Mangrovibacter plantisponsor
+
+
+
+# Zhang 2015 helped guide species boundaries in Erwinia.
+GCF_000165815.1	Erwinia pyrifoliae
+GCF_002752575.1	Erwinia aphidicola
+GCF_000745075.1	Erwinia oleae
+GCF_001422605.1	Erwinia endophytica
+GCF_002865965.1	Erwinia endophytica
+
+
+
+# Reuter 2014 was a good guide to the Yersinia genus. Yersinia frederiksenii
+# has some very deep branches, and may deserve two species names.
+GCF_000834215.1	Yersinia kristensenii
+GCF_001116865.1	Yersinia enterocolitica
+GCF_001135485.1	Yersinia massiliensis
+GCF_001151185.1	Yersinia massiliensis
+GCF_001218185.1	Yersinia massiliensis
+GCF_001222845.1	Yersinia massiliensis
+GCF_001244565.1	Yersinia massiliensis
+GCF_001319565.1	Yersinia massiliensis
+GCF_001319985.1	Yersinia massiliensis
+GCF_002192925.1	Yersinia massiliensis
+GCF_002591095.1	Yersinia massiliensis
+GCF_001150525.1	Yersinia intermedia
+GCF_002073315.1	Yersinia intermedia
+GCF_002082245.2	Yersinia intermedia
+GCF_001115185.1	Yersinia aleksiciae
+GCF_001319955.1	Yersinia bercovieri
+GCF_001106265.1	Yersinia mollaretii
+GCF_001136465.1	Yersinia similis
+GCF_001140625.1	Yersinia similis
+GCF_001222425.1	Yersinia pseudotuberculosis
+
+
+
+# While Shi 2016 put strain LC20 in enterocolitica, I found it as distant from
+# The rest of enterocolitica as kristensenii and frederiksenii, so I'm calling
+# this strain (and its close relative) 'unknown' because I think they need
+# their own species name.
+GCF_000597945.1	Yersinia unknown
+GCF_002188895.1	Yersinia unknown
+
+
+
+# I went with the newly proposed wautersii species, but it was unclear whether
+# one isolate (GCF_001244855.1) belonged in this species. Due to its odd
+# branch length, I opted to exclude it and label it 'unknown'.
+GCF_001123345.1	Yersinia wautersii
+GCF_001244855.1	Yersinia unknown
