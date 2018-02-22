@@ -63,6 +63,7 @@ GCF_001692375.1	Serratia fonticola
 GCF_001808015.1	Citrobacter koseri
 GCF_001275405.1	Xenorhabdus griffiniae
 GCF_001422565.1	Rouxiella silvae
+GCF_000257645.1	Rouxiella unknown
 
 
 
@@ -71,6 +72,12 @@ GCF_001422565.1	Rouxiella silvae
 GCF_000330845.1	Unknown unknown
 GCF_000302695.1	Unknown unknown
 GCF_000307305.1	Unknown unknown
+GCF_001187865.1	Unknown unknown
+GCF_900215375.1	Unknown unknown
+GCF_002751995.1	Unknown unknown
+GCF_000463345.2	Unknown unknown
+GCF_002847015.1	Unknown unknown
+
 
 
 # This assembly was labelled 'Salmonella enterica', but it was an outgroup to
@@ -1390,6 +1397,7 @@ GCF_002752575.1	Erwinia aphidicola
 GCF_000745075.1	Erwinia oleae
 GCF_001422605.1	Erwinia endophytica
 GCF_002865965.1	Erwinia endophytica
+GCF_000599885.1	Erwinia unknown
 
 
 
