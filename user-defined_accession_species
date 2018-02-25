@@ -1298,6 +1298,11 @@ GCF_002860705.1	Enterobacter bugandensis
 GCF_002785605.1	Enterobacter mori
 GCF_000224675.1	Enterobacter soli
 GCF_900185885.1	Enterobacter unknown
+
+
+
+# These two seem to be in the same species and are quite distant from anything
+# else. Maybe deserve their own genus?
 GCF_000755535.1	Enterobacter unknown
 GCF_001006635.1	Enterobacter unknown
 
@@ -1310,12 +1315,51 @@ GCF_002811785.1	Lelliottia nimipressuralis
 GCF_002869975.1	Lelliottia nimipressuralis
 GCF_002870005.1	Lelliottia nimipressuralis
 GCF_002870015.1	Lelliottia nimipressuralis
-GCF_000016325.1	Lelliottia unknown
 GCF_001652505.2	Lelliottia unknown
-GCF_000813585.1	Leclercia unknown
 GCF_000018085.1	Serratia quinivorans
 GCF_000347995.1	Serratia quinivorans
 GCF_002607755.1	Serratia proteamaculans
+
+
+
+# Andrés-Barrao 2017 acknowledged that this strain is in Lelliottia (not
+# Enterobacter as it was labelled) but does not propose a new species name for
+# it.
+GCF_000016325.1	Lelliottia unknown
+
+
+
+# Lelliottia sp. PFL01 was referred to as 'Lelliottia jeotgali' in this
+# BioSample: https://www.ncbi.nlm.nih.gov/biosample/?term=SAMN05891786
+# I didn't find any papers that used this name, but I've gone ahead with it.
+GCF_002271215.1	Lelliottia jeotgali
+
+
+
+# This isolate was labelled as Leclercia adecarboxylata, but it seems to be a
+# very distinct Leclercia species. It's not far from the LSNIH1 isolate
+# described in Weingarten 2018, though that paper does not propose a species
+# name.
+# Interestingly, it's also moderately close to this isolate:
+# https://www.ncbi.nlm.nih.gov/nucleotide/GQ856080
+# This page references an unpublished paper titled 'Leclercia helveticus, sp.
+# nov. and Leclercia cibatus, sp. nov. isolated from food and environment and
+# emended description of the genus Leclercia', but I cannot find that paper,
+# despite it being from 2009.
+GCF_000813585.1	Leclercia unknown
+
+
+
+# Pillonetto 2018 described two species of Phytobacter, though I saw a third
+# branch as well.
+GCF_000814915.1	Phytobacter diazotrophicus
+GCF_002903045.1	Phytobacter diazotrophicus
+GCF_002903085.1	Phytobacter diazotrophicus
+GCF_900168315.1	Phytobacter diazotrophicus
+GCF_002903065.1	Phytobacter ursingii
+GCF_001022135.1	Phytobacter ursingii
+GCF_002092975.1	Phytobacter ursingii
+GCF_900112785.1	Phytobacter unknown
 
 
 
