@@ -126,15 +126,15 @@ def load_accession_species():
                 accession, species = parts[0], parts[1]
                 accession_species[accession] = species
 
-    # Shigella and E. coli are grouped together.
-    for accession, species in accession_species.items():
-        if species == 'Escherichia coli' or species.startswith('Shigella '):
-            accession_species[accession] = 'Escherichia coli / Shigella'
-
     # If the user-defined file doesn't exist yet, make an empty one.
     else:
         with open('user-defined_accession_species', 'wt') as user_species:
             user_species.write('Accession\tSpecies\tNotes\n')
+
+    # Shigella and E. coli are grouped together.
+    for accession, species in accession_species.items():
+        if species == 'Escherichia coli' or species.startswith('Shigella '):
+            accession_species[accession] = 'Escherichia coli / Shigella'
 
     return accession_species
 
