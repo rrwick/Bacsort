@@ -24,7 +24,7 @@ import gzip
 import shutil
 from pathlib import Path
 
-threshold = 0.0025
+threshold = 0.005
 
 
 def main():

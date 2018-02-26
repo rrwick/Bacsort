@@ -49,7 +49,7 @@ for genus in $genera; do
     echo "------------------------------------------------"
     mkdir -p assemblies/$genus
     cd assemblies/$genus
-    $download --verbose --genus $genus --metadata-table data.tsv --format fasta bacteria
+    $download --verbose --genus $genus --metadata-table data.tsv --format fasta -p $threads bacteria
 
     if test -n "$(find refseq/bacteria -name '*.fna.gz' -print -quit)"
         then
