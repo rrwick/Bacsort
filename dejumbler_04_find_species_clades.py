@@ -17,7 +17,6 @@ Public License for more details. You should have received a copy of the GNU Gene
 License along with Dejumbler. If not, see <http://www.gnu.org/licenses/>.
 """
 
-import sys
 from Bio import Phylo
 from pathlib import Path
 import collections
@@ -207,6 +206,7 @@ def rgb_to_hsv(r, g, b):
     mx = max(r, g, b)
     mn = min(r, g, b)
     df = mx - mn
+    h = 0
     if mx == mn:
         h = 0
     elif mx == r:
@@ -226,7 +226,7 @@ def rgb_to_hsv(r, g, b):
 def rgb_to_hsl(r, g, b):
     r, g, b = r / 255, g / 255, b / 255
     high = max(r, g, b)
-    low = min(r, g, b);
+    low = min(r, g, b)
     h, s, l = ((high + low) / 2,) * 3
     if high == low:
         h = 0.0
@@ -240,7 +240,7 @@ def rgb_to_hsl(r, g, b):
             h = (b - r) / d + 2
         elif b == high:
             h = (r - g) / d + 4
-        h /= 6;
+        h /= 6
     return h, s, l
 
 

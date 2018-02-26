@@ -42,7 +42,7 @@ def main():
             continue
 
         assemblies, graph = create_graph_from_distances(distance_filename)
-        clusters = cluster_assemblies(assemblies, graph, threshold)
+        clusters = cluster_assemblies(assemblies, graph)
 
         if not Path('clusters').is_dir():
             os.makedirs('clusters')
@@ -59,7 +59,8 @@ def main():
                 if len(assemblies) == 1:
                     representative = assemblies[0]
                 else:
-                    representative = sorted([(get_assembly_n50('assemblies/' + genus + '/' + a), a) for a in assemblies])[-1][1]
+                    representative = sorted([(get_assembly_n50('assemblies/' + genus + '/' + a), a)
+                                             for a in assemblies])[-1][1]
 
                 cluster_info = '\t'.join([cluster_name, ','.join(assemblies), representative])
                 cluster_accessions_file.write(cluster_info)
@@ -75,7 +76,6 @@ def main():
             pass
 
         print()
-
 
 
 def create_graph_from_distances(distance_filename):
@@ -117,7 +117,7 @@ def create_graph_from_distances(distance_filename):
     return assemblies, graph
 
 
-def cluster_assemblies(assemblies, graph, threshold):
+def cluster_assemblies(assemblies, graph):
     visited = set()
     i = 0
     clusters = {}
