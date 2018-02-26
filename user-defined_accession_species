@@ -529,7 +529,14 @@ GCF_900215435.1	Pantoea unknown
 GCF_900068835.1	Pantoea unknown
 GCF_900068855.1	Pantoea unknown
 GCF_900068845.1	Pantoea unknown
-GCF_002837195.1	Pantoea unknown
+
+
+
+# These two assemblies are very distant from everything else (and from each
+# other). While they were labelled as Enterobacter/Pantoea, I judged them to
+# be sufficiently unique to not belong to either of those genera.
+GCF_001922585.1	Unknown unknown
+GCF_002837195.1	Unknown unknown
 
 
 
@@ -1374,7 +1381,16 @@ GCF_002860705.1	Enterobacter bugandensis
 # matched to multiple clades.
 GCF_002785605.1	Enterobacter mori
 GCF_000224675.1	Enterobacter soli
-GCF_900185885.1	Enterobacter unknown
+
+
+
+# There are three assemblies which make a clade quite distant from other
+# genomes: GCF_900116015, GCF_001888805 and GCF_900185885. All were labelled
+# Enterobacter, but I think they deserve their own genus name (or maybe two
+# names, as GCF_900116015 is quite distant from the other two).
+GCF_900116015.1	Unknown unknown
+GCF_001888805.1	Unknown unknown
+GCF_900185885.1	Unknown unknown
 
 
 
@@ -1456,10 +1472,26 @@ GCF_900116465.1	Kosakonia radicincitans
 GCF_900119515.1	Kosakonia radicincitans
 GCF_900168185.1	Kosakonia radicincitans
 GCF_000877295.1	Kosakonia oryzae
-GCF_900109485.1	Kosakonia unknown
+
+
+
+# These three assemblies form a nice, tight clade and definitely deserve a
+# species name of their own.
 GCF_000410515.1	Kosakonia unknown
 GCF_000958895.1	Kosakonia unknown
 GCF_002510275.1	Kosakonia unknown
+
+
+
+# This assembly was odd. It's labelled 'Kosakonia sacchari strain SP1', but
+# it's quite distant from what I think is the real Kosakonia sacchari clade
+# (which also contains a strain SP1 assembly).
+GCF_900109485.1	Kosakonia unknown
+
+
+
+# This assembly was labelled 'Enterobacter sp. Bisph1' but is within the
+# Kosakonia clade
 GCF_000814905.1	Kosakonia unknown
 
 
@@ -1518,6 +1550,11 @@ GCF_002752575.1	Erwinia aphidicola
 GCF_000745075.1	Erwinia oleae
 GCF_001422605.1	Erwinia endophytica
 GCF_002865965.1	Erwinia endophytica
+
+
+
+# This assembly was labelled as Pantoea, but it is sufficiently within the
+# Erwinia clade for me to rename it as such.
 GCF_000599885.1	Erwinia unknown
 
 
