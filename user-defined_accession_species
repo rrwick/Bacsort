@@ -1,5 +1,5 @@
-# Some species assignments are clear based on the tree structure, and I've
-# assigned names without checking the literature.
+# Some species assignments are clear based on the tree structure, and I was
+# able to assign names without checking the literature.
 GCF_001281565.1	Proteus mirabilis
 GCF_001808035.1	Proteus mirabilis
 GCF_000512315.2	Morganella morganii
@@ -63,20 +63,70 @@ GCF_001692375.1	Serratia fonticola
 GCF_001808015.1	Citrobacter koseri
 GCF_001275405.1	Xenorhabdus griffiniae
 GCF_001422565.1	Rouxiella silvae
+
+
+
+# This assembly was labelled 'Enterobacter sp. CC120223-11' but it isn't
+# particularly close to other species in Enterobacter. It's closest relatives
+# are Pluralibacter, but it's sufficiently distant that it might deserve a
+# genus name of its own.
+GCF_900215375.1	Unknown unknown
+
+
+
+# These seven isolates were sequenced in Chen 2017. In this paper they were
+# described as 'Erwiniaceae-like' and were therefore labelled with the genus
+# Erwinia. However, their closest named relatives are in the genus Izhakiella,
+# so that's were I'm putting them.
+GCF_002751995.1	Izhakiella unknown
+GCF_002752015.1	Izhakiella unknown
+GCF_002752025.1	Izhakiella unknown
+GCF_002752055.1	Izhakiella unknown
+GCF_002752075.1	Izhakiella unknown
+GCF_002752165.1	Izhakiella unknown
+GCF_002752595.1	Izhakiella unknown
+
+
+
+# This assembly was labelled 'Klebsiella sp. RIT-PI-d', but it is nowhere near
+# other Klebsiella, so I think it deserves its own genus.
+GCF_001187865.1	Unknown unknown
+
+
+
+# This genome was introduced by Su 2012. It certainly deserves a new species
+# name, probably a new genus too, but they didn't propose one in the paper,
+# just calling it strain LSJC7.
+GCF_000302695.1	Unknown unknown
+
+
+
+# This assembly was labelled 'Enterobacteriaceae bacterium B14', but the paper
+# which introduced it (Park 2012) proposed a genus and species name for it,
+# which I've used here.
+GCF_000307305.1	Galloisinimonas intestini
+
+
+
+# These two assemblies were labelled as Serratia, but are nowhere near the
+# rest of Serratia. Their closest relatives are in the genus Dickeya, but they
+# are an outgroup and so maybe deserve their own genus.
+GCF_000463345.2	Unknown unknown
+GCF_002847015.1	Unknown unknown
+
+
+
+# This assembly was labelled as 'Serratia sp. M24T3', but it is clearly
+# nestled amongst Rouxiella, so I've named it as such.
 GCF_000257645.1	Rouxiella unknown
 
 
 
-# Some assemblies lacked a species name and any moderately close relatives, so
-# I couldn't place them into a genus.
-GCF_000330845.1	Unknown unknown
-GCF_000302695.1	Unknown unknown
-GCF_000307305.1	Unknown unknown
-GCF_001187865.1	Unknown unknown
-GCF_900215375.1	Unknown unknown
-GCF_002751995.1	Unknown unknown
-GCF_000463345.2	Unknown unknown
-GCF_002847015.1	Unknown unknown
+# Pseudocitrobacter is a new genus introduced in Kämpfer 2014, were they
+# defined two species, faecalis and anthropi. This assembly (which was
+# labelled as Enterobacter) is moderately and equally close to both of those
+# species, and so I've put it in that genus but left its species as 'unknown'.
+GCF_000330845.1	Pseudocitrobacter unknown
 
 
 
@@ -270,7 +320,7 @@ GCF_900174015.1	Klebsiella quasivariicola
 
 
 # This assembly does not fit in well with any other Klebsiella, so I've
-# redefined it as 'unknown'. I suspect it may be a cross-species hybrid.
+# redefined it as 'unknown' in case there's something wrong with it.
 GCF_002264315.1	Klebsiella unknown
 
 
@@ -482,6 +532,7 @@ GCF_900068845.1	Pantoea unknown
 GCF_002837195.1	Pantoea unknown
 
 
+
 # GCF_001691555.1 is interesting - it was labelled as Pantoea eucrina, and it
 # does form a clade with the rest of eucrina, but it is quite separate from
 # the others. I left it as eucrina, but wouldn't be surprised if it gets a
@@ -564,12 +615,38 @@ GCF_001559235.1	Citrobacter youngae
 GCF_002151815.1	Citrobacter youngae
 GCF_002863945.1	Citrobacter youngae
 GCF_001463265.1	Citrobacter sedlakii
-GCF_000238735.1	Citrobacter unknown
-GCF_900077125.1	Citrobacter unknown
-GCF_000155975.1	Citrobacter unknown
+
+
+
+# This strain of Citrobacter (Y19) was labelled as amalonaticus but seems to
+# be its own species, slightly closer to Citrobacter farmeri.
 GCF_000981805.1	Citrobacter unknown
+
+
+
+# These two Citrobacters are relatively close and belong in the same species.
+# They probably deserve their own species name, but could possibly be included
+# with amalonaticus, the closest named group.
 GCF_001559075.1	Citrobacter unknown
 GCF_002880615.1	Citrobacter unknown
+
+
+
+# These three assemblies were labelled Citrobacter freundii, Enterobacter
+# cloacae and Citrobacter sp. A316. I've decided to group them in with
+# portucalensis, with which they form a clade. However, they may deserve their
+# own species name, especially GCF_002042945.1 which is the outgroup of the
+# rest.
+GCF_000238735.1	Citrobacter portucalensis
+GCF_900077125.1	Citrobacter portucalensis
+GCF_002042945.1	Citrobacter portucalensis
+
+
+
+# This assembly was labelled Citrobacter youngae but is an outgroup to
+# Citrobacter werkmanii. It wasn't close enough for me to include with
+# werkmanii, however, so I've left it unknown.
+GCF_000155975.1	Citrobacter unknown
 
 
 
