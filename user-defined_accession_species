@@ -1522,11 +1522,18 @@ GCF_000255535.1	Rahnella unknown
 # their own species names.
 GCF_001039065.1	Pectobacterium peruviense
 GCF_000749915.1	Pectobacterium polaris
+
+
+
+# Nabhan 2013 defines Pectobacterium aroidearum, including this assembly which
+# was previously called 'Pectobacterium carotovorum PC1'.
+GCF_000023605.1	Pectobacterium aroidearum
+
+
+
+# This assembly is quite distant from all other Pectobacterium. It was
+# labelled as carotovorum but clearly needs a new species name.
 GCF_000803215.1	Pectobacterium unknown
-GCF_000023605.1	Pectobacterium unknown
-GCF_000803315.1	Pectobacterium unknown
-GCF_001984525.1	Pectobacterium unknown
-GCF_001984535.1	Pectobacterium unknown
 
 
 
@@ -1598,3 +1605,9 @@ GCF_002188895.1	Yersinia unknown
 # branch length, I opted to exclude it and label it 'unknown'.
 GCF_001123345.1	Yersinia wautersii
 GCF_001244855.1	Yersinia unknown
+
+
+
+# Lenaerts 2014 descibed Rosenbergiella well. This assembly was erroneously
+# named Tatumella.
+GCF_002752555.1	Rosenbergiella epipactidis
