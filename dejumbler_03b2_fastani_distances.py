@@ -24,8 +24,8 @@ def main():
     print("Convert FastANI distances to PHYLIP matrix")
     print("------------------------------------------------")
 
-    fastani_output_filename = 'tree/fastani_output_0000_0000'
-    distance_matrix_filename = 'tree/distances.phylip_temp'
+    fastani_output_filename = 'tree/fastani_output'
+    distance_matrix_filename = 'tree/distances.phylip'
 
     with open(fastani_output_filename, 'rt') as fastani_output:
         for line in fastani_output:
