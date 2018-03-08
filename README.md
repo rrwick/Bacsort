@@ -49,22 +49,48 @@ dejumbler_01_download_genomes.sh "Citrobacter Klebsiella Salmonella Yersinia"
 dejumbler_02_cluster_genera.py "Citrobacter Klebsiella Salmonella Yersinia"
 ```
 
-### Step 3: build tree
+### Step 3: distance matrix for all clusters
+
+There are two alternative ways to accomplish this step: using Mash and using FastANI.
+
+#### Step 3a: Mash distance matrix
+
+This is the simpler (and probably faster) of the two options. Mash estimates pairwise genomic distance by comparing the set of k-mers in the two assemblies. This means that both core sequence (shared by both assemblies) and accessory sequence (only in one assembly) affect the result.
 
 ```
-dejumbler_03_build_tree.sh
+dejumbler_03a_mash_distances.sh
 ```
 
-### Step 4: curate tree
+#### Step 3a: FastANI distance matrix
+
+FastANI, while fast compared to other methods of getting average nucleotide identity, is not as fast as Mash. Unless you are working with a small dataset, it will probably be necessary to parallelise this process in a method appropriate to your system.
 
 ```
-dejumbler_04_find_species_clades.py
+dejumbler_03b1_fastani_distances.sh
 ```
 
-### Step 5: copy assemblies to species directories
+Once the distances are computed, they must be converted into a PHYLIP distance matrix, which is relatively quick and carried out using this command:
 
 ```
-dejumbler_05_copy_assemblies.py
+dejumbler_03b2_fastani_distances.py
+```
+
+### Step 4: build tree
+
+```
+dejumbler_04_build_tree.sh
+```
+
+### Step 5: curate tree
+
+```
+dejumbler_05_find_species_clades.py
+```
+
+### Step 6: copy assemblies to species directories
+
+```
+dejumbler_06_copy_assemblies.py
 ```
 
 
