@@ -130,13 +130,6 @@ GCF_000330845.1	Pseudocitrobacter unknown
 
 
 
-# This assembly was labelled 'Salmonella enterica', but it was an outgroup to
-# the rest of enterica and had an oddly short branch length. I excluded it in
-# case there's something wrong with it.
-GCF_002053395.1	Salmonella unknown
-
-
-
 # Klebsiella pneumoniae and related species are defined well in Brisse 2014
 # and Holt 2015. Many isolates are misnamed because previously the entire
 # group was called K. pneumoniae. More recently, Long 2017 defined a new
