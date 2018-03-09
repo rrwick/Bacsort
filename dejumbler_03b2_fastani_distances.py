@@ -60,6 +60,7 @@ def main():
                     distance_matrix.write('%.6f' % distances[(i, j)])
                 except KeyError:
                     distance_matrix.write('%.6f' % max_distance)
+            distance_matrix.write('\n')
     print('Done\n')
 
 
