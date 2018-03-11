@@ -53,9 +53,12 @@ def main():
             for j in clusters:
                 distance_matrix.write('\t')
                 try:
-                    distance_matrix.write('%.6f' % distances[(i, j)])
+                    distance = distances[(i, j)]
                 except KeyError:
-                    distance_matrix.write('%.6f' % 0.2)
+                    distance = 0.2
+                if distance > 0.2:
+                    distance = 0.2
+                distance_matrix.write('%.6f' % distance)
             distance_matrix.write('\n')
     print('Done\n')
 
