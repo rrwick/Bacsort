@@ -28,7 +28,6 @@ def main():
     fastani_output_filename = 'tree/fastani_output'
     distance_matrix_filename = 'tree/distances.phylip'
 
-    max_distance = 0.0
     with open(fastani_output_filename, 'rt') as fastani_output:
         for line in fastani_output:
             parts = line.strip().split(' ')
@@ -43,10 +42,7 @@ def main():
             clusters.add(cluster_2)
             add_distance(distances, cluster_1, cluster_2, distance)
             add_distance(distances, cluster_2, cluster_1, distance)
-            if distance > max_distance:
-                max_distance = distance
     print('Found {} clusters and {} distances'.format(len(clusters), len(distances)))
-    print('Max distance = {}'.format('%.6f' % max_distance))
 
     with open(distance_matrix_filename, 'wt') as distance_matrix:
         distance_matrix.write(str(len(clusters)))
@@ -59,7 +55,7 @@ def main():
                 try:
                     distance_matrix.write('%.6f' % distances[(i, j)])
                 except KeyError:
-                    distance_matrix.write('%.6f' % max_distance)
+                    distance_matrix.write('%.6f' % 0.2)
             distance_matrix.write('\n')
     print('Done\n')
 
