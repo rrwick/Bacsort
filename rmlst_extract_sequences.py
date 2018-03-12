@@ -60,11 +60,12 @@ def main():
 
         with open(assembly + '.rmlst', 'wt') as rmlst_genes:
             for name in sorted(gene_seqs.keys()):
-                rmlst_genes.write('>')
-                rmlst_genes.write(name)
-                rmlst_genes.write('\n')
-                rmlst_genes.write(gene_seqs[name])
-                rmlst_genes.write('\n')
+                if gene_seqs[name] is not None:
+                    rmlst_genes.write('>')
+                    rmlst_genes.write(name)
+                    rmlst_genes.write('\n')
+                    rmlst_genes.write(gene_seqs[name])
+                    rmlst_genes.write('\n')
 
 
 
