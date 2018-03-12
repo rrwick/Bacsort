@@ -4,7 +4,6 @@ import argparse
 import glob
 import gzip
 import os
-import re
 import subprocess
 import sys
 from multiprocessing.pool import ThreadPool
@@ -283,7 +282,6 @@ def load_fasta(filename):
             if contig_name in fasta_seqs:
                 sys.exit('Error: duplicate contig names in {}'.format(filename))
             fasta_seqs[contig_name] = sequence
-    contig_names = set(fasta_seqs.keys())
     return fasta_seqs
 
 

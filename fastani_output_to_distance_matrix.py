@@ -14,8 +14,6 @@ Public License for more details. You should have received a copy of the GNU Gene
 License along with Dejumbler. If not, see <http://www.gnu.org/licenses/>.
 """
 
-import sys
-
 
 def main():
     clusters = set()
