@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 
 import argparse
+import gc
 import glob
 import gzip
 import os
+import resource
 import subprocess
 import sys
 from multiprocessing.pool import ThreadPool
@@ -66,7 +68,7 @@ def main():
                     rmlst_genes.write(gene_seqs[name])
                     rmlst_genes.write('\n')
 
-
+        print('\nMemory usage: {}\n'.format(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss), flush=True)
 
 
 def find_gene_seq_for_assembly(assembly, db_name, gene, gene_seqs, assembly_seqs, args):
