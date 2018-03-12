@@ -85,9 +85,9 @@ run_fastani_in_parallel.sh
 run_fastani_with_slurm.sh
 ```
 
-Once the distances are computed, they must be converted into a PHYLIP distance matrix, which is relatively quick and carried out using this command:
+Once the distances are computed, they must be converted into a PHYLIP distance matrix, which is relatively quick and carried out using this command. We use a maximum distance of 0.2 because FastANI wasn't designed to quantify ANI less than 80%.
 ```
-fastani_output_to_distance_matrix.py tree/fastani_output > tree/distances.phylip
+pairwise_identities_to_distance_matrix.py --max_dist 0.2 tree/fastani_output > tree/distances.phylip
 ```
 
 #### Option 3: rMLST
@@ -111,7 +111,7 @@ rmlst_identities.py clusters > tree/rmlst_identities
 
 Finally, convert the identities into a distance matrix (same as for FastANI):
 ```
-fastani_output_to_distance_matrix.py tree/rmlst_identities > tree/distances.phylip
+pairwise_identities_to_distance_matrix.py tree/rmlst_identities > tree/distances.phylip
 ```
 
 ### Step 4: build tree

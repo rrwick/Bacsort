@@ -20,7 +20,14 @@ import sys
 
 def get_arguments():
     parser = argparse.ArgumentParser(description='Distance matrix from FastANI identities')
-    parser.add_argument('fastani_output', type=str, help='FastANI output file')
+
+    parser.add_argument('fastani_output', type=str,
+                        help='FastANI output file')
+
+    parser.add_argument('--max_dist', type=float, required=False, default=1.0,
+                        help='Maximum allowed genomic distance')
+
+
     args = parser.parse_args()
     return args
 
@@ -62,9 +69,9 @@ def main():
             try:
                 distance = distances[(i, j)]
             except KeyError:
-                distance = 0.2
-            if distance > 0.2:
-                distance = 0.2
+                distance = args.max_dist
+            if distance > args.max_dist:
+                distance = args.max_dist
             print('%.6f' % distance, end='')
         print()
 
