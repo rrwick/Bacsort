@@ -12,8 +12,7 @@ from multiprocessing.pool import ThreadPool
 
 
 def get_arguments():
-    parser = argparse.ArgumentParser(description='Distance matrix from rMLST gene identity',
-                                     add_help=False)
+    parser = argparse.ArgumentParser(description='Distance matrix from rMLST gene identity')
 
     parser.add_argument('assembly_dir', type=str,
                         help='Directory containing assembly fasta files (can be gzipped)')
@@ -84,7 +83,7 @@ def find_gene_seq_for_assembly(assembly, db_name, gene, gene_seqs, assembly_seqs
     query_name = query_name_from_filename(gene)
     hit = get_best_match(db_name, gene, args.search_tool, assembly_seqs, args.min_cov, args.min_id)
     if hit is None:
-        print('    {}: none'.format(query_name), end='', flush=True)
+        print('    {}: none'.format(query_name))
         gene_seqs[assembly][query_name] = None
     else:
         print('    {}: {}, {:.2f}% cov, {:.2f}% id, {} bp '
