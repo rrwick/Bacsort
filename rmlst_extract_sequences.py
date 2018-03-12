@@ -12,7 +12,7 @@ from multiprocessing.pool import ThreadPool
 
 
 def get_arguments():
-    parser = argparse.ArgumentParser(description='Distance matrix from rMLST gene identity')
+    parser = argparse.ArgumentParser(description='Extract rMLST sequences to file')
 
     parser.add_argument('assembly_dir', type=str,
                         help='Directory containing assembly fasta files (can be gzipped)')
@@ -123,7 +123,8 @@ def build_minimap_database(assembly):
         unzipped_name = assembly[:-3]
     else:
         unzipped_name = assembly
-    subprocess.run('minimap2 -d {}.mmi {}'.format(unzipped_name, assembly), shell=True)
+    cmd = ['minimap2', '-d', unzipped_name + '.mmi', assembly]
+    subprocess.run(cmd)
     return unzipped_name
 
 
@@ -170,9 +171,9 @@ def get_best_match_using_blast(db_name, query, min_cov, min_id):
 
 
 def get_best_match_using_minimap(db_name, query, min_cov, min_id, assembly_seqs):
+    cmd = ['minimap2', '-c', db_name + '.mmi', query]
     with open(os.devnull, 'w') as devnull:
-        minimap_out = subprocess.check_output('minimap2 -c {}.mmi {}'.format(db_name, query),
-                                              shell=True, stderr=devnull).decode()
+        minimap_out = subprocess.check_output(cmd, stderr=devnull).decode()
     hits = sorted((MinimapHit(x) for x in minimap_out.split('\n') if x), key=lambda x: x.score)
     if not hits:
         return None
