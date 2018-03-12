@@ -14,17 +14,28 @@ Public License for more details. You should have received a copy of the GNU Gene
 License along with Dejumbler. If not, see <http://www.gnu.org/licenses/>.
 """
 
+import argparse
+import sys
+
+
+def get_arguments():
+    parser = argparse.ArgumentParser(description='Distance matrix from FastANI identities')
+    parser.add_argument('fastani_output', type=str, help='FastANI output file')
+    args = parser.parse_args()
+    return args
+
 
 def main():
+    args = get_arguments()
+
     clusters = set()
     distances = {}
 
     print()
-    print("Convert FastANI distances to PHYLIP matrix")
-    print("------------------------------------------------")
+    print('Convert FastANI distances to PHYLIP matrix', file=sys.stderr)
+    print('------------------------------------------------', file=sys.stderr)
 
-    fastani_output_filename = 'tree/fastani_output'
-    distance_matrix_filename = 'tree/distances.phylip'
+    fastani_output_filename = args.fastani_output
 
     with open(fastani_output_filename, 'rt') as fastani_output:
         for line in fastani_output:
@@ -40,25 +51,22 @@ def main():
             clusters.add(cluster_2)
             add_distance(distances, cluster_1, cluster_2, distance)
             add_distance(distances, cluster_2, cluster_1, distance)
-    print('Found {} clusters and {} distances'.format(len(clusters), len(distances)))
+    print('Found {} clusters and {} distances'.format(len(clusters), len(distances)), file=sys.stderr)
 
-    with open(distance_matrix_filename, 'wt') as distance_matrix:
-        distance_matrix.write(str(len(clusters)))
-        distance_matrix.write('\n')
-        clusters = sorted(clusters)
-        for i in clusters:
-            distance_matrix.write(i)
-            for j in clusters:
-                distance_matrix.write('\t')
-                try:
-                    distance = distances[(i, j)]
-                except KeyError:
-                    distance = 0.2
-                if distance > 0.2:
-                    distance = 0.2
-                distance_matrix.write('%.6f' % distance)
-            distance_matrix.write('\n')
-    print('Done\n')
+    print(len(clusters))
+    clusters = sorted(clusters)
+    for i in clusters:
+        print(distance_matrix, end='')
+        for j in clusters:
+            print('\t', end='')
+            try:
+                distance = distances[(i, j)]
+            except KeyError:
+                distance = 0.2
+            if distance > 0.2:
+                distance = 0.2
+            print('%.6f' % distance, end='')
+        print()
 
 
 def add_distance(distances, cluster_1, cluster_2, distance):

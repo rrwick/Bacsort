@@ -7,6 +7,8 @@ Running Dejumbler requires that you have [Mash](https://github.com/marbl/Mash) a
 
 You'll also need Python3 and [BioPython](http://biopython.org/). If `python3 -c "import Bio"` doesn't give you an error, you should be good! If you need to install BioPython, it's easiest to do with pip: `pip3 install biopython`
 
+Finally, depending on how you want to compute pairwise distances, you may need [FastANI](https://github.com/ParBLiSS/FastANI), [minimap2](https://github.com/lh3/minimap2) and/or the [edlib Python library](https://github.com/Martinsos/edlib/tree/master/bindings/python).
+
 
 
 
@@ -40,45 +42,83 @@ Dejumbler will download _all_ NCBI assemblies for your genera of interest, so ma
 ### Step 1: download assemblies
 
 ```
-dejumbler_01_download_genomes.sh "Citrobacter Klebsiella Salmonella Yersinia"
+download_genomes.sh "Citrobacter Klebsiella Salmonella Yersinia"
 ```
 
 ### Step 2: cluster assemblies
 
 ```
-dejumbler_02_cluster_genera.py "Citrobacter Klebsiella Salmonella Yersinia"
+cluster_genera.py "Citrobacter Klebsiella Salmonella Yersinia"
 ```
 
-### Step 3: distance matrix for all clusters
+### Step 3: distance matrix
 
-There are two alternative ways to accomplish this step: using Mash and using FastANI.
+As input for the neighbour joining tree algorith, we need a matrix of all pairwise distances between clusters. There a few alternative ways to produce such a matrix: using Mash, FastANI or rMLST.
 
-#### Step 3a: Mash distance matrix
+#### Option 1: Mash
 
-This is the simpler (and probably faster) of the two options. Mash estimates pairwise genomic distance by comparing the set of k-mers in the two assemblies. This means that both core sequence (shared by both assemblies) and accessory sequence (only in one assembly) affect the result.
+Advantages:
+* Simple and fast.
 
+Disadvantages:
+* Since Mash uses the entire set of k-mers for each pairwise comparison, both core sequence (shared by both assemblies) and accessory sequence (only in one assembly) affect the result. This means it may produce less accurate (compared to vertical evolution) trees.
+
+This one script will take care of running Mash and converting its output to a PHYLIP distance matrix. Run it with no arguments in your working Dejumbler directory.
 ```
-dejumbler_03a_mash_distances.sh
+mash_distance_matrix.sh
 ```
 
-#### Step 3a: FastANI distance matrix
+#### Option 2: FastANI
 
-FastANI, while fast compared to other methods of getting average nucleotide identity, is not as fast as Mash. Unless you are working with a small dataset, it will probably be necessary to parallelise this process in a method appropriate to your system.
+Advantages:
+* Produces pairwise ANI measurements using only the sequence shared by two assemblies. This makes it less swayed by the accessory genome and it may produce more accurate trees.
 
+Disadvantages:
+* FastANI is designed for 80-100% nucleotide identity, and so this approach is only recommended if you are working within a genus or closely related genera.
+* It is slower than Mash.
+* FastANI is not intrinsically parallel, so you'll need to parallelise it one way or another to cope with large datasets.
+
+To run FastANI on your Dejumbler clusters, choose one of these scripts. You may need to modify them to suit your system (particularly the script which uses Slurm).
 ```
-dejumbler_03b1_fastani_distances.sh
+run_fastani_one_thread.sh
+run_fastani_in_parallel.sh
+run_fastani_with_slurm.sh
 ```
 
 Once the distances are computed, they must be converted into a PHYLIP distance matrix, which is relatively quick and carried out using this command:
-
 ```
-dejumbler_03b2_fastani_distances.py
+fastani_output_to_distance_matrix.py tree/fastani_output > tree/distances.phylip
+```
+
+#### Option 3: rMLST
+
+Advantages:
+* By using a mostly shared core genome, this approach should result in a tree that's decently compatible with vertical evolution.
+* Can deal with much more sequence divergence than FastANI, and is therefore suitable for more diverse sets.
+
+Disadvantages:
+* You'll need to get the rMLST alleles yourself ([pubmlst.org/rmlst](https://pubmlst.org/rmlst/) - account required)
+
+This approach has three steps. First, you must extract the rMLST sequences from your assemblies:
+```
+rmlst_extract_sequences.py clusters rmlst_allele_dir
+```
+
+Next, conduct pairwise alignments to get identities:
+```
+rmlst_identities.py clusters > tree/rmlst_identities
+```
+
+Finally, convert the identities into a distance matrix (same as for FastANI):
+```
+fastani_output_to_distance_matrix.py tree/rmlst_identities > tree/distances.phylip
 ```
 
 ### Step 4: build tree
 
+Building the tree with [Quicktree](https://github.com/khowe/quicktree) is relatively quick and easy:
 ```
-dejumbler_04_build_tree.sh
+quicktree -in m tree/distances.phylip > tree/tree.newick
 ```
 
 ### Step 5: curate tree
