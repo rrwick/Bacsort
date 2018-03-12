@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 
 import argparse
-import edlib
 import glob
 import gzip
 import os
-import pathlib
 import re
+import subprocess
 import sys
 from multiprocessing.pool import ThreadPool
 
@@ -15,9 +14,9 @@ def get_arguments():
     parser = argparse.ArgumentParser(description='Distance matrix from rMLST gene identity')
 
     parser.add_argument('assembly_dir', type=str,
-                        help='Directory containing assembly fasta files and rMLST files')
-    parser.add_argument('out_file', type=str,
-                        help='Filename for distance matrix output')
+                        help='Directory containing assembly fasta files (can be gzipped)')
+    parser.add_argument('rmlst_dir', type=str,
+                        help='Directory containing rMLST fasta files')
 
     parser.add_argument('--search_tool', type=str, required=False, default='minimap',
                         help='Which tool to use for finding rMLST genes (must be "blast" or "minimap"')
@@ -36,35 +35,38 @@ def main():
     args = get_arguments()
 
     assembly_files = get_fastas(args.assembly_dir)
+    gene_files = get_fastas(args.rmlst_dir)
 
-    gene_seqs = {}
-    print('\nLoading rMLST genes:')
     for assembly in assembly_files:
-        rmlst_file = assembly + '.rmlst'
-        assembly_name = os.path.basename(assembly)
-        if not pathlib.Path(rmlst_file).is_file():
-            sys.exit('Error: {} is missing'.format(rmlst_file))
-        print('  {}'.format(rmlst_file))
-        gene_seqs[assembly_name] = load_fasta(rmlst_file)
+        db_name = build_database(assembly, args.search_tool)
+        if args.search_tool == 'minimap':
+            assembly_seqs = load_fasta(assembly)
+        else:
+            assembly_seqs = None
 
-    print('\nCalculating pairwise distances', end='', flush=True)
-    distances = {}
-    for i in range(len(assembly_files)):
-        assembly_1 = os.path.basename(assembly_files[i])
+        assembly_name = os.path.basename(assembly)
+
+        print('\nSearching for genes in {}'.format(assembly_name))
+        gene_seqs = {}
 
         if args.threads == 1:
-            for j in range(i, len(assembly_files)):
-                assembly_2 = os.path.basename(assembly_files[j])
-                get_assembly_distance(assembly_1, assembly_2, gene_seqs, distances)
+            for gene in gene_files:
+                find_gene_seq_for_assembly(assembly_name, db_name, gene, gene_seqs, assembly_seqs, args)
         else:
             pool = ThreadPool(args.threads)
-            assembly_2s = [os.path.basename(assembly_files[j]) for j in range(i, len(assembly_files))]
-            pool.map(lambda assembly_2: get_assembly_distance(assembly_1, assembly_2, gene_seqs, distances), assembly_2s)
-        print('.', end='', flush=True)
+            pool.map(lambda gene: find_gene_seq_for_assembly(assembly_name, db_name, gene, gene_seqs,
+                                                             assembly_seqs, args), gene_files)
+        clean_up_database(db_name, args.search_tool)
 
-    print('done')
-    print('\nWriting distance matrix to file')
-    write_phylip_distance_matrix(assembly_files, distances, args.out_file)
+        with open(assembly + '.rmlst', 'wt') as rmlst_genes:
+            for name in sorted(gene_seqs.keys()):
+                rmlst_genes.write('>')
+                rmlst_genes.write(name)
+                rmlst_genes.write('\n')
+                rmlst_genes.write(gene_seqs[name])
+                rmlst_genes.write('\n')
+
+
 
 
 def find_gene_seq_for_assembly(assembly, db_name, gene, gene_seqs, assembly_seqs, args):
@@ -72,69 +74,12 @@ def find_gene_seq_for_assembly(assembly, db_name, gene, gene_seqs, assembly_seqs
     hit = get_best_match(db_name, gene, args.search_tool, assembly_seqs, args.min_cov, args.min_id)
     if hit is None:
         print('    {}: none'.format(query_name))
-        gene_seqs[assembly][query_name] = None
+        gene_seqs[query_name] = None
     else:
         print('    {}: {}, {:.2f}% cov, {:.2f}% id, {} bp '
               '({}...{})'.format(query_name, hit.name, hit.coverage,hit.identity, len(hit.seq),
                                  hit.seq[:6], hit.seq[-6:]))
-        gene_seqs[assembly][query_name] = hit.seq
-
-
-def get_assembly_distance(assembly_1, assembly_2, gene_seqs, distances):
-    if assembly_1 == assembly_2:
-        distances[(assembly_1, assembly_2)] = 0.0
-        return
-
-    pattern = re.compile(r'\d+[\w=]')
-    common_genes = set(gene_seqs[assembly_1]) & set(gene_seqs[assembly_2])
-    if not common_genes:
-        distances[(assembly_1, assembly_2)] = 1.0
-        distances[(assembly_2, assembly_1)] = 1.0
-        return
-
-    alignments = []
-    for gene in common_genes:
-        gene_1 = gene_seqs[assembly_1][gene]
-        gene_2 = gene_seqs[assembly_2][gene]
-        result = edlib.align(gene_1, gene_2, 'NW', 'path')
-        cigar = [(int(x[:-1]), x[-1]) for x in pattern.findall(result['cigar'])]
-        alignment_length = sum(x[0] for x in cigar)
-        match_count = sum(x[0] for x in cigar if x[1] == '=')
-        identity = match_count / alignment_length
-        alignments.append((identity, match_count, alignment_length))
-
-    # alignments = sorted(alignments, key=lambda x: x[0])
-    # discard_count = 0
-    # while True:
-    #     if (discard_count + 2) / len(alignments) < discard_best_worst_alignments:
-    #         discard_count += 2
-    #     else:
-    #         break
-    # discard_each_end = discard_count // 2
-    # alignments = alignments[discard_count:-discard_count]
-
-    total_identity = sum(x[1] for x in alignments) / sum(x[2] for x in alignments)
-    distance = 1.0 - total_identity
-
-    distances[(assembly_1, assembly_2)] = distance
-    distances[(assembly_2, assembly_1)] = distance
-
-
-def write_phylip_distance_matrix(assembly_files, distances, output_filename):
-    assemblies = [os.path.basename(a) for a in assembly_files]
-    with open(output_filename, 'wt') as distance_matrix:
-        distance_matrix.write(str(len(assembly_files)))
-        distance_matrix.write('\n')
-        for i in assemblies:
-            distance_matrix.write(i)
-            for j in assemblies:
-                distance_matrix.write('\t')
-                try:
-                    distance = distances[(i, j)]
-                except KeyError:
-                    distance = 1.0
-                distance_matrix.write('%.6f' % distance)
-            distance_matrix.write('\n')
+        gene_seqs[query_name] = hit.seq
 
 
 def get_fastas(fasta_dir):
@@ -147,6 +92,105 @@ def get_fastas(fasta_dir):
     fastas += glob.glob(fasta_dir + '/*.fas')
     fastas += glob.glob(fasta_dir + '/*.fasta')
     return sorted(fastas)
+
+
+def build_database(assembly, search_tool):
+    print()
+    if search_tool == 'blast':
+        return build_blast_database(assembly)
+    elif search_tool == 'minimap':
+        return build_minimap_database(assembly)
+    else:
+        assert False
+
+
+def build_blast_database(assembly):
+    if assembly.endswith('.gz'):
+        unzipped_name = assembly[:-3]
+        subprocess.run('gunzip -c {} > {}'.format(assembly, unzipped_name), shell=True)
+    else:
+        unzipped_name = assembly
+    subprocess.run('makeblastdb -dbtype nucl -in {}'.format(unzipped_name), shell=True)
+    if unzipped_name != assembly:
+        os.remove(unzipped_name)
+    return unzipped_name
+
+
+def build_minimap_database(assembly):
+    if assembly.endswith('.gz'):
+        unzipped_name = assembly[:-3]
+    else:
+        unzipped_name = assembly
+    subprocess.run('minimap2 -d {}.mmi {}'.format(unzipped_name, assembly), shell=True)
+    return unzipped_name
+
+
+def clean_up_database(db_name, search_tool):
+    if search_tool == 'blast':
+        clean_up_blast_database(db_name)
+    elif search_tool == 'minimap':
+        clean_up_minimap_database(db_name)
+    else:
+        assert False
+
+
+def clean_up_blast_database(db_name):
+    os.remove(db_name + '.nhr')
+    os.remove(db_name + '.nin')
+    os.remove(db_name + '.nsq')
+
+
+def clean_up_minimap_database(db_name):
+    os.remove(db_name + '.mmi')
+
+
+def get_best_match(db_name, query, search_tool, assembly_seqs, min_cov, min_id):
+    if search_tool == 'blast':
+        return get_best_match_using_blast(db_name, query, min_cov, min_id)
+    elif search_tool == 'minimap':
+        return get_best_match_using_minimap(db_name, query, min_cov, min_id, assembly_seqs)
+    else:
+        assert False
+
+
+def get_best_match_using_blast(db_name, query, min_cov, min_id):
+    blast_out = \
+        subprocess.check_output('blastn -db {} -query {} '
+                                '-outfmt "6 bitscore pident qcovs sseq qseqid"'.format(db_name, query),
+                                shell=True).decode()
+    hits = sorted((BlastHit(x) for x in blast_out.split('\n') if x), key=lambda x: x.bitscore)
+    if not hits:
+        return None
+    best = hits[-1]
+    if best.coverage < min_cov or best.identity < min_id:
+        return None
+    return best
+
+
+def get_best_match_using_minimap(db_name, query, min_cov, min_id, assembly_seqs):
+    with open(os.devnull, 'w') as devnull:
+        minimap_out = subprocess.check_output('minimap2 -c {}.mmi {}'.format(db_name, query),
+                                              shell=True, stderr=devnull).decode()
+    hits = sorted((MinimapHit(x) for x in minimap_out.split('\n') if x), key=lambda x: x.score)
+    if not hits:
+        return None
+    best = hits[-1]
+    if best.coverage < min_cov or best.identity < min_id:
+        return None
+    best.seq = get_target_seq(assembly_seqs, best)
+    return best
+
+
+def get_target_seq(assembly_seqs, hit):
+    contig_seq = assembly_seqs[hit.contig_name]
+    if hit.start < hit.end:
+        target_seq = contig_seq[hit.start:hit.end]
+        if hit.strand == '+':
+            return target_seq
+        else:
+            return reverse_complement(target_seq)
+    else:
+        assert False
 
 
 def query_name_from_filename(query_filename):
