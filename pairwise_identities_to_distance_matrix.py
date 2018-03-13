@@ -22,7 +22,9 @@ def get_arguments():
     parser = argparse.ArgumentParser(description='Distance matrix from FastANI identities')
 
     parser.add_argument('fastani_output', type=str,
-                        help='FastANI output file')
+                        help='FastANI output file (or similarly formatted file with three '
+                             'whitespace-delimited columns of assembly 1, assembly 2, percent '
+                             'identity')
 
     parser.add_argument('--max_dist', type=float, required=False, default=1.0,
                         help='Maximum allowed genomic distance')
@@ -46,7 +48,7 @@ def main():
 
     with open(fastani_output_filename, 'rt') as fastani_output:
         for line in fastani_output:
-            parts = line.strip().split(' ')
+            parts = line.strip().split()
             cluster_1 = parts[0]
             cluster_2 = parts[1]
             ani = float(parts[2])
