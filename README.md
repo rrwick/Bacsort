@@ -104,7 +104,7 @@ This approach has three steps. First, you must extract the rMLST sequences from 
 rmlst_extract_sequences.py clusters rmlst_allele_dir
 ```
 
-Next, conduct pairwise alignments to get identities:
+Next, conduct pairwise alignments to get identities. Double check that this script produced a file with (n^2 + n) / 2 lines (all non-redundant pairwise comparisons).
 ```
 rmlst_identities.py clusters > tree/rmlst_identities
 ```

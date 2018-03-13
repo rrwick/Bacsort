@@ -42,29 +42,36 @@ def main():
         print('  {}'.format(rmlst_file), file=sys.stderr)
         gene_seqs[assembly_name] = load_fasta(rmlst_file)
 
+    results = mp.Queue()
+
     processes = [mp.Process(target=get_assembly_identity_group,
-                            args=(assembly_files, gene_seqs, i, args.threads))
+                            args=(assembly_files, gene_seqs, i, args.threads, results))
                  for i in range(args.threads)]
     for p in processes:
         p.start()
     for p in processes:
         p.join()
 
+    all_results = []
+    for _ in range(args.threads):
+        all_results += results.get()
+    all_results = sorted(all_results)
+    for i, j, identity in all_results:
+        print('\t'.join([assembly_files[i], assembly_files[j], '%.6f' % identity]))
 
-def get_assembly_identity_group(assembly_files, gene_seqs, subset_num, subset_total):
+
+def get_assembly_identity_group(assembly_files, gene_seqs, subset_num, subset_total, result_queue):
+    results = []
     n = 0
     for i in range(len(assembly_files)):
         assembly_1 = os.path.basename(assembly_files[i])
         for j in range(i, len(assembly_files)):
             assembly_2 = os.path.basename(assembly_files[j])
             if n % subset_total == subset_num:
-                id = get_assembly_identity(assembly_1, assembly_2, gene_seqs)
-                out_line = '\t'.join([assembly_1, assembly_2, '%.6f' % id]) + '\n'
-
-                # Using sys.stdout.write instead of print helps to avoid some multiprocess
-                # printing collisions.
-                sys.stdout.write(out_line)
+                identity = get_assembly_identity(assembly_1, assembly_2, gene_seqs)
+                results.append((i, j, identity))
             n += 1
+    result_queue.put(results)
 
 
 def get_assembly_identity(assembly_1, assembly_2, gene_seqs):
