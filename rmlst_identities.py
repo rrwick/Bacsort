@@ -72,7 +72,7 @@ def main():
 
 
 def get_assembly_identity_group(assembly_files, gene_seqs, subset_num, subset_total, result_queue):
-    print('  process {} started'.format(subset_num))
+    print('  process {} started'.format(subset_num), file=sys.stderr, flush=True)
     results = []
     n = 0
     for i in range(len(assembly_files)):
@@ -84,7 +84,7 @@ def get_assembly_identity_group(assembly_files, gene_seqs, subset_num, subset_to
                 results.append((i, j, identity))
             n += 1
     result_queue.put(results)
-    print('  process {} finished'.format(subset_num))
+    print('  process {} finished'.format(subset_num), file=sys.stderr, flush=True)
 
 
 def get_assembly_identity(assembly_1, assembly_2, gene_seqs):
