@@ -43,8 +43,8 @@ def main():
         gene_seqs[assembly_name] = load_fasta(rmlst_file)
 
     processes = [mp.Process(target=get_assembly_identity_group,
-                            args=(assembly_files, gene_seqs, 0, args.threads))
-                 for x in range(args.threads)]
+                            args=(assembly_files, gene_seqs, i, args.threads))
+                 for i in range(args.threads)]
     for p in processes:
         p.start()
     for p in processes:
