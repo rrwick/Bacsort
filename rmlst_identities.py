@@ -8,6 +8,7 @@ import os
 import pathlib
 import re
 import sys
+import time
 import multiprocessing as mp
 
 
@@ -51,14 +52,16 @@ def main():
     print('\nStarting processes', file=sys.stderr, flush=True)
     for p in processes:
         p.start()
-    print('Joining processes', file=sys.stderr, flush=True)
-    for p in processes:
-        p.join()
+    time.sleep(5)
 
-    print('Gathering results', file=sys.stderr, flush=True)
+    print('\nWaiting for results', file=sys.stderr, flush=True)
     all_results = []
     for _ in range(args.threads):
         all_results += results.get()
+
+    print('\nJoining processes', file=sys.stderr, flush=True)
+    for p in processes:
+        p.join()
 
     print('Sorting results', file=sys.stderr, flush=True)
     all_results = sorted(all_results)
@@ -69,6 +72,7 @@ def main():
 
 
 def get_assembly_identity_group(assembly_files, gene_seqs, subset_num, subset_total, result_queue):
+    print('  process {} started'.format(subset_num))
     results = []
     n = 0
     for i in range(len(assembly_files)):
@@ -80,6 +84,7 @@ def get_assembly_identity_group(assembly_files, gene_seqs, subset_num, subset_to
                 results.append((i, j, identity))
             n += 1
     result_queue.put(results)
+    print('  process {} finished'.format(subset_num))
 
 
 def get_assembly_identity(assembly_1, assembly_2, gene_seqs):
