@@ -47,15 +47,23 @@ def main():
     processes = [mp.Process(target=get_assembly_identity_group,
                             args=(assembly_files, gene_seqs, i, args.threads, results))
                  for i in range(args.threads)]
+
+    print('\nStarting processes', file=sys.stderr, flush=True)
     for p in processes:
         p.start()
+    print('Joining processes', file=sys.stderr, flush=True)
     for p in processes:
         p.join()
 
+    print('Gathering results', file=sys.stderr, flush=True)
     all_results = []
     for _ in range(args.threads):
         all_results += results.get()
+
+    print('Sorting results', file=sys.stderr, flush=True)
     all_results = sorted(all_results)
+
+    print('', file=sys.stderr, flush=True)
     for i, j, identity in all_results:
         print('\t'.join([assembly_files[i], assembly_files[j], '%.6f' % identity]))
 
