@@ -59,8 +59,11 @@ def get_assembly_identity_group(assembly_files, gene_seqs, subset_num, subset_to
             assembly_2 = os.path.basename(assembly_files[j])
             if n % subset_total == subset_num:
                 id = get_assembly_identity(assembly_1, assembly_2, gene_seqs)
-                out_line = '\t'.join([assembly_1, assembly_2, '%.6f' % id])
-                print(out_line)
+                out_line = '\t'.join([assembly_1, assembly_2, '%.6f' % id]) + '\n'
+
+                # Using sys.stdout.write instead of print helps to avoid some multiprocess
+                # printing collisions.
+                sys.stdout.write(out_line)
             n += 1
 
 
