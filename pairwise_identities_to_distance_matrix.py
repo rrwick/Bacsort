@@ -19,9 +19,9 @@ import sys
 
 
 def get_arguments():
-    parser = argparse.ArgumentParser(description='Distance matrix from FastANI identities')
+    parser = argparse.ArgumentParser(description='Distance matrix from pairwise identities')
 
-    parser.add_argument('fastani_output', type=str,
+    parser.add_argument('identities', type=str,
                         help='FastANI output file (or similarly formatted file with three '
                              'whitespace-delimited columns of assembly 1, assembly 2, percent '
                              'identity')
@@ -40,7 +40,7 @@ def main():
     clusters = set()
     distances = {}
 
-    print()
+    print('', file=sys.stderr)
     print('Convert FastANI distances to PHYLIP matrix', file=sys.stderr)
     print('------------------------------------------------', file=sys.stderr)
 
