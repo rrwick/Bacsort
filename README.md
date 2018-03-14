@@ -3,7 +3,7 @@
 
 ## Requirements
 
-Running Dejumbler requires that you have [Mash](https://github.com/marbl/Mash) and [Quicktree](https://github.com/khowe/quicktree) installed and available in your PATH. If you can type `mash -h` and `quicktree -h` into your terminal and not get an error, you should be good!
+Running Dejumbler requires that you have [Mash](https://github.com/marbl/Mash) installed and available in your PATH. If you can type `mash -h` into your terminal and not get an error, you should be good! To build trees, you'll need either [Quicktree](https://github.com/khowe/quicktree) or [RapidNJ](http://birc.au.dk/software/rapidnj/).
 
 You'll also need Python3 and [BioPython](http://biopython.org/). If `python3 -c "import Bio"` doesn't give you an error, you should be good! If you need to install BioPython, it's easiest to do with pip: `pip3 install biopython`
 
@@ -119,6 +119,11 @@ pairwise_identities_to_distance_matrix.py tree/rmlst_identities > tree/distances
 Building the tree with [Quicktree](https://github.com/khowe/quicktree) is relatively quick and easy:
 ```
 quicktree -in m tree/distances.phylip > tree/tree.newick
+```
+
+Alternatively, you can use [RapidNJ](http://birc.au.dk/software/rapidnj/):
+```
+rapidnj -i pd tree/distances.phylip > tree/tree.newick
 ```
 
 ### Step 5: curate tree
