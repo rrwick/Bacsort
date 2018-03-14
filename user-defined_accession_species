@@ -312,12 +312,6 @@ GCF_900174015.1	Klebsiella quasivariicola
 
 
 
-# This assembly does not fit in well with any other Klebsiella, so I've
-# redefined it as 'unknown' in case there's something wrong with it.
-GCF_002264315.1	Klebsiella unknown
-
-
-
 # Klebsiella oxytoca and its related species were recently defined in Passet
 # 2017. One unnamed clade remains, which here I have left as 'unknown'.
 # The remaining clade I called Ko4 based on the sequences from the
