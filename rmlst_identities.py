@@ -68,7 +68,8 @@ def main():
 
     print('', file=sys.stderr, flush=True)
     for i, j, identity in all_results:
-        print('\t'.join([assembly_files[i], assembly_files[j], '%.6f' % identity]))
+        print('\t'.join([os.path.basename(assembly_files[i]),
+                         os.path.basename(assembly_files[j]), '%.6f' % identity]))
 
 
 def get_assembly_identity_group(assembly_files, gene_seqs, subset_num, subset_total, result_queue):
