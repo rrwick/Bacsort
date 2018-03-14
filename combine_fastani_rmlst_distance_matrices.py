@@ -13,10 +13,12 @@ def get_arguments():
     parser.add_argument('rmlst_matrix', type=str,
                         help='PHYLIP distance matrix from rMLST')
 
-    parser.add_argument('--lower', type=float, required=False, default=0.16,
-                        help='Lower bound on the transition zone')
-    parser.add_argument('--upper', type=float, required=False, default=0.2,
-                        help='Upper bound on the transition zone')
+    parser.add_argument('--t1', type=float, required=False, default=0.08,
+                        help='threshold 1')
+    parser.add_argument('--t2', type=float, required=False, default=0.16,
+                        help='threshold 2')
+    parser.add_argument('--t3', type=float, required=False, default=0.2,
+                        help='threshold 3')
 
     args = parser.parse_args()
     return args
@@ -33,12 +35,13 @@ def main():
 
     # First we do a regression between FastANI distances and rMLST distance, using the relatively
     # close FastANI distances that we trust.
-    slope = fastani_rmlst_regression(fastani_distances, rmlst_distances, assemblies, args.lower)
+    slope, intercept = fastani_rmlst_regression(fastani_distances, rmlst_distances, assemblies,
+                                                args.t1, args.t2)
 
     # Then we build a new matrix, using FastANI for low distances and rMLST for large distances
     # (adjusted using our regression slope)
     combined_matrix = build_combined_matrix(fastani_distances, rmlst_distances, assemblies,
-                                            args.lower, args.upper, slope)
+                                            args.t2, args.t3, slope, intercept)
     print_matrix(combined_matrix, assemblies)
 
 
@@ -78,25 +81,31 @@ def load_distance_matrix(matrix_filename):
     return matrix, assemblies
 
 
-def fastani_rmlst_regression(fastani_distances, rmlst_distances, assemblies, lower):
-    print('\nFinding rMLST to FastANI ratio:', end='', file=sys.stderr, flush=True)
+def fastani_rmlst_regression(fastani_distances, rmlst_distances, assemblies, t1, t2):
+    print('\nPerforming regression:', end='', file=sys.stderr, flush=True)
     x, y = [], []
+
     for i, assembly_1 in enumerate(assemblies):
         for j in range(i, len(assemblies)):
             assembly_2 = assemblies[j]
             fastani_distance = fastani_distances[assembly_1][assembly_2]
             assert fastani_distance == fastani_distances[assembly_2][assembly_1]
-            if fastani_distance < lower:
+            if t1 < fastani_distance < t2:
                 rmlst_distance = rmlst_distances[assembly_1][assembly_2]
                 assert rmlst_distance == rmlst_distances[assembly_2][assembly_1]
                 x.append(rmlst_distance)
                 y.append(fastani_distance)
+
     x = np.array(x)
     y = np.array(y)
-    x = x[:, np.newaxis]
-    slope, _, _, _ = np.linalg.lstsq(x, y, rcond=None)
-    print(slope, file=sys.stderr, flush=True)
-    return slope[0]
+    a = np.vstack([x, np.ones(len(x))]).T
+    slope, intercept = np.linalg.lstsq(a, y)[0]
+
+    print('slope:    ', slope, file=sys.stderr, flush=True)
+    print('intercept:', intercept, file=sys.stderr, flush=True)
+    print('adjusted_rMLST_distance = {} * rMLST_distance + {}'.format(slope, intercept),
+          file=sys.stderr, flush=True)
+    return slope, intercept
 
 
 def make_empty_distance_matrix(assemblies):
@@ -108,7 +117,8 @@ def make_empty_distance_matrix(assemblies):
     return matrix
 
 
-def build_combined_matrix(fastani_distances, rmlst_distances, assemblies, lower, upper, slope):
+def build_combined_matrix(fastani_distances, rmlst_distances, assemblies, t2, t3, slope,
+                          intercept):
     combined_matrix = make_empty_distance_matrix(assemblies)
     print('\nBuilding combined matrix', end='', file=sys.stderr, flush=True)
     for i in range(len(assemblies)):
@@ -116,13 +126,13 @@ def build_combined_matrix(fastani_distances, rmlst_distances, assemblies, lower,
         for j in range(i, len(assemblies)):
             a2 = assemblies[j]
             fastani_distance = fastani_distances[a1][a2]
-            rmlst_distance = rmlst_distances[a1][a2] * slope
-            if fastani_distance <= lower:
+            rmlst_distance = (rmlst_distances[a1][a2] * slope) + intercept
+            if fastani_distance <= t2:
                 distance = fastani_distance
-            elif fastani_distance >= upper:
+            elif fastani_distance >= t3:
                 distance = rmlst_distance
-            else:  # in between lower and upper
-                distance = blend(fastani_distance, rmlst_distance, lower, upper)
+            else:  # in between t2 and t3
+                distance = blend(fastani_distance, rmlst_distance, t2, t3)
             combined_matrix[a1, a2] = distance
             combined_matrix[a2, a1] = distance
         if i % 100 == 0:
@@ -131,21 +141,23 @@ def build_combined_matrix(fastani_distances, rmlst_distances, assemblies, lower,
     return combined_matrix
 
 
-def blend(fastani_distance, rmlst_distance, lower, upper):
-    rmlst_weight = (fastani_distance - lower) / (upper - lower)
+def blend(fastani_distance, rmlst_distance, t2, t3):
+    rmlst_weight = (fastani_distance - t2) / (t3 - t2)
     fastani_weight = 1.0 - rmlst_weight
     return (fastani_weight * fastani_distance) + (rmlst_weight * rmlst_distance)
 
 
 def print_matrix(matrix, assemblies):
-    print('\nPrinting matrix to stdout...', end='', file=sys.stderr, flush=True)
+    print('\nPrinting matrix to stdout', end='', file=sys.stderr, flush=True)
     print(len(assemblies))
     for i in assemblies:
         print(i, end='')
         for j in assemblies:
             print('\t%.6f' % matrix[(i, j)], end='')
         print()
-    print('done', file=sys.stderr, flush=True)
+        if i % 100 == 0:
+            print('.', end='', file=sys.stderr, flush=True)
+    print(' done', file=sys.stderr, flush=True)
 
 
 if __name__ == '__main__':
