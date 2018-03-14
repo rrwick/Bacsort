@@ -44,7 +44,7 @@ def main():
     print('Convert FastANI distances to PHYLIP matrix', file=sys.stderr)
     print('------------------------------------------------', file=sys.stderr)
 
-    fastani_output_filename = args.fastani_output
+    fastani_output_filename = args.identities
 
     with open(fastani_output_filename, 'rt') as fastani_output:
         for line in fastani_output:
