@@ -29,7 +29,6 @@ def get_arguments():
     parser.add_argument('--max_dist', type=float, required=False, default=1.0,
                         help='Maximum allowed genomic distance')
 
-
     args = parser.parse_args()
     return args
 
@@ -60,12 +59,13 @@ def main():
             clusters.add(cluster_2)
             add_distance(distances, cluster_1, cluster_2, distance)
             add_distance(distances, cluster_2, cluster_1, distance)
-    print('Found {} clusters and {} distances'.format(len(clusters), len(distances)), file=sys.stderr)
+    print('Found {} clusters and {} distances'.format(len(clusters), len(distances)),
+          file=sys.stderr)
 
     print(len(clusters))
     clusters = sorted(clusters)
     for i in clusters:
-        print(distance_matrix, end='')
+        print(clusters[i], end='')
         for j in clusters:
             print('\t', end='')
             try:

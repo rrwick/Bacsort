@@ -132,9 +132,9 @@ def get_compression_type(filename):
         if file_start.startswith(magic_bytes):
             compression_type = file_type
     if compression_type == 'bz2':
-        quit_with_error('cannot use bzip2 format - use gzip instead')
+        sys.exit('Error: cannot use bzip2 format - use gzip instead')
     if compression_type == 'zip':
-        quit_with_error('cannot use zip format - use gzip instead')
+        sys.exit('Error: cannot use zip format - use gzip instead')
     return compression_type
 
 
