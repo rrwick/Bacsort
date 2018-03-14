@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import argparse
+import collections
 import edlib
 import glob
 import gzip
@@ -24,6 +25,9 @@ def get_arguments():
                         help='Minimum coverage to use in gene search')
     parser.add_argument('--min_id', type=float, required=False, default=90.0,
                         help='Minimum identity to use in gene search')
+    parser.add_argument('--discard', type=float, required=False, default=20.0,
+                        help='This percentage of the worst alignments will be discarded (to guard '
+                             'against poor gene extraction)')
 
     args = parser.parse_args()
     return args
@@ -46,7 +50,8 @@ def main():
     results = mp.Queue()
 
     processes = [mp.Process(target=get_assembly_identity_group,
-                            args=(assembly_files, gene_seqs, i, args.threads, results))
+                            args=(assembly_files, gene_seqs, i, args.threads, args.discard,
+                                  results))
                  for i in range(args.threads)]
 
     print('\nStarting processes', file=sys.stderr, flush=True)
@@ -72,7 +77,8 @@ def main():
                          os.path.basename(assembly_files[j]), '%.6f' % identity]))
 
 
-def get_assembly_identity_group(assembly_files, gene_seqs, subset_num, subset_total, result_queue):
+def get_assembly_identity_group(assembly_files, gene_seqs, subset_num, subset_total, discard,
+                                result_queue):
     print('  process {} started'.format(subset_num), file=sys.stderr, flush=True)
     results = []
     n = 0
@@ -81,14 +87,18 @@ def get_assembly_identity_group(assembly_files, gene_seqs, subset_num, subset_to
         for j in range(i, len(assembly_files)):
             assembly_2 = os.path.basename(assembly_files[j])
             if n % subset_total == subset_num:
-                identity = get_assembly_identity(assembly_1, assembly_2, gene_seqs)
+                identity = get_assembly_identity(assembly_1, assembly_2, gene_seqs, discard)
                 results.append((i, j, identity))
             n += 1
     result_queue.put(results)
     print('  process {} finished'.format(subset_num), file=sys.stderr, flush=True)
 
 
-def get_assembly_identity(assembly_1, assembly_2, gene_seqs):
+GeneAlignment = collections.namedtuple('GeneAlignment', ['identity', 'match_count',
+                                                         'alignment_length', 'mean_length'])
+
+
+def get_assembly_identity(assembly_1, assembly_2, gene_seqs, discard):
     if assembly_1 == assembly_2:
         return 100.0
     pattern = re.compile(r'\d+[\w=]')
@@ -99,13 +109,31 @@ def get_assembly_identity(assembly_1, assembly_2, gene_seqs):
     for gene in common_genes:
         gene_1 = gene_seqs[assembly_1][gene]
         gene_2 = gene_seqs[assembly_2][gene]
+        mean_length = int(round((len(gene_1) + len(gene_2)) / 2))
         result = edlib.align(gene_1, gene_2, 'NW', 'path')
         cigar = [(int(x[:-1]), x[-1]) for x in pattern.findall(result['cigar'])]
         alignment_length = sum(x[0] for x in cigar)
         match_count = sum(x[0] for x in cigar if x[1] == '=')
         identity = match_count / alignment_length
-        alignments.append((identity, match_count, alignment_length))
-    return 100.0 * sum(x[1] for x in alignments) / sum(x[2] for x in alignments)
+        alignments.append(GeneAlignment(identity, match_count, alignment_length, mean_length))
+
+    alignments = sorted(alignments, key=lambda a: a.identity)
+    total_mean_length = sum(a.mean_length for a in alignments)
+
+    first_i = 0
+    discarded_length = 0
+    discard_fraction = discard / 100.0  # percentage to fraction
+    for i, a in enumerate(alignments):
+        if (discarded_length + a.mean_length) / total_mean_length > discard_fraction:
+            first_i = i
+            break
+        discarded_length += a.mean_length
+
+    match_total = sum(x.match_count for x in alignments[first_i:])
+    length_total = sum(x.alignment_length for x in alignments[first_i:])
+    identity = 100.0 * match_total / length_total
+
+    return identity
 
 
 def get_fastas(fasta_dir):
