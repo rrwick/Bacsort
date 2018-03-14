@@ -99,7 +99,7 @@ def fastani_rmlst_regression(fastani_distances, rmlst_distances, assemblies, t1,
     x = np.array(x)
     y = np.array(y)
     a = np.vstack([x, np.ones(len(x))]).T
-    slope, intercept = np.linalg.lstsq(a, y)[0]
+    slope, intercept = np.linalg.lstsq(a, y, rcond=None)[0]
 
     print('slope:    ', slope, file=sys.stderr, flush=True)
     print('intercept:', intercept, file=sys.stderr, flush=True)
