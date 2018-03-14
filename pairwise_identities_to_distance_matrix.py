@@ -65,7 +65,7 @@ def main():
     print(len(clusters))
     clusters = sorted(clusters)
     for i in clusters:
-        print(clusters[i], end='')
+        print(i, end='')
         for j in clusters:
             print('\t', end='')
             try:
