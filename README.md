@@ -114,6 +114,16 @@ Finally, convert the identities into a distance matrix (same as for FastANI):
 pairwise_identities_to_distance_matrix.py tree/rmlst_identities > tree/distances.phylip
 ```
 
+#### Option 4: combination
+
+Finally, you can create two different distance matrices and combine them together. I wrote this for combining FastANI distances (which are very good up to 20% divergence) with Mash/rMLST distances (which can handle greater divergence).
+
+```
+combine_distance_matrices.py fastani.phylip mash.phylip > combined.phylip
+```
+
+
+
 ### Step 4: build tree
 
 Building the tree with [Quicktree](https://github.com/khowe/quicktree) is relatively quick and easy:
