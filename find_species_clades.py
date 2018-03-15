@@ -112,8 +112,8 @@ def load_accession_species():
                 accession_species[accession] = species
 
     # ...and then load from the user-defined file, so they can overwrite NCBI species.
-    if Path('user-defined_accession_species').is_file():
-        with open('user-defined_accession_species', 'rt') as user_species:
+    if Path('species_definitions').is_file():
+        with open('species_definitions', 'rt') as user_species:
             for line in user_species:
                 if not line.startswith('GCF'):
                     continue
@@ -127,8 +127,8 @@ def load_accession_species():
 
     # If the user-defined file doesn't exist yet, make an empty one.
     else:
-        with open('user-defined_accession_species', 'wt') as user_species:
-            user_species.write('Accession\tSpecies\tNotes\n')
+        with open('species_definitions', 'wt') as user_species:
+            user_species.write('Accession\tSpecies\n')
 
     # Shigella and E. coli are grouped together.
     for accession, species in accession_species.items():
