@@ -125,10 +125,17 @@ def load_accession_species():
                 accession, species = parts[0], parts[1]
                 accession_species[accession] = species
 
-    # If the user-defined file doesn't exist yet, make an empty one.
+    # If the user-defined file doesn't exist yet, make an empty one with instructions.
     else:
         with open('species_definitions', 'wt') as user_species:
-            user_species.write('Accession\tSpecies\n')
+            t = '# This file is where you can define species for particular RefSeq assemblies,\n' \
+                '# overriding the RefSeq species labels. Simply add lines to this file which\n' \
+                '# have the RefSeq assembly accession (starts with GCF) followed by a tab and\n' \
+                '# then the binomial species name.\n' \
+                '\n' \
+                '# Example:\n' \
+                'GCF_000000000.1	Genus species\n'
+            user_species.write(t)
 
     # Shigella and E. coli are grouped together.
     for accession, species in accession_species.items():

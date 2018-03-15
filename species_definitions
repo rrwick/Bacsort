@@ -1,3 +1,15 @@
+# This file is where you can define species for particular RefSeq assemblies,
+# overriding the RefSeq species labels. Simply add lines to this file which
+# have the RefSeq assembly accession (starts with GCF) followed by a tab and
+# then the binomial species name.
+
+# Example:
+GCF_000000000.1	Genus species
+
+
+# What follows are my species redefinitions of Enterobacteriaceae.
+
+
 # Some species assignments are clear based on the tree structure, and I was
 # able to assign names without checking the literature.
 GCF_001281565.1	Proteus mirabilis
