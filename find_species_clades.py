@@ -106,8 +106,15 @@ def load_accession_species():
                     continue
                 species = parts[9]
                 species_parts = species.split(' ')[0:2]
+
+                # Some 'species names' aren't really species names.
                 if species_parts[1] == 'sp.':
                     species_parts[1] = 'unknown'
+                elif species_parts[1] == 'bacterium':
+                    species_parts[1] = 'unknown'
+                elif species_parts[1] == 'endosymbiont':
+                    species_parts[1] = 'unknown'
+
                 species = ' '.join(species_parts)
                 accession_species[accession] = species
 
