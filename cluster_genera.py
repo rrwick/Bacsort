@@ -17,34 +17,47 @@ Public License for more details. You should have received a copy of the GNU Gene
 License along with Dejumbler. If not, see <http://www.gnu.org/licenses/>.
 """
 
-import sys
+import argparse
 import collections
-import os
 import gzip
+import os
+import pathlib
 import shutil
-from pathlib import Path
 
-threshold = 0.005
+
+def get_arguments():
+    parser = argparse.ArgumentParser(description='Cluster assemblies in each genus')
+
+    parser.add_argument('assembly_dir', type=str,
+                        help='Assembly directory (should contain one subdirectory per genus')
+    parser.add_argument('genera', type=str,
+                        help='Space-delimited list of genera')
+    parser.add_argument('--threshold', type=float, required=False, default=0.005,
+                        help='Mash distance clustering threshold')
+    args = parser.parse_args()
+    return args
 
 
 def main():
-    genera = sys.argv[1].split()
+    args = get_arguments()
+
+    genera = args.genera.split()
 
     for genus in genera:
         print()
         print('Clustering ' + genus)
         print('------------------------------------------------')
 
-        distance_filename = 'assemblies/' + genus + '/mash_distances'
-        if not Path(distance_filename).is_file():
+        distance_filename = args.assembly_dir + '/' + genus + '/mash_distances'
+        if not pathlib.Path(distance_filename).is_file():
             print('Could not find pairwise distances file - skipping genus')
             print()
             continue
 
-        assemblies, graph = create_graph_from_distances(distance_filename)
+        assemblies, graph = create_graph_from_distances(distance_filename, args.threshold)
         clusters = cluster_assemblies(assemblies, graph)
 
-        if not Path('clusters').is_dir():
+        if not pathlib.Path('clusters').is_dir():
             os.makedirs('clusters')
 
         print()
@@ -55,7 +68,6 @@ def main():
                 cluster_name = genus + '_' + (cluster_num_format % num)
 
                 # Choose representative for each cluster by N50.
-                # TO DO: maybe choose using some other logic?
                 if len(assemblies) == 1:
                     representative = assemblies[0]
                 else:
@@ -71,14 +83,10 @@ def main():
 
                 shutil.copyfile('assemblies/' + genus + '/' + representative,
                                 'clusters/' + cluster_name + '.fna.gz')
-
-            # Delete the assemblies (to save disk space)
-            pass
-
         print()
 
 
-def create_graph_from_distances(distance_filename):
+def create_graph_from_distances(distance_filename, threshold):
     print('Loading distances...', end='', flush=True)
 
     assemblies = set()
