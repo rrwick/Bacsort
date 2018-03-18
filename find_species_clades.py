@@ -155,7 +155,7 @@ def load_accession_species():
 def get_tip_names(clade):
     tip_names = []
     if clade.name is not None:
-       tip_names.append(clade.name)
+        tip_names.append(clade.name)
     for child in clade:
         tip_names += get_tip_names(child)
     return tip_names

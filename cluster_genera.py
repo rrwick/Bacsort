@@ -22,6 +22,7 @@ import collections
 import gzip
 import os
 import pathlib
+import re
 import shutil
 
 
@@ -32,8 +33,11 @@ def get_arguments():
                         help='Assembly directory (should contain one subdirectory per genus')
     parser.add_argument('genera', type=str,
                         help='Space-delimited list of genera')
+
     parser.add_argument('--threshold', type=float, required=False, default=0.005,
                         help='Mash distance clustering threshold')
+    parser.add_argument('--excluded', type=str, required=False, default='excluded_assemblies',
+                        help='File containing assembly accessions to exclude (one per line)')
     args = parser.parse_args()
     return args
 
@@ -42,6 +46,8 @@ def main():
     args = get_arguments()
 
     genera = args.genera.split()
+
+    excluded = load_excluded_assemblies(args.excluded)
 
     for genus in genera:
         print()
@@ -54,7 +60,7 @@ def main():
             print()
             continue
 
-        assemblies, graph = create_graph_from_distances(distance_filename, args.threshold)
+        assemblies, graph = create_graph_from_distances(distance_filename, args.threshold, excluded)
         clusters = cluster_assemblies(assemblies, graph)
 
         if not pathlib.Path('clusters').is_dir():
@@ -86,7 +92,7 @@ def main():
         print()
 
 
-def create_graph_from_distances(distance_filename, threshold):
+def create_graph_from_distances(distance_filename, threshold, excluded):
     print('Loading distances...', end='', flush=True)
 
     assemblies = set()
@@ -96,9 +102,17 @@ def create_graph_from_distances(distance_filename, threshold):
     with open(distance_filename, 'rt') as distance_file:
         for line in distance_file:
             parts = line.split('\t')
+
             assembly_1 = parts[0]
             assembly_2 = parts[1]
             distance = float(parts[2])
+
+            # Skip this line if either assembly has been excluded. We check the first 13 characters
+            # of the assembly name because that's the accession up to the version number. E.g. the
+            # full assembly name might be GCF_002053395.1.fna.gz but we just check the first 13
+            # characters (GCF_002053395).
+            if assembly_1[:13] in excluded or assembly_2[:13] in excluded:
+                continue
 
             assemblies.add(assembly_1)
             assemblies.add(assembly_2)
@@ -180,6 +194,27 @@ def get_contig_lengths(filename):
         if name:
             lengths.append(len(sequence))
     return lengths
+
+
+def load_excluded_assemblies(excluded_assemblies_filename):
+    excluded = set()
+    print()
+    print('Loading excluded assemblies')
+    print('------------------------------------------------')
+    if pathlib.Path(excluded_assemblies_filename).is_file():
+        p = re.compile(r'(GCF_\d{9})[^\d]')
+        with open(excluded_assemblies_filename, 'rt') as excluded_assemblies:
+            for line in excluded_assemblies:
+                line = line.strip()
+                if line.startswith('GCF'):
+                    match = p.search(line)
+                    if match:
+                        accession = match.group(1)
+                        excluded.add(accession)
+                        print(accession)
+    if not excluded:
+        print('no exclusions found')
+    return excluded
 
 
 if __name__ == '__main__':

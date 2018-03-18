@@ -48,12 +48,12 @@ download_genomes.sh "Citrobacter Klebsiella Salmonella Yersinia"
 ### Step 2: cluster assemblies
 
 ```
-cluster_genera.py "Citrobacter Klebsiella Salmonella Yersinia"
+cluster_genera.py assemblies "Citrobacter Klebsiella Salmonella Yersinia"
 ```
 
 ### Step 3: distance matrix
 
-As input for the neighbour joining tree algorith, we need a matrix of all pairwise distances between clusters. There a few alternative ways to produce such a matrix: using Mash, FastANI or rMLST.
+As input for the neighbour joining tree algorithm, we need a matrix of all pairwise distances between clusters. There a few alternative ways to produce such a matrix: using Mash, FastANI or rMLST.
 
 #### Option 1: Mash
 
