@@ -31,8 +31,6 @@ def get_arguments():
 
     parser.add_argument('assembly_dir', type=str,
                         help='Assembly directory (should contain one subdirectory per genus')
-    parser.add_argument('genera', type=str,
-                        help='Space-delimited list of genera')
 
     parser.add_argument('--threshold', type=float, required=False, default=0.005,
                         help='Mash distance clustering threshold')
@@ -45,9 +43,10 @@ def get_arguments():
 def main():
     args = get_arguments()
 
-    genera = args.genera.split()
-
     excluded = load_excluded_assemblies(args.excluded)
+
+    genera = [os.path.basename(str(x)) for x in pathlib.Path(args.assembly_dir).iterdir()
+              if x.is_dir()]
 
     for genus in genera:
         print()
