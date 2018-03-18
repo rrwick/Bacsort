@@ -80,9 +80,9 @@ Disadvantages:
 
 To run FastANI on your Dejumbler clusters, choose one of these scripts. You may need to modify them to suit your system (particularly the script which uses Slurm).
 ```
-run_fastani_one_thread.sh
-run_fastani_in_parallel.sh
-run_fastani_with_slurm.sh
+fastani_one_thread.sh
+fastani_in_parallel.sh
+fastani_with_slurm.sh
 ```
 
 Once the distances are computed, they must be converted into a PHYLIP distance matrix, which is relatively quick and carried out using this command. We use a maximum distance of 0.2 because FastANI wasn't designed to quantify ANI less than 80%.
