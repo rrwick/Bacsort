@@ -139,13 +139,13 @@ rapidnj -i pd tree/distances.phylip > tree/tree.newick
 ### Step 5: curate tree
 
 ```
-dejumbler_05_find_species_clades.py
+find_species_clades.py
 ```
 
 ### Step 6: copy assemblies to species directories
 
 ```
-dejumbler_06_copy_assemblies.py
+copy_assemblies.py
 ```
 
 
