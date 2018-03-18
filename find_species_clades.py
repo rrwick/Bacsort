@@ -101,9 +101,9 @@ def load_accession_species():
         with open(data_file, 'rt') as data:
             for line in data:
                 parts = line.split('\t')
-                accession = parts[0][:13]
-                if accession == 'assembly_accession':
+                if parts[0] == 'assembly_accession':
                     continue
+                accession = parts[0][:13]
                 species = parts[9]
                 species_parts = species.split(' ')[0:2]
 
