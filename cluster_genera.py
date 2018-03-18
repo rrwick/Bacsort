@@ -45,8 +45,8 @@ def main():
 
     excluded = load_excluded_assemblies(args.excluded)
 
-    genera = [os.path.basename(str(x)) for x in pathlib.Path(args.assembly_dir).iterdir()
-              if x.is_dir()]
+    genera = sorted(os.path.basename(str(x)) for x in pathlib.Path(args.assembly_dir).iterdir()
+                    if x.is_dir())
 
     for genus in genera:
         print()
