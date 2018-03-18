@@ -14,7 +14,7 @@
 # Public License for more details. You should have received a copy of the GNU General Public
 # License along with Dejumbler. If not, see <http://www.gnu.org/licenses/>.
 
-threads=32
+group_count=32
 
 mkdir -p tree
 
@@ -25,7 +25,7 @@ cd clusters
 ls *.fna.gz > cluster_list
 
 total_count=$( wc -l < cluster_list )
-count_per_file=$( perl -w -e "use POSIX; print ceil($total_count/$threads), qq{\n}" )
+count_per_file=$( perl -w -e "use POSIX; print ceil($total_count/$group_count), qq{\n}" )
 cat cluster_list | shuf > split.tmp
 split -a 4 -dl $count_per_file split.tmp cluster_list_
 rm split.tmp
