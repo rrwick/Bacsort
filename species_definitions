@@ -1,10 +1,11 @@
 # This file is where you can define species for particular RefSeq assemblies,
 # overriding the RefSeq species labels. Simply add lines to this file which
 # have the RefSeq assembly accession (starts with GCF) followed by a tab and
-# then the binomial species name.
+# then the binomial species name. The version number (e.g. final .1) does not
+need to be included in the accession.
 
 # Example:
-GCF_000000000.1	Genus species
+GCF_000000000	Genus species
 
 
 # What follows are my species redefinitions of Enterobacteriaceae.
@@ -12,69 +13,69 @@ GCF_000000000.1	Genus species
 
 # Some species assignments are clear based on the tree structure, and I was
 # able to assign names without checking the literature.
-GCF_001281565.1	Proteus mirabilis
-GCF_001808035.1	Proteus mirabilis
-GCF_000512315.2	Morganella morganii
-GCF_001807955.1	Morganella morganii
-GCF_900075225.1	Klebsiella aerogenes
-GCF_900077035.1	Klebsiella aerogenes
-GCF_900083685.1	Raoultella ornithinolytica
-GCF_900083755.1	Raoultella planticola
-GCF_000648315.1	Raoultella planticola
-GCF_001049875.1	Raoultella planticola
-GCF_002108615.1	Raoultella planticola
-GCF_900083925.1	Serratia marcescens
-GCF_900083935.1	Escherichia coli
-GCF_001286085.1	Escherichia albertii
-GCF_002035305.1	Salmonella enterica
-GCF_000408845.1	Escherichia coli
-GCF_000157115.2	Escherichia coli
-GCF_000159895.2	Escherichia coli
-GCF_000158415.2	Escherichia coli
-GCF_000336365.1	Serratia plymuthica
-GCF_000214195.1	Serratia plymuthica
-GCF_000214805.1	Serratia plymuthica
-GCF_000800945.1	Plesiomonas shigelloides
-GCF_000611875.2	Tatumella ptyseos
-GCF_002843235.1	Providencia rettgeri
-GCF_002215245.1	Pantoea ananatis
-GCF_001537385.1	Serratia marcescens
-GCF_001537265.1	Serratia marcescens
-GCF_001808215.1	Serratia marcescens
-GCF_001011075.1	Serratia marcescens
-GCF_000747565.1	Serratia marcescens
-GCF_001714765.1	Serratia marcescens
-GCF_900215455.1	Serratia marcescens
-GCF_001642805.2	Serratia marcescens
-GCF_002752455.1	Serratia marcescens
-GCF_002752475.1	Serratia marcescens
-GCF_000695995.1	Serratia marcescens
-GCF_900215445.1	Serratia marcescens
-GCF_002797215.1	Serratia marcescens
-GCF_001060475.1	Serratia marcescens
-GCF_001060695.1	Serratia marcescens
-GCF_001062045.1	Serratia marcescens
-GCF_001984565.1	Serratia marcescens
-GCF_001066285.1	Serratia marcescens
-GCF_002751955.1	Serratia marcescens
-GCF_002751935.1	Serratia marcescens
-GCF_002752085.1	Serratia marcescens
-GCF_002752255.1	Serratia marcescens
-GCF_002752235.1	Serratia marcescens
-GCF_002752095.1	Serratia marcescens
-GCF_002752135.1	Serratia marcescens
-GCF_002752155.1	Serratia marcescens
-GCF_002752265.1	Serratia marcescens
-GCF_002752195.1	Serratia marcescens
-GCF_002752535.1	Serratia marcescens
-GCF_002752435.1	Serratia marcescens
-GCF_002752495.1	Serratia marcescens
-GCF_001076875.1	Serratia marcescens
-GCF_000330865.1	Serratia rubidaea
-GCF_001692375.1	Serratia fonticola
-GCF_001808015.1	Citrobacter koseri
-GCF_001275405.1	Xenorhabdus griffiniae
-GCF_001422565.1	Rouxiella silvae
+GCF_001281565	Proteus mirabilis
+GCF_001808035	Proteus mirabilis
+GCF_000512315	Morganella morganii
+GCF_001807955	Morganella morganii
+GCF_900075225	Klebsiella aerogenes
+GCF_900077035	Klebsiella aerogenes
+GCF_900083685	Raoultella ornithinolytica
+GCF_900083755	Raoultella planticola
+GCF_000648315	Raoultella planticola
+GCF_001049875	Raoultella planticola
+GCF_002108615	Raoultella planticola
+GCF_900083925	Serratia marcescens
+GCF_900083935	Escherichia coli
+GCF_001286085	Escherichia albertii
+GCF_002035305	Salmonella enterica
+GCF_000408845	Escherichia coli
+GCF_000157115	Escherichia coli
+GCF_000159895	Escherichia coli
+GCF_000158415	Escherichia coli
+GCF_000336365	Serratia plymuthica
+GCF_000214195	Serratia plymuthica
+GCF_000214805	Serratia plymuthica
+GCF_000800945	Plesiomonas shigelloides
+GCF_000611875	Tatumella ptyseos
+GCF_002843235	Providencia rettgeri
+GCF_002215245	Pantoea ananatis
+GCF_001537385	Serratia marcescens
+GCF_001537265	Serratia marcescens
+GCF_001808215	Serratia marcescens
+GCF_001011075	Serratia marcescens
+GCF_000747565	Serratia marcescens
+GCF_001714765	Serratia marcescens
+GCF_900215455	Serratia marcescens
+GCF_001642805	Serratia marcescens
+GCF_002752455	Serratia marcescens
+GCF_002752475	Serratia marcescens
+GCF_000695995	Serratia marcescens
+GCF_900215445	Serratia marcescens
+GCF_002797215	Serratia marcescens
+GCF_001060475	Serratia marcescens
+GCF_001060695	Serratia marcescens
+GCF_001062045	Serratia marcescens
+GCF_001984565	Serratia marcescens
+GCF_001066285	Serratia marcescens
+GCF_002751955	Serratia marcescens
+GCF_002751935	Serratia marcescens
+GCF_002752085	Serratia marcescens
+GCF_002752255	Serratia marcescens
+GCF_002752235	Serratia marcescens
+GCF_002752095	Serratia marcescens
+GCF_002752135	Serratia marcescens
+GCF_002752155	Serratia marcescens
+GCF_002752265	Serratia marcescens
+GCF_002752195	Serratia marcescens
+GCF_002752535	Serratia marcescens
+GCF_002752435	Serratia marcescens
+GCF_002752495	Serratia marcescens
+GCF_001076875	Serratia marcescens
+GCF_000330865	Serratia rubidaea
+GCF_001692375	Serratia fonticola
+GCF_001808015	Citrobacter koseri
+GCF_001275405	Xenorhabdus griffiniae
+GCF_001422565	Rouxiella silvae
 
 
 
@@ -82,7 +83,7 @@ GCF_001422565.1	Rouxiella silvae
 # particularly close to other species in Enterobacter. It's closest relatives
 # are Pluralibacter, but it's sufficiently distant that it might deserve a
 # genus name of its own.
-GCF_900215375.1	Unknown unknown
+GCF_900215375	Unknown unknown
 
 
 
@@ -90,47 +91,47 @@ GCF_900215375.1	Unknown unknown
 # described as 'Erwiniaceae-like' and were therefore labelled with the genus
 # Erwinia. However, their closest named relatives are in the genus Izhakiella,
 # so that's were I'm putting them.
-GCF_002751995.1	Izhakiella unknown
-GCF_002752015.1	Izhakiella unknown
-GCF_002752025.1	Izhakiella unknown
-GCF_002752055.1	Izhakiella unknown
-GCF_002752075.1	Izhakiella unknown
-GCF_002752165.1	Izhakiella unknown
-GCF_002752595.1	Izhakiella unknown
+GCF_002751995	Izhakiella unknown
+GCF_002752015	Izhakiella unknown
+GCF_002752025	Izhakiella unknown
+GCF_002752055	Izhakiella unknown
+GCF_002752075	Izhakiella unknown
+GCF_002752165	Izhakiella unknown
+GCF_002752595	Izhakiella unknown
 
 
 
 # This assembly was labelled 'Klebsiella sp. RIT-PI-d', but it is nowhere near
 # other Klebsiella, so I think it deserves its own genus.
-GCF_001187865.1	Unknown unknown
+GCF_001187865	Unknown unknown
 
 
 
 # This genome was introduced by Su 2012. It certainly deserves a new species
 # name, probably a new genus too, but they didn't propose one in the paper,
 # just calling it strain LSJC7.
-GCF_000302695.1	Unknown unknown
+GCF_000302695	Unknown unknown
 
 
 
 # This assembly was labelled 'Enterobacteriaceae bacterium B14', but the paper
 # which introduced it (Park 2012) proposed a genus and species name for it,
 # which I've used here.
-GCF_000307305.1	Galloisinimonas intestini
+GCF_000307305	Galloisinimonas intestini
 
 
 
 # These two assemblies were labelled as Serratia, but are nowhere near the
 # rest of Serratia. Their closest relatives are in the genus Dickeya, but they
 # are an outgroup and so maybe deserve their own genus.
-GCF_000463345.2	Unknown unknown
-GCF_002847015.1	Unknown unknown
+GCF_000463345	Unknown unknown
+GCF_002847015	Unknown unknown
 
 
 
 # This assembly was labelled as 'Serratia sp. M24T3', but it is clearly
 # nestled amongst Rouxiella, so I've named it as such.
-GCF_000257645.1	Rouxiella unknown
+GCF_000257645	Rouxiella unknown
 
 
 
@@ -138,7 +139,7 @@ GCF_000257645.1	Rouxiella unknown
 # defined two species, faecalis and anthropi. This assembly (which was
 # labelled as Enterobacter) is moderately and equally close to both of those
 # species, and so I've put it in that genus but left its species as 'unknown'.
-GCF_000330845.1	Pseudocitrobacter unknown
+GCF_000330845	Pseudocitrobacter unknown
 
 
 
@@ -148,179 +149,179 @@ GCF_000330845.1	Pseudocitrobacter unknown
 # species, quasivariicola. A significant clade without a species name remains,
 # which I currently call Kp5 (Blin 2017). This may end up being a subspecies
 # of K. variicola or perhaps its own species.
-GCF_000349245.1	Klebsiella quasipneumoniae
-GCF_000367165.1	Klebsiella quasipneumoniae
-GCF_000827665.1	Klebsiella quasipneumoniae
-GCF_001033805.1	Klebsiella quasipneumoniae
-GCF_001033915.1	Klebsiella quasipneumoniae
-GCF_001034125.1	Klebsiella quasipneumoniae
-GCF_001278905.1	Klebsiella quasipneumoniae
-GCF_001280925.1	Klebsiella quasipneumoniae
-GCF_900113365.1	Klebsiella quasipneumoniae
-GCF_900119505.1	Klebsiella quasipneumoniae
-GCF_900119585.1	Klebsiella quasipneumoniae
-GCF_900176555.1	Klebsiella quasipneumoniae
-GCF_900100145.1	Klebsiella quasipneumoniae
-GCF_900102285.1	Klebsiella quasipneumoniae
-GCF_900102775.1	Klebsiella quasipneumoniae
-GCF_900104465.1	Klebsiella quasipneumoniae
-GCF_900107525.1	Klebsiella quasipneumoniae
-GCF_900109625.1	Klebsiella quasipneumoniae
-GCF_900114145.1	Klebsiella quasipneumoniae
-GCF_900119545.1	Klebsiella quasipneumoniae
-GCF_900119605.1	Klebsiella quasipneumoniae
-GCF_900099865.1	Klebsiella quasipneumoniae
-GCF_900101145.1	Klebsiella quasipneumoniae
-GCF_900101155.1	Klebsiella quasipneumoniae
-GCF_900101255.1	Klebsiella quasipneumoniae
-GCF_900101775.1	Klebsiella quasipneumoniae
-GCF_900103095.1	Klebsiella quasipneumoniae
-GCF_900103465.1	Klebsiella quasipneumoniae
-GCF_900107085.1	Klebsiella quasipneumoniae
-GCF_900107425.1	Klebsiella quasipneumoniae
-GCF_900107805.1	Klebsiella quasipneumoniae
-GCF_900108445.1	Klebsiella quasipneumoniae
-GCF_900109975.1	Klebsiella quasipneumoniae
-GCF_900110325.1	Klebsiella quasipneumoniae
-GCF_900110725.1	Klebsiella quasipneumoniae
-GCF_900111335.1	Klebsiella quasipneumoniae
-GCF_900113165.1	Klebsiella quasipneumoniae
-GCF_900113475.1	Klebsiella quasipneumoniae
-GCF_900114985.1	Klebsiella quasipneumoniae
-GCF_900115525.1	Klebsiella quasipneumoniae
-GCF_900119465.1	Klebsiella quasipneumoniae
-GCF_002288845.1	Klebsiella quasipneumoniae
-GCF_002752865.1	Klebsiella quasipneumoniae
-GCF_900093045.1	Klebsiella quasipneumoniae
-GCF_900093195.1	Klebsiella quasipneumoniae
-GCF_900093365.1	Klebsiella quasipneumoniae
-GCF_900093375.1	Klebsiella quasipneumoniae
-GCF_900093395.1	Klebsiella quasipneumoniae
-GCF_900093405.1	Klebsiella quasipneumoniae
-GCF_900173195.1	Klebsiella quasipneumoniae
-GCF_900173205.1	Klebsiella quasipneumoniae
-GCF_900173215.1	Klebsiella quasipneumoniae
-GCF_900173225.1	Klebsiella quasipneumoniae
-GCF_900173255.1	Klebsiella quasipneumoniae
-GCF_900173535.1	Klebsiella quasipneumoniae
-GCF_900173555.1	Klebsiella quasipneumoniae
-GCF_900174385.1	Klebsiella quasipneumoniae
-GCF_900174395.1	Klebsiella quasipneumoniae
-GCF_900174425.1	Klebsiella quasipneumoniae
-GCF_900173815.1	Klebsiella quasipneumoniae
-GCF_900173845.1	Klebsiella quasipneumoniae
-GCF_900173855.1	Klebsiella quasipneumoniae
-GCF_900173865.1	Klebsiella quasipneumoniae
-GCF_900173875.1	Klebsiella quasipneumoniae
-GCF_900174325.1	Klebsiella quasipneumoniae
-GCF_001373075.1	Klebsiella quasipneumoniae
-GCF_001463185.1	Klebsiella quasipneumoniae
-GCF_001466765.1	Klebsiella quasipneumoniae
-GCF_900084845.1	Klebsiella quasipneumoniae
-GCF_900084875.1	Klebsiella quasipneumoniae
-GCF_900084895.1	Klebsiella quasipneumoniae
-GCF_900085235.1	Klebsiella quasipneumoniae
-GCF_900085435.1	Klebsiella quasipneumoniae
-GCF_900086305.1	Klebsiella quasipneumoniae
-GCF_900086455.1	Klebsiella quasipneumoniae
-GCF_900092845.1	Klebsiella quasipneumoniae
-GCF_900093305.1	Klebsiella quasipneumoniae
-GCF_900171795.1	Klebsiella quasipneumoniae
-GCF_900172505.1	Klebsiella quasipneumoniae
-GCF_900172515.1	Klebsiella quasipneumoniae
-GCF_900172535.1	Klebsiella quasipneumoniae
-GCF_900172595.1	Klebsiella quasipneumoniae
-GCF_900172635.1	Klebsiella quasipneumoniae
-GCF_001052595.1	Klebsiella pneumoniae
-GCF_001054225.1	Klebsiella pneumoniae
-GCF_900092915.1	Klebsiella pneumoniae
-GCF_900093145.1	Klebsiella pneumoniae
-GCF_000195655.1	Klebsiella pneumoniae
-GCF_001308905.1	Klebsiella pneumoniae
-GCF_000238715.1	Klebsiella pneumoniae
-GCF_001030715.1	Klebsiella pneumoniae
-GCF_001030745.1	Klebsiella pneumoniae
-GCF_900084675.1	Klebsiella pneumoniae
-GCF_001443245.1	Klebsiella pneumoniae
-GCF_001717795.1	Klebsiella pneumoniae
-GCF_001808265.1	Klebsiella pneumoniae
-GCF_900084925.1	Klebsiella pneumoniae
-GCF_002850275.1	Klebsiella pneumoniae
-GCF_900083665.1	Klebsiella pneumoniae
-GCF_900084005.1	Klebsiella pneumoniae
-GCF_900084685.1	Klebsiella pneumoniae
-GCF_900085055.1	Klebsiella pneumoniae
-GCF_001052475.1	Klebsiella pneumoniae
-GCF_001557575.1	Klebsiella pneumoniae
-GCF_001006625.1	Klebsiella variicola
-GCF_000019565.1	Klebsiella variicola
-GCF_000163075.1	Klebsiella variicola
-GCF_000398905.1	Klebsiella variicola
-GCF_000786375.2	Klebsiella variicola
-GCF_000986855.1	Klebsiella variicola
-GCF_001006575.1	Klebsiella variicola
-GCF_001033825.1	Klebsiella variicola
-GCF_001317095.1	Klebsiella variicola
-GCF_001463685.1	Klebsiella variicola
-GCF_001549975.1	Klebsiella variicola
-GCF_001620885.1	Klebsiella variicola
-GCF_001807645.1	Klebsiella variicola
-GCF_001807705.1	Klebsiella variicola
-GCF_001808325.1	Klebsiella variicola
-GCF_002156765.1	Klebsiella variicola
-GCF_002724035.1	Klebsiella variicola
-GCF_002810575.1	Klebsiella variicola
-GCF_002810595.1	Klebsiella variicola
-GCF_002837625.1	Klebsiella variicola
-GCF_900084135.1	Klebsiella variicola
-GCF_900085165.1	Klebsiella variicola
-GCF_900084205.1	Klebsiella variicola
-GCF_900084295.1	Klebsiella variicola
-GCF_900084765.1	Klebsiella variicola
-GCF_900084775.1	Klebsiella variicola
-GCF_900084795.1	Klebsiella variicola
-GCF_900084995.1	Klebsiella variicola
-GCF_900085015.1	Klebsiella variicola
-GCF_900085175.1	Klebsiella variicola
-GCF_900085185.1	Klebsiella variicola
-GCF_900085825.1	Klebsiella variicola
-GCF_900086175.1	Klebsiella variicola
-GCF_900086385.1	Klebsiella variicola
-GCF_900171785.1	Klebsiella variicola
-GCF_900171975.1	Klebsiella variicola
-GCF_900171985.1	Klebsiella variicola
-GCF_900173285.1	Klebsiella variicola
-GCF_900173315.1	Klebsiella variicola
-GCF_900174165.1	Klebsiella variicola
-GCF_900174175.1	Klebsiella variicola
-GCF_900173385.1	Klebsiella variicola
-GCF_900173565.1	Klebsiella variicola
-GCF_900174345.1	Klebsiella variicola
-GCF_900174355.1	Klebsiella variicola
-GCF_900174375.1	Klebsiella variicola
-GCF_900173705.1	Klebsiella variicola
-GCF_900173715.1	Klebsiella variicola
-GCF_900174035.1	Klebsiella variicola
-GCF_900174115.1	Klebsiella variicola
-GCF_900175105.1	Klebsiella variicola
-GCF_002837615.1	Klebsiella variicola
-GCF_001548315.1	Klebsiella Kp5
-GCF_002806645.1	Klebsiella Kp5
-GCF_002806655.1	Klebsiella Kp5
-GCF_002806695.1	Klebsiella Kp5
-GCF_002810615.1	Klebsiella Kp5
-GCF_002810635.1	Klebsiella Kp5
-GCF_002837655.1	Klebsiella Kp5
-GCF_002810475.1	Klebsiella Kp5
-GCF_002810535.1	Klebsiella Kp5
-GCF_002810545.1	Klebsiella Kp5
-GCF_002810495.1	Klebsiella Kp5
-GCF_002810515.1	Klebsiella Kp5
-GCF_900087855.1	Klebsiella Kp5
-GCF_000523395.1	Klebsiella quasivariicola
-GCF_002186515.1	Klebsiella quasivariicola
-GCF_900172085.1	Klebsiella quasivariicola
-GCF_900174015.1	Klebsiella quasivariicola
+GCF_000349245	Klebsiella quasipneumoniae
+GCF_000367165	Klebsiella quasipneumoniae
+GCF_000827665	Klebsiella quasipneumoniae
+GCF_001033805	Klebsiella quasipneumoniae
+GCF_001033915	Klebsiella quasipneumoniae
+GCF_001034125	Klebsiella quasipneumoniae
+GCF_001278905	Klebsiella quasipneumoniae
+GCF_001280925	Klebsiella quasipneumoniae
+GCF_900113365	Klebsiella quasipneumoniae
+GCF_900119505	Klebsiella quasipneumoniae
+GCF_900119585	Klebsiella quasipneumoniae
+GCF_900176555	Klebsiella quasipneumoniae
+GCF_900100145	Klebsiella quasipneumoniae
+GCF_900102285	Klebsiella quasipneumoniae
+GCF_900102775	Klebsiella quasipneumoniae
+GCF_900104465	Klebsiella quasipneumoniae
+GCF_900107525	Klebsiella quasipneumoniae
+GCF_900109625	Klebsiella quasipneumoniae
+GCF_900114145	Klebsiella quasipneumoniae
+GCF_900119545	Klebsiella quasipneumoniae
+GCF_900119605	Klebsiella quasipneumoniae
+GCF_900099865	Klebsiella quasipneumoniae
+GCF_900101145	Klebsiella quasipneumoniae
+GCF_900101155	Klebsiella quasipneumoniae
+GCF_900101255	Klebsiella quasipneumoniae
+GCF_900101775	Klebsiella quasipneumoniae
+GCF_900103095	Klebsiella quasipneumoniae
+GCF_900103465	Klebsiella quasipneumoniae
+GCF_900107085	Klebsiella quasipneumoniae
+GCF_900107425	Klebsiella quasipneumoniae
+GCF_900107805	Klebsiella quasipneumoniae
+GCF_900108445	Klebsiella quasipneumoniae
+GCF_900109975	Klebsiella quasipneumoniae
+GCF_900110325	Klebsiella quasipneumoniae
+GCF_900110725	Klebsiella quasipneumoniae
+GCF_900111335	Klebsiella quasipneumoniae
+GCF_900113165	Klebsiella quasipneumoniae
+GCF_900113475	Klebsiella quasipneumoniae
+GCF_900114985	Klebsiella quasipneumoniae
+GCF_900115525	Klebsiella quasipneumoniae
+GCF_900119465	Klebsiella quasipneumoniae
+GCF_002288845	Klebsiella quasipneumoniae
+GCF_002752865	Klebsiella quasipneumoniae
+GCF_900093045	Klebsiella quasipneumoniae
+GCF_900093195	Klebsiella quasipneumoniae
+GCF_900093365	Klebsiella quasipneumoniae
+GCF_900093375	Klebsiella quasipneumoniae
+GCF_900093395	Klebsiella quasipneumoniae
+GCF_900093405	Klebsiella quasipneumoniae
+GCF_900173195	Klebsiella quasipneumoniae
+GCF_900173205	Klebsiella quasipneumoniae
+GCF_900173215	Klebsiella quasipneumoniae
+GCF_900173225	Klebsiella quasipneumoniae
+GCF_900173255	Klebsiella quasipneumoniae
+GCF_900173535	Klebsiella quasipneumoniae
+GCF_900173555	Klebsiella quasipneumoniae
+GCF_900174385	Klebsiella quasipneumoniae
+GCF_900174395	Klebsiella quasipneumoniae
+GCF_900174425	Klebsiella quasipneumoniae
+GCF_900173815	Klebsiella quasipneumoniae
+GCF_900173845	Klebsiella quasipneumoniae
+GCF_900173855	Klebsiella quasipneumoniae
+GCF_900173865	Klebsiella quasipneumoniae
+GCF_900173875	Klebsiella quasipneumoniae
+GCF_900174325	Klebsiella quasipneumoniae
+GCF_001373075	Klebsiella quasipneumoniae
+GCF_001463185	Klebsiella quasipneumoniae
+GCF_001466765	Klebsiella quasipneumoniae
+GCF_900084845	Klebsiella quasipneumoniae
+GCF_900084875	Klebsiella quasipneumoniae
+GCF_900084895	Klebsiella quasipneumoniae
+GCF_900085235	Klebsiella quasipneumoniae
+GCF_900085435	Klebsiella quasipneumoniae
+GCF_900086305	Klebsiella quasipneumoniae
+GCF_900086455	Klebsiella quasipneumoniae
+GCF_900092845	Klebsiella quasipneumoniae
+GCF_900093305	Klebsiella quasipneumoniae
+GCF_900171795	Klebsiella quasipneumoniae
+GCF_900172505	Klebsiella quasipneumoniae
+GCF_900172515	Klebsiella quasipneumoniae
+GCF_900172535	Klebsiella quasipneumoniae
+GCF_900172595	Klebsiella quasipneumoniae
+GCF_900172635	Klebsiella quasipneumoniae
+GCF_001052595	Klebsiella pneumoniae
+GCF_001054225	Klebsiella pneumoniae
+GCF_900092915	Klebsiella pneumoniae
+GCF_900093145	Klebsiella pneumoniae
+GCF_000195655	Klebsiella pneumoniae
+GCF_001308905	Klebsiella pneumoniae
+GCF_000238715	Klebsiella pneumoniae
+GCF_001030715	Klebsiella pneumoniae
+GCF_001030745	Klebsiella pneumoniae
+GCF_900084675	Klebsiella pneumoniae
+GCF_001443245	Klebsiella pneumoniae
+GCF_001717795	Klebsiella pneumoniae
+GCF_001808265	Klebsiella pneumoniae
+GCF_900084925	Klebsiella pneumoniae
+GCF_002850275	Klebsiella pneumoniae
+GCF_900083665	Klebsiella pneumoniae
+GCF_900084005	Klebsiella pneumoniae
+GCF_900084685	Klebsiella pneumoniae
+GCF_900085055	Klebsiella pneumoniae
+GCF_001052475	Klebsiella pneumoniae
+GCF_001557575	Klebsiella pneumoniae
+GCF_001006625	Klebsiella variicola
+GCF_000019565	Klebsiella variicola
+GCF_000163075	Klebsiella variicola
+GCF_000398905	Klebsiella variicola
+GCF_000786375	Klebsiella variicola
+GCF_000986855	Klebsiella variicola
+GCF_001006575	Klebsiella variicola
+GCF_001033825	Klebsiella variicola
+GCF_001317095	Klebsiella variicola
+GCF_001463685	Klebsiella variicola
+GCF_001549975	Klebsiella variicola
+GCF_001620885	Klebsiella variicola
+GCF_001807645	Klebsiella variicola
+GCF_001807705	Klebsiella variicola
+GCF_001808325	Klebsiella variicola
+GCF_002156765	Klebsiella variicola
+GCF_002724035	Klebsiella variicola
+GCF_002810575	Klebsiella variicola
+GCF_002810595	Klebsiella variicola
+GCF_002837625	Klebsiella variicola
+GCF_900084135	Klebsiella variicola
+GCF_900085165	Klebsiella variicola
+GCF_900084205	Klebsiella variicola
+GCF_900084295	Klebsiella variicola
+GCF_900084765	Klebsiella variicola
+GCF_900084775	Klebsiella variicola
+GCF_900084795	Klebsiella variicola
+GCF_900084995	Klebsiella variicola
+GCF_900085015	Klebsiella variicola
+GCF_900085175	Klebsiella variicola
+GCF_900085185	Klebsiella variicola
+GCF_900085825	Klebsiella variicola
+GCF_900086175	Klebsiella variicola
+GCF_900086385	Klebsiella variicola
+GCF_900171785	Klebsiella variicola
+GCF_900171975	Klebsiella variicola
+GCF_900171985	Klebsiella variicola
+GCF_900173285	Klebsiella variicola
+GCF_900173315	Klebsiella variicola
+GCF_900174165	Klebsiella variicola
+GCF_900174175	Klebsiella variicola
+GCF_900173385	Klebsiella variicola
+GCF_900173565	Klebsiella variicola
+GCF_900174345	Klebsiella variicola
+GCF_900174355	Klebsiella variicola
+GCF_900174375	Klebsiella variicola
+GCF_900173705	Klebsiella variicola
+GCF_900173715	Klebsiella variicola
+GCF_900174035	Klebsiella variicola
+GCF_900174115	Klebsiella variicola
+GCF_900175105	Klebsiella variicola
+GCF_002837615	Klebsiella variicola
+GCF_001548315	Klebsiella Kp5
+GCF_002806645	Klebsiella Kp5
+GCF_002806655	Klebsiella Kp5
+GCF_002806695	Klebsiella Kp5
+GCF_002810615	Klebsiella Kp5
+GCF_002810635	Klebsiella Kp5
+GCF_002837655	Klebsiella Kp5
+GCF_002810475	Klebsiella Kp5
+GCF_002810535	Klebsiella Kp5
+GCF_002810545	Klebsiella Kp5
+GCF_002810495	Klebsiella Kp5
+GCF_002810515	Klebsiella Kp5
+GCF_900087855	Klebsiella Kp5
+GCF_000523395	Klebsiella quasivariicola
+GCF_002186515	Klebsiella quasivariicola
+GCF_900172085	Klebsiella quasivariicola
+GCF_900174015	Klebsiella quasivariicola
 
 
 
@@ -332,58 +333,58 @@ GCF_900174015.1	Klebsiella quasivariicola
 # FYI: phylogroup Ko1 is now michiganensis, Ko2 is now oxytoca and Ko6 is now
 # grimontii. I haven't seen Ko3 in full genomes, and I don't have a reference
 # sequence for Ko5.
-GCF_001809025.1	Klebsiella oxytoca
-GCF_001808475.1	Klebsiella oxytoca
-GCF_000427015.1	Klebsiella grimontii
-GCF_000733495.1	Klebsiella grimontii
-GCF_001052235.1	Klebsiella grimontii
-GCF_001052825.1	Klebsiella grimontii
-GCF_001053665.1	Klebsiella grimontii
-GCF_001060405.1	Klebsiella grimontii
-GCF_001054995.1	Klebsiella grimontii
-GCF_001070955.1	Klebsiella grimontii
-GCF_001072735.1	Klebsiella grimontii
-GCF_001072835.1	Klebsiella grimontii
-GCF_001076805.1	Klebsiella grimontii
-GCF_001065765.1	Klebsiella grimontii
-GCF_001066775.1	Klebsiella grimontii
-GCF_001548355.1	Klebsiella grimontii
-GCF_001633115.1	Klebsiella grimontii
-GCF_002090195.1	Klebsiella grimontii
-GCF_002080105.1	Klebsiella grimontii
-GCF_002556465.1	Klebsiella grimontii
-GCF_002559635.1	Klebsiella grimontii
-GCF_002856195.1	Klebsiella grimontii
-GCF_002880715.1	Klebsiella grimontii
-GCF_900083595.1	Klebsiella grimontii
-GCF_900083605.1	Klebsiella grimontii
-GCF_900200035.1	Klebsiella grimontii
-GCF_900083805.1	Klebsiella michiganensis
-GCF_900083835.1	Klebsiella michiganensis
-GCF_900083695.1	Klebsiella michiganensis
-GCF_000293135.1	Klebsiella michiganensis
-GCF_000524315.1	Klebsiella michiganensis
-GCF_000714655.1	Klebsiella michiganensis
-GCF_001022195.1	Klebsiella michiganensis
-GCF_001753185.1	Klebsiella michiganensis
-GCF_001970835.1	Klebsiella michiganensis
-GCF_002072655.1	Klebsiella michiganensis
-GCF_002111445.1	Klebsiella michiganensis
-GCF_002906395.1	Klebsiella michiganensis
-GCF_002906415.1	Klebsiella michiganensis
-GCF_002906435.1	Klebsiella michiganensis
-GCF_900083565.1	Klebsiella michiganensis
-GCF_900083575.1	Klebsiella michiganensis
-GCF_900083635.1	Klebsiella michiganensis
-GCF_900083825.1	Klebsiella michiganensis
-GCF_900083885.1	Klebsiella michiganensis
-GCF_900083915.1	Klebsiella michiganensis
-GCF_900084035.1	Klebsiella michiganensis
-GCF_001807845.1	Klebsiella michiganensis
-GCF_000247915.1	Klebsiella Ko4
-GCF_001057685.1	Klebsiella Ko4
-GCF_002186735.1	Klebsiella Ko4
-GCF_001065705.1	Klebsiella Ko4
+GCF_001809025	Klebsiella oxytoca
+GCF_001808475	Klebsiella oxytoca
+GCF_000427015	Klebsiella grimontii
+GCF_000733495	Klebsiella grimontii
+GCF_001052235	Klebsiella grimontii
+GCF_001052825	Klebsiella grimontii
+GCF_001053665	Klebsiella grimontii
+GCF_001060405	Klebsiella grimontii
+GCF_001054995	Klebsiella grimontii
+GCF_001070955	Klebsiella grimontii
+GCF_001072735	Klebsiella grimontii
+GCF_001072835	Klebsiella grimontii
+GCF_001076805	Klebsiella grimontii
+GCF_001065765	Klebsiella grimontii
+GCF_001066775	Klebsiella grimontii
+GCF_001548355	Klebsiella grimontii
+GCF_001633115	Klebsiella grimontii
+GCF_002090195	Klebsiella grimontii
+GCF_002080105	Klebsiella grimontii
+GCF_002556465	Klebsiella grimontii
+GCF_002559635	Klebsiella grimontii
+GCF_002856195	Klebsiella grimontii
+GCF_002880715	Klebsiella grimontii
+GCF_900083595	Klebsiella grimontii
+GCF_900083605	Klebsiella grimontii
+GCF_900200035	Klebsiella grimontii
+GCF_900083805	Klebsiella michiganensis
+GCF_900083835	Klebsiella michiganensis
+GCF_900083695	Klebsiella michiganensis
+GCF_000293135	Klebsiella michiganensis
+GCF_000524315	Klebsiella michiganensis
+GCF_000714655	Klebsiella michiganensis
+GCF_001022195	Klebsiella michiganensis
+GCF_001753185	Klebsiella michiganensis
+GCF_001970835	Klebsiella michiganensis
+GCF_002072655	Klebsiella michiganensis
+GCF_002111445	Klebsiella michiganensis
+GCF_002906395	Klebsiella michiganensis
+GCF_002906415	Klebsiella michiganensis
+GCF_002906435	Klebsiella michiganensis
+GCF_900083565	Klebsiella michiganensis
+GCF_900083575	Klebsiella michiganensis
+GCF_900083635	Klebsiella michiganensis
+GCF_900083825	Klebsiella michiganensis
+GCF_900083885	Klebsiella michiganensis
+GCF_900083915	Klebsiella michiganensis
+GCF_900084035	Klebsiella michiganensis
+GCF_001807845	Klebsiella michiganensis
+GCF_000247915	Klebsiella Ko4
+GCF_001057685	Klebsiella Ko4
+GCF_002186735	Klebsiella Ko4
+GCF_001065705	Klebsiella Ko4
 
 
 
@@ -392,15 +393,15 @@ GCF_001065705.1	Klebsiella Ko4
 # Raoultella species. There is an outgroup to the rest of terrigena
 # (GCF_002270295) which I've here called 'unknown', but should perhaps be
 # included with terrigena.
-GCF_000829965.1	Raoultella terrigena
-GCF_002270295.1	Raoultella unknown
+GCF_000829965	Raoultella terrigena
+GCF_002270295	Raoultella unknown
 
 
 
 # Kluyvera georgiana doesn't have many representatives, but based on the
 # phylogeny in Pavan 2005, I'm confident in renaming this one ascorbata
 # assembly as georgiana.
-GCF_001682915.1	Kluyvera georgiana	Pavan 2005
+GCF_001682915	Kluyvera georgiana	Pavan 2005
 
 
 
@@ -408,7 +409,7 @@ GCF_001682915.1	Kluyvera georgiana	Pavan 2005
 # Atlantibacter hermannii assembly. Based on the relationships in Hata 2016,
 # I think this assembly should also be hermannii, as the other Atlantibacter
 # species (subterranea) is much more distantly related.
-GCF_000878365.1	Atlantibacter hermannii
+GCF_000878365	Atlantibacter hermannii
 
 
 
@@ -418,74 +419,74 @@ GCF_000878365.1	Atlantibacter hermannii
 # is mislabelled, so I've changed that one to 'Lelliottia unknown'. What I've
 # currently defined as neteri has some very deep branches, so I wonder if the
 # real lapagei is in there.
-GCF_900177785.1	Cedecea neteri
-GCF_000277545.1	Cedecea neteri
-GCF_000963575.1	Cedecea neteri
-GCF_002811785.1	Lelliottia unknown
+GCF_900177785	Cedecea neteri
+GCF_000277545	Cedecea neteri
+GCF_000963575	Cedecea neteri
+GCF_002811785	Lelliottia unknown
 
 
 
 # Walk 2009 and Luo 2011 described five 'crytic' lineages of E. coli, which
 # aren't part of E. coli, called clades I-V. Liu 2015 named clade V as
 # Escherichia marmotae, which I've gone with here.
-GCF_000190955.1	Escherichia clade-1
-GCF_001650555.1	Escherichia clade-1
-GCF_002133995.1	Escherichia clade-1
-GCF_002134215.1	Escherichia clade-1
-GCF_002531355.1	Escherichia clade-1
-GCF_000190995.1	Escherichia clade-1
-GCF_000208545.1	Escherichia clade-1
-GCF_001910995.1	Escherichia clade-1
-GCF_001911065.1	Escherichia clade-1
-GCF_001911405.1	Escherichia clade-1
-GCF_001912385.1	Escherichia clade-1
-GCF_001912565.1	Escherichia clade-1
-GCF_000194175.1	Escherichia clade-1
-GCF_000194575.1	Escherichia clade-1
-GCF_002133425.1	Escherichia clade-1
-GCF_000208485.1	Escherichia clade-1
-GCF_000687125.1	Escherichia clade-1
-GCF_000703725.1	Escherichia clade-1
-GCF_000812765.1	Escherichia clade-1
-GCF_001264195.1	Escherichia clade-1
-GCF_001911145.1	Escherichia clade-1
-GCF_001912235.1	Escherichia clade-1
-GCF_001912525.1	Escherichia clade-1
-GCF_002207125.1	Escherichia clade-1
-GCF_002810695.1	Escherichia clade-1
-GCF_002901325.1	Escherichia clade-1
-GCF_001660175.1	Escherichia clade-2
-GCF_000208445.1	Escherichia clade-3
-GCF_000208465.1	Escherichia clade-3
-GCF_000398885.1	Escherichia clade-3
-GCF_000407925.1	Escherichia clade-3
-GCF_000407765.1	Escherichia clade-3
-GCF_000459855.1	Escherichia clade-3
-GCF_000208525.1	Escherichia clade-4
-GCF_000601195.1	Escherichia clade-4
-GCF_002110245.1	Escherichia clade-4
-GCF_000208565.1	Escherichia marmotae
-GCF_000350705.1	Escherichia marmotae
-GCF_000408525.1	Escherichia marmotae
-GCF_002573245.1	Escherichia marmotae
-GCF_002573255.1	Escherichia marmotae
-GCF_000408325.1	Escherichia marmotae
-GCF_000408805.1	Escherichia marmotae
-GCF_001561675.1	Escherichia marmotae
-GCF_002109985.1	Escherichia marmotae
+GCF_000190955	Escherichia clade-1
+GCF_001650555	Escherichia clade-1
+GCF_002133995	Escherichia clade-1
+GCF_002134215	Escherichia clade-1
+GCF_002531355	Escherichia clade-1
+GCF_000190995	Escherichia clade-1
+GCF_000208545	Escherichia clade-1
+GCF_001910995	Escherichia clade-1
+GCF_001911065	Escherichia clade-1
+GCF_001911405	Escherichia clade-1
+GCF_001912385	Escherichia clade-1
+GCF_001912565	Escherichia clade-1
+GCF_000194175	Escherichia clade-1
+GCF_000194575	Escherichia clade-1
+GCF_002133425	Escherichia clade-1
+GCF_000208485	Escherichia clade-1
+GCF_000687125	Escherichia clade-1
+GCF_000703725	Escherichia clade-1
+GCF_000812765	Escherichia clade-1
+GCF_001264195	Escherichia clade-1
+GCF_001911145	Escherichia clade-1
+GCF_001912235	Escherichia clade-1
+GCF_001912525	Escherichia clade-1
+GCF_002207125	Escherichia clade-1
+GCF_002810695	Escherichia clade-1
+GCF_002901325	Escherichia clade-1
+GCF_001660175	Escherichia clade-2
+GCF_000208445	Escherichia clade-3
+GCF_000208465	Escherichia clade-3
+GCF_000398885	Escherichia clade-3
+GCF_000407925	Escherichia clade-3
+GCF_000407765	Escherichia clade-3
+GCF_000459855	Escherichia clade-3
+GCF_000208525	Escherichia clade-4
+GCF_000601195	Escherichia clade-4
+GCF_002110245	Escherichia clade-4
+GCF_000208565	Escherichia marmotae
+GCF_000350705	Escherichia marmotae
+GCF_000408525	Escherichia marmotae
+GCF_002573245	Escherichia marmotae
+GCF_002573255	Escherichia marmotae
+GCF_000408325	Escherichia marmotae
+GCF_000408805	Escherichia marmotae
+GCF_001561675	Escherichia marmotae
+GCF_002109985	Escherichia marmotae
 
 
 
 # The Buttiauxella genus doesn't have many representatives, but I think that
 # GCF_000737905 is misnamed based on the trees in Alnajar 2017.
-GCF_000737905.1	Buttiauxella noackiae
+GCF_000737905	Buttiauxella noackiae
 
 
 
 # These changes are pretty straightforward and are backed by the phylogeny in
 # Jackson 2015.
-GCF_000485925.1	Siccibacter turicensis
-GCF_000486025.1	Siccibacter turicensis
+GCF_000485925	Siccibacter turicensis
+GCF_000486025	Siccibacter turicensis
 
 
 
@@ -494,48 +495,48 @@ GCF_000486025.1	Siccibacter turicensis
 # tree: wallisii, gavinae and deleyi. Some species were in the tree in two
 # incompatible locations (e.g. rodasii was in two very separate branches), so
 # I've renamed the ones incompatible with the type strains as 'unknown'.
-GCF_001641135.1	Pantoea allii
-GCF_000731025.2	Pantoea brenneri
-GCF_001743465.1	Pantoea brenneri
-GCF_002233725.1	Pantoea brenneri
-GCF_000255315.1	Pantoea anthophila
-GCF_000784875.1	Pantoea eucrina
-GCF_001881025.1	Pantoea eucrina
-GCF_002207995.1	Pantoea dispersa
-GCF_000220605.1	Pantoea agglomerans
-GCF_000952095.1	Pantoea agglomerans
-GCF_001238615.1	Pantoea agglomerans
-GCF_001264395.1	Pantoea agglomerans
-GCF_900068865.1	Pantoea agglomerans
-GCF_002082355.1	Pantoea agglomerans
-GCF_000745295.1	Pantoea vagans
-GCF_001558735.1	Pantoea vagans
-GCF_002554555.1	Pantoea vagans
-GCF_000179655.1	Pantoea eucalypti
-GCF_000330765.1	Pantoea eucalypti
-GCF_000816655.1	Pantoea eucalypti
-GCF_900167425.1	Pantoea eucalypti
-GCF_000784965.1	Pantoea calida
-GCF_000738765.1	Pantoea septica
-GCF_001067555.1	Pantoea septica
-GCF_002313185.2	Pantoea septica
-GCF_000759475.1	Pantoea unknown
-GCF_000773965.1	Pantoea unknown
-GCF_000801085.1	Pantoea unknown
-GCF_001506165.1	Pantoea unknown
-GCF_002749715.1	Pantoea unknown
-GCF_900215435.1	Pantoea unknown
-GCF_900068835.1	Pantoea unknown
-GCF_900068855.1	Pantoea unknown
-GCF_900068845.1	Pantoea unknown
+GCF_001641135	Pantoea allii
+GCF_000731025	Pantoea brenneri
+GCF_001743465	Pantoea brenneri
+GCF_002233725	Pantoea brenneri
+GCF_000255315	Pantoea anthophila
+GCF_000784875	Pantoea eucrina
+GCF_001881025	Pantoea eucrina
+GCF_002207995	Pantoea dispersa
+GCF_000220605	Pantoea agglomerans
+GCF_000952095	Pantoea agglomerans
+GCF_001238615	Pantoea agglomerans
+GCF_001264395	Pantoea agglomerans
+GCF_900068865	Pantoea agglomerans
+GCF_002082355	Pantoea agglomerans
+GCF_000745295	Pantoea vagans
+GCF_001558735	Pantoea vagans
+GCF_002554555	Pantoea vagans
+GCF_000179655	Pantoea eucalypti
+GCF_000330765	Pantoea eucalypti
+GCF_000816655	Pantoea eucalypti
+GCF_900167425	Pantoea eucalypti
+GCF_000784965	Pantoea calida
+GCF_000738765	Pantoea septica
+GCF_001067555	Pantoea septica
+GCF_002313185	Pantoea septica
+GCF_000759475	Pantoea unknown
+GCF_000773965	Pantoea unknown
+GCF_000801085	Pantoea unknown
+GCF_001506165	Pantoea unknown
+GCF_002749715	Pantoea unknown
+GCF_900215435	Pantoea unknown
+GCF_900068835	Pantoea unknown
+GCF_900068855	Pantoea unknown
+GCF_900068845	Pantoea unknown
 
 
 
 # These two assemblies are very distant from everything else (and from each
 # other). While they were labelled as Enterobacter/Pantoea, I judged them to
 # be sufficiently unique to not belong to either of those genera.
-GCF_001922585.1	Unknown unknown
-GCF_002837195.1	Unknown unknown
+GCF_001922585	Unknown unknown
+GCF_002837195	Unknown unknown
 
 
 
@@ -549,12 +550,12 @@ GCF_002837195.1	Unknown unknown
 # There were a couple odd Serratia species in the tree: ureilytica and
 # nematodiphila. These were both clearly within the marcescens clade, so I've
 # renamed them to marcescens.
-GCF_000988045.1	Serratia marcescens
-GCF_000738675.1	Serratia marcescens
-GCF_900101535.1	Serratia marcescens
-GCF_002082115.1	Serratia marcescens
-GCF_002185265.1	Serratia marcescens
-GCF_900005125.1	Serratia marcescens
+GCF_000988045	Serratia marcescens
+GCF_000738675	Serratia marcescens
+GCF_900101535	Serratia marcescens
+GCF_002082115	Serratia marcescens
+GCF_002185265	Serratia marcescens
+GCF_900005125	Serratia marcescens
 
 
 
@@ -566,75 +567,75 @@ GCF_900005125.1	Serratia marcescens
 # Citrobacter youngae was also a problem. The strain ATCC 29220 which was
 # labelled as youngae was very different from the youngae defined in Ribeiro's
 # papers. I went with Ribeiro's and changed ATCC 29220 to Citrobacter unknown.
-GCF_000208765.1	Citrobacter braakii
-GCF_000398845.1	Citrobacter braakii
-GCF_000398865.1	Citrobacter braakii
-GCF_000972645.1	Citrobacter braakii
-GCF_001273815.1	Citrobacter braakii
-GCF_001689745.1	Citrobacter braakii
-GCF_002289385.1	Citrobacter braakii
-GCF_002850715.1	Citrobacter braakii
-GCF_002903215.1	Citrobacter braakii
-GCF_900169625.1	Citrobacter braakii
-GCF_900169695.1	Citrobacter braakii
-GCF_001022685.1	Citrobacter braakii
-GCF_000692115.1	Citrobacter europaeus
-GCF_000783995.2	Citrobacter europaeus
-GCF_001922445.1	Citrobacter europaeus
-GCF_002073755.1	Citrobacter europaeus
-GCF_002786865.1	Citrobacter europaeus
-GCF_000692135.1	Citrobacter amalonaticus
-GCF_000809165.1	Citrobacter amalonaticus
-GCF_001297795.1	Citrobacter amalonaticus
-GCF_900112055.1	Citrobacter amalonaticus
-GCF_000158355.2	Citrobacter portucalensis
-GCF_000521945.1	Citrobacter portucalensis
-GCF_001037485.1	Citrobacter portucalensis
-GCF_001037515.1	Citrobacter portucalensis
-GCF_001037585.1	Citrobacter portucalensis
-GCF_001281005.1	Citrobacter portucalensis
-GCF_001317135.2	Citrobacter portucalensis
-GCF_001317155.2	Citrobacter portucalensis
-GCF_001867255.1	Citrobacter portucalensis
-GCF_001880775.1	Citrobacter portucalensis
-GCF_002796485.1	Citrobacter portucalensis
-GCF_002903305.1	Citrobacter portucalensis
-GCF_000648515.1	Citrobacter werkmanii
-GCF_001721255.1	Citrobacter werkmanii
-GCF_001570325.1	Citrobacter werkmanii
-GCF_001570345.1	Citrobacter werkmanii
-GCF_000277565.1	Citrobacter freundii
-GCF_000313895.1	Citrobacter freundii
-GCF_000398825.1	Citrobacter freundii
-GCF_001034445.1	Citrobacter freundii
-GCF_001034475.1	Citrobacter freundii
-GCF_001034485.1	Citrobacter freundii
-GCF_001037505.1	Citrobacter freundii
-GCF_001037575.1	Citrobacter freundii
-GCF_001586835.1	Citrobacter freundii
-GCF_001586845.1	Citrobacter freundii
-GCF_000739675.1	Citrobacter murliniae
-GCF_001037495.1	Citrobacter murliniae
-GCF_002386385.1	Citrobacter gillenii
-GCF_001034465.1	Citrobacter youngae
-GCF_001559235.1	Citrobacter youngae
-GCF_002151815.1	Citrobacter youngae
-GCF_002863945.1	Citrobacter youngae
-GCF_001463265.1	Citrobacter sedlakii
+GCF_000208765	Citrobacter braakii
+GCF_000398845	Citrobacter braakii
+GCF_000398865	Citrobacter braakii
+GCF_000972645	Citrobacter braakii
+GCF_001273815	Citrobacter braakii
+GCF_001689745	Citrobacter braakii
+GCF_002289385	Citrobacter braakii
+GCF_002850715	Citrobacter braakii
+GCF_002903215	Citrobacter braakii
+GCF_900169625	Citrobacter braakii
+GCF_900169695	Citrobacter braakii
+GCF_001022685	Citrobacter braakii
+GCF_000692115	Citrobacter europaeus
+GCF_000783995	Citrobacter europaeus
+GCF_001922445	Citrobacter europaeus
+GCF_002073755	Citrobacter europaeus
+GCF_002786865	Citrobacter europaeus
+GCF_000692135	Citrobacter amalonaticus
+GCF_000809165	Citrobacter amalonaticus
+GCF_001297795	Citrobacter amalonaticus
+GCF_900112055	Citrobacter amalonaticus
+GCF_000158355	Citrobacter portucalensis
+GCF_000521945	Citrobacter portucalensis
+GCF_001037485	Citrobacter portucalensis
+GCF_001037515	Citrobacter portucalensis
+GCF_001037585	Citrobacter portucalensis
+GCF_001281005	Citrobacter portucalensis
+GCF_001317135	Citrobacter portucalensis
+GCF_001317155	Citrobacter portucalensis
+GCF_001867255	Citrobacter portucalensis
+GCF_001880775	Citrobacter portucalensis
+GCF_002796485	Citrobacter portucalensis
+GCF_002903305	Citrobacter portucalensis
+GCF_000648515	Citrobacter werkmanii
+GCF_001721255	Citrobacter werkmanii
+GCF_001570325	Citrobacter werkmanii
+GCF_001570345	Citrobacter werkmanii
+GCF_000277565	Citrobacter freundii
+GCF_000313895	Citrobacter freundii
+GCF_000398825	Citrobacter freundii
+GCF_001034445	Citrobacter freundii
+GCF_001034475	Citrobacter freundii
+GCF_001034485	Citrobacter freundii
+GCF_001037505	Citrobacter freundii
+GCF_001037575	Citrobacter freundii
+GCF_001586835	Citrobacter freundii
+GCF_001586845	Citrobacter freundii
+GCF_000739675	Citrobacter murliniae
+GCF_001037495	Citrobacter murliniae
+GCF_002386385	Citrobacter gillenii
+GCF_001034465	Citrobacter youngae
+GCF_001559235	Citrobacter youngae
+GCF_002151815	Citrobacter youngae
+GCF_002863945	Citrobacter youngae
+GCF_001463265	Citrobacter sedlakii
 
 
 
 # This strain of Citrobacter (Y19) was labelled as amalonaticus but seems to
 # be its own species, slightly closer to Citrobacter farmeri.
-GCF_000981805.1	Citrobacter unknown
+GCF_000981805	Citrobacter unknown
 
 
 
 # These two Citrobacters are relatively close and belong in the same species.
 # They probably deserve their own species name, but could possibly be included
 # with amalonaticus, the closest named group.
-GCF_001559075.1	Citrobacter unknown
-GCF_002880615.1	Citrobacter unknown
+GCF_001559075	Citrobacter unknown
+GCF_002880615	Citrobacter unknown
 
 
 
@@ -643,16 +644,16 @@ GCF_002880615.1	Citrobacter unknown
 # portucalensis, with which they form a clade. However, they may deserve their
 # own species name, especially GCF_002042945.1 which is the outgroup of the
 # rest.
-GCF_000238735.1	Citrobacter portucalensis
-GCF_900077125.1	Citrobacter portucalensis
-GCF_002042945.1	Citrobacter portucalensis
+GCF_000238735	Citrobacter portucalensis
+GCF_900077125	Citrobacter portucalensis
+GCF_002042945	Citrobacter portucalensis
 
 
 
 # This assembly was labelled Citrobacter youngae but is an outgroup to
 # Citrobacter werkmanii. It wasn't close enough for me to include with
 # werkmanii, however, so I've left it unknown.
-GCF_000155975.1	Citrobacter unknown
+GCF_000155975	Citrobacter unknown
 
 
 
@@ -663,13 +664,13 @@ GCF_000155975.1	Citrobacter unknown
 # Hafnia alvei:
 # http://www.tgw1916.net/Enterobacteria/Obesumbacterium.html
 # http://www.bacterio.net/obesumbacterium.html
-GCF_000185685.2	Hafnia paralvei
-GCF_000239255.1	Hafnia paralvei
-GCF_001559255.1	Hafnia paralvei
-GCF_001816025.1	Hafnia paralvei
-GCF_002355555.1	Hafnia alvei
-GCF_001586165.1	Hafnia alvei
-GCF_001655035.1	Hafnia alvei
+GCF_000185685	Hafnia paralvei
+GCF_000239255	Hafnia paralvei
+GCF_001559255	Hafnia paralvei
+GCF_001816025	Hafnia paralvei
+GCF_002355555	Hafnia alvei
+GCF_001586165	Hafnia alvei
+GCF_001655035	Hafnia alvei
 
 
 
@@ -678,16 +679,16 @@ GCF_001655035.1	Hafnia alvei
 # some of the classifications. Hyun 2016 and Dai 2018 helped with some of the
 # more recently named species. Proteus terrae and inconstans weren't present
 # in the assemblies, and many unnamed clades remain.
-GCF_002184635.1	Proteus vulgaris
-GCF_001049955.1	Proteus penneri
-GCF_001939795.1	Proteus cibarius
-GCF_002749905.1	Proteus cibarius
-GCF_001722135.1	Proteus unknown
-GCF_001742985.1	Proteus unknown
-GCF_001049975.1	Proteus unknown
-GCF_000497855.1	Proteus unknown
-GCF_002206145.2	Proteus unknown
-GCF_002591155.1	Proteus unknown
+GCF_002184635	Proteus vulgaris
+GCF_001049955	Proteus penneri
+GCF_001939795	Proteus cibarius
+GCF_002749905	Proteus cibarius
+GCF_001722135	Proteus unknown
+GCF_001742985	Proteus unknown
+GCF_001049975	Proteus unknown
+GCF_000497855	Proteus unknown
+GCF_002206145	Proteus unknown
+GCF_002591155	Proteus unknown
 
 
 
@@ -696,7 +697,7 @@ GCF_002591155.1	Proteus unknown
 # describing its genome sequence: Yuan 2017. However, it is very distant from
 # the other stuartii genomes, sufficiently so to be a different species, so
 # here I label it as 'unknown'.
-GCF_001853385.1	Providencia unknown
+GCF_001853385	Providencia unknown
 
 
 
@@ -706,19 +707,19 @@ GCF_001853385.1	Providencia unknown
 # of the two (GCF_002632765) might be considered a different species, so this
 # could change. Only one assembly (GCF_000798625, strain NBAII XenSa04)
 # remains unnamed.
-GCF_002632865.1	Xenorhabdus stockiae
-GCF_002632765.1	Xenorhabdus stockiae
+GCF_002632865	Xenorhabdus stockiae
+GCF_002632765	Xenorhabdus stockiae
 
 
 
 # Edwardsiella had some recent species definitions. I went with the ones given
 # in Bujan 2017.
-GCF_000020865.1	Edwardsiella piscicida
-GCF_000146305.1	Edwardsiella piscicida
-GCF_000804515.1	Edwardsiella piscicida
-GCF_001186215.1	Edwardsiella anguillarum
-GCF_000711175.1	Edwardsiella anguillarum
-GCF_000800725.1	Edwardsiella anguillarum
+GCF_000020865	Edwardsiella piscicida
+GCF_000146305	Edwardsiella piscicida
+GCF_000804515	Edwardsiella piscicida
+GCF_001186215	Edwardsiella anguillarum
+GCF_000711175	Edwardsiella anguillarum
+GCF_000800725	Edwardsiella anguillarum
 
 
 
@@ -731,8 +732,8 @@ GCF_000800725.1	Edwardsiella anguillarum
 # match the Chou 2007 odontotermitis and changed the more recently described
 # Sapountzis 2015 isolates to 'unknown' - they probably deserve a species
 # name of their own.
-GCF_001188485.1	Trabulsiella unknown
-GCF_001188495.1	Trabulsiella unknown
+GCF_001188485	Trabulsiella unknown
+GCF_001188495	Trabulsiella unknown
 
 
 
@@ -750,626 +751,626 @@ GCF_001188495.1	Trabulsiella unknown
 # throughout the cloacae complex, so I did not use that species name.
 # 'Enterobacter nickellidurans' best matched to within the asburiae clade, so
 # I didn't use that name either.
-GCF_000315775.1	Enterobacter hormaechei
-GCF_000492455.1	Enterobacter hormaechei
-GCF_001469415.1	Enterobacter hormaechei
-GCF_900076045.1	Enterobacter hormaechei
-GCF_000492495.1	Enterobacter hormaechei
-GCF_000492575.1	Enterobacter hormaechei
-GCF_000492615.1	Enterobacter hormaechei
-GCF_000492715.1	Enterobacter hormaechei
-GCF_000492855.1	Enterobacter hormaechei
-GCF_000534035.1	Enterobacter hormaechei
-GCF_000534175.1	Enterobacter hormaechei
-GCF_000534195.1	Enterobacter hormaechei
-GCF_000534215.1	Enterobacter hormaechei
-GCF_000534295.1	Enterobacter hormaechei
-GCF_000534455.1	Enterobacter hormaechei
-GCF_000534635.1	Enterobacter hormaechei
-GCF_000724505.1	Enterobacter hormaechei
-GCF_000750225.1	Enterobacter hormaechei
-GCF_000750275.1	Enterobacter hormaechei
-GCF_000784905.1	Enterobacter hormaechei
-GCF_000783855.2	Enterobacter hormaechei
-GCF_000952315.1	Enterobacter hormaechei
-GCF_000958805.1	Enterobacter hormaechei
-GCF_001022435.2	Enterobacter hormaechei
-GCF_001030145.1	Enterobacter hormaechei
-GCF_001030195.1	Enterobacter hormaechei
-GCF_001037565.1	Enterobacter hormaechei
-GCF_000478345.1	Enterobacter hormaechei
-GCF_002151865.1	Enterobacter hormaechei
-GCF_000534755.1	Enterobacter hormaechei
-GCF_000474785.1	Enterobacter hormaechei
-GCF_001037845.1	Enterobacter hormaechei
-GCF_002201815.1	Enterobacter hormaechei
-GCF_900075045.1	Enterobacter hormaechei
-GCF_900075525.1	Enterobacter hormaechei
-GCF_900075905.1	Enterobacter hormaechei
-GCF_900075925.1	Enterobacter hormaechei
-GCF_900076095.1	Enterobacter hormaechei
-GCF_900076425.1	Enterobacter hormaechei
-GCF_900076505.1	Enterobacter hormaechei
-GCF_900076655.1	Enterobacter hormaechei
-GCF_900076665.1	Enterobacter hormaechei
-GCF_900076685.1	Enterobacter hormaechei
-GCF_900077635.1	Enterobacter hormaechei
-GCF_900077965.1	Enterobacter hormaechei
-GCF_900078125.1	Enterobacter hormaechei
-GCF_900078135.1	Enterobacter hormaechei
-GCF_000474805.1	Enterobacter hormaechei
-GCF_000492975.1	Enterobacter hormaechei
-GCF_000534475.1	Enterobacter hormaechei
-GCF_000534595.1	Enterobacter hormaechei
-GCF_000534615.1	Enterobacter hormaechei
-GCF_000534655.1	Enterobacter hormaechei
-GCF_000534715.1	Enterobacter hormaechei
-GCF_000534775.1	Enterobacter hormaechei
-GCF_000633795.1	Enterobacter hormaechei
-GCF_001037735.1	Enterobacter hormaechei
-GCF_002204935.1	Enterobacter hormaechei
-GCF_002204945.1	Enterobacter hormaechei
-GCF_002204955.1	Enterobacter hormaechei
-GCF_002204965.1	Enterobacter hormaechei
-GCF_000692315.1	Enterobacter hormaechei
-GCF_900074995.1	Enterobacter hormaechei
-GCF_900075055.1	Enterobacter hormaechei
-GCF_900075115.1	Enterobacter hormaechei
-GCF_900075155.1	Enterobacter hormaechei
-GCF_900075275.1	Enterobacter hormaechei
-GCF_900075325.1	Enterobacter hormaechei
-GCF_900075675.1	Enterobacter hormaechei
-GCF_900075835.1	Enterobacter hormaechei
-GCF_900075865.1	Enterobacter hormaechei
-GCF_900076195.1	Enterobacter hormaechei
-GCF_900076215.1	Enterobacter hormaechei
-GCF_900076315.1	Enterobacter hormaechei
-GCF_900076705.1	Enterobacter hormaechei
-GCF_900076965.1	Enterobacter hormaechei
-GCF_900077255.1	Enterobacter hormaechei
-GCF_900077415.1	Enterobacter hormaechei
-GCF_900077435.1	Enterobacter hormaechei
-GCF_900077445.1	Enterobacter hormaechei
-GCF_900077565.1	Enterobacter hormaechei
-GCF_900077595.1	Enterobacter hormaechei
-GCF_900077825.1	Enterobacter hormaechei
-GCF_900077865.1	Enterobacter hormaechei
-GCF_900077915.1	Enterobacter hormaechei
-GCF_900078035.1	Enterobacter hormaechei
-GCF_900078095.1	Enterobacter hormaechei
-GCF_000534395.1	Enterobacter hormaechei
-GCF_001037665.1	Enterobacter hormaechei
-GCF_000747015.1	Enterobacter hormaechei
-GCF_002055735.1	Enterobacter hormaechei
-GCF_002087625.1	Enterobacter hormaechei
-GCF_900075345.1	Enterobacter hormaechei
-GCF_900075355.1	Enterobacter hormaechei
-GCF_900075665.1	Enterobacter hormaechei
-GCF_900076005.1	Enterobacter hormaechei
-GCF_900076065.1	Enterobacter hormaechei
-GCF_900076225.1	Enterobacter hormaechei
-GCF_900076445.1	Enterobacter hormaechei
-GCF_900077025.1	Enterobacter hormaechei
-GCF_900077375.1	Enterobacter hormaechei
-GCF_900077455.1	Enterobacter hormaechei
-GCF_000534415.1	Enterobacter hormaechei
-GCF_001037835.1	Enterobacter hormaechei
-GCF_000534495.1	Enterobacter hormaechei
-GCF_000692235.1	Enterobacter hormaechei
-GCF_001037595.1	Enterobacter hormaechei
-GCF_001037815.1	Enterobacter hormaechei
-GCF_002152945.1	Enterobacter hormaechei
-GCF_900075015.1	Enterobacter hormaechei
-GCF_900075625.1	Enterobacter hormaechei
-GCF_900075955.1	Enterobacter hormaechei
-GCF_900075965.1	Enterobacter hormaechei
-GCF_900077475.1	Enterobacter hormaechei
-GCF_900077935.1	Enterobacter hormaechei
-GCF_900077945.1	Enterobacter hormaechei
-GCF_000534535.1	Enterobacter hormaechei
-GCF_000534555.1	Enterobacter hormaechei
-GCF_000534575.1	Enterobacter hormaechei
-GCF_000534735.1	Enterobacter hormaechei
-GCF_000949365.1	Enterobacter hormaechei
-GCF_000952195.1	Enterobacter hormaechei
-GCF_000952215.1	Enterobacter hormaechei
-GCF_000952275.1	Enterobacter hormaechei
-GCF_000952285.1	Enterobacter hormaechei
-GCF_000952355.1	Enterobacter hormaechei
-GCF_000952405.1	Enterobacter hormaechei
-GCF_000952415.1	Enterobacter hormaechei
-GCF_000952455.1	Enterobacter hormaechei
-GCF_000952475.1	Enterobacter hormaechei
-GCF_000952495.1	Enterobacter hormaechei
-GCF_000952505.1	Enterobacter hormaechei
-GCF_000952515.1	Enterobacter hormaechei
-GCF_000952555.1	Enterobacter hormaechei
-GCF_000952585.1	Enterobacter hormaechei
-GCF_000952595.1	Enterobacter hormaechei
-GCF_000952655.1	Enterobacter hormaechei
-GCF_000952665.1	Enterobacter hormaechei
-GCF_000952675.1	Enterobacter hormaechei
-GCF_000952755.1	Enterobacter hormaechei
-GCF_000958665.1	Enterobacter hormaechei
-GCF_000958695.1	Enterobacter hormaechei
-GCF_000958725.1	Enterobacter hormaechei
-GCF_000958745.1	Enterobacter hormaechei
-GCF_000958765.1	Enterobacter hormaechei
-GCF_000958815.1	Enterobacter hormaechei
-GCF_000958825.1	Enterobacter hormaechei
-GCF_000958845.1	Enterobacter hormaechei
-GCF_000958925.1	Enterobacter hormaechei
-GCF_001010875.1	Enterobacter hormaechei
-GCF_001025045.1	Enterobacter hormaechei
-GCF_001025055.1	Enterobacter hormaechei
-GCF_001922365.1	Enterobacter hormaechei
-GCF_002192395.1	Enterobacter hormaechei
-GCF_002204775.1	Enterobacter hormaechei
-GCF_900076175.1	Enterobacter hormaechei
-GCF_002161915.1	Enterobacter hormaechei
-GCF_002161935.1	Enterobacter hormaechei
-GCF_000534675.1	Enterobacter hormaechei
-GCF_000534695.1	Enterobacter hormaechei
-GCF_000534795.1	Enterobacter hormaechei
-GCF_001022015.1	Enterobacter hormaechei
-GCF_001022055.1	Enterobacter hormaechei
-GCF_001022075.1	Enterobacter hormaechei
-GCF_001022255.1	Enterobacter hormaechei
-GCF_000770745.1	Enterobacter hormaechei
-GCF_002237465.1	Enterobacter hormaechei
-GCF_000783835.2	Enterobacter hormaechei
-GCF_900077875.1	Enterobacter hormaechei
-GCF_002177145.1	Enterobacter hormaechei
-GCF_002184665.1	Enterobacter hormaechei
-GCF_002185845.1	Enterobacter hormaechei
-GCF_000938355.2	Enterobacter hormaechei
-GCF_900074975.1	Enterobacter hormaechei
-GCF_900076255.1	Enterobacter hormaechei
-GCF_900076265.1	Enterobacter hormaechei
-GCF_900077485.1	Enterobacter hormaechei
-GCF_900077495.1	Enterobacter hormaechei
-GCF_001276405.1	Enterobacter hormaechei
-GCF_001276425.1	Enterobacter hormaechei
-GCF_002151935.1	Enterobacter hormaechei
-GCF_900075985.1	Enterobacter hormaechei
-GCF_900077505.1	Enterobacter hormaechei
-GCF_900076345.1	Enterobacter hormaechei
-GCF_900076375.1	Enterobacter hormaechei
-GCF_900076395.1	Enterobacter hormaechei
-GCF_900076455.1	Enterobacter hormaechei
-GCF_900076865.1	Enterobacter hormaechei
-GCF_002264185.1	Enterobacter hormaechei
-GCF_900075685.1	Enterobacter hormaechei
-GCF_001487035.1	Enterobacter hormaechei
-GCF_002416525.1	Enterobacter hormaechei
-GCF_002416535.1	Enterobacter hormaechei
-GCF_900075105.1	Enterobacter hormaechei
-GCF_900075185.1	Enterobacter hormaechei
-GCF_900075205.1	Enterobacter hormaechei
-GCF_900075215.1	Enterobacter hormaechei
-GCF_900075255.1	Enterobacter hormaechei
-GCF_900075365.1	Enterobacter hormaechei
-GCF_900075415.1	Enterobacter hormaechei
-GCF_900075505.1	Enterobacter hormaechei
-GCF_900075535.1	Enterobacter hormaechei
-GCF_900075635.1	Enterobacter hormaechei
-GCF_900075795.1	Enterobacter hormaechei
-GCF_900076135.1	Enterobacter hormaechei
-GCF_900076155.1	Enterobacter hormaechei
-GCF_900076355.1	Enterobacter hormaechei
-GCF_900076605.1	Enterobacter hormaechei
-GCF_900076745.1	Enterobacter hormaechei
-GCF_900076845.1	Enterobacter hormaechei
-GCF_900076975.1	Enterobacter hormaechei
-GCF_900077185.1	Enterobacter hormaechei
-GCF_900077355.1	Enterobacter hormaechei
-GCF_900077515.1	Enterobacter hormaechei
-GCF_900077815.1	Enterobacter hormaechei
-GCF_900077975.1	Enterobacter hormaechei
-GCF_900078115.1	Enterobacter hormaechei
-GCF_900078145.1	Enterobacter hormaechei
-GCF_900078155.1	Enterobacter hormaechei
-GCF_002192355.1	Enterobacter hormaechei
-GCF_001037885.1	Enterobacter hormaechei
-GCF_001037645.1	Enterobacter hormaechei
-GCF_001037655.1	Enterobacter hormaechei
-GCF_001037675.1	Enterobacter hormaechei
-GCF_001037725.1	Enterobacter hormaechei
-GCF_001037745.1	Enterobacter hormaechei
-GCF_001037755.1	Enterobacter hormaechei
-GCF_001037805.1	Enterobacter hormaechei
-GCF_001037905.1	Enterobacter hormaechei
-GCF_001052225.1	Enterobacter hormaechei
-GCF_001056175.1	Enterobacter hormaechei
-GCF_001187305.1	Enterobacter hormaechei
-GCF_001270135.1	Enterobacter hormaechei
-GCF_001316615.1	Enterobacter hormaechei
-GCF_001316805.2	Enterobacter hormaechei
-GCF_001316815.2	Enterobacter hormaechei
-GCF_001375695.1	Enterobacter hormaechei
-GCF_001463465.1	Enterobacter hormaechei
-GCF_900076185.1	Enterobacter hormaechei
-GCF_900076475.1	Enterobacter hormaechei
-GCF_900077685.1	Enterobacter hormaechei
-GCF_900075025.1	Enterobacter hormaechei
-GCF_900075515.1	Enterobacter hormaechei
-GCF_002740875.1	Enterobacter hormaechei
-GCF_900075615.1	Enterobacter hormaechei
-GCF_900076235.1	Enterobacter hormaechei
-GCF_900076245.1	Enterobacter hormaechei
-GCF_900076435.1	Enterobacter hormaechei
-GCF_900076525.1	Enterobacter hormaechei
-GCF_900076555.1	Enterobacter hormaechei
-GCF_900076825.1	Enterobacter hormaechei
-GCF_900076885.1	Enterobacter hormaechei
-GCF_900077715.1	Enterobacter hormaechei
-GCF_900077985.1	Enterobacter hormaechei
-GCF_002787395.1	Enterobacter hormaechei
-GCF_002189085.1	Enterobacter hormaechei
-GCF_900076165.1	Enterobacter hormaechei
-GCF_900076625.1	Enterobacter hormaechei
-GCF_900077615.1	Enterobacter hormaechei
-GCF_001475615.1	Enterobacter hormaechei
-GCF_001475635.1	Enterobacter hormaechei
-GCF_001475645.1	Enterobacter hormaechei
-GCF_001475795.1	Enterobacter hormaechei
-GCF_001475805.1	Enterobacter hormaechei
-GCF_001475835.1	Enterobacter hormaechei
-GCF_001475855.1	Enterobacter hormaechei
-GCF_001475875.1	Enterobacter hormaechei
-GCF_001475955.1	Enterobacter hormaechei
-GCF_001476005.1	Enterobacter hormaechei
-GCF_001476035.1	Enterobacter hormaechei
-GCF_001476055.1	Enterobacter hormaechei
-GCF_001476065.1	Enterobacter hormaechei
-GCF_001476095.1	Enterobacter hormaechei
-GCF_900076935.1	Enterobacter hormaechei
-GCF_002740595.1	Enterobacter hormaechei
-GCF_002751815.1	Enterobacter hormaechei
-GCF_900075285.1	Enterobacter hormaechei
-GCF_001593645.1	Enterobacter hormaechei
-GCF_001631805.1	Enterobacter hormaechei
-GCF_001641445.1	Enterobacter hormaechei
-GCF_001641585.1	Enterobacter hormaechei
-GCF_001643165.1	Enterobacter hormaechei
-GCF_001653545.1	Enterobacter hormaechei
-GCF_001653625.1	Enterobacter hormaechei
-GCF_900076635.1	Enterobacter hormaechei
-GCF_900076765.1	Enterobacter hormaechei
-GCF_001662855.1	Enterobacter hormaechei
-GCF_001729745.1	Enterobacter hormaechei
-GCF_001729785.1	Enterobacter hormaechei
-GCF_001938425.1	Enterobacter hormaechei
-GCF_900185925.1	Enterobacter hormaechei
-GCF_001938435.1	Enterobacter hormaechei
-GCF_001984805.1	Enterobacter hormaechei
-GCF_002151825.1	Enterobacter hormaechei
-GCF_002151915.1	Enterobacter hormaechei
-GCF_002151965.1	Enterobacter hormaechei
-GCF_002154845.1	Enterobacter hormaechei
-GCF_002154865.1	Enterobacter hormaechei
-GCF_002154935.1	Enterobacter hormaechei
-GCF_002208275.1	Enterobacter hormaechei
-GCF_002264065.1	Enterobacter hormaechei
-GCF_002416545.1	Enterobacter hormaechei
-GCF_002740575.1	Enterobacter hormaechei
-GCF_002778385.1	Enterobacter hormaechei
-GCF_002785645.1	Enterobacter hormaechei
-GCF_002785655.1	Enterobacter hormaechei
-GCF_002785805.1	Enterobacter hormaechei
-GCF_900074965.1	Enterobacter hormaechei
-GCF_900075085.1	Enterobacter hormaechei
-GCF_900075245.1	Enterobacter hormaechei
-GCF_900075445.1	Enterobacter hormaechei
-GCF_900076055.1	Enterobacter hormaechei
-GCF_900076595.1	Enterobacter hormaechei
-GCF_900077285.1	Enterobacter hormaechei
-GCF_900077745.1	Enterobacter hormaechei
-GCF_900075005.1	Enterobacter hormaechei
-GCF_900075265.1	Enterobacter hormaechei
-GCF_900075605.1	Enterobacter hormaechei
-GCF_900075775.1	Enterobacter hormaechei
-GCF_900075825.1	Enterobacter hormaechei
-GCF_900076645.1	Enterobacter hormaechei
-GCF_900076805.1	Enterobacter hormaechei
-GCF_900076835.1	Enterobacter hormaechei
-GCF_900076855.1	Enterobacter hormaechei
-GCF_900076905.1	Enterobacter hormaechei
-GCF_900076985.1	Enterobacter hormaechei
-GCF_900076995.1	Enterobacter hormaechei
-GCF_900077275.1	Enterobacter hormaechei
-GCF_900077315.1	Enterobacter hormaechei
-GCF_900077665.1	Enterobacter hormaechei
-GCF_900077955.1	Enterobacter hormaechei
-GCF_900075035.1	Enterobacter hormaechei
-GCF_900077385.1	Enterobacter hormaechei
-GCF_002785845.1	Enterobacter hormaechei
-GCF_002785965.1	Enterobacter hormaechei
-GCF_002795185.1	Enterobacter hormaechei
-GCF_002797275.1	Enterobacter hormaechei
-GCF_002858545.1	Enterobacter hormaechei
-GCF_002885835.1	Enterobacter hormaechei
-GCF_002901365.1	Enterobacter hormaechei
-GCF_900074985.1	Enterobacter hormaechei
-GCF_900075065.1	Enterobacter hormaechei
-GCF_900075095.1	Enterobacter hormaechei
-GCF_900075125.1	Enterobacter hormaechei
-GCF_900075135.1	Enterobacter hormaechei
-GCF_900075175.1	Enterobacter hormaechei
-GCF_900075195.1	Enterobacter hormaechei
-GCF_900075745.1	Enterobacter hormaechei
-GCF_900075235.1	Enterobacter hormaechei
-GCF_900075405.1	Enterobacter hormaechei
-GCF_900077055.1	Enterobacter hormaechei
-GCF_900078055.1	Enterobacter hormaechei
-GCF_900075295.1	Enterobacter hormaechei
-GCF_900076695.1	Enterobacter hormaechei
-GCF_900076755.1	Enterobacter hormaechei
-GCF_900075305.1	Enterobacter hormaechei
-GCF_900075315.1	Enterobacter hormaechei
-GCF_900075455.1	Enterobacter hormaechei
-GCF_900075375.1	Enterobacter hormaechei
-GCF_900075845.1	Enterobacter hormaechei
-GCF_900075975.1	Enterobacter hormaechei
-GCF_900075385.1	Enterobacter hormaechei
-GCF_900076535.1	Enterobacter hormaechei
-GCF_900076545.1	Enterobacter hormaechei
-GCF_900077225.1	Enterobacter hormaechei
-GCF_900077235.1	Enterobacter hormaechei
-GCF_900077245.1	Enterobacter hormaechei
-GCF_900077645.1	Enterobacter hormaechei
-GCF_900075395.1	Enterobacter hormaechei
-GCF_900075465.1	Enterobacter hormaechei
-GCF_900076955.1	Enterobacter hormaechei
-GCF_900075475.1	Enterobacter hormaechei
-GCF_900075575.1	Enterobacter hormaechei
-GCF_900076775.1	Enterobacter hormaechei
-GCF_900075585.1	Enterobacter hormaechei
-GCF_900075595.1	Enterobacter hormaechei
-GCF_900075645.1	Enterobacter hormaechei
-GCF_900078015.1	Enterobacter hormaechei
-GCF_900075655.1	Enterobacter hormaechei
-GCF_900075755.1	Enterobacter hormaechei
-GCF_900077045.1	Enterobacter hormaechei
-GCF_900077065.1	Enterobacter hormaechei
-GCF_900075695.1	Enterobacter hormaechei
-GCF_900075705.1	Enterobacter hormaechei
-GCF_900075715.1	Enterobacter hormaechei
-GCF_900075735.1	Enterobacter hormaechei
-GCF_900075765.1	Enterobacter hormaechei
-GCF_900075785.1	Enterobacter hormaechei
-GCF_900075805.1	Enterobacter hormaechei
-GCF_900075875.1	Enterobacter hormaechei
-GCF_900075885.1	Enterobacter hormaechei
-GCF_900075895.1	Enterobacter hormaechei
-GCF_900075915.1	Enterobacter hormaechei
-GCF_900075945.1	Enterobacter hormaechei
-GCF_900075995.1	Enterobacter hormaechei
-GCF_900076015.1	Enterobacter hormaechei
-GCF_900076295.1	Enterobacter hormaechei
-GCF_900076335.1	Enterobacter hormaechei
-GCF_900076615.1	Enterobacter hormaechei
-GCF_900076035.1	Enterobacter hormaechei
-GCF_900076085.1	Enterobacter hormaechei
-GCF_900076105.1	Enterobacter hormaechei
-GCF_900076115.1	Enterobacter hormaechei
-GCF_900077655.1	Enterobacter hormaechei
-GCF_900076125.1	Enterobacter hormaechei
-GCF_900076145.1	Enterobacter hormaechei
-GCF_900076205.1	Enterobacter hormaechei
-GCF_900076275.1	Enterobacter hormaechei
-GCF_900076915.1	Enterobacter hormaechei
-GCF_900076305.1	Enterobacter hormaechei
-GCF_900076325.1	Enterobacter hormaechei
-GCF_900076405.1	Enterobacter hormaechei
-GCF_900076415.1	Enterobacter hormaechei
-GCF_900076465.1	Enterobacter hormaechei
-GCF_900076495.1	Enterobacter hormaechei
-GCF_900076515.1	Enterobacter hormaechei
-GCF_900076675.1	Enterobacter hormaechei
-GCF_900077265.1	Enterobacter hormaechei
-GCF_900076725.1	Enterobacter hormaechei
-GCF_900076785.1	Enterobacter hormaechei
-GCF_900076795.1	Enterobacter hormaechei
-GCF_900076815.1	Enterobacter hormaechei
-GCF_900076875.1	Enterobacter hormaechei
-GCF_900076895.1	Enterobacter hormaechei
-GCF_900076925.1	Enterobacter hormaechei
-GCF_900076945.1	Enterobacter hormaechei
-GCF_900077015.1	Enterobacter hormaechei
-GCF_900077995.1	Enterobacter hormaechei
-GCF_900077085.1	Enterobacter hormaechei
-GCF_900077095.1	Enterobacter hormaechei
-GCF_900077585.1	Enterobacter hormaechei
-GCF_900077115.1	Enterobacter hormaechei
-GCF_900077735.1	Enterobacter hormaechei
-GCF_900077895.1	Enterobacter hormaechei
-GCF_900077135.1	Enterobacter hormaechei
-GCF_900077145.1	Enterobacter hormaechei
-GCF_900077175.1	Enterobacter hormaechei
-GCF_900077525.1	Enterobacter hormaechei
-GCF_900077325.1	Enterobacter hormaechei
-GCF_900077335.1	Enterobacter hormaechei
-GCF_900077755.1	Enterobacter hormaechei
-GCF_900077765.1	Enterobacter hormaechei
-GCF_900077365.1	Enterobacter hormaechei
-GCF_900077395.1	Enterobacter hormaechei
-GCF_900077805.1	Enterobacter hormaechei
-GCF_900077405.1	Enterobacter hormaechei
-GCF_900077425.1	Enterobacter hormaechei
-GCF_900077555.1	Enterobacter hormaechei
-GCF_900077575.1	Enterobacter hormaechei
-GCF_900077625.1	Enterobacter hormaechei
-GCF_900077705.1	Enterobacter hormaechei
-GCF_900077785.1	Enterobacter hormaechei
-GCF_900077795.1	Enterobacter hormaechei
-GCF_900077835.1	Enterobacter hormaechei
-GCF_900077845.1	Enterobacter hormaechei
-GCF_900077855.1	Enterobacter hormaechei
-GCF_900077885.1	Enterobacter hormaechei
-GCF_900077905.1	Enterobacter hormaechei
-GCF_900078005.1	Enterobacter hormaechei
-GCF_900078025.1	Enterobacter hormaechei
-GCF_900078065.1	Enterobacter hormaechei
-GCF_900078075.1	Enterobacter hormaechei
-GCF_900078085.1	Enterobacter hormaechei
-GCF_900078105.1	Enterobacter hormaechei
-GCF_900102705.1	Enterobacter hormaechei
-GCF_900177445.1	Enterobacter hormaechei
-GCF_001443095.1	Enterobacter hormaechei
-GCF_900076075.1	Enterobacter hormaechei
-GCF_900076565.1	Enterobacter hormaechei
-GCF_900076735.1	Enterobacter hormaechei
-GCF_900083845.1	Enterobacter hormaechei
-GCF_000694955.1	Enterobacter hormaechei
-GCF_900075725.1	Enterobacter hormaechei
-GCF_900077195.1	Enterobacter hormaechei
-GCF_000239975.1	Enterobacter ludwigii
-GCF_000422225.1	Enterobacter ludwigii
-GCF_000512375.1	Enterobacter ludwigii
-GCF_000534355.1	Enterobacter ludwigii
-GCF_000534435.1	Enterobacter ludwigii
-GCF_000948685.1	Enterobacter ludwigii
-GCF_000948705.1	Enterobacter ludwigii
-GCF_001022445.2	Enterobacter ludwigii
-GCF_001029645.1	Enterobacter ludwigii
-GCF_002025685.1	Enterobacter ludwigii
-GCF_002148625.1	Enterobacter ludwigii
-GCF_002151875.1	Enterobacter ludwigii
-GCF_900075145.1	Enterobacter ludwigii
-GCF_900075935.1	Enterobacter ludwigii
-GCF_900077925.1	Enterobacter ludwigii
-GCF_900076575.1	Enterobacter ludwigii
-GCF_900077345.1	Enterobacter ludwigii
-GCF_900142835.1	Enterobacter ludwigii
-GCF_000492675.1	Enterobacter asburiae
-GCF_900076585.1	Enterobacter asburiae
-GCF_001059415.1	Enterobacter asburiae
-GCF_000534055.1	Enterobacter asburiae
-GCF_001463035.1	Enterobacter asburiae
-GCF_000568075.1	Enterobacter asburiae
-GCF_000762975.1	Enterobacter asburiae
-GCF_000783675.1	Enterobacter asburiae
-GCF_000801755.2	Enterobacter asburiae
-GCF_000952605.1	Enterobacter asburiae
-GCF_000952575.1	Enterobacter asburiae
-GCF_000958735.1	Enterobacter asburiae
-GCF_900075075.1	Enterobacter asburiae
-GCF_900076385.1	Enterobacter asburiae
-GCF_900077295.1	Enterobacter asburiae
-GCF_900077465.1	Enterobacter asburiae
-GCF_900077725.1	Enterobacter asburiae
-GCF_002863825.1	Enterobacter asburiae
-GCF_001057935.1	Enterobacter asburiae
-GCF_900180435.1	Enterobacter asburiae
-GCF_001719105.1	Enterobacter asburiae
-GCF_002208095.1	Enterobacter asburiae
-GCF_002264125.1	Enterobacter asburiae
-GCF_002334225.1	Enterobacter asburiae
-GCF_900075335.1	Enterobacter asburiae
-GCF_900075555.1	Enterobacter asburiae
-GCF_900075855.1	Enterobacter asburiae
-GCF_900077165.1	Enterobacter asburiae
-GCF_900077545.1	Enterobacter asburiae
-GCF_900077605.1	Enterobacter asburiae
-GCF_900077775.1	Enterobacter asburiae
-GCF_900129625.1	Enterobacter asburiae
-GCF_000493035.1	Enterobacter kobei
-GCF_000493055.1	Enterobacter kobei
-GCF_000534275.1	Enterobacter kobei
-GCF_000692355.1	Enterobacter kobei
-GCF_000692255.1	Enterobacter kobei
-GCF_000798855.1	Enterobacter kobei
-GCF_000952375.1	Enterobacter kobei
-GCF_001022495.2	Enterobacter kobei
-GCF_001055165.1	Enterobacter kobei
-GCF_001057545.1	Enterobacter kobei
-GCF_001057735.1	Enterobacter kobei
-GCF_001058415.1	Enterobacter kobei
-GCF_001058605.1	Enterobacter kobei
-GCF_001190105.1	Enterobacter kobei
-GCF_001441705.1	Enterobacter kobei
-GCF_001623605.1	Enterobacter kobei
-GCF_002018415.1	Enterobacter kobei
-GCF_002193115.1	Enterobacter kobei
-GCF_002208285.1	Enterobacter kobei
-GCF_002785705.1	Enterobacter kobei
-GCF_002785725.1	Enterobacter kobei
-GCF_002785745.1	Enterobacter kobei
-GCF_002785755.1	Enterobacter kobei
-GCF_002785905.1	Enterobacter kobei
-GCF_002785785.1	Enterobacter kobei
-GCF_002785795.1	Enterobacter kobei
-GCF_002785945.1	Enterobacter kobei
-GCF_900075495.1	Enterobacter kobei
-GCF_900075705.1	Enterobacter kobei
-GCF_900076025.1	Enterobacter kobei
-GCF_900077155.1	Enterobacter kobei
-GCF_900077535.1	Enterobacter kobei
-GCF_900077675.1	Enterobacter kobei
-GCF_000286275.1	Enterobacter kobei
-GCF_001053635.1	Enterobacter kobei
-GCF_001053725.1	Enterobacter kobei
-GCF_000492995.1	Enterobacter kobei
-GCF_000534515.1	Enterobacter kobei
-GCF_001053395.1	Enterobacter kobei
-GCF_000784865.1	Enterobacter kobei
-GCF_002206605.1	Enterobacter kobei
-GCF_002151955.1	Enterobacter kobei
-GCF_002165535.1	Enterobacter kobei
-GCF_000286655.1	Enterobacter cloacae
-GCF_000493175.1	Enterobacter cloacae
-GCF_000612205.1	Enterobacter cloacae
-GCF_000805795.1	Enterobacter cloacae
-GCF_000812425.1	Enterobacter cloacae
-GCF_001675835.1	Enterobacter cloacae
-GCF_001807145.1	Enterobacter cloacae
-GCF_002897075.1	Enterobacter cloacae
-GCF_001875645.1	Enterobacter cloacae
-GCF_000710795.1	Enterobacter cloacae
-GCF_001463365.1	Enterobacter cloacae
-GCF_001605945.1	Enterobacter cloacae
-GCF_000493015.1	Enterobacter cloacae
-GCF_000733275.2	Enterobacter cloacae
-GCF_001030225.1	Enterobacter cloacae
-GCF_002145455.1	Enterobacter cloacae
-GCF_002206155.2	Enterobacter cloacae
-GCF_000568095.1	Enterobacter cloacae
-GCF_000568155.1	Enterobacter cloacae
-GCF_000568175.1	Enterobacter cloacae
-GCF_900048055.1	Enterobacter cloacae
-GCF_900113755.1	Enterobacter cloacae
-GCF_001742765.1	Enterobacter cloacae
-GCF_900110475.1	Enterobacter cloacae
-GCF_001038925.1	Enterobacter cloacae
-GCF_001043635.1	Enterobacter cloacae
-GCF_002072125.1	Enterobacter cloacae
-GCF_000515295.1	Enterobacter bugandensis
-GCF_000534375.1	Enterobacter bugandensis
-GCF_000957065.1	Enterobacter bugandensis
-GCF_000958885.1	Enterobacter bugandensis
-GCF_001022595.1	Enterobacter bugandensis
-GCF_001023305.1	Enterobacter bugandensis
-GCF_001054435.1	Enterobacter bugandensis
-GCF_001054505.1	Enterobacter bugandensis
-GCF_001055645.1	Enterobacter bugandensis
-GCF_001055805.1	Enterobacter bugandensis
-GCF_001055835.1	Enterobacter bugandensis
-GCF_001054625.1	Enterobacter bugandensis
-GCF_001055515.1	Enterobacter bugandensis
-GCF_001057695.1	Enterobacter bugandensis
-GCF_001462935.1	Enterobacter bugandensis
-GCF_001518315.1	Enterobacter bugandensis
-GCF_001518395.1	Enterobacter bugandensis
-GCF_001631115.1	Enterobacter bugandensis
-GCF_001743375.1	Enterobacter bugandensis
-GCF_001743385.1	Enterobacter bugandensis
-GCF_002785865.1	Enterobacter bugandensis
-GCF_900075565.1	Enterobacter bugandensis
-GCF_900075815.1	Enterobacter bugandensis
-GCF_900078165.1	Enterobacter bugandensis
-GCF_002848105.1	Enterobacter bugandensis
-GCF_002860705.1	Enterobacter bugandensis
+GCF_000315775	Enterobacter hormaechei
+GCF_000492455	Enterobacter hormaechei
+GCF_001469415	Enterobacter hormaechei
+GCF_900076045	Enterobacter hormaechei
+GCF_000492495	Enterobacter hormaechei
+GCF_000492575	Enterobacter hormaechei
+GCF_000492615	Enterobacter hormaechei
+GCF_000492715	Enterobacter hormaechei
+GCF_000492855	Enterobacter hormaechei
+GCF_000534035	Enterobacter hormaechei
+GCF_000534175	Enterobacter hormaechei
+GCF_000534195	Enterobacter hormaechei
+GCF_000534215	Enterobacter hormaechei
+GCF_000534295	Enterobacter hormaechei
+GCF_000534455	Enterobacter hormaechei
+GCF_000534635	Enterobacter hormaechei
+GCF_000724505	Enterobacter hormaechei
+GCF_000750225	Enterobacter hormaechei
+GCF_000750275	Enterobacter hormaechei
+GCF_000784905	Enterobacter hormaechei
+GCF_000783855	Enterobacter hormaechei
+GCF_000952315	Enterobacter hormaechei
+GCF_000958805	Enterobacter hormaechei
+GCF_001022435	Enterobacter hormaechei
+GCF_001030145	Enterobacter hormaechei
+GCF_001030195	Enterobacter hormaechei
+GCF_001037565	Enterobacter hormaechei
+GCF_000478345	Enterobacter hormaechei
+GCF_002151865	Enterobacter hormaechei
+GCF_000534755	Enterobacter hormaechei
+GCF_000474785	Enterobacter hormaechei
+GCF_001037845	Enterobacter hormaechei
+GCF_002201815	Enterobacter hormaechei
+GCF_900075045	Enterobacter hormaechei
+GCF_900075525	Enterobacter hormaechei
+GCF_900075905	Enterobacter hormaechei
+GCF_900075925	Enterobacter hormaechei
+GCF_900076095	Enterobacter hormaechei
+GCF_900076425	Enterobacter hormaechei
+GCF_900076505	Enterobacter hormaechei
+GCF_900076655	Enterobacter hormaechei
+GCF_900076665	Enterobacter hormaechei
+GCF_900076685	Enterobacter hormaechei
+GCF_900077635	Enterobacter hormaechei
+GCF_900077965	Enterobacter hormaechei
+GCF_900078125	Enterobacter hormaechei
+GCF_900078135	Enterobacter hormaechei
+GCF_000474805	Enterobacter hormaechei
+GCF_000492975	Enterobacter hormaechei
+GCF_000534475	Enterobacter hormaechei
+GCF_000534595	Enterobacter hormaechei
+GCF_000534615	Enterobacter hormaechei
+GCF_000534655	Enterobacter hormaechei
+GCF_000534715	Enterobacter hormaechei
+GCF_000534775	Enterobacter hormaechei
+GCF_000633795	Enterobacter hormaechei
+GCF_001037735	Enterobacter hormaechei
+GCF_002204935	Enterobacter hormaechei
+GCF_002204945	Enterobacter hormaechei
+GCF_002204955	Enterobacter hormaechei
+GCF_002204965	Enterobacter hormaechei
+GCF_000692315	Enterobacter hormaechei
+GCF_900074995	Enterobacter hormaechei
+GCF_900075055	Enterobacter hormaechei
+GCF_900075115	Enterobacter hormaechei
+GCF_900075155	Enterobacter hormaechei
+GCF_900075275	Enterobacter hormaechei
+GCF_900075325	Enterobacter hormaechei
+GCF_900075675	Enterobacter hormaechei
+GCF_900075835	Enterobacter hormaechei
+GCF_900075865	Enterobacter hormaechei
+GCF_900076195	Enterobacter hormaechei
+GCF_900076215	Enterobacter hormaechei
+GCF_900076315	Enterobacter hormaechei
+GCF_900076705	Enterobacter hormaechei
+GCF_900076965	Enterobacter hormaechei
+GCF_900077255	Enterobacter hormaechei
+GCF_900077415	Enterobacter hormaechei
+GCF_900077435	Enterobacter hormaechei
+GCF_900077445	Enterobacter hormaechei
+GCF_900077565	Enterobacter hormaechei
+GCF_900077595	Enterobacter hormaechei
+GCF_900077825	Enterobacter hormaechei
+GCF_900077865	Enterobacter hormaechei
+GCF_900077915	Enterobacter hormaechei
+GCF_900078035	Enterobacter hormaechei
+GCF_900078095	Enterobacter hormaechei
+GCF_000534395	Enterobacter hormaechei
+GCF_001037665	Enterobacter hormaechei
+GCF_000747015	Enterobacter hormaechei
+GCF_002055735	Enterobacter hormaechei
+GCF_002087625	Enterobacter hormaechei
+GCF_900075345	Enterobacter hormaechei
+GCF_900075355	Enterobacter hormaechei
+GCF_900075665	Enterobacter hormaechei
+GCF_900076005	Enterobacter hormaechei
+GCF_900076065	Enterobacter hormaechei
+GCF_900076225	Enterobacter hormaechei
+GCF_900076445	Enterobacter hormaechei
+GCF_900077025	Enterobacter hormaechei
+GCF_900077375	Enterobacter hormaechei
+GCF_900077455	Enterobacter hormaechei
+GCF_000534415	Enterobacter hormaechei
+GCF_001037835	Enterobacter hormaechei
+GCF_000534495	Enterobacter hormaechei
+GCF_000692235	Enterobacter hormaechei
+GCF_001037595	Enterobacter hormaechei
+GCF_001037815	Enterobacter hormaechei
+GCF_002152945	Enterobacter hormaechei
+GCF_900075015	Enterobacter hormaechei
+GCF_900075625	Enterobacter hormaechei
+GCF_900075955	Enterobacter hormaechei
+GCF_900075965	Enterobacter hormaechei
+GCF_900077475	Enterobacter hormaechei
+GCF_900077935	Enterobacter hormaechei
+GCF_900077945	Enterobacter hormaechei
+GCF_000534535	Enterobacter hormaechei
+GCF_000534555	Enterobacter hormaechei
+GCF_000534575	Enterobacter hormaechei
+GCF_000534735	Enterobacter hormaechei
+GCF_000949365	Enterobacter hormaechei
+GCF_000952195	Enterobacter hormaechei
+GCF_000952215	Enterobacter hormaechei
+GCF_000952275	Enterobacter hormaechei
+GCF_000952285	Enterobacter hormaechei
+GCF_000952355	Enterobacter hormaechei
+GCF_000952405	Enterobacter hormaechei
+GCF_000952415	Enterobacter hormaechei
+GCF_000952455	Enterobacter hormaechei
+GCF_000952475	Enterobacter hormaechei
+GCF_000952495	Enterobacter hormaechei
+GCF_000952505	Enterobacter hormaechei
+GCF_000952515	Enterobacter hormaechei
+GCF_000952555	Enterobacter hormaechei
+GCF_000952585	Enterobacter hormaechei
+GCF_000952595	Enterobacter hormaechei
+GCF_000952655	Enterobacter hormaechei
+GCF_000952665	Enterobacter hormaechei
+GCF_000952675	Enterobacter hormaechei
+GCF_000952755	Enterobacter hormaechei
+GCF_000958665	Enterobacter hormaechei
+GCF_000958695	Enterobacter hormaechei
+GCF_000958725	Enterobacter hormaechei
+GCF_000958745	Enterobacter hormaechei
+GCF_000958765	Enterobacter hormaechei
+GCF_000958815	Enterobacter hormaechei
+GCF_000958825	Enterobacter hormaechei
+GCF_000958845	Enterobacter hormaechei
+GCF_000958925	Enterobacter hormaechei
+GCF_001010875	Enterobacter hormaechei
+GCF_001025045	Enterobacter hormaechei
+GCF_001025055	Enterobacter hormaechei
+GCF_001922365	Enterobacter hormaechei
+GCF_002192395	Enterobacter hormaechei
+GCF_002204775	Enterobacter hormaechei
+GCF_900076175	Enterobacter hormaechei
+GCF_002161915	Enterobacter hormaechei
+GCF_002161935	Enterobacter hormaechei
+GCF_000534675	Enterobacter hormaechei
+GCF_000534695	Enterobacter hormaechei
+GCF_000534795	Enterobacter hormaechei
+GCF_001022015	Enterobacter hormaechei
+GCF_001022055	Enterobacter hormaechei
+GCF_001022075	Enterobacter hormaechei
+GCF_001022255	Enterobacter hormaechei
+GCF_000770745	Enterobacter hormaechei
+GCF_002237465	Enterobacter hormaechei
+GCF_000783835	Enterobacter hormaechei
+GCF_900077875	Enterobacter hormaechei
+GCF_002177145	Enterobacter hormaechei
+GCF_002184665	Enterobacter hormaechei
+GCF_002185845	Enterobacter hormaechei
+GCF_000938355	Enterobacter hormaechei
+GCF_900074975	Enterobacter hormaechei
+GCF_900076255	Enterobacter hormaechei
+GCF_900076265	Enterobacter hormaechei
+GCF_900077485	Enterobacter hormaechei
+GCF_900077495	Enterobacter hormaechei
+GCF_001276405	Enterobacter hormaechei
+GCF_001276425	Enterobacter hormaechei
+GCF_002151935	Enterobacter hormaechei
+GCF_900075985	Enterobacter hormaechei
+GCF_900077505	Enterobacter hormaechei
+GCF_900076345	Enterobacter hormaechei
+GCF_900076375	Enterobacter hormaechei
+GCF_900076395	Enterobacter hormaechei
+GCF_900076455	Enterobacter hormaechei
+GCF_900076865	Enterobacter hormaechei
+GCF_002264185	Enterobacter hormaechei
+GCF_900075685	Enterobacter hormaechei
+GCF_001487035	Enterobacter hormaechei
+GCF_002416525	Enterobacter hormaechei
+GCF_002416535	Enterobacter hormaechei
+GCF_900075105	Enterobacter hormaechei
+GCF_900075185	Enterobacter hormaechei
+GCF_900075205	Enterobacter hormaechei
+GCF_900075215	Enterobacter hormaechei
+GCF_900075255	Enterobacter hormaechei
+GCF_900075365	Enterobacter hormaechei
+GCF_900075415	Enterobacter hormaechei
+GCF_900075505	Enterobacter hormaechei
+GCF_900075535	Enterobacter hormaechei
+GCF_900075635	Enterobacter hormaechei
+GCF_900075795	Enterobacter hormaechei
+GCF_900076135	Enterobacter hormaechei
+GCF_900076155	Enterobacter hormaechei
+GCF_900076355	Enterobacter hormaechei
+GCF_900076605	Enterobacter hormaechei
+GCF_900076745	Enterobacter hormaechei
+GCF_900076845	Enterobacter hormaechei
+GCF_900076975	Enterobacter hormaechei
+GCF_900077185	Enterobacter hormaechei
+GCF_900077355	Enterobacter hormaechei
+GCF_900077515	Enterobacter hormaechei
+GCF_900077815	Enterobacter hormaechei
+GCF_900077975	Enterobacter hormaechei
+GCF_900078115	Enterobacter hormaechei
+GCF_900078145	Enterobacter hormaechei
+GCF_900078155	Enterobacter hormaechei
+GCF_002192355	Enterobacter hormaechei
+GCF_001037885	Enterobacter hormaechei
+GCF_001037645	Enterobacter hormaechei
+GCF_001037655	Enterobacter hormaechei
+GCF_001037675	Enterobacter hormaechei
+GCF_001037725	Enterobacter hormaechei
+GCF_001037745	Enterobacter hormaechei
+GCF_001037755	Enterobacter hormaechei
+GCF_001037805	Enterobacter hormaechei
+GCF_001037905	Enterobacter hormaechei
+GCF_001052225	Enterobacter hormaechei
+GCF_001056175	Enterobacter hormaechei
+GCF_001187305	Enterobacter hormaechei
+GCF_001270135	Enterobacter hormaechei
+GCF_001316615	Enterobacter hormaechei
+GCF_001316805	Enterobacter hormaechei
+GCF_001316815	Enterobacter hormaechei
+GCF_001375695	Enterobacter hormaechei
+GCF_001463465	Enterobacter hormaechei
+GCF_900076185	Enterobacter hormaechei
+GCF_900076475	Enterobacter hormaechei
+GCF_900077685	Enterobacter hormaechei
+GCF_900075025	Enterobacter hormaechei
+GCF_900075515	Enterobacter hormaechei
+GCF_002740875	Enterobacter hormaechei
+GCF_900075615	Enterobacter hormaechei
+GCF_900076235	Enterobacter hormaechei
+GCF_900076245	Enterobacter hormaechei
+GCF_900076435	Enterobacter hormaechei
+GCF_900076525	Enterobacter hormaechei
+GCF_900076555	Enterobacter hormaechei
+GCF_900076825	Enterobacter hormaechei
+GCF_900076885	Enterobacter hormaechei
+GCF_900077715	Enterobacter hormaechei
+GCF_900077985	Enterobacter hormaechei
+GCF_002787395	Enterobacter hormaechei
+GCF_002189085	Enterobacter hormaechei
+GCF_900076165	Enterobacter hormaechei
+GCF_900076625	Enterobacter hormaechei
+GCF_900077615	Enterobacter hormaechei
+GCF_001475615	Enterobacter hormaechei
+GCF_001475635	Enterobacter hormaechei
+GCF_001475645	Enterobacter hormaechei
+GCF_001475795	Enterobacter hormaechei
+GCF_001475805	Enterobacter hormaechei
+GCF_001475835	Enterobacter hormaechei
+GCF_001475855	Enterobacter hormaechei
+GCF_001475875	Enterobacter hormaechei
+GCF_001475955	Enterobacter hormaechei
+GCF_001476005	Enterobacter hormaechei
+GCF_001476035	Enterobacter hormaechei
+GCF_001476055	Enterobacter hormaechei
+GCF_001476065	Enterobacter hormaechei
+GCF_001476095	Enterobacter hormaechei
+GCF_900076935	Enterobacter hormaechei
+GCF_002740595	Enterobacter hormaechei
+GCF_002751815	Enterobacter hormaechei
+GCF_900075285	Enterobacter hormaechei
+GCF_001593645	Enterobacter hormaechei
+GCF_001631805	Enterobacter hormaechei
+GCF_001641445	Enterobacter hormaechei
+GCF_001641585	Enterobacter hormaechei
+GCF_001643165	Enterobacter hormaechei
+GCF_001653545	Enterobacter hormaechei
+GCF_001653625	Enterobacter hormaechei
+GCF_900076635	Enterobacter hormaechei
+GCF_900076765	Enterobacter hormaechei
+GCF_001662855	Enterobacter hormaechei
+GCF_001729745	Enterobacter hormaechei
+GCF_001729785	Enterobacter hormaechei
+GCF_001938425	Enterobacter hormaechei
+GCF_900185925	Enterobacter hormaechei
+GCF_001938435	Enterobacter hormaechei
+GCF_001984805	Enterobacter hormaechei
+GCF_002151825	Enterobacter hormaechei
+GCF_002151915	Enterobacter hormaechei
+GCF_002151965	Enterobacter hormaechei
+GCF_002154845	Enterobacter hormaechei
+GCF_002154865	Enterobacter hormaechei
+GCF_002154935	Enterobacter hormaechei
+GCF_002208275	Enterobacter hormaechei
+GCF_002264065	Enterobacter hormaechei
+GCF_002416545	Enterobacter hormaechei
+GCF_002740575	Enterobacter hormaechei
+GCF_002778385	Enterobacter hormaechei
+GCF_002785645	Enterobacter hormaechei
+GCF_002785655	Enterobacter hormaechei
+GCF_002785805	Enterobacter hormaechei
+GCF_900074965	Enterobacter hormaechei
+GCF_900075085	Enterobacter hormaechei
+GCF_900075245	Enterobacter hormaechei
+GCF_900075445	Enterobacter hormaechei
+GCF_900076055	Enterobacter hormaechei
+GCF_900076595	Enterobacter hormaechei
+GCF_900077285	Enterobacter hormaechei
+GCF_900077745	Enterobacter hormaechei
+GCF_900075005	Enterobacter hormaechei
+GCF_900075265	Enterobacter hormaechei
+GCF_900075605	Enterobacter hormaechei
+GCF_900075775	Enterobacter hormaechei
+GCF_900075825	Enterobacter hormaechei
+GCF_900076645	Enterobacter hormaechei
+GCF_900076805	Enterobacter hormaechei
+GCF_900076835	Enterobacter hormaechei
+GCF_900076855	Enterobacter hormaechei
+GCF_900076905	Enterobacter hormaechei
+GCF_900076985	Enterobacter hormaechei
+GCF_900076995	Enterobacter hormaechei
+GCF_900077275	Enterobacter hormaechei
+GCF_900077315	Enterobacter hormaechei
+GCF_900077665	Enterobacter hormaechei
+GCF_900077955	Enterobacter hormaechei
+GCF_900075035	Enterobacter hormaechei
+GCF_900077385	Enterobacter hormaechei
+GCF_002785845	Enterobacter hormaechei
+GCF_002785965	Enterobacter hormaechei
+GCF_002795185	Enterobacter hormaechei
+GCF_002797275	Enterobacter hormaechei
+GCF_002858545	Enterobacter hormaechei
+GCF_002885835	Enterobacter hormaechei
+GCF_002901365	Enterobacter hormaechei
+GCF_900074985	Enterobacter hormaechei
+GCF_900075065	Enterobacter hormaechei
+GCF_900075095	Enterobacter hormaechei
+GCF_900075125	Enterobacter hormaechei
+GCF_900075135	Enterobacter hormaechei
+GCF_900075175	Enterobacter hormaechei
+GCF_900075195	Enterobacter hormaechei
+GCF_900075745	Enterobacter hormaechei
+GCF_900075235	Enterobacter hormaechei
+GCF_900075405	Enterobacter hormaechei
+GCF_900077055	Enterobacter hormaechei
+GCF_900078055	Enterobacter hormaechei
+GCF_900075295	Enterobacter hormaechei
+GCF_900076695	Enterobacter hormaechei
+GCF_900076755	Enterobacter hormaechei
+GCF_900075305	Enterobacter hormaechei
+GCF_900075315	Enterobacter hormaechei
+GCF_900075455	Enterobacter hormaechei
+GCF_900075375	Enterobacter hormaechei
+GCF_900075845	Enterobacter hormaechei
+GCF_900075975	Enterobacter hormaechei
+GCF_900075385	Enterobacter hormaechei
+GCF_900076535	Enterobacter hormaechei
+GCF_900076545	Enterobacter hormaechei
+GCF_900077225	Enterobacter hormaechei
+GCF_900077235	Enterobacter hormaechei
+GCF_900077245	Enterobacter hormaechei
+GCF_900077645	Enterobacter hormaechei
+GCF_900075395	Enterobacter hormaechei
+GCF_900075465	Enterobacter hormaechei
+GCF_900076955	Enterobacter hormaechei
+GCF_900075475	Enterobacter hormaechei
+GCF_900075575	Enterobacter hormaechei
+GCF_900076775	Enterobacter hormaechei
+GCF_900075585	Enterobacter hormaechei
+GCF_900075595	Enterobacter hormaechei
+GCF_900075645	Enterobacter hormaechei
+GCF_900078015	Enterobacter hormaechei
+GCF_900075655	Enterobacter hormaechei
+GCF_900075755	Enterobacter hormaechei
+GCF_900077045	Enterobacter hormaechei
+GCF_900077065	Enterobacter hormaechei
+GCF_900075695	Enterobacter hormaechei
+GCF_900075705	Enterobacter hormaechei
+GCF_900075715	Enterobacter hormaechei
+GCF_900075735	Enterobacter hormaechei
+GCF_900075765	Enterobacter hormaechei
+GCF_900075785	Enterobacter hormaechei
+GCF_900075805	Enterobacter hormaechei
+GCF_900075875	Enterobacter hormaechei
+GCF_900075885	Enterobacter hormaechei
+GCF_900075895	Enterobacter hormaechei
+GCF_900075915	Enterobacter hormaechei
+GCF_900075945	Enterobacter hormaechei
+GCF_900075995	Enterobacter hormaechei
+GCF_900076015	Enterobacter hormaechei
+GCF_900076295	Enterobacter hormaechei
+GCF_900076335	Enterobacter hormaechei
+GCF_900076615	Enterobacter hormaechei
+GCF_900076035	Enterobacter hormaechei
+GCF_900076085	Enterobacter hormaechei
+GCF_900076105	Enterobacter hormaechei
+GCF_900076115	Enterobacter hormaechei
+GCF_900077655	Enterobacter hormaechei
+GCF_900076125	Enterobacter hormaechei
+GCF_900076145	Enterobacter hormaechei
+GCF_900076205	Enterobacter hormaechei
+GCF_900076275	Enterobacter hormaechei
+GCF_900076915	Enterobacter hormaechei
+GCF_900076305	Enterobacter hormaechei
+GCF_900076325	Enterobacter hormaechei
+GCF_900076405	Enterobacter hormaechei
+GCF_900076415	Enterobacter hormaechei
+GCF_900076465	Enterobacter hormaechei
+GCF_900076495	Enterobacter hormaechei
+GCF_900076515	Enterobacter hormaechei
+GCF_900076675	Enterobacter hormaechei
+GCF_900077265	Enterobacter hormaechei
+GCF_900076725	Enterobacter hormaechei
+GCF_900076785	Enterobacter hormaechei
+GCF_900076795	Enterobacter hormaechei
+GCF_900076815	Enterobacter hormaechei
+GCF_900076875	Enterobacter hormaechei
+GCF_900076895	Enterobacter hormaechei
+GCF_900076925	Enterobacter hormaechei
+GCF_900076945	Enterobacter hormaechei
+GCF_900077015	Enterobacter hormaechei
+GCF_900077995	Enterobacter hormaechei
+GCF_900077085	Enterobacter hormaechei
+GCF_900077095	Enterobacter hormaechei
+GCF_900077585	Enterobacter hormaechei
+GCF_900077115	Enterobacter hormaechei
+GCF_900077735	Enterobacter hormaechei
+GCF_900077895	Enterobacter hormaechei
+GCF_900077135	Enterobacter hormaechei
+GCF_900077145	Enterobacter hormaechei
+GCF_900077175	Enterobacter hormaechei
+GCF_900077525	Enterobacter hormaechei
+GCF_900077325	Enterobacter hormaechei
+GCF_900077335	Enterobacter hormaechei
+GCF_900077755	Enterobacter hormaechei
+GCF_900077765	Enterobacter hormaechei
+GCF_900077365	Enterobacter hormaechei
+GCF_900077395	Enterobacter hormaechei
+GCF_900077805	Enterobacter hormaechei
+GCF_900077405	Enterobacter hormaechei
+GCF_900077425	Enterobacter hormaechei
+GCF_900077555	Enterobacter hormaechei
+GCF_900077575	Enterobacter hormaechei
+GCF_900077625	Enterobacter hormaechei
+GCF_900077705	Enterobacter hormaechei
+GCF_900077785	Enterobacter hormaechei
+GCF_900077795	Enterobacter hormaechei
+GCF_900077835	Enterobacter hormaechei
+GCF_900077845	Enterobacter hormaechei
+GCF_900077855	Enterobacter hormaechei
+GCF_900077885	Enterobacter hormaechei
+GCF_900077905	Enterobacter hormaechei
+GCF_900078005	Enterobacter hormaechei
+GCF_900078025	Enterobacter hormaechei
+GCF_900078065	Enterobacter hormaechei
+GCF_900078075	Enterobacter hormaechei
+GCF_900078085	Enterobacter hormaechei
+GCF_900078105	Enterobacter hormaechei
+GCF_900102705	Enterobacter hormaechei
+GCF_900177445	Enterobacter hormaechei
+GCF_001443095	Enterobacter hormaechei
+GCF_900076075	Enterobacter hormaechei
+GCF_900076565	Enterobacter hormaechei
+GCF_900076735	Enterobacter hormaechei
+GCF_900083845	Enterobacter hormaechei
+GCF_000694955	Enterobacter hormaechei
+GCF_900075725	Enterobacter hormaechei
+GCF_900077195	Enterobacter hormaechei
+GCF_000239975	Enterobacter ludwigii
+GCF_000422225	Enterobacter ludwigii
+GCF_000512375	Enterobacter ludwigii
+GCF_000534355	Enterobacter ludwigii
+GCF_000534435	Enterobacter ludwigii
+GCF_000948685	Enterobacter ludwigii
+GCF_000948705	Enterobacter ludwigii
+GCF_001022445	Enterobacter ludwigii
+GCF_001029645	Enterobacter ludwigii
+GCF_002025685	Enterobacter ludwigii
+GCF_002148625	Enterobacter ludwigii
+GCF_002151875	Enterobacter ludwigii
+GCF_900075145	Enterobacter ludwigii
+GCF_900075935	Enterobacter ludwigii
+GCF_900077925	Enterobacter ludwigii
+GCF_900076575	Enterobacter ludwigii
+GCF_900077345	Enterobacter ludwigii
+GCF_900142835	Enterobacter ludwigii
+GCF_000492675	Enterobacter asburiae
+GCF_900076585	Enterobacter asburiae
+GCF_001059415	Enterobacter asburiae
+GCF_000534055	Enterobacter asburiae
+GCF_001463035	Enterobacter asburiae
+GCF_000568075	Enterobacter asburiae
+GCF_000762975	Enterobacter asburiae
+GCF_000783675	Enterobacter asburiae
+GCF_000801755	Enterobacter asburiae
+GCF_000952605	Enterobacter asburiae
+GCF_000952575	Enterobacter asburiae
+GCF_000958735	Enterobacter asburiae
+GCF_900075075	Enterobacter asburiae
+GCF_900076385	Enterobacter asburiae
+GCF_900077295	Enterobacter asburiae
+GCF_900077465	Enterobacter asburiae
+GCF_900077725	Enterobacter asburiae
+GCF_002863825	Enterobacter asburiae
+GCF_001057935	Enterobacter asburiae
+GCF_900180435	Enterobacter asburiae
+GCF_001719105	Enterobacter asburiae
+GCF_002208095	Enterobacter asburiae
+GCF_002264125	Enterobacter asburiae
+GCF_002334225	Enterobacter asburiae
+GCF_900075335	Enterobacter asburiae
+GCF_900075555	Enterobacter asburiae
+GCF_900075855	Enterobacter asburiae
+GCF_900077165	Enterobacter asburiae
+GCF_900077545	Enterobacter asburiae
+GCF_900077605	Enterobacter asburiae
+GCF_900077775	Enterobacter asburiae
+GCF_900129625	Enterobacter asburiae
+GCF_000493035	Enterobacter kobei
+GCF_000493055	Enterobacter kobei
+GCF_000534275	Enterobacter kobei
+GCF_000692355	Enterobacter kobei
+GCF_000692255	Enterobacter kobei
+GCF_000798855	Enterobacter kobei
+GCF_000952375	Enterobacter kobei
+GCF_001022495	Enterobacter kobei
+GCF_001055165	Enterobacter kobei
+GCF_001057545	Enterobacter kobei
+GCF_001057735	Enterobacter kobei
+GCF_001058415	Enterobacter kobei
+GCF_001058605	Enterobacter kobei
+GCF_001190105	Enterobacter kobei
+GCF_001441705	Enterobacter kobei
+GCF_001623605	Enterobacter kobei
+GCF_002018415	Enterobacter kobei
+GCF_002193115	Enterobacter kobei
+GCF_002208285	Enterobacter kobei
+GCF_002785705	Enterobacter kobei
+GCF_002785725	Enterobacter kobei
+GCF_002785745	Enterobacter kobei
+GCF_002785755	Enterobacter kobei
+GCF_002785905	Enterobacter kobei
+GCF_002785785	Enterobacter kobei
+GCF_002785795	Enterobacter kobei
+GCF_002785945	Enterobacter kobei
+GCF_900075495	Enterobacter kobei
+GCF_900075705	Enterobacter kobei
+GCF_900076025	Enterobacter kobei
+GCF_900077155	Enterobacter kobei
+GCF_900077535	Enterobacter kobei
+GCF_900077675	Enterobacter kobei
+GCF_000286275	Enterobacter kobei
+GCF_001053635	Enterobacter kobei
+GCF_001053725	Enterobacter kobei
+GCF_000492995	Enterobacter kobei
+GCF_000534515	Enterobacter kobei
+GCF_001053395	Enterobacter kobei
+GCF_000784865	Enterobacter kobei
+GCF_002206605	Enterobacter kobei
+GCF_002151955	Enterobacter kobei
+GCF_002165535	Enterobacter kobei
+GCF_000286655	Enterobacter cloacae
+GCF_000493175	Enterobacter cloacae
+GCF_000612205	Enterobacter cloacae
+GCF_000805795	Enterobacter cloacae
+GCF_000812425	Enterobacter cloacae
+GCF_001675835	Enterobacter cloacae
+GCF_001807145	Enterobacter cloacae
+GCF_002897075	Enterobacter cloacae
+GCF_001875645	Enterobacter cloacae
+GCF_000710795	Enterobacter cloacae
+GCF_001463365	Enterobacter cloacae
+GCF_001605945	Enterobacter cloacae
+GCF_000493015	Enterobacter cloacae
+GCF_000733275	Enterobacter cloacae
+GCF_001030225	Enterobacter cloacae
+GCF_002145455	Enterobacter cloacae
+GCF_002206155	Enterobacter cloacae
+GCF_000568095	Enterobacter cloacae
+GCF_000568155	Enterobacter cloacae
+GCF_000568175	Enterobacter cloacae
+GCF_900048055	Enterobacter cloacae
+GCF_900113755	Enterobacter cloacae
+GCF_001742765	Enterobacter cloacae
+GCF_900110475	Enterobacter cloacae
+GCF_001038925	Enterobacter cloacae
+GCF_001043635	Enterobacter cloacae
+GCF_002072125	Enterobacter cloacae
+GCF_000515295	Enterobacter bugandensis
+GCF_000534375	Enterobacter bugandensis
+GCF_000957065	Enterobacter bugandensis
+GCF_000958885	Enterobacter bugandensis
+GCF_001022595	Enterobacter bugandensis
+GCF_001023305	Enterobacter bugandensis
+GCF_001054435	Enterobacter bugandensis
+GCF_001054505	Enterobacter bugandensis
+GCF_001055645	Enterobacter bugandensis
+GCF_001055805	Enterobacter bugandensis
+GCF_001055835	Enterobacter bugandensis
+GCF_001054625	Enterobacter bugandensis
+GCF_001055515	Enterobacter bugandensis
+GCF_001057695	Enterobacter bugandensis
+GCF_001462935	Enterobacter bugandensis
+GCF_001518315	Enterobacter bugandensis
+GCF_001518395	Enterobacter bugandensis
+GCF_001631115	Enterobacter bugandensis
+GCF_001743375	Enterobacter bugandensis
+GCF_001743385	Enterobacter bugandensis
+GCF_002785865	Enterobacter bugandensis
+GCF_900075565	Enterobacter bugandensis
+GCF_900075815	Enterobacter bugandensis
+GCF_900078165	Enterobacter bugandensis
+GCF_002848105	Enterobacter bugandensis
+GCF_002860705	Enterobacter bugandensis
 
 
 
@@ -1378,8 +1379,8 @@ GCF_002860705.1	Enterobacter bugandensis
 # Enterobacter nickellidurans in the assemblies. I also wasn't able to pin
 # down Enterobacter siamensis, as only 16S sequences were available and they
 # matched to multiple clades.
-GCF_002785605.1	Enterobacter mori
-GCF_000224675.1	Enterobacter soli
+GCF_002785605	Enterobacter mori
+GCF_000224675	Enterobacter soli
 
 
 
@@ -1387,44 +1388,44 @@ GCF_000224675.1	Enterobacter soli
 # genomes: GCF_900116015, GCF_001888805 and GCF_900185885. All were labelled
 # Enterobacter, but I think they deserve their own genus name (or maybe two
 # names, as GCF_900116015 is quite distant from the other two).
-GCF_900116015.1	Unknown unknown
-GCF_001888805.1	Unknown unknown
-GCF_900185885.1	Unknown unknown
+GCF_900116015	Unknown unknown
+GCF_001888805	Unknown unknown
+GCF_900185885	Unknown unknown
 
 
 
 # These two seem to be in the same species and are quite distant from anything
 # else. Maybe deserve their own genus?
-GCF_000755535.1	Enterobacter unknown
-GCF_001006635.1	Enterobacter unknown
+GCF_000755535	Enterobacter unknown
+GCF_001006635	Enterobacter unknown
 
 
 
 # I used Brady 2013 to sort out Lelliottia. There were only two species
 # defined, amnigena and nimipressuralis, and many unnamed branches remain.
 # This paper also helped with Serratia and Kosakonia.
-GCF_002811785.1	Lelliottia nimipressuralis
-GCF_002869975.1	Lelliottia nimipressuralis
-GCF_002870005.1	Lelliottia nimipressuralis
-GCF_002870015.1	Lelliottia nimipressuralis
-GCF_001652505.2	Lelliottia unknown
-GCF_000018085.1	Serratia quinivorans
-GCF_000347995.1	Serratia quinivorans
-GCF_002607755.1	Serratia proteamaculans
+GCF_002811785	Lelliottia nimipressuralis
+GCF_002869975	Lelliottia nimipressuralis
+GCF_002870005	Lelliottia nimipressuralis
+GCF_002870015	Lelliottia nimipressuralis
+GCF_001652505	Lelliottia unknown
+GCF_000018085	Serratia quinivorans
+GCF_000347995	Serratia quinivorans
+GCF_002607755	Serratia proteamaculans
 
 
 
 # Andrés-Barrao 2017 acknowledged that this strain is in Lelliottia (not
 # Enterobacter as it was labelled) but does not propose a new species name for
 # it.
-GCF_000016325.1	Lelliottia unknown
+GCF_000016325	Lelliottia unknown
 
 
 
 # Lelliottia sp. PFL01 was referred to as 'Lelliottia jeotgali' in this
 # BioSample: https://www.ncbi.nlm.nih.gov/biosample/?term=SAMN05891786
 # I didn't find any papers that used this name, but I've gone ahead with it.
-GCF_002271215.1	Lelliottia jeotgali
+GCF_002271215	Lelliottia jeotgali
 
 
 
@@ -1438,20 +1439,20 @@ GCF_002271215.1	Lelliottia jeotgali
 # nov. and Leclercia cibatus, sp. nov. isolated from food and environment and
 # emended description of the genus Leclercia', but I cannot find that paper,
 # despite it being from 2009.
-GCF_000813585.1	Leclercia unknown
+GCF_000813585	Leclercia unknown
 
 
 
 # Pillonetto 2018 described two species of Phytobacter, though I saw a third
 # branch as well.
-GCF_000814915.1	Phytobacter diazotrophicus
-GCF_002903045.1	Phytobacter diazotrophicus
-GCF_002903085.1	Phytobacter diazotrophicus
-GCF_900168315.1	Phytobacter diazotrophicus
-GCF_002903065.1	Phytobacter ursingii
-GCF_001022135.1	Phytobacter ursingii
-GCF_002092975.1	Phytobacter ursingii
-GCF_900112785.1	Phytobacter unknown
+GCF_000814915	Phytobacter diazotrophicus
+GCF_002903045	Phytobacter diazotrophicus
+GCF_002903085	Phytobacter diazotrophicus
+GCF_900168315	Phytobacter diazotrophicus
+GCF_002903065	Phytobacter ursingii
+GCF_001022135	Phytobacter ursingii
+GCF_002092975	Phytobacter ursingii
+GCF_900112785	Phytobacter unknown
 
 
 
@@ -1459,59 +1460,59 @@ GCF_900112785.1	Phytobacter unknown
 # (Ola 51 and KO348) do not make a clade. I went with Ola 51 as oryzae and
 # left the other clade (containing KO348) as 'unknown'. A few other unknown
 # clades remain in this genus.
-GCF_000496775.1	Kosakonia cowanii
-GCF_000333535.1	Kosakonia cowanii
-GCF_001975225.1	Kosakonia cowanii
-GCF_002250015.1	Kosakonia cowanii
-GCF_001582075.1	Kosakonia oryzendophytica
-GCF_900111655.1	Kosakonia radicincitans
-GCF_900112805.1	Kosakonia radicincitans
-GCF_900115965.1	Kosakonia radicincitans
-GCF_900116465.1	Kosakonia radicincitans
-GCF_900119515.1	Kosakonia radicincitans
-GCF_900168185.1	Kosakonia radicincitans
-GCF_000877295.1	Kosakonia oryzae
+GCF_000496775	Kosakonia cowanii
+GCF_000333535	Kosakonia cowanii
+GCF_001975225	Kosakonia cowanii
+GCF_002250015	Kosakonia cowanii
+GCF_001582075	Kosakonia oryzendophytica
+GCF_900111655	Kosakonia radicincitans
+GCF_900112805	Kosakonia radicincitans
+GCF_900115965	Kosakonia radicincitans
+GCF_900116465	Kosakonia radicincitans
+GCF_900119515	Kosakonia radicincitans
+GCF_900168185	Kosakonia radicincitans
+GCF_000877295	Kosakonia oryzae
 
 
 
 # These three assemblies form a nice, tight clade and definitely deserve a
 # species name of their own.
-GCF_000410515.1	Kosakonia unknown
-GCF_000958895.1	Kosakonia unknown
-GCF_002510275.1	Kosakonia unknown
+GCF_000410515	Kosakonia unknown
+GCF_000958895	Kosakonia unknown
+GCF_002510275	Kosakonia unknown
 
 
 
 # This assembly was odd. It's labelled 'Kosakonia sacchari strain SP1', but
 # it's quite distant from what I think is the real Kosakonia sacchari clade
 # (which also contains a strain SP1 assembly).
-GCF_900109485.1	Kosakonia unknown
+GCF_900109485	Kosakonia unknown
 
 
 
 # This assembly was labelled 'Enterobacter sp. Bisph1' but is within the
 # Kosakonia clade
-GCF_000814905.1	Kosakonia unknown
+GCF_000814905	Kosakonia unknown
 
 
 
 # Marrero 2013 and Tian 2016 helped to sort out Dickeya.
-GCF_000406085.2	Dickeya aquatica
-GCF_000406285.1	Dickeya aquatica
-GCF_000406205.1	Dickeya fangzhongdai
-GCF_000406305.1	Dickeya fangzhongdai
-GCF_001187975.1	Dickeya fangzhongdai
-GCF_000758345.1	Dickeya fangzhongdai
-GCF_000774065.1	Dickeya fangzhongdai
-GCF_000803195.1	Dickeya fangzhongdai
-GCF_001187965.1	Dickeya fangzhongdai
+GCF_000406085	Dickeya aquatica
+GCF_000406285	Dickeya aquatica
+GCF_000406205	Dickeya fangzhongdai
+GCF_000406305	Dickeya fangzhongdai
+GCF_001187975	Dickeya fangzhongdai
+GCF_000758345	Dickeya fangzhongdai
+GCF_000774065	Dickeya fangzhongdai
+GCF_000803195	Dickeya fangzhongdai
+GCF_001187965	Dickeya fangzhongdai
 
 
 
 # Rahnella was tough one. While there were a few named species (Brady 2017 was
 # helpful), only two appeared in the tree.
-GCF_001422575.1	Rahnella unknown
-GCF_000255535.1	Rahnella unknown
+GCF_001422575	Rahnella unknown
+GCF_000255535	Rahnella unknown
 
 
 
@@ -1519,26 +1520,26 @@ GCF_000255535.1	Rahnella unknown
 # if a polyphyletic mess, with many deep branches. I went with the newly
 # proposed polaris species for one branch, but others probably also deserve
 # their own species names.
-GCF_001039065.1	Pectobacterium peruviense
-GCF_000749915.1	Pectobacterium polaris
+GCF_001039065	Pectobacterium peruviense
+GCF_000749915	Pectobacterium polaris
 
 
 
 # Nabhan 2013 defines Pectobacterium aroidearum, including this assembly which
 # was previously called 'Pectobacterium carotovorum PC1'.
-GCF_000023605.1	Pectobacterium aroidearum
+GCF_000023605	Pectobacterium aroidearum
 
 
 
 # This assembly is quite distant from all other Pectobacterium. It was
 # labelled as carotovorum but clearly needs a new species name.
-GCF_000803215.1	Pectobacterium unknown
+GCF_000803215	Pectobacterium unknown
 
 
 
 # Brady 2017 also helped with Brenneria. Again, there were lots of defined
 # species, but only two were in the tree.
-GCF_000225565.1	Brenneria_nigrifluens
+GCF_000225565	Brenneria_nigrifluens
 
 
 
@@ -1546,47 +1547,47 @@ GCF_000225565.1	Brenneria_nigrifluens
 # of the two assemblies (GCF_000705335.1) isn't a great match for either. I've
 # tentatively put it in Mangrovibacter plantisponsor, but it is only about a
 # 99% identity match to references sequences for that species.
-GCF_000705335.1	Mangrovibacter plantisponsor
+GCF_000705335	Mangrovibacter plantisponsor
 
 
 
 # Zhang 2015 helped guide species boundaries in Erwinia.
-GCF_000165815.1	Erwinia pyrifoliae
-GCF_002752575.1	Erwinia aphidicola
-GCF_000745075.1	Erwinia oleae
-GCF_001422605.1	Erwinia endophytica
-GCF_002865965.1	Erwinia endophytica
+GCF_000165815	Erwinia pyrifoliae
+GCF_002752575	Erwinia aphidicola
+GCF_000745075	Erwinia oleae
+GCF_001422605	Erwinia endophytica
+GCF_002865965	Erwinia endophytica
 
 
 
 # This assembly was labelled as Pantoea, but it is sufficiently within the
 # Erwinia clade for me to rename it as such.
-GCF_000599885.1	Erwinia unknown
+GCF_000599885	Erwinia unknown
 
 
 
 # Reuter 2014 was a good guide to the Yersinia genus. Yersinia frederiksenii
 # has some very deep branches, and may deserve two species names.
-GCF_000834215.1	Yersinia kristensenii
-GCF_001116865.1	Yersinia enterocolitica
-GCF_001135485.1	Yersinia massiliensis
-GCF_001151185.1	Yersinia massiliensis
-GCF_001218185.1	Yersinia massiliensis
-GCF_001222845.1	Yersinia massiliensis
-GCF_001244565.1	Yersinia massiliensis
-GCF_001319565.1	Yersinia massiliensis
-GCF_001319985.1	Yersinia massiliensis
-GCF_002192925.1	Yersinia massiliensis
-GCF_002591095.1	Yersinia massiliensis
-GCF_001150525.1	Yersinia intermedia
-GCF_002073315.1	Yersinia intermedia
-GCF_002082245.2	Yersinia intermedia
-GCF_001115185.1	Yersinia aleksiciae
-GCF_001319955.1	Yersinia bercovieri
-GCF_001106265.1	Yersinia mollaretii
-GCF_001136465.1	Yersinia similis
-GCF_001140625.1	Yersinia similis
-GCF_001222425.1	Yersinia pseudotuberculosis
+GCF_000834215	Yersinia kristensenii
+GCF_001116865	Yersinia enterocolitica
+GCF_001135485	Yersinia massiliensis
+GCF_001151185	Yersinia massiliensis
+GCF_001218185	Yersinia massiliensis
+GCF_001222845	Yersinia massiliensis
+GCF_001244565	Yersinia massiliensis
+GCF_001319565	Yersinia massiliensis
+GCF_001319985	Yersinia massiliensis
+GCF_002192925	Yersinia massiliensis
+GCF_002591095	Yersinia massiliensis
+GCF_001150525	Yersinia intermedia
+GCF_002073315	Yersinia intermedia
+GCF_002082245	Yersinia intermedia
+GCF_001115185	Yersinia aleksiciae
+GCF_001319955	Yersinia bercovieri
+GCF_001106265	Yersinia mollaretii
+GCF_001136465	Yersinia similis
+GCF_001140625	Yersinia similis
+GCF_001222425	Yersinia pseudotuberculosis
 
 
 
@@ -1594,19 +1595,19 @@ GCF_001222425.1	Yersinia pseudotuberculosis
 # The rest of enterocolitica as kristensenii and frederiksenii, so I'm calling
 # this strain (and its close relative) 'unknown' because I think they need
 # their own species name.
-GCF_000597945.1	Yersinia unknown
-GCF_002188895.1	Yersinia unknown
+GCF_000597945	Yersinia unknown
+GCF_002188895	Yersinia unknown
 
 
 
 # I went with the newly proposed wautersii species, but it was unclear whether
 # one isolate (GCF_001244855.1) belonged in this species. Due to its odd
 # branch length, I opted to exclude it and label it 'unknown'.
-GCF_001123345.1	Yersinia wautersii
-GCF_001244855.1	Yersinia unknown
+GCF_001123345	Yersinia wautersii
+GCF_001244855	Yersinia unknown
 
 
 
 # Lenaerts 2014 descibed Rosenbergiella well. This assembly was erroneously
 # named Tatumella.
-GCF_002752555.1	Rosenbergiella epipactidis
+GCF_002752555	Rosenbergiella epipactidis

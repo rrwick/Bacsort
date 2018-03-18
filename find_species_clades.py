@@ -101,7 +101,7 @@ def load_accession_species():
         with open(data_file, 'rt') as data:
             for line in data:
                 parts = line.split('\t')
-                accession = parts[0]
+                accession = parts[0][:13]
                 if accession == 'assembly_accession':
                     continue
                 species = parts[9]
@@ -129,7 +129,7 @@ def load_accession_species():
                     continue
                 if len(parts) < 2:
                     continue
-                accession, species = parts[0], parts[1]
+                accession, species = parts[0][:13], parts[1]
                 accession_species[accession] = species
 
     # If the user-defined file doesn't exist yet, make an empty one with instructions.
@@ -138,10 +138,11 @@ def load_accession_species():
             t = '# This file is where you can define species for particular RefSeq assemblies,\n' \
                 '# overriding the RefSeq species labels. Simply add lines to this file which\n' \
                 '# have the RefSeq assembly accession (starts with GCF) followed by a tab and\n' \
-                '# then the binomial species name.\n' \
+                '# then the binomial species name. The version number (e.g. final .1) does not\n' \
+                'need to be included in the accession.\n' \
                 '\n' \
                 '# Example:\n' \
-                'GCF_000000000.1	Genus species\n'
+                'GCF_000000000	Genus species\n'
             user_species.write(t)
 
     # Shigella and E. coli are grouped together.
@@ -202,7 +203,7 @@ def load_cluster_accessions():
         for line in accessions_file:
             parts = line.split('\t')
             cluster_name = parts[0]
-            accessions = [x.split('.fna.gz')[0] for x in parts[1].split(',')]
+            accessions = [x.split('.fna.gz')[0][:13] for x in parts[1].split(',')]
             cluster_accessions[cluster_name] = accessions
     return cluster_accessions
 

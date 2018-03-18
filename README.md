@@ -93,7 +93,7 @@ Or if you have a Slurm-managed cluster, this may be the fastest approach:
 fastani_with_slurm.sh
 # Wait for Slurm jobs to finish
 cat tree/fastani_output_* > tree/fastani_output
-rm tree/fastani_output_*
+rm tree/fastani_output_* tree/fastani_stdout_*
 ```
 
 Once the distances are computed, they must be converted into a PHYLIP distance matrix, which is relatively quick and carried out using this command. We use a maximum distance of 0.2 because FastANI wasn't designed to quantify ANI less than 80%.
