@@ -38,8 +38,4 @@ for q in cluster_list_*; do
     done
 done
 
-# WAIT HERE FOR THE SLURM JOBS TO FINISH
-
 cd ..
-cat tree/fastani_output_* > tree/fastani_output
-rm tree/fastani_output_*

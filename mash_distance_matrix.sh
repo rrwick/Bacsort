@@ -20,7 +20,7 @@ threads=16
 mkdir -p tree
 
 printf "\n"
-echo "Create a distance matrix of all clusters"
+echo "Mash distance matrix of all clusters"
 echo "------------------------------------------------"
 cd clusters
 mash sketch -p $threads -o ../tree/reference -s 100000 *.fna.gz
@@ -30,6 +30,6 @@ mash dist -p $threads tree/reference.msh tree/reference.msh -t > tree/distances.
 # Convert matrix to PHYLIP format
 tail -n +2 tree/distances.tab > tree/distances.tab.temp  # remove first line
 wc -l tree/distances.tab.temp | awk '"[0-9]+ errors" {sum += $1}; END {print sum}' > tree/distances.ndist  # get number for sample/line count
-cat tree/distances.ndist tree/distances.tab.temp > tree/distances.phylip
-rm tree/distances.tab.temp
+cat tree/distances.ndist tree/distances.tab.temp > tree/mash_distances.phylip
+rm tree/distances.ndist tree/reference.msh tree/distances.tab tree/distances.tab.temp
 printf "\n"

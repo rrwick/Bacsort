@@ -78,16 +78,27 @@ Disadvantages:
 * It is slower than Mash.
 * FastANI is not intrinsically parallel, so you'll need to parallelise it one way or another to cope with large datasets.
 
-To run FastANI on your Dejumbler clusters, choose one of these scripts. You may need to modify them to suit your system (particularly the script which uses Slurm).
+To run FastANI on your Dejumbler clusters in serial (only appropriate for small datasets):
 ```
 fastani_one_thread.sh
+```
+
+Or use this script to run it in parallel:
+```
 fastani_in_parallel.sh
+```
+
+Or if you have a Slurm-managed cluster, this may be the fastest approach:
+```
 fastani_with_slurm.sh
+# Wait for Slurm jobs to finish
+cat tree/fastani_output_* > tree/fastani_output
+rm tree/fastani_output_*
 ```
 
 Once the distances are computed, they must be converted into a PHYLIP distance matrix, which is relatively quick and carried out using this command. We use a maximum distance of 0.2 because FastANI wasn't designed to quantify ANI less than 80%.
 ```
-pairwise_identities_to_distance_matrix.py --max_dist 0.2 tree/fastani_output > tree/distances.phylip
+pairwise_identities_to_distance_matrix.py --max_dist 0.2 tree/fastani_output > tree/fastani_distances.phylip
 ```
 
 #### Option 3: rMLST
