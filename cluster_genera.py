@@ -80,12 +80,11 @@ def main():
                     representative = sorted([(get_assembly_n50('assemblies/' + genus + '/' + a), a)
                                              for a in assemblies])[-1][1]
 
-                cluster_info = '\t'.join([cluster_name, ','.join(assemblies), representative])
-                cluster_accessions_file.write(cluster_info)
+                out_line = cluster_name + '\t' + \
+                    ','.join([(a + '*' if a == representative else a) for a in assemblies])
+                cluster_accessions_file.write(out_line)
                 cluster_accessions_file.write('\n')
-
-                print(cluster_name + '\t', end='')
-                print(','.join([(a + '*' if a == representative else a) for a in assemblies]))
+                print(out_line)
 
                 shutil.copyfile('assemblies/' + genus + '/' + representative,
                                 'clusters/' + cluster_name + '.fna.gz')
@@ -214,6 +213,7 @@ def load_excluded_assemblies(excluded_assemblies_filename):
                         print(accession)
     if not excluded:
         print('no exclusions found')
+    print()
     return excluded
 
 
