@@ -1,2 +1,3 @@
 GCF_002053395	This Salmonella enterica assembly has an oddly short branch length in the tree.
 GCF_002264315	This Klebsiella pneumoniae assembly seems to have a lot of E. coli sequence in it.
+GCF_001244855	This Yersinia pseudotuberculosis assembly moves around in the tree, depending on how I generate the distance matrix. Sometimes its an outgroup to the rest of pseudotuberculosis, sometimes an outgroup to wautersii. Perhaps it's a hybrid?

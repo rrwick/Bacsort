@@ -683,6 +683,7 @@ GCF_002184635	Proteus vulgaris
 GCF_001049955	Proteus penneri
 GCF_001939795	Proteus cibarius
 GCF_002749905	Proteus cibarius
+GCF_002607735	Proteus alimentorum
 GCF_001722135	Proteus unknown
 GCF_001742985	Proteus unknown
 GCF_001049975	Proteus unknown
@@ -1592,7 +1593,7 @@ GCF_001222425	Yersinia pseudotuberculosis
 
 
 # While Shi 2016 put strain LC20 in enterocolitica, I found it as distant from
-# The rest of enterocolitica as kristensenii and frederiksenii, so I'm calling
+# the rest of enterocolitica as kristensenii and frederiksenii, so I'm calling
 # this strain (and its close relative) 'unknown' because I think they need
 # their own species name.
 GCF_000597945	Yersinia unknown
