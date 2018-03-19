@@ -1612,3 +1612,16 @@ GCF_001244855	Yersinia unknown
 # Lenaerts 2014 descibed Rosenbergiella well. This assembly was erroneously
 # named Tatumella.
 GCF_002752555	Rosenbergiella epipactidis
+
+
+
+# Enterochimera is a new genus represented by only six assemblies at the
+# moment. The names are preliminary (hopefully a paper describing them is
+# forthcoming), but I've used them because there is currently nothing else to
+# call them. https://www.ncbi.nlm.nih.gov/bioproject/422155
+GCF_002858675	Enterochimera californica
+GCF_002858705	Enterochimera arupensis
+GCF_002858715	Enterochimera coloradensis
+GCF_002858785	Enterochimera arupensis
+GCF_002858805	Enterochimera arupensis
+GCF_002858825	Enterochimera arupensis
