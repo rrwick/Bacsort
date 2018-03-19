@@ -18,7 +18,7 @@ License along with Dejumbler. If not, see <http://www.gnu.org/licenses/>.
 """
 
 from Bio import Phylo
-from pathlib import Path
+import pathlib
 import collections
 import random
 
@@ -96,7 +96,7 @@ def load_accession_species():
     accession_species = {}
 
     # Load from NCBI metadata first...
-    data_files = [str(x) for x in Path.cwd().glob('assemblies/*/data.tsv')]
+    data_files = [str(x) for x in pathlib.Path.cwd().glob('assemblies/*/data.tsv')]
     for data_file in data_files:
         with open(data_file, 'rt') as data:
             for line in data:
@@ -119,7 +119,7 @@ def load_accession_species():
                 accession_species[accession] = species
 
     # ...and then load from the user-defined file, so they can overwrite NCBI species.
-    if Path('species_definitions').is_file():
+    if pathlib.Path('species_definitions').is_file():
         with open('species_definitions', 'rt') as user_species:
             for line in user_species:
                 if not line.startswith('GCF'):
@@ -183,7 +183,7 @@ def get_species_counts_from_tip_names(tip_names):
         num = int(parts[0])
         species = parts[1]
         counts[species] += num
-    return(counts)
+    return counts
 
 
 def score_clade_for_species(species, clade_species_counts, all_species_counts):
