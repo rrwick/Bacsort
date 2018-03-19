@@ -31,14 +31,21 @@ def main():
 
     for assembly_file in assembly_files:
         accession = os.path.basename(assembly_file)[:13]
+
+        # Only accessions that are in clusters will be copied. This serves to exclude assemblies
+        # which were put in the exclusion file.
         if accession not in cluster_accessions:
             print('Skipping {} (excluded from clusters)'.format(accession))
             continue
+
         species = accession_species[accession]
+
+        # For the purposes of this script and its directories, Shigella is in E. coli.
         if species == 'Escherichia coli / Shigella':
             species = 'Escherichia coli'
+
         genus, species = species.split(' ')[0:2]
-        print(accession, genus, species)
+        print('{} -> {} {}'.format(os.path.basename(assembly_file), genus, species))
 
         species_dir = 'assemblies_binned/' + genus + '/' + species
         if not pathlib.Path(species_dir).is_dir():
@@ -52,7 +59,6 @@ def load_cluster_accessions():
     with open('cluster_accessions', 'rt') as accessions_file:
         for line in accessions_file:
             parts = line.split('\t')
-            cluster_name = parts[0]
             accessions = [x.split('.fna.gz')[0][:13] for x in parts[1].split(',')]
             cluster_accessions += accessions
     return set(cluster_accessions)
