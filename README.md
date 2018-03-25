@@ -137,27 +137,45 @@ combine_distance_matrices.py fastani.phylip mash.phylip > combined.phylip
 
 ### Step 4: build tree
 
-Building the tree with [Quicktree](https://github.com/khowe/quicktree) is relatively quick and easy:
+There are many tools available for building a Newick-format tree from a PHYLIP distance matrix, and any can be used here.
+
+I prefer the [BIONJ algorithm](https://academic.oup.com/mbe/article/14/7/685/1119804) based on the recommendation of the [this paper](https://wellcomeopenresearch.org/articles/3-33). A simple script is included in this repo to build one from a PHYLIP distance matrix using R's [ape package](http://ape-package.ird.fr/):
 ```
-quicktree -in m tree/distances.phylip > tree/tree.newick
+bionj_tree.R tree/distances.phylip tree/tree.newick
 ```
 
-Alternatively, you can use [RapidNJ](http://birc.au.dk/software/rapidnj/):
-```
-rapidnj -i pd tree/distances.phylip > tree/tree.newick
-```
+Alternatively, there are plenty of other tools for building a Newick-format tree from a PHYLIP distance matrix:
+* [RapidNJ](http://birc.au.dk/software/rapidnj/) is a particularly fast tool using the neighbour-joining (NJ) algorithm.
+* [Quicktree](https://github.com/khowe/quicktree) is another NJ tool which produces similar results.
+* [BIONJ](http://www.atgc-montpellier.fr/bionj/download.php) is a commmand line tool for building BIONJ trees.
+* The [ape](http://ape-package.ird.fr/) and [phangorn](https://github.com/KlausVigo/phangorn) R packages have a number of tree-building algorithms, including UPGMA, NJ and BIONJ.
+* The [PHYLIP package](http://evolution.genetics.washington.edu/phylip.html) has a number of programs which may be relevant.
+
 
 ### Step 5: curate tree
 
+Run this command to make a tree file which contains the species labels in the node names:
 ```
 find_species_clades.py
 ```
 
+It produces the tree in two formats: newick and PhyloXML. The PhyloXML tree is suitable for viewing in [Archaeopteryx](https://sites.google.com/site/cmzmasek/home/software/archaeopteryx). Clades which perfectly define a species (i.e. all instances of that species are in a clade which contains no other species) will be coloured in the tree. You can then focus on the uncoloured parts where mislabellings may occur.
+
+As you find species label errors, add them to the `species_definitions` file in this format:
+```
+GCF_000000000	Genus species
+```
+
+You can then run `find_species_clades.py` again to generate a new tree with your updated definitions. This process can be repeated (fix labels, make tree, fix labels, make tree, etc) until you have no more changes to make.
+
+
 ### Step 6: copy assemblies to species directories
 
+When you are happy with the species labels in the tree, you can run this command to copy assemblies into species directories. It will make a directory titled `assemblies_binned` with subdirectories for each genus and then subdirectories for each species.
 ```
 copy_assemblies.py
 ```
+
 
 
 
