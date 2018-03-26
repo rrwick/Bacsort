@@ -1,3 +1,27 @@
-GCF_002053395	This Salmonella enterica assembly has an oddly short branch length in the tree.
-GCF_002264315	This Klebsiella pneumoniae assembly seems to have a lot of E. coli sequence in it.
-GCF_001244855	This Yersinia pseudotuberculosis assembly moves around in the tree, depending on how I generate the distance matrix. Sometimes its an outgroup to the rest of pseudotuberculosis, sometimes an outgroup to wautersii. Perhaps it's a hybrid?
+# This Salmonella enterica assembly has an oddly short branch length in the
+# tree.
+GCF_002053395
+
+# This Klebsiella pneumoniae assembly seems to have a lot of E. coli sequence
+# in it.
+GCF_002264315
+
+# This Yersinia pseudotuberculosis assembly moves around in the tree,
+# depending on how I generate the distance matrix. Sometimes its an outgroup
+#to the rest of pseudotuberculosis, sometimes an outgroup to wautersii.
+# Perhaps it's a hybrid?
+GCF_001244855
+
+# These two Klebsiella quasipneumoniae genomes are a hybrid between
+# K. quasipneumoniae (~70%) and K. pneumoniae (~30%).
+GCF_002288845
+GCF_002752865
+
+# These two Klebsiella pneumoniae genomes are a hybrid between K. pneumoniae
+# (~80%) and K. quasipneumoniae (~20%).
+GCF_001704235
+GCF_001874875
+
+# This Klebsiella pneumoniae genome is a hybrid between K. pneumoniae (~88%)
+# and K. quasipneumoniae (~12%).
+GCF_900172095
