@@ -398,10 +398,18 @@ GCF_002270295	Raoultella unknown
 
 
 
+# This assembly was a decent but not perfect match for the 1GB strain of
+# Raoultella electrica (Kimura 2014). Due to the assembly's lack of any close
+# neighbours in the tree, I decided it was close enough and labelled it as
+# electrica.
+GCF_002806725	Raoultella electrica
+
+
+
 # Kluyvera georgiana doesn't have many representatives, but based on the
 # phylogeny in Pavan 2005, I'm confident in renaming this one ascorbata
 # assembly as georgiana.
-GCF_001682915	Kluyvera georgiana	Pavan 2005
+GCF_001682915	Kluyvera georgiana
 
 
 
