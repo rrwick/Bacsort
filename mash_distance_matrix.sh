@@ -30,6 +30,6 @@ mash dist -p $threads tree/reference.msh tree/reference.msh -t > tree/distances.
 # Convert matrix to PHYLIP format
 tail -n +2 tree/distances.tab > tree/distances.tab.temp  # remove first line
 wc -l tree/distances.tab.temp | awk '"[0-9]+ errors" {sum += $1}; END {print sum}' > tree/distances.ndist  # get number for sample/line count
-cat tree/distances.ndist tree/distances.tab.temp > tree/mash_distances.phylip
+cat tree/distances.ndist tree/distances.tab.temp > tree/mash.phylip
 rm tree/distances.ndist tree/reference.msh tree/distances.tab tree/distances.tab.temp
 printf "\n"

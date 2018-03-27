@@ -48,7 +48,7 @@ download_genomes.sh "Citrobacter Klebsiella Salmonella Yersinia"
 ### Step 2: cluster assemblies
 
 ```
-cluster_genera.py assemblies "Citrobacter Klebsiella Salmonella Yersinia"
+cluster_genera.py assemblies
 ```
 
 ### Step 3: distance matrix
