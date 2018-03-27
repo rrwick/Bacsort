@@ -128,7 +128,8 @@ def create_graph_from_distances(distance_filename, threshold, excluded):
     assemblies = sorted(assemblies)
     assembly_count = len(assemblies)
 
-    print(' found', assembly_count, 'assemblies')
+    noun = ('assembly' if assembly_count == 1 else 'assemblies')
+    print(' found', assembly_count, noun)
 
     # Sanity check: make sure we have all the connections.
     for assembly in assemblies:
