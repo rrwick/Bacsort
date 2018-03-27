@@ -8,7 +8,7 @@ need to be included in the accession.
 GCF_000000000	Genus species
 
 
-# What follows are my species redefinitions of Enterobacteriaceae.
+# What follows are my species redefinitions of assemblies in Enterobacterales.
 
 
 # Some species assignments are clear based on the tree structure, and I was
@@ -1602,8 +1602,9 @@ GCF_002188895	Yersinia unknown
 
 
 # I went with the newly proposed wautersii species, but it was unclear whether
-# one isolate (GCF_001244855.1) belonged in this species. Due to its odd
-# branch length, I opted to exclude it and label it 'unknown'.
+# one isolate (GCF_001244855.1) belonged in this species. It moved around a
+# bit, depending on the tree-building method, so I opted to exclude it and
+# label it 'unknown'.
 GCF_001123345	Yersinia wautersii
 GCF_001244855	Yersinia unknown
 

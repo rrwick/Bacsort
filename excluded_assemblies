@@ -1,27 +1,47 @@
-# This Salmonella enterica assembly has an oddly short branch length in the
-# tree.
+# These Salmonella enterica assemblies are contaminated with many short
+# E. coli contigs.
 GCF_002053395
+GCF_002053405
 
 # This Klebsiella pneumoniae assembly seems to have a lot of E. coli sequence
-# in it.
+# in it. Interestingly, the change seems to happen within a contig, implying
+# that it might be a hybrid (instead of contamination).
 GCF_002264315
 
-# This Yersinia pseudotuberculosis assembly moves around in the tree,
-# depending on how I generate the distance matrix. Sometimes its an outgroup
-#to the rest of pseudotuberculosis, sometimes an outgroup to wautersii.
-# Perhaps it's a hybrid?
-GCF_001244855
-
-# These two Klebsiella quasipneumoniae genomes are a hybrid between
-# K. quasipneumoniae (~70%) and K. pneumoniae (~30%).
+# These Klebsiella quasipneumoniae assemblies are hybrids with K. pneumoniae.
 GCF_002288845
 GCF_002752865
+GCF_002188215
+GCF_002186485
+GCF_002186965
+GCF_002851235
+GCF_002854795
+GCF_002854775
+GCF_002854595
 
-# These two Klebsiella pneumoniae genomes are a hybrid between K. pneumoniae
-# (~80%) and K. quasipneumoniae (~20%).
+# These Klebsiella pneumoniae assemblies are hybrids with K. quasipneumoniae.
 GCF_001704235
 GCF_001874875
-
-# This Klebsiella pneumoniae genome is a hybrid between K. pneumoniae (~88%)
-# and K. quasipneumoniae (~12%).
 GCF_900172095
+GCF_001054225
+GCF_001061315
+GCF_001052475
+
+# This Klebsiella pneumoniae assembly has some K. quasipneumoniae sequence
+# which is mainly in short contigs, which makes me suspect contamination.
+GCF_001756835
+
+# This Klebsiella variicola assembly has some Klebsiella Kp5 sequence in short
+# contigs, so probably contamination.
+GCF_002810575
+
+# This Raoultella ornithinolytica assembly is a hybrid with R. planticola.
+GCF_001455225
+
+# This E. coli assembly has a couple of contig which look like they are from
+# R. planticola. Perhaps a plasmid?
+GCF_002465305
+
+# This Salmonella assembly seems to be contaminated with short contigs from
+# Cronobacter sakazakii.
+GCF_002200575
