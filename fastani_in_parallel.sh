@@ -34,7 +34,7 @@ for q in cluster_list_*; do
     q_num=$(echo $q | sed 's/cluster_list_//')
     for r in cluster_list_*; do
         r_num=$(echo $r | sed 's/cluster_list_//')
-        FastANI --rl $r --ql $q -o ../tree/fastani_output_"$q_num"_"$r_num" &> ../tree/fastani_stdout_"$q_num"_"$r_num" &
+        fastANI --rl $r --ql $q -o ../tree/fastani_output_"$q_num"_"$r_num" &> ../tree/fastani_stdout_"$q_num"_"$r_num" &
     done
     wait
 done
