@@ -1812,6 +1812,9 @@ GCF_001982645	Moraxella osloensis
 
 
 
+# Pseudomonas is a particularly complex genus, and some species are a mess.
+# The available literature (like Gomilla 2015) helped a bit, but there was
+# still a lot of ambiguity.
 GCF_000233495	Pseudomonas aeruginosa
 GCF_000632755	Pseudomonas aeruginosa
 GCF_001065055	Pseudomonas aeruginosa
@@ -1860,9 +1863,29 @@ GCF_001810205	Pseudomonas aeruginosa
 GCF_001812145	Pseudomonas aeruginosa
 GCF_001812165	Pseudomonas aeruginosa
 GCF_001813485	Pseudomonas aeruginosa
-
 GCF_001400955	Pseudomonas viridiflava
 GCF_001400635	Pseudomonas viridiflava
 GCF_001467325	Pseudomonas viridiflava
-
 GCF_001806145	Pseudomonas lundensis
+GCF_000828205	Pseudomonas balearica
+GCF_000317185	Pseudomonas citronellolis
+GCF_000725445	Pseudomonas citronellolis
+GCF_000812405	Pseudomonas citronellolis
+GCF_001465445	Pseudomonas citronellolis
+GCF_001669755	Pseudomonas citronellolis
+GCF_001748265	Pseudomonas citronellolis
+GCF_001838695	Pseudomonas citronellolis
+GCF_000949385	Pseudomonas resinovorans
+GCF_001708505	Pseudomonas resinovorans
+GCF_000647775	Pseudomonas flexibilis
+GCF_000222125	Pseudomonas segetis
+GCF_000465595	Pseudomonas simiae
+GCF_000934565	Pseudomonas simiae
+GCF_000963495	Pseudomonas simiae
+GCF_000257625	Pseudomonas simiae
+GCF_001749735	Pseudomonas marincola
+GCF_000955805	Pseudomonas nitroreducens
+GCF_001320705	Pseudomonas nitroreducens
+GCF_001672555	Pseudomonas nitroreducens
+GCF_001675465	Pseudomonas nitroreducens
+GCF_002079985	Pseudomonas nitroreducens
