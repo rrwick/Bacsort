@@ -201,7 +201,7 @@ def load_excluded_assemblies(excluded_assemblies_filename):
     print('Loading excluded assemblies')
     print('------------------------------------------------')
     if pathlib.Path(excluded_assemblies_filename).is_file():
-        p = re.compile(r'(GCF_\d{9})[^\d]')
+        p = re.compile(r'(GCF_\d{9})')
         with open(excluded_assemblies_filename, 'rt') as excluded_assemblies:
             for line in excluded_assemblies:
                 line = line.strip()
