@@ -1634,3 +1634,178 @@ GCF_002858715	Enterochimera coloradensis
 GCF_002858785	Enterochimera arupensis
 GCF_002858805	Enterochimera arupensis
 GCF_002858825	Enterochimera arupensis
+
+
+
+# Acinetobacter was largely guided by Touchon 2014 and Fitzpatrick 2015. Most
+# of the species were pretty straight-forward.
+# Nemec 2010 and Nemec 2016 were particularly helpful for giving names to some
+# less represented clades.
+GCF_001433045	Acinetobacter baumannii
+GCF_002899995	Acinetobacter baumannii
+GCF_900093475	Acinetobacter baumannii
+GCF_000162375	Acinetobacter nosocomialis
+GCF_000314595	Acinetobacter nosocomialis
+GCF_000335575	Acinetobacter nosocomialis
+GCF_000582055	Acinetobacter nosocomialis
+GCF_000580675	Acinetobacter nosocomialis
+GCF_000588255	Acinetobacter nosocomialis
+GCF_000581115	Acinetobacter nosocomialis
+GCF_000582095	Acinetobacter nosocomialis
+GCF_000582315	Acinetobacter nosocomialis
+GCF_000582255	Acinetobacter nosocomialis
+GCF_000584255	Acinetobacter nosocomialis
+GCF_000584615	Acinetobacter nosocomialis
+GCF_000584795	Acinetobacter nosocomialis
+GCF_000694975	Acinetobacter nosocomialis
+GCF_000587995	Acinetobacter nosocomialis
+GCF_000588095	Acinetobacter nosocomialis
+GCF_002144915	Acinetobacter nosocomialis
+GCF_000588335	Acinetobacter nosocomialis
+GCF_000588595	Acinetobacter nosocomialis
+GCF_000589115	Acinetobacter nosocomialis
+GCF_000589135	Acinetobacter nosocomialis
+GCF_000589155	Acinetobacter nosocomialis
+GCF_000589175	Acinetobacter nosocomialis
+GCF_000589215	Acinetobacter nosocomialis
+GCF_000589235	Acinetobacter nosocomialis
+GCF_000589255	Acinetobacter nosocomialis
+GCF_000589335	Acinetobacter nosocomialis
+GCF_000682095	Acinetobacter nosocomialis
+GCF_000682615	Acinetobacter nosocomialis
+GCF_000682335	Acinetobacter nosocomialis
+GCF_000682515	Acinetobacter nosocomialis
+GCF_001471615	Acinetobacter nosocomialis
+GCF_001414835	Acinetobacter nosocomialis
+GCF_000681535	Acinetobacter pittii
+GCF_000163635	Acinetobacter pittii
+GCF_000580955	Acinetobacter pittii
+GCF_000584215	Acinetobacter pittii
+GCF_000588415	Acinetobacter pittii
+GCF_000301635	Acinetobacter pittii
+GCF_000302395	Acinetobacter pittii
+GCF_000800865	Acinetobacter pittii
+GCF_000302435	Acinetobacter pittii
+GCF_000341835	Acinetobacter pittii
+GCF_002251565	Acinetobacter pittii
+GCF_000580855	Acinetobacter pittii
+GCF_000581095	Acinetobacter pittii
+GCF_000315155	Acinetobacter pittii
+GCF_000583395	Acinetobacter pittii
+GCF_000581275	Acinetobacter pittii
+GCF_000581835	Acinetobacter pittii
+GCF_000582075	Acinetobacter pittii
+GCF_900110525	Acinetobacter pittii
+GCF_000582195	Acinetobacter pittii
+GCF_000584015	Acinetobacter pittii
+GCF_000584575	Acinetobacter pittii
+GCF_000588015	Acinetobacter pittii
+GCF_000588395	Acinetobacter pittii
+GCF_000588515	Acinetobacter pittii
+GCF_000588535	Acinetobacter pittii
+GCF_000681815	Acinetobacter pittii
+GCF_000682355	Acinetobacter pittii
+GCF_000746375	Acinetobacter pittii
+GCF_000787015	Acinetobacter pittii
+GCF_001541635	Acinetobacter pittii
+GCF_001663695	Acinetobacter pittii
+GCF_001423205	Acinetobacter calcoaceticus
+GCF_900110445	Acinetobacter calcoaceticus
+GCF_000241225	Acinetobacter venetianus
+GCF_000475335	Acinetobacter venetianus
+GCF_001575095	Acinetobacter venetianus
+GCF_000156555	Acinetobacter haemolyticus
+GCF_000368285	Acinetobacter parvus
+GCF_000368305	Acinetobacter parvus
+GCF_000368325	Acinetobacter parvus
+GCF_000368365	Acinetobacter parvus
+GCF_000368425	Acinetobacter parvus
+GCF_000369865	Acinetobacter parvus
+GCF_000580635	Acinetobacter radioresistens
+GCF_000581035	Acinetobacter radioresistens
+GCF_000581195	Acinetobacter radioresistens
+GCF_000581215	Acinetobacter radioresistens
+GCF_000582135	Acinetobacter radioresistens
+GCF_000582235	Acinetobacter radioresistens
+GCF_000582925	Acinetobacter radioresistens
+GCF_000620525	Acinetobacter radioresistens
+GCF_000682155	Acinetobacter radioresistens
+GCF_001054715	Acinetobacter soli
+GCF_001276505	Acinetobacter soli
+GCF_002204165	Acinetobacter soli
+GCF_000046845	Acinetobacter baylyi
+GCF_000581715	Acinetobacter ursingii
+GCF_000292385	Acinetobacter seifertii
+GCF_000805365	Acinetobacter seifertii
+GCF_001990725	Acinetobacter seifertii
+GCF_001990735	Acinetobacter seifertii
+GCF_001990765	Acinetobacter seifertii
+GCF_000264725	Acinetobacter schindleri
+GCF_000369585	Acinetobacter schindleri
+GCF_001077515	Acinetobacter schindleri
+GCF_001866125	Acinetobacter schindleri
+GCF_000367965	Acinetobacter modestus
+GCF_000369425	Acinetobacter modestus
+GCF_000369565	Acinetobacter modestus
+GCF_000962795	Acinetobacter modestus
+GCF_001005525	Acinetobacter modestus
+GCF_002165255	Acinetobacter modestus
+GCF_002165335	Acinetobacter modestus
+GCF_002165385	Acinetobacter modestus
+GCF_000367945	Acinetobacter proteolyticus
+GCF_000369485	Acinetobacter dispersus
+GCF_000369545	Acinetobacter dispersus
+GCF_000368345	Acinetobacter vivianii
+GCF_000369705	Acinetobacter vivianii
+GCF_000788125	Acinetobacter vivianii
+GCF_001605865	Acinetobacter vivianii
+GCF_001729365	Acinetobacter vivianii
+GCF_000314615	Acinetobacter courvalinii
+GCF_000369605	Acinetobacter courvalinii
+GCF_000369785	Acinetobacter courvalinii
+GCF_000580655	Acinetobacter courvalinii
+GCF_000588715	Acinetobacter courvalinii
+GCF_000580915	Acinetobacter courvalinii
+GCF_000705635	Acinetobacter guillouiae
+GCF_001425285	Acinetobacter guillouiae
+GCF_000335555	Acinetobacter bereziniae
+GCF_001005515	Acinetobacter bereziniae
+GCF_000219275	Acinetobacter johnsonii
+GCF_001592855	Acinetobacter johnsonii
+GCF_002018895	Acinetobacter johnsonii
+GCF_002018925	Acinetobacter johnsonii
+GCF_000369465	Acinetobacter indicus
+GCF_000386005	Acinetobacter towneri
+GCF_002412355	Acinetobacter towneri
+
+
+
+# Acinetobacter lactucae and Acinetobacter dijkshoorniae seem to be
+# conflicting names for the same clade. I went with lactucae because it was
+# defined slightly earlier (Rooney Sep 2016, vs Cosgaya Oct 2016) and seems to
+# be more widely used.
+GCF_000399705	Acinetobacter lactucae
+GCF_000516615	Acinetobacter lactucae
+GCF_001415555	Acinetobacter lactucae
+GCF_001595745	Acinetobacter lactucae
+GCF_900080165	Acinetobacter lactucae
+
+
+
+# These genomes sit in between pittii and lactucae, so it's not clear what to
+# call them.
+GCF_000399685	Acinetobacter unknown
+GCF_000588275	Acinetobacter unknown
+GCF_001432505	Acinetobacter unknown
+GCF_002144845	Acinetobacter unknown
+
+
+
+# I deemed one assembly close enough to Acinetobacter oleivorans to be
+# included, but other nearby ones I left as or changed to unknown.
+GCF_000369825	Acinetobacter oleivorans
+GCF_000399665	Acinetobacter unknown
+
+
+
+GCF_001982645	Moraxella osloensis
