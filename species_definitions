@@ -1851,19 +1851,37 @@ GCF_002443275	Acinetobacter colistiniresistens
 GCF_000369645	Acinetobacter colistiniresistens
 GCF_001278715	Acinetobacter albensis
 GCF_002135275	Acinetobacter kyonggiensis
+GCF_000369405	Acinetobacter taxon-21
+GCF_000369805	Acinetobacter taxon-22
+GCF_000368265	Acinetobacter taxon-25
+GCF_000400715	Acinetobacter genomosp-15BJ
+GCF_000302415	Acinetobacter genomosp-16
+GCF_000369525	Acinetobacter genomosp-16
+GCF_000368445	Acinetobacter genomosp-16
+GCF_000369845	Acinetobacter genomosp-16
+GCF_000764915	Acinetobacter genomosp-16
 
 
-# These were a decent match for A. psychrotolerans 16S references. Not
-# perfect, but they had no close neighbours in the tree so I decided they were
-# close enough.
-GCF_000367985	Acinetobacter psychrotolerans
-GCF_000369505	Acinetobacter psychrotolerans
+
+# These were a mediocre match for A. psychrotolerans 16S references, but I
+# instead went with the genomospecies 6 label that Nemec used.
+GCF_000367985	Acinetobacter genomosp-6
+GCF_000369505	Acinetobacter genomosp-6
 
 
 
 # This assembly was labelled Acinetobacter junii, but it is very distant from
 # The rest of junii.
 GCF_002795165	Acinetobacter unknown
+
+
+
+# It's not clear if these assemblies belong in A. pittii. I think they are
+# what Touchon 2014 call pittii-like, but they are pretty close and have no
+# other name, so I chose to group them in with the rest of pittii.
+GCF_000588275	Acinetobacter pittii
+GCF_001432505	Acinetobacter pittii
+GCF_002144845	Acinetobacter pittii
 
 
 
