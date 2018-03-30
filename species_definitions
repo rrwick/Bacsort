@@ -1886,3 +1886,22 @@ GCF_002144845	Acinetobacter pittii
 
 
 GCF_001982645	Moraxella osloensis
+GCF_001809255	Moraxella catarrhalis
+
+
+
+# My tree had Moraxella ovis as part of the Moraxella bovoculi clade, making
+# bovoculi polyphyletic. However, Dickey 2016 had bovoculi (mostly the same
+# isolates) as a single clade, so I haven't relabelled anything.
+
+
+
+# Moraxella canis was a bit fuzzy. I moved two assemblies (GCF_001064405 and
+# GCF_001064535) into canis but put the next most distantly related ones
+# into 'unknown'.
+GCF_001064405	Moraxella canis
+GCF_001064535	Moraxella canis
+GCF_001656295	Moraxella unknown
+GCF_001656335	Moraxella unknown
+GCF_001656355	Moraxella unknown
+GCF_001656375	Moraxella unknown
