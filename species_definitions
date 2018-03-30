@@ -1887,6 +1887,7 @@ GCF_002144845	Acinetobacter pittii
 
 GCF_001982645	Moraxella osloensis
 GCF_001809255	Moraxella catarrhalis
+GCF_002894025	Moraxella porci
 
 
 
@@ -1905,3 +1906,23 @@ GCF_001656295	Moraxella unknown
 GCF_001656335	Moraxella unknown
 GCF_001656355	Moraxella unknown
 GCF_001656375	Moraxella unknown
+
+
+
+# I could identify a few unnamed Psychrobacter species using 16S sequences
+# Through NCBI taxonomy.
+GCF_001652315	Psychrobacter faecalis
+GCF_002836335	Psychrobacter faecalis
+GCF_000508345	Psychrobacter marincola
+GCF_000511655	Psychrobacter marincola
+GCF_000511045	Psychrobacter okhotskensis
+GCF_000511065	Psychrobacter okhotskensis
+GCF_000511635	Psychrobacter okhotskensis
+GCF_002836005	Psychrobacter okhotskensis
+
+
+
+# I was also willing to group a couple Psychrobacter assemblies with named
+# neighbours if they were close enough.
+GCF_002285555	Psychrobacter alimentarius
+GCF_001854065	Psychrobacter pacificensis

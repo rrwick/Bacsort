@@ -45,3 +45,7 @@ GCF_002465305
 # This Salmonella assembly seems to be contaminated with short contigs from
 # Cronobacter sakazakii.
 GCF_002200575
+
+# This assembly is grossly mislabelled as Psychrobacter immobilis, when it is
+# actually Neisseria meningitidis.
+GCF_900203135
