@@ -1746,6 +1746,8 @@ GCF_000264725	Acinetobacter schindleri
 GCF_000369585	Acinetobacter schindleri
 GCF_001077515	Acinetobacter schindleri
 GCF_001866125	Acinetobacter schindleri
+GCF_002918965	Acinetobacter schindleri
+GCF_002919885	Acinetobacter schindleri
 GCF_000367965	Acinetobacter modestus
 GCF_000369425	Acinetobacter modestus
 GCF_000369565	Acinetobacter modestus
@@ -1808,6 +1810,22 @@ GCF_002144845	Acinetobacter unknown
 # included, but other nearby ones I left as or changed to unknown.
 GCF_000369825	Acinetobacter oleivorans
 GCF_000399665	Acinetobacter unknown
+
+
+
+# While Acinetobacter idrijaensis was described in Guillen 2014, it seems to
+# be firmly in the middle of Acinetobacter lwoffii, so I've renamed it as
+# that.
+GCF_000761495	Acinetobacter lwoffii
+
+
+
+# Acinetobacter variabilis was defined by Krizova 2015.
+GCF_000368385	Acinetobacter variabilis
+GCF_000369625	Acinetobacter variabilis
+GCF_000580795	Acinetobacter variabilis
+GCF_000804305	Acinetobacter variabilis
+GCF_002934695	Acinetobacter variabilis
 
 
 
