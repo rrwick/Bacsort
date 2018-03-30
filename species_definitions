@@ -1644,6 +1644,7 @@ GCF_002858825	Enterochimera arupensis
 GCF_001433045	Acinetobacter baumannii
 GCF_002899995	Acinetobacter baumannii
 GCF_900093475	Acinetobacter baumannii
+GCF_002919905	Acinetobacter baumannii
 GCF_000162375	Acinetobacter nosocomialis
 GCF_000314595	Acinetobacter nosocomialis
 GCF_000335575	Acinetobacter nosocomialis
@@ -1658,6 +1659,7 @@ GCF_000584255	Acinetobacter nosocomialis
 GCF_000584615	Acinetobacter nosocomialis
 GCF_000584795	Acinetobacter nosocomialis
 GCF_000694975	Acinetobacter nosocomialis
+GCF_003000705	Acinetobacter nosocomialis
 GCF_000587995	Acinetobacter nosocomialis
 GCF_000588095	Acinetobacter nosocomialis
 GCF_002144915	Acinetobacter nosocomialis
@@ -1768,6 +1770,7 @@ GCF_000588715	Acinetobacter courvalinii
 GCF_000580915	Acinetobacter courvalinii
 GCF_000705635	Acinetobacter guillouiae
 GCF_001425285	Acinetobacter guillouiae
+GCF_002980175	Acinetobacter guillouiae
 GCF_000335555	Acinetobacter bereziniae
 GCF_001005515	Acinetobacter bereziniae
 GCF_000219275	Acinetobacter johnsonii
@@ -1809,83 +1812,3 @@ GCF_000399665	Acinetobacter unknown
 
 
 GCF_001982645	Moraxella osloensis
-
-
-
-# Pseudomonas is a particularly complex genus, and some species are a mess.
-# The available literature (like Gomilla 2015) helped a bit, but there was
-# still a lot of ambiguity.
-GCF_000233495	Pseudomonas aeruginosa
-GCF_000632755	Pseudomonas aeruginosa
-GCF_001065055	Pseudomonas aeruginosa
-GCF_001810465	Pseudomonas aeruginosa
-GCF_001811215	Pseudomonas aeruginosa
-GCF_001837685	Pseudomonas aeruginosa
-GCF_001811975	Pseudomonas aeruginosa
-GCF_001813025	Pseudomonas aeruginosa
-GCF_001836655	Pseudomonas aeruginosa
-GCF_001813995	Pseudomonas aeruginosa
-GCF_001837545	Pseudomonas aeruginosa
-GCF_001836415	Pseudomonas aeruginosa
-GCF_001060395	Pseudomonas aeruginosa
-GCF_001061455	Pseudomonas aeruginosa
-GCF_001810325	Pseudomonas aeruginosa
-GCF_001809935	Pseudomonas aeruginosa
-GCF_000757505	Pseudomonas aeruginosa
-GCF_001807925	Pseudomonas aeruginosa
-GCF_001836405	Pseudomonas aeruginosa
-GCF_001809805	Pseudomonas aeruginosa
-GCF_001063615	Pseudomonas aeruginosa
-GCF_001065155	Pseudomonas aeruginosa
-GCF_001062785	Pseudomonas aeruginosa
-GCF_001067805	Pseudomonas aeruginosa
-GCF_001814745	Pseudomonas aeruginosa
-GCF_001060745	Pseudomonas aeruginosa
-GCF_001813325	Pseudomonas aeruginosa
-GCF_001815235	Pseudomonas aeruginosa
-GCF_001062205	Pseudomonas aeruginosa
-GCF_001064395	Pseudomonas aeruginosa
-GCF_001813645	Pseudomonas aeruginosa
-GCF_001836645	Pseudomonas aeruginosa
-GCF_001836625	Pseudomonas aeruginosa
-GCF_001062775	Pseudomonas aeruginosa
-GCF_001808305	Pseudomonas aeruginosa
-GCF_001809775	Pseudomonas aeruginosa
-GCF_001060205	Pseudomonas aeruginosa
-GCF_001063435	Pseudomonas aeruginosa
-GCF_001066435	Pseudomonas aeruginosa
-GCF_001066465	Pseudomonas aeruginosa
-GCF_001067815	Pseudomonas aeruginosa
-GCF_000952805	Pseudomonas aeruginosa
-GCF_001836665	Pseudomonas aeruginosa
-GCF_001836505	Pseudomonas aeruginosa
-GCF_001810205	Pseudomonas aeruginosa
-GCF_001812145	Pseudomonas aeruginosa
-GCF_001812165	Pseudomonas aeruginosa
-GCF_001813485	Pseudomonas aeruginosa
-GCF_001400955	Pseudomonas viridiflava
-GCF_001400635	Pseudomonas viridiflava
-GCF_001467325	Pseudomonas viridiflava
-GCF_001806145	Pseudomonas lundensis
-GCF_000828205	Pseudomonas balearica
-GCF_000317185	Pseudomonas citronellolis
-GCF_000725445	Pseudomonas citronellolis
-GCF_000812405	Pseudomonas citronellolis
-GCF_001465445	Pseudomonas citronellolis
-GCF_001669755	Pseudomonas citronellolis
-GCF_001748265	Pseudomonas citronellolis
-GCF_001838695	Pseudomonas citronellolis
-GCF_000949385	Pseudomonas resinovorans
-GCF_001708505	Pseudomonas resinovorans
-GCF_000647775	Pseudomonas flexibilis
-GCF_000222125	Pseudomonas segetis
-GCF_000465595	Pseudomonas simiae
-GCF_000934565	Pseudomonas simiae
-GCF_000963495	Pseudomonas simiae
-GCF_000257625	Pseudomonas simiae
-GCF_001749735	Pseudomonas marincola
-GCF_000955805	Pseudomonas nitroreducens
-GCF_001320705	Pseudomonas nitroreducens
-GCF_001672555	Pseudomonas nitroreducens
-GCF_001675465	Pseudomonas nitroreducens
-GCF_002079985	Pseudomonas nitroreducens
