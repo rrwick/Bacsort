@@ -435,7 +435,7 @@ GCF_002811785	Lelliottia unknown
 
 
 # Walk 2009 and Luo 2011 described five 'crytic' lineages of E. coli, which
-# aren't part of E. coli, called clades I-V. Liu 2015 named clade V as
+# aren't part of E. coli, called clades I-V. Liu 2015 named clade-5 as
 # Escherichia marmotae, which I've gone with here.
 GCF_000190955	Escherichia clade-1
 GCF_001650555	Escherichia clade-1
@@ -1983,6 +1983,7 @@ GCF_002965705	Escherichia clade-4
 GCF_002965765	Escherichia clade-4
 GCF_002965985	Escherichia clade-4
 GCF_002965085	Escherichia marmotae
+GCF_002965105	Escherichia marmotae
 GCF_002965125	Escherichia marmotae
 GCF_002965135	Escherichia marmotae
 GCF_002965185	Escherichia marmotae
@@ -1996,9 +1997,42 @@ GCF_002965395	Escherichia marmotae
 GCF_002965465	Escherichia marmotae
 GCF_002965525	Escherichia marmotae
 GCF_002965785	Escherichia marmotae
+GCF_002965805	Escherichia marmotae
+GCF_002965825	Escherichia marmotae
 GCF_002965845	Escherichia marmotae
 GCF_002965865	Escherichia marmotae
 GCF_002965885	Escherichia marmotae
+GCF_002965905	Escherichia marmotae
 GCF_002965925	Escherichia marmotae
 GCF_002966025	Escherichia marmotae
 GCF_002966085	Escherichia marmotae
+GCF_002919795	Citrobacter braakii
+GCF_003001015	Citrobacter freundii
+GCF_002934585	Citrobacter amalonaticus
+GCF_002918535	Citrobacter unknown
+GCF_002918555	Citrobacter unknown
+GCF_002918935	Citrobacter unknown
+GCF_002919495	Citrobacter unknown
+GCF_002918735	Enterobacter hormaechei
+GCF_002918795	Enterobacter hormaechei
+GCF_002919665	Enterobacter hormaechei
+GCF_002919685	Enterobacter hormaechei
+GCF_002919765	Enterobacter hormaechei
+GCF_002925805	Enterobacter hormaechei
+GCF_002936065	Enterobacter hormaechei
+GCF_002936085	Enterobacter hormaechei
+GCF_002936125	Enterobacter hormaechei
+GCF_002936775	Enterobacter hormaechei
+GCF_002936795	Enterobacter hormaechei
+GCF_002936805	Enterobacter hormaechei
+GCF_002936855	Enterobacter hormaechei
+GCF_002947755	Enterobacter hormaechei
+GCF_002954165	Enterobacter hormaechei
+GCF_002941085	Enterobacter cloacae
+GCF_002952735	Enterobacter cloacae
+GCF_002934535	Enterobacter ludwigii
+GCF_002919745	Enterobacter kobei
+GCF_002919775	Enterobacter kobei
+GCF_002919705	Enterobacter asburiae
+GCF_002919725	Enterobacter asburiae
+GCF_002918705	Pseudescherichia unknown
