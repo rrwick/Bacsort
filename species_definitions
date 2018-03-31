@@ -1780,15 +1780,6 @@ GCF_900080165	Acinetobacter lactucae
 
 
 
-# These genomes sit in between pittii and lactucae, so it's not clear what to
-# call them.
-GCF_000399685	Acinetobacter unknown
-GCF_000588275	Acinetobacter unknown
-GCF_001432505	Acinetobacter unknown
-GCF_002144845	Acinetobacter unknown
-
-
-
 # I deemed one assembly close enough to Acinetobacter oleivorans to be
 # included, but other nearby ones I left as or changed to unknown.
 GCF_000369825	Acinetobacter oleivorans
@@ -1859,12 +1850,11 @@ GCF_002795165	Acinetobacter unknown
 
 
 
-# It's not clear if these assemblies belong in A. pittii. I think they are
-# what Touchon 2014 call pittii-like, but they are pretty close and have no
-# other name, so I chose to group them in with the rest of pittii.
+# It's not clear if this assembly (and its close neighbours) belongs in
+# A. pittii. I think they are what Touchon 2014 call pittii-like, but they are
+# pretty close and have no other name, so I chose to group them in with the
+# rest of pittii.
 GCF_000588275	Acinetobacter pittii
-GCF_001432505	Acinetobacter pittii
-GCF_002144845	Acinetobacter pittii
 
 
 
