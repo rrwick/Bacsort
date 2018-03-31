@@ -1624,19 +1624,6 @@ GCF_002752555	Rosenbergiella epipactidis
 
 
 
-# Enterochimera is a new genus represented by only six assemblies at the
-# moment. The names are preliminary (hopefully a paper describing them is
-# forthcoming), but I've used them because there is currently nothing else to
-# call them. https://www.ncbi.nlm.nih.gov/bioproject/422155
-GCF_002858675	Enterochimera californica
-GCF_002858705	Enterochimera arupensis
-GCF_002858715	Enterochimera coloradensis
-GCF_002858785	Enterochimera arupensis
-GCF_002858805	Enterochimera arupensis
-GCF_002858825	Enterochimera arupensis
-
-
-
 # Acinetobacter was largely guided by Touchon 2014 and Fitzpatrick 2015. Most
 # of the species were pretty straight-forward.
 # Nemec 2010 and Nemec 2016 were particularly helpful for giving names to some
@@ -2064,3 +2051,17 @@ GCF_002920145	Serratia marcescens
 GCF_000803315	Pectobacterium unknown
 GCF_001984525	Pectobacterium unknown
 GCF_001984535	Pectobacterium unknown
+
+
+
+# This BioProject introduces some assemblies from a proposed new genus,
+# Enterochimera. However, some of these seem to be the same as Nissabacter
+# archeti, so I'm not sure if the new genus is valid. I've called the close
+# ones Nissabacter archeti and the more distant ones Nissabacter unknown, but
+# perhaps this will change if the new name Enterochimera catches on.
+GCF_002858705	Nissabacter archeti
+GCF_002858785	Nissabacter archeti
+GCF_002858805	Nissabacter archeti
+GCF_002858825	Nissabacter archeti
+GCF_002858675	Nissabacter unknown
+GCF_002858715	Nissabacter unknown
