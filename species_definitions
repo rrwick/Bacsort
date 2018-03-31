@@ -2009,6 +2009,7 @@ GCF_002966085	Escherichia marmotae
 GCF_002919795	Citrobacter braakii
 GCF_003001015	Citrobacter freundii
 GCF_002934585	Citrobacter amalonaticus
+GCF_002918505	Citrobacter unknown
 GCF_002918535	Citrobacter unknown
 GCF_002918555	Citrobacter unknown
 GCF_002918935	Citrobacter unknown
@@ -2025,6 +2026,7 @@ GCF_002936125	Enterobacter hormaechei
 GCF_002936775	Enterobacter hormaechei
 GCF_002936795	Enterobacter hormaechei
 GCF_002936805	Enterobacter hormaechei
+GCF_002936835	Enterobacter hormaechei
 GCF_002936855	Enterobacter hormaechei
 GCF_002947755	Enterobacter hormaechei
 GCF_002954165	Enterobacter hormaechei
@@ -2036,3 +2038,29 @@ GCF_002919775	Enterobacter kobei
 GCF_002919705	Enterobacter asburiae
 GCF_002919725	Enterobacter asburiae
 GCF_002918705	Pseudescherichia unknown
+GCF_002915515	Unknown unknown
+GCF_002915575	Unknown unknown
+GCF_002922915	Lelliottia jeotgali
+GCF_002923025	Lelliottia jeotgali
+GCF_002923085	Lelliottia jeotgali
+GCF_002923065	Lelliottia jeotgali
+GCF_002923125	Lelliottia jeotgali
+GCF_002922995	Lelliottia jeotgali
+GCF_002959725	Pantoea eucalypti
+GCF_002928325	Pantoea eucrina
+GCF_002928355	Pantoea dispersa
+GCF_002928365	Pantoea dispersa
+GCF_002935055	Serratia marcescens
+GCF_002920115	Serratia marcescens
+GCF_002918955	Serratia marcescens
+GCF_002920095	Serratia marcescens
+GCF_002920145	Serratia marcescens
+
+
+
+# These three assemblies were labelled Pectobacterium carotovorum, but they
+# are different enough from the rest of carotovorum that I think they belong
+# in their own species.
+GCF_000803315	Pectobacterium unknown
+GCF_001984525	Pectobacterium unknown
+GCF_001984535	Pectobacterium unknown
