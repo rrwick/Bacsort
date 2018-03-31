@@ -21,6 +21,7 @@ from Bio import Phylo
 import pathlib
 import collections
 import random
+import sys
 
 
 def main():
@@ -121,6 +122,7 @@ def load_accession_species():
     # ...and then load from the user-defined file, so they can overwrite NCBI species.
     if pathlib.Path('species_definitions').is_file():
         with open('species_definitions', 'rt') as user_species:
+            user_defined_accessions = set()
             for line in user_species:
                 if not line.startswith('GCF'):
                     continue
@@ -130,7 +132,19 @@ def load_accession_species():
                 if len(parts) < 2:
                     continue
                 accession, species = parts[0][:13], parts[1]
+
+                # Don't allow the same accession to be defined twice in the file.
+                if accession in user_defined_accessions:
+                    sys.exit('Error: {} is defined twice'.format(accession))
+
+                if accession in accession_species:
+                    ncbi_species = accession_species
+                    if species == ncbi_species:
+                        print('WARNING: {} has a user-defined species that is the same as the '
+                              'NCBI-defined species'.format(accession))
+
                 accession_species[accession] = species
+                user_defined_accessions.add(accession)
 
     # If the user-defined file doesn't exist yet, make an empty one with instructions.
     else:
@@ -165,7 +179,8 @@ def get_tip_names(clade):
 def colour_clade_recursively(clade, colour):
     clade.color = colour
     if len(clade) == 0:  # is a tip
-        clade.properties = [Phylo.PhyloXML.Property(colour.to_hex(), 'style:font_color', 'node', 'xsd:token')]
+        clade.properties = [Phylo.PhyloXML.Property(colour.to_hex(), 'style:font_color', 'node',
+                                                    'xsd:token')]
     for child in clade:
         colour_clade_recursively(child, colour)
 
