@@ -1933,3 +1933,16 @@ GCF_002863645	Psychrobacter nivimaris
 # neighbours if they were close enough.
 GCF_002285555	Psychrobacter alimentarius
 GCF_001854065	Psychrobacter pacificensis
+
+
+
+# In late March 2018, I downloaded Enterobacterales again to get the newest
+# assemblies, some of which needed to be renamed.
+GCF_900108195	Klebsiella quasipneumoniae
+GCF_002918655	Klebsiella michiganensis
+GCF_002918695	Klebsiella michiganensis
+GCF_002919625	Klebsiella michiganensis
+GCF_002918635	Klebsiella michiganensis
+GCF_002919605	Klebsiella michiganensis
+GCF_002947505	Klebsiella michiganensis
+GCF_002918665	Klebsiella michiganensis
