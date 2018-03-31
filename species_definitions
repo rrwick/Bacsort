@@ -1969,6 +1969,7 @@ GCF_002965295	Escherichia marmotae
 GCF_002965345	Escherichia marmotae
 GCF_002965365	Escherichia marmotae
 GCF_002965395	Escherichia marmotae
+GCF_002965425	Escherichia marmotae
 GCF_002965465	Escherichia marmotae
 GCF_002965525	Escherichia marmotae
 GCF_002965785	Escherichia marmotae
@@ -2005,6 +2006,7 @@ GCF_002936835	Enterobacter hormaechei
 GCF_002936855	Enterobacter hormaechei
 GCF_002947755	Enterobacter hormaechei
 GCF_002954165	Enterobacter hormaechei
+GCF_002968455	Enterobacter hormaechei
 GCF_002941085	Enterobacter cloacae
 GCF_002952735	Enterobacter cloacae
 GCF_002934535	Enterobacter ludwigii
@@ -2025,6 +2027,9 @@ GCF_002959725	Pantoea eucalypti
 GCF_002928325	Pantoea eucrina
 GCF_002928355	Pantoea dispersa
 GCF_002928365	Pantoea dispersa
+GCF_002918995	Pantoea calida
+GCF_002919015	Pantoea calida
+GCF_002922505	Pantoea calida
 GCF_002935055	Serratia marcescens
 GCF_002920115	Serratia marcescens
 GCF_002918955	Serratia marcescens
