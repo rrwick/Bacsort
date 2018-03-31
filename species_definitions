@@ -421,16 +421,13 @@ GCF_000878365	Atlantibacter hermannii
 
 
 
-# Cedecea is an odd genus. The species davisae and neteri form a clade, but
-# the third species (lapagei) was only represented by one species very distant
-# in the tree. It is in a clade of mostly Lelliottia, which makes me think it
-# is mislabelled, so I've changed that one to 'Lelliottia unknown'. What I've
+# Cedecea davisae and Cedeceaneteri form a clade, but the third species
+# (lapagei) was only only applied to a mislabelled Lelliottia, What I've
 # currently defined as neteri has some very deep branches, so I wonder if the
 # real lapagei is in there.
 GCF_900177785	Cedecea neteri
 GCF_000277545	Cedecea neteri
 GCF_000963575	Cedecea neteri
-GCF_002811785	Lelliottia unknown
 
 
 
