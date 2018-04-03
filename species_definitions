@@ -2191,9 +2191,10 @@ GCF_002858715	Nissabacter unknown
 
 
 
-# Pseudomonas is a particularly tricky genus, as it has a lot of species and a
-# lot of inconsistent names. I mainly used Gomila 2015 and Garrido-Sanz 2016
-# for reference.
+# Pseudomonas is a particularly tricky genus, with lots of named species, lots
+# of unnamed species and lots of inconsistent naming. I gave up on tackling
+# whole genus and instead just limited myself to fixing up P. aeruginosa,
+# where a handful of assemblies in the species were not labelled as such.
 GCF_000478485	Pseudomonas aeruginosa
 GCF_000757505	Pseudomonas aeruginosa
 GCF_000952805	Pseudomonas aeruginosa
@@ -2240,132 +2241,3 @@ GCF_001836655	Pseudomonas aeruginosa
 GCF_001836665	Pseudomonas aeruginosa
 GCF_001837545	Pseudomonas aeruginosa
 GCF_001837685	Pseudomonas aeruginosa
-GCF_000955805	Pseudomonas nitroreducens
-GCF_001320705	Pseudomonas nitroreducens
-GCF_001675465	Pseudomonas nitroreducens
-GCF_002079985	Pseudomonas nitroreducens
-GCF_000317185	Pseudomonas citronellolis
-GCF_000725445	Pseudomonas citronellolis
-GCF_000812405	Pseudomonas citronellolis
-GCF_001465445	Pseudomonas citronellolis
-GCF_001669755	Pseudomonas citronellolis
-GCF_001748265	Pseudomonas citronellolis
-GCF_001838695	Pseudomonas citronellolis
-GCF_000949385	Pseudomonas resinovorans
-GCF_001708505	Pseudomonas resinovorans
-GCF_000647775	Pseudomonas flexibilis
-GCF_000828205	Pseudomonas balearica
-GCF_000334015	Pseudomonas poae
-GCF_900004645	Pseudomonas poae
-GCF_000263675	Pseudomonas lactis
-GCF_000803005	Pseudomonas lactis
-GCF_002238255	Pseudomonas lactis
-GCF_900104875	Pseudomonas veronii
-GCF_002881895	Pseudomonas veronii
-GCF_002882855	Pseudomonas veronii
-GCF_002882875	Pseudomonas veronii
-GCF_002882895	Pseudomonas veronii
-GCF_000510915	Pseudomonas brenneri
-GCF_900004755	Pseudomonas brenneri
-GCF_000177515	Pseudomonas congelans
-GCF_000737225	Pseudomonas congelans
-GCF_002881915	Pseudomonas extremorientalis
-GCF_002881955	Pseudomonas extremorientalis
-GCF_002881975	Pseudomonas extremorientalis
-GCF_002881995	Pseudomonas extremorientalis
-GCF_002882015	Pseudomonas extremorientalis
-GCF_002882055	Pseudomonas extremorientalis
-GCF_002882915	Pseudomonas extremorientalis
-GCF_002882925	Pseudomonas extremorientalis
-GCF_002882955	Pseudomonas extremorientalis
-GCF_002882975	Pseudomonas extremorientalis
-GCF_900111535	Pseudomonas extremorientalis
-GCF_900112095	Pseudomonas extremorientalis
-GCF_900113815	Pseudomonas extremorientalis
-GCF_900113895	Pseudomonas extremorientalis
-GCF_900115535	Pseudomonas extremorientalis
-GCF_002699915	Pseudomonas gessardii
-GCF_002005125	Pseudomonas mandelii
-GCF_002882075	Pseudomonas mandelii
-GCF_002882095	Pseudomonas mandelii
-GCF_002882115	Pseudomonas mandelii
-GCF_002882155	Pseudomonas mandelii
-GCF_002882175	Pseudomonas mandelii
-GCF_002882195	Pseudomonas mandelii
-GCF_002882235	Pseudomonas mandelii
-GCF_002882255	Pseudomonas mandelii
-GCF_002882295	Pseudomonas mandelii
-GCF_002882315	Pseudomonas mandelii
-GCF_002882335	Pseudomonas mandelii
-GCF_002882345	Pseudomonas mandelii
-GCF_002882395	Pseudomonas mandelii
-GCF_002882415	Pseudomonas mandelii
-GCF_002882985	Pseudomonas mandelii
-GCF_002883015	Pseudomonas mandelii
-GCF_002883035	Pseudomonas mandelii
-GCF_002883055	Pseudomonas mandelii
-GCF_002883065	Pseudomonas mandelii
-GCF_002883095	Pseudomonas mandelii
-GCF_002883155	Pseudomonas mandelii
-GCF_002883175	Pseudomonas mandelii
-GCF_002883195	Pseudomonas mandelii
-GCF_002883215	Pseudomonas mandelii
-GCF_002883235	Pseudomonas mandelii
-GCF_002883245	Pseudomonas mandelii
-GCF_000708695	Pseudomonas proteolytica
-GCF_001855215	Pseudomonas proteolytica
-GCF_000801775	Pseudomonas rhodesiae
-GCF_000801855	Pseudomonas rhodesiae
-GCF_000801915	Pseudomonas rhodesiae
-GCF_001029595	Pseudomonas rhodesiae
-GCF_002237665	Pseudomonas rhodesiae
-GCF_002263675	Pseudomonas rhodesiae
-GCF_002699785	Pseudomonas rhodesiae
-GCF_002901675	Pseudomonas rhodesiae
-GCF_002251635	Pseudomonas unknown
-
-
-
-# Tran 2017 dealt with psychrotolerans and oryzihabitans. I decided to keep
-# both names, leaving some difficult-to-place assemblies as unknown.
-GCF_000236825	Pseudomonas oryzihabitans
-GCF_000510705	Pseudomonas oryzihabitans
-GCF_000510745	Pseudomonas oryzihabitans
-GCF_000510765	Pseudomonas oryzihabitans
-GCF_001477475	Pseudomonas oryzihabitans
-GCF_001991015	Pseudomonas oryzihabitans
-GCF_900102665	Pseudomonas oryzihabitans
-GCF_001518815	Pseudomonas unknown
-GCF_001650425	Pseudomonas unknown
-
-
-
-# The same situation with brassicacearum and kilonensis: Tran 2017 suggested
-# they are one species, but I've decided to keep both names for different
-# clades.
-GCF_000263695	Pseudomonas brassicacearum
-GCF_000285615	Pseudomonas brassicacearum
-GCF_000514275	Pseudomonas brassicacearum
-GCF_000876175	Pseudomonas brassicacearum
-GCF_002796855	Pseudomonas brassicacearum
-GCF_000237065	Pseudomonas kilonensis
-GCF_000416195	Pseudomonas kilonensis
-GCF_000498415	Pseudomonas kilonensis
-GCF_002001065	Pseudomonas kilonensis
-GCF_002027095	Pseudomonas kilonensis
-GCF_002879715	Pseudomonas kilonensis
-GCF_001017815	Pseudomonas unknown
-GCF_001307275	Pseudomonas unknown
-GCF_001623525	Pseudomonas unknown
-
-
-
-# P. libanensis and synxantha were difficult. I chose to keep both type
-# strains, but change other assemblies with those names (in inconsistent
-# places) to 'unknown'.
-GCF_000263715	Pseudomonas unknown
-GCF_000801895	Pseudomonas unknown
-GCF_000968415	Pseudomonas unknown
-GCF_001297075	Pseudomonas unknown
-GCF_001602175	Pseudomonas unknown
-GCF_002022245	Pseudomonas unknown
