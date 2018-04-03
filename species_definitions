@@ -744,7 +744,30 @@ GCF_001188495	Trabulsiella unknown
 
 
 # Enterobacter is a particularly messy genus. I used Paauw 2008 to guide my
-# species assignments for the Enterobacter cloacae complex:
+# species assignments for the Enterobacter cloacae complex
+#
+#   Paauw       Hoffmann
+#   cluster     clusters     species
+#   -----------------------------------
+#   1           3            E. hormaechei
+#   2           6, 8         E. hormaechei
+#   3           11, 12       E. cloacae
+#   4           5            E. ludwigii
+#   5           1            E. asburiae
+#   6           2            E. kobei
+#   7           4            E. cloacae-IV
+#
+# These are the Hoffmann groups not represented in Paauw 2008:
+#
+#   ?           7            E. hormaechei
+#   ?           9            E. bugandensis
+#   ?           10           Lelliottia nimipressuralis
+#
+# So according to this scheme, the 'real' E. cloacae are Hoffmann groups 11
+# and 12, and cloacae-IV probably needs a new name.
+
+
+
 #   cluster 1 -> hormaechei
 #   cluster 2 -> hormaechei
 #   cluster 4 -> ludwigii
@@ -1323,33 +1346,9 @@ GCF_000784865	Enterobacter kobei
 GCF_002206605	Enterobacter kobei
 GCF_002151955	Enterobacter kobei
 GCF_002165535	Enterobacter kobei
-GCF_000286655	Enterobacter cloacae
-GCF_000493175	Enterobacter cloacae
-GCF_000612205	Enterobacter cloacae
-GCF_000805795	Enterobacter cloacae
-GCF_000812425	Enterobacter cloacae
-GCF_001675835	Enterobacter cloacae
-GCF_001807145	Enterobacter cloacae
-GCF_002897075	Enterobacter cloacae
-GCF_001875645	Enterobacter cloacae
 GCF_000710795	Enterobacter cloacae
 GCF_001463365	Enterobacter cloacae
 GCF_001605945	Enterobacter cloacae
-GCF_000493015	Enterobacter cloacae
-GCF_000733275	Enterobacter cloacae
-GCF_001030225	Enterobacter cloacae
-GCF_002145455	Enterobacter cloacae
-GCF_002206155	Enterobacter cloacae
-GCF_000568095	Enterobacter cloacae
-GCF_000568155	Enterobacter cloacae
-GCF_000568175	Enterobacter cloacae
-GCF_900048055	Enterobacter cloacae
-GCF_900113755	Enterobacter cloacae
-GCF_001742765	Enterobacter cloacae
-GCF_900110475	Enterobacter cloacae
-GCF_001038925	Enterobacter cloacae
-GCF_001043635	Enterobacter cloacae
-GCF_002072125	Enterobacter cloacae
 GCF_000515295	Enterobacter bugandensis
 GCF_000534375	Enterobacter bugandensis
 GCF_000957065	Enterobacter bugandensis
@@ -1376,6 +1375,133 @@ GCF_900075815	Enterobacter bugandensis
 GCF_900078165	Enterobacter bugandensis
 GCF_002848105	Enterobacter bugandensis
 GCF_002860705	Enterobacter bugandensis
+GCF_000286655	Enterobacter cloacae-IV
+GCF_000467655	Enterobacter cloacae-IV
+GCF_000492435	Enterobacter cloacae-IV
+GCF_000492895	Enterobacter cloacae-IV
+GCF_000493175	Enterobacter cloacae-IV
+GCF_000534155	Enterobacter cloacae-IV
+GCF_000612205	Enterobacter cloacae-IV
+GCF_000692295	Enterobacter cloacae-IV
+GCF_000692335	Enterobacter cloacae-IV
+GCF_000805795	Enterobacter cloacae-IV
+GCF_000807415	Enterobacter cloacae-IV
+GCF_000812425	Enterobacter cloacae-IV
+GCF_000956965	Enterobacter cloacae-IV
+GCF_000957195	Enterobacter cloacae-IV
+GCF_000957315	Enterobacter cloacae-IV
+GCF_000957415	Enterobacter cloacae-IV
+GCF_000958015	Enterobacter cloacae-IV
+GCF_001022415	Enterobacter cloacae-IV
+GCF_001023175	Enterobacter cloacae-IV
+GCF_001471995	Enterobacter cloacae-IV
+GCF_002151855	Enterobacter cloacae-IV
+GCF_000957765	Enterobacter cloacae-IV
+GCF_000958425	Enterobacter cloacae-IV
+GCF_001472715	Enterobacter cloacae-IV
+GCF_000968725	Enterobacter cloacae-IV
+GCF_001011955	Enterobacter cloacae-IV
+GCF_001022655	Enterobacter cloacae-IV
+GCF_001022755	Enterobacter cloacae-IV
+GCF_001052055	Enterobacter cloacae-IV
+GCF_001052605	Enterobacter cloacae-IV
+GCF_001052895	Enterobacter cloacae-IV
+GCF_001054835	Enterobacter cloacae-IV
+GCF_001056255	Enterobacter cloacae-IV
+GCF_001076175	Enterobacter cloacae-IV
+GCF_900078045	Enterobacter cloacae-IV
+GCF_001317055	Enterobacter cloacae-IV
+GCF_001472305	Enterobacter cloacae-IV
+GCF_001472995	Enterobacter cloacae-IV
+GCF_001518455	Enterobacter cloacae-IV
+GCF_001518535	Enterobacter cloacae-IV
+GCF_001631035	Enterobacter cloacae-IV
+GCF_002007805	Enterobacter cloacae-IV
+GCF_002211685	Enterobacter cloacae-IV
+GCF_001631535	Enterobacter cloacae-IV
+GCF_001631695	Enterobacter cloacae-IV
+GCF_001631745	Enterobacter cloacae-IV
+GCF_001675835	Enterobacter cloacae-IV
+GCF_001729805	Enterobacter cloacae-IV
+GCF_001807145	Enterobacter cloacae-IV
+GCF_001858135	Enterobacter cloacae-IV
+GCF_001858285	Enterobacter cloacae-IV
+GCF_002162415	Enterobacter cloacae-IV
+GCF_002184675	Enterobacter cloacae-IV
+GCF_002266365	Enterobacter cloacae-IV
+GCF_002278335	Enterobacter cloacae-IV
+GCF_002278385	Enterobacter cloacae-IV
+GCF_002785615	Enterobacter cloacae-IV
+GCF_002785665	Enterobacter cloacae-IV
+GCF_002785885	Enterobacter cloacae-IV
+GCF_002897075	Enterobacter cloacae-IV
+GCF_002918755	Enterobacter cloacae-IV
+GCF_003000605	Enterobacter cloacae-IV
+GCF_900076285	Enterobacter cloacae-IV
+GCF_900076485	Enterobacter cloacae-IV
+GCF_900076715	Enterobacter cloacae-IV
+GCF_900077305	Enterobacter cloacae-IV
+GCF_001875645	Enterobacter cloacae-IV
+
+
+
+# After grouping most Enterobacter cloacae complex assemblies into one of the
+# above species, some clades remain without a name. Some of these are
+# substantial and definitely deserve their own species name.
+GCF_000686165	Enterobacter unknown
+GCF_000686185	Enterobacter unknown
+GCF_001057675	Enterobacter unknown
+GCF_001077015	Enterobacter unknown
+GCF_000564975	Enterobacter unknown
+GCF_002197345	Enterobacter unknown
+GCF_000953895	Enterobacter unknown
+GCF_000958085	Enterobacter unknown
+GCF_001030225	Enterobacter unknown
+GCF_002266405	Enterobacter unknown
+GCF_002278375	Enterobacter unknown
+GCF_002278205	Enterobacter unknown
+GCF_002278245	Enterobacter unknown
+GCF_002278305	Enterobacter unknown
+GCF_002939185	Enterobacter unknown
+GCF_000692275	Enterobacter unknown
+GCF_000965885	Enterobacter unknown
+GCF_001984825	Enterobacter unknown
+GCF_002145455	Enterobacter unknown
+GCF_000958265	Enterobacter unknown
+GCF_000958285	Enterobacter unknown
+GCF_001022525	Enterobacter unknown
+GCF_001022675	Enterobacter unknown
+GCF_001055075	Enterobacter unknown
+GCF_001056585	Enterobacter unknown
+GCF_001631105	Enterobacter unknown
+GCF_002206155	Enterobacter unknown
+GCF_900076365	Enterobacter unknown
+GCF_001022965	Enterobacter unknown
+GCF_001518635	Enterobacter unknown
+GCF_001631445	Enterobacter unknown
+GCF_900077215	Enterobacter unknown
+GCF_000965835	Enterobacter unknown
+GCF_900110475	Enterobacter unknown
+GCF_001039365	Enterobacter unknown
+GCF_001742765	Enterobacter unknown
+GCF_900077005	Enterobacter unknown
+GCF_001038925	Enterobacter unknown
+GCF_001043635	Enterobacter unknown
+GCF_002952735	Enterobacter unknown
+GCF_000568095	Enterobacter unknown
+GCF_000568155	Enterobacter unknown
+GCF_000568175	Enterobacter unknown
+GCF_001052195	Enterobacter unknown
+GCF_001052295	Enterobacter unknown
+GCF_001053955	Enterobacter unknown
+GCF_900048055	Enterobacter unknown
+GCF_900113755	Enterobacter unknown
+GCF_000493015	Enterobacter unknown
+GCF_000733275	Enterobacter unknown
+GCF_900075425	Enterobacter unknown
+GCF_900077695	Enterobacter unknown
+GCF_002072125	Enterobacter unknown
+GCF_001562175	Enterobacter unknown
 
 
 
@@ -1389,20 +1515,20 @@ GCF_000224675	Enterobacter soli
 
 
 
-# There are three assemblies which make a clade quite distant from other
-# genomes: GCF_900116015, GCF_001888805 and GCF_900185885. All were labelled
-# Enterobacter, but I think they deserve their own genus name (or maybe two
-# names, as GCF_900116015 is quite distant from the other two).
+# These three assemblies make a clade quite distant from other genomes. All
+# were labelled Enterobacter, but I think they deserve their own genus name
+# (or maybe two names, as GCF_900116015 is quite distant from the other two).
 GCF_900116015	Unknown unknown
 GCF_001888805	Unknown unknown
 GCF_900185885	Unknown unknown
 
 
 
-# These two seem to be in the same species and are quite distant from anything
-# else. Maybe deserve their own genus?
-GCF_000755535	Enterobacter unknown
-GCF_001006635	Enterobacter unknown
+# These two assemblies are quite distant from others. They are labelled
+# Enterobacter, but are closer to Leclercia (but not close enough for me to
+# put them in that genus).
+GCF_000755535	Unknown unknown
+GCF_001006635	Unknown unknown
 
 
 
@@ -1417,6 +1543,11 @@ GCF_001652505	Lelliottia unknown
 GCF_000018085	Serratia quinivorans
 GCF_000347995	Serratia quinivorans
 GCF_002607755	Serratia proteamaculans
+
+
+
+GCF_002920265	Leclercia adecarboxylata
+GCF_002935105	Leclercia adecarboxylata
 
 
 
@@ -2008,7 +2139,6 @@ GCF_002947755	Enterobacter hormaechei
 GCF_002954165	Enterobacter hormaechei
 GCF_002968455	Enterobacter hormaechei
 GCF_002941085	Enterobacter cloacae
-GCF_002952735	Enterobacter cloacae
 GCF_002934535	Enterobacter ludwigii
 GCF_002919745	Enterobacter kobei
 GCF_002919775	Enterobacter kobei
