@@ -1,9 +1,9 @@
-# Bacterial species Dejumbler
+# Bacsort
 
 
 ## Requirements
 
-Running Dejumbler requires that you have [Mash](https://github.com/marbl/Mash) installed and available in your PATH. If you can type `mash -h` into your terminal and not get an error, you should be good! To build trees, you'll need either [Quicktree](https://github.com/khowe/quicktree) or [RapidNJ](http://birc.au.dk/software/rapidnj/).
+Running Bacsort requires that you have [Mash](https://github.com/marbl/Mash) installed and available in your PATH. If you can type `mash -h` into your terminal and not get an error, you should be good! To build trees, you'll need either [Quicktree](https://github.com/khowe/quicktree) or [RapidNJ](http://birc.au.dk/software/rapidnj/).
 
 You'll also need Python3 and [BioPython](http://biopython.org/). If `python3 -c "import Bio"` doesn't give you an error, you should be good! If you need to install BioPython, it's easiest to do with pip: `pip3 install biopython`
 
@@ -14,13 +14,13 @@ Finally, depending on how you want to compute pairwise distances, you may need [
 
 ## Installation
 
-You don't need to install Dejumbler - it's just a collection of independent scripts which can be run directly. However, copying them to somewhere in your path (e.g. `~/.local/bin`) will make it easier to run:
+You don't need to install Bacsort - it's just a collection of independent scripts which can be run directly. However, copying them to somewhere in your path (e.g. `~/.local/bin`) will make it easier to run:
 
 ```
-git clone https://github.com/rrwick/Dejumbler
+git clone https://github.com/rrwick/Bacsort
 install_dir="$HOME"/.local/bin
 mkdir -p "$install_dir"
-cp Dejumbler/dejumbler_* "$install_dir"
+cp Bacsort/*.sh Bacsort/*.py "$install_dir"
 export PATH="$install_dir":"$PATH"  # Add this line to your .bashrc file (or equivalent) if needed
 ```
 
@@ -29,14 +29,14 @@ export PATH="$install_dir":"$PATH"  # Add this line to your .bashrc file (or equ
 
 ## How to use
 
-All Dejumbler commands need to be run in the same directory. They will create directories and files where it is run, so I would recommended running it from a new directory:
+All Bacsort commands need to be run in the same directory. They will create directories and files where it is run, so I would recommended running it from a new directory:
 
 ```
-mkdir dejumbler_results
-cd dejumbler_results
+mkdir bacsort_results
+cd bacsort_results
 ```
 
-Dejumbler will download _all_ NCBI assemblies for your genera of interest, so make sure you have enough free disk space! Each assembly is about 2-3 MB (gzipped), so you'll need many GB for common genera with many assemblies.
+Bacsort will download _all_ NCBI assemblies for your genera of interest, so make sure you have enough free disk space! Each assembly is about 2-3 MB (gzipped), so you'll need many GB for common genera with many assemblies.
 
 
 ### Step 1: download assemblies
@@ -63,7 +63,7 @@ Advantages:
 Disadvantages:
 * Since Mash uses the entire set of k-mers for each pairwise comparison, both core sequence (shared by both assemblies) and accessory sequence (only in one assembly) affect the result. This means it may produce less accurate (compared to vertical evolution) trees.
 
-This one script will take care of running Mash and converting its output to a PHYLIP distance matrix. Run it with no arguments in your working Dejumbler directory.
+This one script will take care of running Mash and converting its output to a PHYLIP distance matrix. Run it with no arguments in your working Bacsort directory.
 ```
 mash_distance_matrix.sh
 ```
@@ -78,7 +78,7 @@ Disadvantages:
 * It is slower than Mash.
 * FastANI is not intrinsically parallel, so you'll need to parallelise it one way or another to cope with large datasets.
 
-To run FastANI on your Dejumbler clusters in serial (only appropriate for small datasets):
+To run FastANI on your Bacsort clusters in serial (only appropriate for small datasets):
 ```
 fastani_one_thread.sh
 ```
