@@ -84,6 +84,8 @@ def load_accession_species():
                     species_parts[1] = 'unknown'
                 elif species_parts[1] == 'bacterium':
                     species_parts[1] = 'unknown'
+                elif species_parts[1] == 'symbiont':
+                    species_parts[1] = 'unknown'
                 elif species_parts[1] == 'endosymbiont':
                     species_parts[1] = 'unknown'
 
