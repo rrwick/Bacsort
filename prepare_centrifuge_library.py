@@ -124,8 +124,8 @@ def main():
         descendant_ids = genus_node.get_descendant_ids(ids_to_nodes)
         for descendant_id in descendant_ids:
             ids_to_remove.add(descendant_id)
-        print('Excluding {} tax IDs: {}\n'.format(genus,
-                                                  ','.join(sorted([tax_id] + descendant_ids))))
+        id_str = ','.join(str(x) for x in sorted([tax_id] + descendant_ids))
+        print('Excluding {} tax IDs: {}\n'.format(genus, id_str))
     with open(original_seqid2taxid, 'rt') as original:
         with open(new_seqid2taxid, 'at') as filtered:
             for line in original:
