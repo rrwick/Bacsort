@@ -16,6 +16,7 @@ not, see <http://www.gnu.org/licenses/>.
 
 import argparse
 import gzip
+import os
 import pathlib
 import sys
 
@@ -28,6 +29,10 @@ def get_arguments():
     parser.add_argument('centrifuge_db_dir', type=str,
                         help='Directory of Bacsort-binned assemblies')
 
+    parser.add_argument('--min_contig_len', type=int, default=10000,
+                        help='Contigs shorter than this will not be included in the Centrifuge '
+                             'library')
+
     args = parser.parse_args()
     return args
 
@@ -39,11 +44,30 @@ def main():
     genus_dirs = [x for x in bin_dir.iterdir() if x.is_dir()]
     genera = sorted(str(x).split('/')[-1] for x in genus_dirs)
 
+    centrifuge_assemblies = \
+        sorted(pathlib.Path(args.centrifuge_db_dir).glob('library/bacteria/*.fna'))
+
+    original_seqid2taxid = args.centrifuge_db_dir + '/seqid2taxid_original.map'
+    new_seqid2taxid = args.centrifuge_db_dir + '/seqid2taxid.map'
+    os.rename(str(new_seqid2taxid), str(original_seqid2taxid))
+    library_dir = pathlib.Path(args.centrifuge_db_dir) / 'library' / 'bacteria'
+
     ids_to_names, names_to_ids, ids_to_nodes = get_ncbi_taxonomy(args.centrifuge_db_dir)
 
-    print('\nCreating a seqid2taxid file for Bacsorted assemblies')
-    with open(args.centrifuge_db_dir + '/seqid2taxid_bacsort.map', 'wt') as seqid2taxid:
+    print('\nProcessing Bacsorted assemblies')
+    print('-------------------------------------------------------------------------------')
+    print('This step looks at all assemblies that were binned by Bacsort and does two')
+    print('things: 1) makes a seqid2taxid record for each of the assembly\'s contigs and')
+    print('2) unzips the assembly into Centrifuge\'s library.')
+    print('-------------------------------------------------------------------------------')
+    with open(new_seqid2taxid, 'wt') as seqid2taxid:
         for genus in genera:
+            if genus == 'Unknown':
+                continue
+            if genus not in names_to_ids:
+                print('WARNING: {} not in NCBI taxonomy, cannot use'.format(genus))
+                continue
+
             genus_dir = bin_dir / pathlib.Path(genus)
             species_dirs = [x for x in genus_dir.iterdir() if x.is_dir()]
             species_names = sorted(str(x).split('/')[-1] for x in species_dirs)
@@ -56,21 +80,41 @@ def main():
                 elif binomial in names_to_ids:
                     tax_id = names_to_ids[binomial]
                     print('{} -> {} (species level)'.format(binomial, tax_id))
-                elif genus in names_to_ids:
+                else:
                     tax_id = names_to_ids[genus]
                     print('{} -> {} (genus level)'.format(binomial, tax_id))
-                else:
-                    sys.exit('Error: {} not in NCBI taxonomy, cannot use'.format(genus))
-                assemblies = [x for x in species_dir.iterdir()
-                              if x.is_file() and str(x).endswith('.fna.gz')]
+                assemblies = sorted(x for x in species_dir.iterdir()
+                                    if x.is_file() and str(x).endswith('.fna.gz'))
                 for assembly in assemblies:
-                    for contig_name in load_contig_names(str(assembly)):
-                        seqid2taxid.write(' '.join([contig_name, str(tax_id)]))
-                        seqid2taxid.write('\n')
+                    assembly_name = str(assembly).split('/')[-1].replace('.gz', '')
+                    new_location = str(library_dir / assembly_name)
+                    print('  {} -> {}'.format(assembly, new_location))
+                    with open(new_location, 'wt') as new_fasta:
+                        for contig_name, seq in load_fasta(str(assembly)):
+                            if len(seq) >= args.min_contig_len:
+                                seqid2taxid.write(' '.join([contig_name, str(tax_id)]))
+                                seqid2taxid.write('\n')
+                                new_fasta.write('>')
+                                new_fasta.write(contig_name)
+                                new_fasta.write('\n')
+                                new_fasta.write(seq)
+                                new_fasta.write('\n')
 
-    print('\nFiltering Bacsorted genera out of Centrifuge seqid2taxid file')
+    print('\nAdding existing Centrifuge seqid2taxid entries')
+    print('-------------------------------------------------------------------------------')
+    print('This step determines which of Centrifuge\'s existing assemblies to exclude')
+    print('(those covered by Bacsorted genera) and which to include (those in different)')
+    print('genera. Excluded assemblies are renamed and included assemblies are added to')
+    print('the seqid2taxid file.')
+    print('-------------------------------------------------------------------------------')
     ids_to_remove = set()
     removed_contigs = set()
+
+    # For the purposes of Bacsort, Shigella is part of E. coli.
+    if 'Escherichia' in genera and 'Shigella' not in genera:
+        genera.append('Shigella')
+        genera = sorted(genera)
+
     for genus in genera:
         tax_id = names_to_ids[genus]
         ids_to_remove.add(tax_id)
@@ -78,9 +122,9 @@ def main():
         descendant_ids = genus_node.get_descendant_ids(ids_to_nodes)
         for descendant_id in descendant_ids:
             ids_to_remove.add(descendant_id)
-        print('{}: {}'.format(genus, sorted([tax_id] + descendant_ids)))
-    with open(args.centrifuge_db_dir + '/seqid2taxid.map', 'rt') as original:
-        with open(args.centrifuge_db_dir + '/seqid2taxid_bacsort.map', 'at') as filtered:
+        print('Excluding {} tax IDs: {}'.format(genus, sorted([tax_id] + descendant_ids)))
+    with open(original_seqid2taxid, 'rt') as original:
+        with open(new_seqid2taxid, 'at') as filtered:
             for line in original:
                 parts = line.strip().split()
                 contig = parts[0]
@@ -89,23 +133,12 @@ def main():
                     removed_contigs.add(contig)
                 else:
                     filtered.write(line)
-
-    print('\nDeleting Centrifuge assemblies from Bacsorted genera')
-    # TO DO
-    # TO DO
-    # TO DO
-    # TO DO
-    # TO DO
-    # TO DO
-    # TO DO
-
-    print('\nAdding Bacsorted assemblies to Centrifuge library')
-    # TO DO
-    # TO DO
-    # TO DO
-    # TO DO
-    # TO DO
-    # TO DO
+    for assembly in centrifuge_assemblies:
+        contig_names = load_contig_names(str(assembly))
+        if all(c in removed_contigs for c in contig_names):
+            new_name = str(assembly) + '.excluded'
+            os.rename(str(assembly), new_name)
+            print('{} -> {}'.format(str(assembly), new_name))
 
 
 class NcbiTaxonomyNode(object):
@@ -198,6 +231,30 @@ def load_contig_names(filename):
                     sys.exit('Error: duplicate contig names in {}'.format(filename))
                 contig_names.add(contig_name)
     return sorted(contig_names)
+
+
+def load_fasta(filename):
+    fasta_seqs = []
+    open_func = get_open_function(filename)
+    with open_func(filename, 'rt') as fasta_file:
+        name = ''
+        sequence = ''
+        for line in fasta_file:
+            line = line.strip()
+            if not line:
+                continue
+            if line[0] == '>':  # Header line = start of new contig
+                if name:
+                    contig_name = name.split()[0]
+                    fasta_seqs.append((contig_name, sequence))
+                    sequence = ''
+                name = line[1:]
+            else:
+                sequence += line
+        if name:
+            contig_name = name.split()[0]
+            fasta_seqs.append((contig_name, sequence))
+    return fasta_seqs
 
 
 if __name__ == '__main__':
