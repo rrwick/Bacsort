@@ -100,7 +100,7 @@ def main():
                                 new_fasta.write(seq)
                                 new_fasta.write('\n')
 
-    print('\nAdding existing Centrifuge seqid2taxid entries')
+    print('\n\n\nAdding existing Centrifuge seqid2taxid entries')
     print('-------------------------------------------------------------------------------')
     print('This step determines which of Centrifuge\'s existing assemblies to exclude')
     print('(those covered by Bacsorted genera) and which to include (those in different)')
@@ -116,13 +116,16 @@ def main():
         genera = sorted(genera)
 
     for genus in genera:
+        if genus not in names_to_ids:
+            continue
         tax_id = names_to_ids[genus]
         ids_to_remove.add(tax_id)
         genus_node = ids_to_nodes[tax_id]
         descendant_ids = genus_node.get_descendant_ids(ids_to_nodes)
         for descendant_id in descendant_ids:
             ids_to_remove.add(descendant_id)
-        print('Excluding {} tax IDs: {}'.format(genus, sorted([tax_id] + descendant_ids)))
+        print('Excluding {} tax IDs: {}\n'.format(genus,
+                                                  ','.join(sorted([tax_id] + descendant_ids))))
     with open(original_seqid2taxid, 'rt') as original:
         with open(new_seqid2taxid, 'at') as filtered:
             for line in original:
