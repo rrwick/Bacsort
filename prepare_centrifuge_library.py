@@ -167,7 +167,7 @@ class NcbiTaxonomyNode(object):
 def get_ncbi_taxonomy(centrifuge_db_dir):
     names_filename = centrifuge_db_dir + '/taxonomy/names.dmp'
     nodes_filename = centrifuge_db_dir + '/taxonomy/nodes.dmp'
-    print('\nLoading NCBI taxonomy... ', file=sys.stderr, end='', flush=True)
+    print('\nLoading NCBI taxonomy... ', end='', flush=True)
     ids_to_names, names_to_ids = get_ncbi_name_dicts(names_filename)
     ids_to_nodes = {}
     with open(nodes_filename, 'rt') as nodes_file:
@@ -177,7 +177,7 @@ def get_ncbi_taxonomy(centrifuge_db_dir):
     for node in ids_to_nodes.values():
         parent_node = ids_to_nodes[node.parent_id]
         parent_node.child_ids.add(node.id)
-    print('done', file=sys.stderr)
+    print('done')
     return ids_to_names, names_to_ids, ids_to_nodes
 
 
