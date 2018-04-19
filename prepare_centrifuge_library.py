@@ -52,7 +52,7 @@ def main():
     os.rename(str(new_seqid2taxid), str(original_seqid2taxid))
     library_dir = pathlib.Path(args.centrifuge_db_dir) / 'library' / 'bacteria'
 
-    ids_to_names, names_to_ids, ids_to_nodes = get_ncbi_taxonomy(args.centrifuge_db_dir)
+    names_to_ids, ids_to_nodes = get_ncbi_taxonomy(args.centrifuge_db_dir)
 
     print('\nProcessing Bacsorted assemblies')
     print('-------------------------------------------------------------------------------')
@@ -67,6 +67,10 @@ def main():
             if genus not in names_to_ids:
                 print('WARNING: {} not in NCBI taxonomy, cannot use'.format(genus))
                 continue
+            genus_id = get_taxid(genus, names_to_ids, ids_to_nodes, 'genus')
+            if genus_id is None:
+                print('WARNING: {} is ambiguous, cannot use'.format(genus))
+                continue
 
             genus_dir = bin_dir / pathlib.Path(genus)
             species_dirs = [x for x in genus_dir.iterdir() if x.is_dir()]
@@ -75,13 +79,16 @@ def main():
                 species_dir = genus_dir / pathlib.Path(species)
                 binomial = genus + ' ' + species
                 if species == 'unknown':
-                    tax_id = names_to_ids[genus]
+                    tax_id = genus_id
                     print('{} -> {} (genus level)'.format(binomial, tax_id))
                 elif binomial in names_to_ids:
-                    tax_id = names_to_ids[binomial]
+                    tax_id = get_taxid(binomial, names_to_ids, ids_to_nodes, 'species')
+                    if tax_id is None:
+                        print('WARNING: {} is ambiguous, cannot use'.format(binomial))
+                        continue
                     print('{} -> {} (species level)'.format(binomial, tax_id))
                 else:
-                    tax_id = names_to_ids[genus]
+                    tax_id = genus_id
                     print('{} -> {} (genus level)'.format(binomial, tax_id))
                 assemblies = sorted(x for x in species_dir.iterdir()
                                     if x.is_file() and str(x).endswith('.fna.gz'))
@@ -118,7 +125,10 @@ def main():
     for genus in genera:
         if genus not in names_to_ids:
             continue
-        tax_id = names_to_ids[genus]
+        tax_id = get_taxid(genus, names_to_ids, ids_to_nodes, 'genus')
+        if tax_id is None:
+            print('WARNING: {} is ambiguous, cannot use'.format(genus))
+            continue
         ids_to_remove.add(tax_id)
         genus_node = ids_to_nodes[tax_id]
         descendant_ids = genus_node.get_descendant_ids(ids_to_nodes)
@@ -144,6 +154,24 @@ def main():
             print('{} -> {}'.format(str(assembly), new_name))
 
 
+def get_taxid(name, names_to_ids, ids_to_nodes, rank):
+    ids = [x for x in names_to_ids[name] if ids_to_nodes[x].rank == rank]
+    if len(ids) == 1:
+        return ids[0]
+
+    # If there is more than one match for the name and rank (e.g. Buchnera is a genus in
+    # Enterobacterales and in plants), then we look to see if only one is in Bacteria/Archaea.
+    prokaryote_ids = []
+    for i in ids:
+        node = ids_to_nodes[i]
+        superkingdom = node.get_superkingdom()
+        if superkingdom == 'Bacteria' or superkingdom == 'Archaea':
+            prokaryote_ids.append(i)
+    if len(prokaryote_ids) == 1:
+        return prokaryote_ids[0]
+    return None
+
+
 class NcbiTaxonomyNode(object):
     def __init__(self, line, ids_to_names):
         parts = [x.strip() for x in line.split('|')]
@@ -163,6 +191,13 @@ class NcbiTaxonomyNode(object):
         visited.remove(self.id)
         return sorted(visited)
 
+    def get_superkingdom(self, ids_to_nodes):
+        if self.rank == 'superkingdom':
+            return self.name
+        else:
+            parent = ids_to_nodes[self.parent_id]
+            return parent.get_superkingdom(ids_to_nodes)
+
 
 def get_ncbi_taxonomy(centrifuge_db_dir):
     names_filename = centrifuge_db_dir + '/taxonomy/names.dmp'
@@ -178,7 +213,7 @@ def get_ncbi_taxonomy(centrifuge_db_dir):
         parent_node = ids_to_nodes[node.parent_id]
         parent_node.child_ids.add(node.id)
     print('done')
-    return ids_to_names, names_to_ids, ids_to_nodes
+    return names_to_ids, ids_to_nodes
 
 
 def get_ncbi_name_dicts(names_filename):
@@ -191,7 +226,9 @@ def get_ncbi_name_dicts(names_filename):
             tax_id = int(parts[0])
             name = parts[1]
             ids_to_names[tax_id] = name
-            names_to_ids[name] = tax_id
+            if name not in names_to_ids:
+                names_to_ids[name] = []
+            names_to_ids[name].append(tax_id)
     return ids_to_names, names_to_ids
 
 
