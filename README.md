@@ -98,7 +98,7 @@ rm tree/fastani_output_* tree/fastani_stdout_*
 
 Once the distances are computed, they must be converted into a PHYLIP distance matrix, which is relatively quick and carried out using this command. We use a maximum distance of 0.2 because FastANI wasn't designed to quantify ANI less than 80%.
 ```
-pairwise_identities_to_distance_matrix.py --max_dist 0.2 tree/fastani_output > tree/fastani_distances.phylip
+pairwise_identities_to_distance_matrix.py --max_dist 0.2 tree/fastani_output > tree/fastani.phylip
 ```
 
 #### Option 3: rMLST
@@ -130,7 +130,7 @@ pairwise_identities_to_distance_matrix.py tree/rmlst_identities > tree/distances
 Finally, you can create two different distance matrices and combine them together. I wrote this for combining FastANI distances (which are very good up to 20% divergence) with Mash/rMLST distances (which can handle greater divergence).
 
 ```
-combine_distance_matrices.py fastani.phylip mash.phylip > combined.phylip
+combine_distance_matrices.py tree/fastani.phylip tree/mash.phylip > tree/distances.phylip
 ```
 
 
@@ -169,14 +169,52 @@ GCF_000000000	Genus species
 You can then run `find_species_clades.py` again to generate a new tree with your updated definitions. This process can be repeated (fix labels, make tree, fix labels, make tree, etc) until you have no more changes to make.
 
 
-### Step 6: copy assemblies to species directories
+### Step 6: copy assemblies and/or clusters to species directories
 
-When you are happy with the species labels in the tree, you can run this command to copy assemblies into species directories. It will make a directory titled `assemblies_binned` with subdirectories for each genus and then subdirectories for each species.
+When you are happy with the species labels in the tree, you can run this command to copy assemblies into species directories:
 ```
 copy_assemblies.py
 ```
 
+It will make a directory titled `assemblies_binned` with subdirectories for each genus and then subdirectories for each species.
 
+Alternatively, you can create a `clusters_binned` directory:
+```
+copy_clusters.py
+```
+
+This is the same as above, except that the redundancy-removed clusters are used instead of all assemblies. The `clusters_binned` directory will therefore be smaller than the `assemblies_binned` directory.
+
+
+
+## Using Bacsort with Centrifuge
+
+You can use Bacsort's assemblies to build a [Centrifuge](http://www.ccb.jhu.edu/software/centrifuge/) database which incorporates your revised species labels. For these instructions, I assume that you've only run Bacsort on _some_ bacterial genera, but you'd still like to include _all_ bacterial genera in the Centrifuge database. I also assume that you've already run all of the Bacsort steps above and produced a `clusters_binned` directory.
+
+To begin, use Centrifuge to download genomes and taxonomy information (more detail is available in the [Centrifuge docs](http://www.ccb.jhu.edu/software/centrifuge/manual.shtml#database-download-and-index-building)):
+```
+mkdir -p centrifuge_bacsort
+cd centrifuge_bacsort
+centrifuge-download -o taxonomy taxonomy
+centrifuge-download -o library -m -d bacteria refseq > seqid2taxid.map
+```
+
+Now from the same directory, run this script to incorporate your Bacsorted genomes into the Centrifuge library:
+```
+prepare_centrifuge_library.py /path/to/clusters_binned .
+```
+
+This script does two things:
+1. It copies your Bacsorted genomes into the Centrifuge library and makes appropriate entries in the `seqid2taxid.map` file.
+2. It _removes_ any genomes already in the Centrifuge library which are in the same genera as your Bacsorted assemblies. This prevent conflicts between the existing species labels and your refined species labels.
+
+Now you can continue building the Centrifuge library (again, head to the [Centrifuge docs](http://www.ccb.jhu.edu/software/centrifuge/manual.shtml#database-download-and-index-building) for more detail):
+```
+cat library/*/*.fna > input-sequences.fna
+centrifuge-build -p 16 --conversion-table seqid2taxid.map --taxonomy-tree taxonomy/nodes.dmp --name-table taxonomy/names.dmp input-sequences.fna bacsort
+```
+
+This should create three files which comprise your new Centrifuge database: `bacsort.1.cf`, `bacsort.2.cf` and `bacsort.3.cf`. Use it like you would any other Centrifuge database! You can now delete all other files made along the way to save disk space.
 
 
 
