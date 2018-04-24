@@ -164,7 +164,7 @@ def get_taxid(name, names_to_ids, ids_to_nodes, rank):
     prokaryote_ids = []
     for i in ids:
         node = ids_to_nodes[i]
-        superkingdom = node.get_superkingdom()
+        superkingdom = node.get_superkingdom(ids_to_nodes)
         if superkingdom == 'Bacteria' or superkingdom == 'Archaea':
             prokaryote_ids.append(i)
     if len(prokaryote_ids) == 1:
