@@ -1,6 +1,10 @@
 # Bacsort
 
 
+## Intro
+
+
+
 ## Requirements
 
 Running Bacsort requires that you have [Mash](https://github.com/marbl/Mash) installed and available in your PATH. If you can type `mash -h` into your terminal and not get an error, you should be good! To build trees, you'll need either [Quicktree](https://github.com/khowe/quicktree) or [RapidNJ](http://birc.au.dk/software/rapidnj/).
@@ -27,7 +31,24 @@ export PATH="$install_dir":"$PATH"  # Add this line to your .bashrc file (or equ
 
 
 
-## How to use
+## Bacsorting assemblies
+
+What follows are instructions for refining the species labels for one or more genera of interest. The end result will be assemblies organised into genus/species directories. For example:
+```
+Moraxella/
+  atlantae/
+    GCF_001591265.fna.gz
+    GCF_001678995.fna.gz
+    GCF_001679065.fna.gz
+  boevrei/
+    GCF_000379845.fna.gz
+Psychrobacter/
+  faecalis/
+    GCF_001652315.fna.gz
+    GCF_002836335.fna.gz
+  glacincola/
+    GCF_001411745.fna.gz
+```
 
 All Bacsort commands need to be run in the same directory. They will create directories and files where it is run, so I would recommended running it from a new directory:
 
@@ -74,7 +95,7 @@ Advantages:
 * Produces pairwise ANI measurements using only the sequence shared by two assemblies. This makes it less swayed by the accessory genome and it may produce more accurate trees.
 
 Disadvantages:
-* FastANI is designed for 80-100% nucleotide identity, and so this approach is only recommended if you are working within a genus or closely related genera.
+* FastANI is designed for 80-100% nucleotide identity and will therefore struggle with greater divergences (see [Combining Mash and FastANI distances](#combining-mash-and-fastani-distances) below).
 * It is slower than Mash.
 * FastANI is not intrinsically parallel, so you'll need to parallelise it one way or another to cope with large datasets.
 
@@ -101,33 +122,9 @@ Once the distances are computed, they must be converted into a PHYLIP distance m
 pairwise_identities_to_distance_matrix.py --max_dist 0.2 tree/fastani_output > tree/fastani.phylip
 ```
 
-#### Option 3: rMLST
+#### Combining Mash and FastANI distances
 
-Advantages:
-* By using a mostly shared core genome, this approach should result in a tree that's decently compatible with vertical evolution.
-* Can deal with much more sequence divergence than FastANI, and is therefore suitable for more diverse sets.
-
-Disadvantages:
-* You'll need to get the rMLST alleles yourself ([pubmlst.org/rmlst](https://pubmlst.org/rmlst/) - account required)
-
-This approach has three steps. First, you must extract the rMLST sequences from your assemblies:
-```
-rmlst_extract_sequences.py clusters rmlst_allele_dir
-```
-
-Next, conduct pairwise alignments to get identities. Double check that this script produced a file with (n^2 + n) / 2 lines (all non-redundant pairwise comparisons).
-```
-rmlst_identities.py clusters > tree/rmlst_identities
-```
-
-Finally, convert the identities into a distance matrix (same as for FastANI):
-```
-pairwise_identities_to_distance_matrix.py tree/rmlst_identities > tree/distances.phylip
-```
-
-#### Option 4: combination
-
-Finally, you can create two different distance matrices and combine them together. I wrote this for combining FastANI distances (which are very good up to 20% divergence) with Mash/rMLST distances (which can handle greater divergence).
+If you would like, you can use this script to combine FastANI distances (which are very good up to 20% divergence) with Mash distances (which can handle greater divergence) to get a best-of-both-worlds distance matrix:
 
 ```
 combine_distance_matrices.py tree/fastani.phylip tree/mash.phylip > tree/distances.phylip
@@ -184,6 +181,32 @@ copy_clusters.py
 ```
 
 This is the same as above, except that the redundancy-removed clusters are used instead of all assemblies. The `clusters_binned` directory will therefore be smaller than the `assemblies_binned` directory.
+
+
+
+## Classify new assemblies using Mash
+
+Mash can use your newly organised assemblies to query unknown assemblies and give the best match.
+
+First, build a sketch of all your organised assemblies. You can do this either with `assemblies_binned` (all assemblies) or `clusters_binned` (redundancy-removed), but I'd recommend the latter for performance:
+```
+cd clusters_binned
+mash sketch -o sketches -s 100000 -p 4 */*/*.fna.gz
+```
+
+Now you can use Mash directly to find the distances between your query and all of your reference assemblies:
+```
+mash dist -s 100000 -p 4 sketches.msh query.fasta | sort -gk3,3
+```
+
+Or you can use this script with comes with Bacsort:
+```
+classify_assembly_using_mash.py sketches.msh query.fasta
+```
+
+This script has some additional logic to help with classification:
+* The `--threshold` option controls how close the query must be to a reference to count as a match (default: 5%)
+* The `--contamination_threshold` option helps to spot contaminated assemblies. If the top two genera have matches closer than this (default: 2%), the assembly is considered contaminated. E.g. if your assembly is a strong match to both _Klebsiella_ and _Citrobacter_, then something is probably not right!
 
 
 

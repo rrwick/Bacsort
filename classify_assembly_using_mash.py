@@ -27,7 +27,8 @@ import pathlib
 
 
 def get_arguments():
-    parser = argparse.ArgumentParser(description='Classify assembly using Mash')
+    parser = argparse.ArgumentParser(description='Classify assembly using Mash',
+                                     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
     parser.add_argument('mash_sketch', type=str,
                         help='Mash sketch file of Bacsorted assemblies/clusters directory')
@@ -36,20 +37,24 @@ def get_arguments():
 
     parser.add_argument('--sketch_size', type=int, required=False, default=100000,
                         help='Mash sketch size')
-    parser.add_argument('--threshold', type=float, required=False, default=0.05,
-                        help='Mash distances at or below this threshold count as a match')
-    parser.add_argument('--contamination_threshold', type=float, required=False, default=0.02,
+    parser.add_argument('--threshold', type=float, required=False, default=5.0,
+                        help='Mash distances at or below this threshold count as a match '
+                             '(expressed as a percent)')
+    parser.add_argument('--contamination_threshold', type=float, required=False, default=2.0,
                         help='If two different genera have Mash distances with a difference of '
-                             'less than this value, the assembly is considered contaminated')
+                             'less than this value, the assembly is considered contaminated '
+                             '(expressed as a percent)')
+    parser.add_argument('--threads', type=int, required=False, default=4,
+                        help='Number of threads to use with Mash')
     args = parser.parse_args()
     return args
 
 
 def main():
     args = get_arguments()
-    mash_out = subprocess.check_output('mash dist -s 100000 -p 4 {} {}'.format(args.mash_sketch,
-                                                                               args.assembly),
-                                       shell=True).decode()
+
+    cmd = 'mash dist -s 100000 -p {} {} {}'.format(args.threads, args.mash_sketch, args.assembly)
+    mash_out = subprocess.check_output(cmd, shell=True).decode()
 
     assembly_name = pathlib.Path(args.assembly).name
     if assembly_name.endswith('.gz'):
@@ -69,7 +74,7 @@ def main():
         species = parts[0].split('/')[1]
         binomial = genus + ' ' + species
 
-        if distance <= args.threshold and distance < best_distance:
+        if distance <= (args.threshold / 100.0) and distance < best_distance:
             best_species, best_distance = binomial, distance
 
         if genus not in best_distance_per_genus:
@@ -78,9 +83,9 @@ def main():
             best_distance_per_genus[genus] = min(best_distance_per_genus[genus], distance)
 
     best_distance_per_genus = sorted(best_distance_per_genus.values())
-    if len(best_distance_per_genus) > 1:
+    if len(best_distance_per_genus) > 1 and best_species != 'none':
         genus_dist_1, genus_dist_2 = best_distance_per_genus[:2]
-        if abs(genus_dist_1 - genus_dist_2) < args.contamination_threshold:
+        if abs(genus_dist_1 - genus_dist_2) < (args.contamination_threshold / 100.0):
             best_species += ' (contaminated)'
 
     identity = '%.2f' % (100 * (1.0 - best_distance)) + '%'
