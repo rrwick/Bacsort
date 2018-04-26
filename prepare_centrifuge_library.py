@@ -22,12 +22,12 @@ import sys
 
 
 def get_arguments():
-    parser = argparse.ArgumentParser(description='Cluster assemblies in each genus')
+    parser = argparse.ArgumentParser(description='Add Bacsort assemblies to Centrifuge database')
 
     parser.add_argument('binned_assembly_dir', type=str,
                         help='Directory of Bacsort-binned assemblies')
     parser.add_argument('centrifuge_db_dir', type=str,
-                        help='Directory of Bacsort-binned assemblies')
+                        help='Directory of Centrifuge database')
 
     parser.add_argument('--min_contig_len', type=int, default=10000,
                         help='Contigs shorter than this will not be included in the Centrifuge '

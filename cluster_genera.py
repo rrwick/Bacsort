@@ -30,7 +30,7 @@ def get_arguments():
     parser = argparse.ArgumentParser(description='Cluster assemblies in each genus')
 
     parser.add_argument('assembly_dir', type=str,
-                        help='Assembly directory (should contain one subdirectory per genus')
+                        help='Assembly directory (should contain one subdirectory per genus)')
 
     parser.add_argument('--threshold', type=float, required=False, default=0.005,
                         help='Mash distance clustering threshold')
