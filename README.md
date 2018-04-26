@@ -136,11 +136,9 @@ As input for the neighbour joining tree algorithm, we need a matrix of all pairw
 
 #### Option 1: Mash
 
-Advantages:
-* Simple and fast.
+Advantage: simple and fast.
 
-Disadvantages:
-* Since Mash uses the entire set of k-mers for each pairwise comparison, both core sequence (shared by both assemblies) and accessory sequence (only in one assembly) affect the result. This means it may produce less accurate (compared to vertical evolution) trees.
+Disadvantage: possibly less accurate and more affected by accessory genes like the presence/absense of plasmids.
 
 This one script will take care of running Mash and converting its output to a PHYLIP distance matrix. Run it with no arguments in your working Bacsort directory.
 ```
@@ -149,22 +147,18 @@ mash_distance_matrix.sh
 
 #### Option 2: FastANI
 
-Advantages:
-* Produces pairwise ANI measurements using only the sequence shared by two assemblies. This makes it less swayed by the accessory genome and it may produce more accurate trees.
+Advantage: produces pairwise ANI measurements using only the sequence shared by two assemblies. This makes it less swayed by the accessory genome and it may produce more accurate trees.
 
-Disadvantages:
-* FastANI is designed for 80-100% nucleotide identity and will therefore struggle with greater divergences (see [Combining Mash and FastANI distances](#combining-mash-and-fastani-distances) below).
-* It is slower than Mash.
-* FastANI is not intrinsically parallel, so you'll need to parallelise it one way or another to cope with large datasets.
+Disadvantages: FastANI is designed for 80-100% nucleotide identity and will therefore struggle with greater divergences (see [Combining Mash and FastANI distances](#combining-mash-and-fastani-distances) below). It is slower than Mash and not intrinsically parallel, so you'll need to parallelise it one way or another to cope with large datasets.
 
 To run FastANI on your Bacsort clusters in serial (only appropriate for small datasets):
 ```
 fastani_one_thread.sh
 ```
 
-Or use this script to run it in parallel:
+Or use this script to run it in parallel (in this example using 16 simultaneous processes):
 ```
-fastani_in_parallel.sh
+fastani_in_parallel.sh 16
 ```
 
 Or if you have a Slurm-managed cluster, this may be the fastest approach:

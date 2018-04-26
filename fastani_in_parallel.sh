@@ -14,8 +14,6 @@
 # more details. You should have received a copy of the GNU General Public License along with
 # Bacsort. If not, see <http://www.gnu.org/licenses/>.
 
-threads=32
-
 mkdir -p tree
 
 printf "\n"
@@ -25,7 +23,7 @@ cd clusters
 ls *.fna.gz > cluster_list
 
 total_count=$( wc -l < cluster_list )
-count_per_file=$( perl -w -e "use POSIX; print ceil($total_count/$threads), qq{\n}" )
+count_per_file=$( perl -w -e "use POSIX; print ceil($total_count/$1), qq{\n}" )
 cat cluster_list | shuf > split.tmp
 split -a 4 -dl $count_per_file split.tmp cluster_list_
 rm split.tmp
