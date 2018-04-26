@@ -294,6 +294,35 @@ This should create `*.cf` files which comprise your new Centrifuge database - us
 
 
 
+## Using Bacsort with Kraken
+
+Kraken is a similar tool to Centrifuge, and you can similarly build a database using Bacsorted assemblies. The assumptions stated above in the [Using Bacsort with Centrifuge](#using-bacsort-with-centrifuge) section apply here too.
+
+First create a bacterial database as described in the [Kraken docs](http://ccb.jhu.edu/software/kraken/MANUAL.html#custom-databases):
+```
+kraken-build --download-taxonomy --db bacsort
+kraken-build --download-library bacteria --db bacsort
+```
+
+Now run this script which does two things: 1) adjusts the taxonomy IDs in the Kraken database to match Bacsort's classifications, and 2) prepares additional Bacsorted assemblies for inclusion in the database:
+```
+prepare_kraken_library.py /path/to/clusters_binned bacsort
+```
+
+Now we can add the remaining assemblies to the library:
+```
+for f in additional_assemblies/*.fna; do
+    kraken-build --add-to-library $f --db bacsort
+done
+```
+
+Finally, we build the library (again, please read the [Kraken docs](http://ccb.jhu.edu/software/kraken/MANUAL.html#custom-databases) for more info):
+```
+kraken-build --build --threads 16 --db bacsort
+```
+
+
+
 ## License
 
 [GNU General Public License, version 3](https://www.gnu.org/licenses/gpl-3.0.html)
