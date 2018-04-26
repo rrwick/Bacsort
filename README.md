@@ -3,9 +3,9 @@
 
 ## Intro
 
-RefSeq is a wonderful public repository of bacterial genome assemblies, but unfortunately many of its assemblies are mislabelled. This means that you cannot simply use a tool like [ncbi-genome-download](https://github.com/kblin/ncbi-genome-download) to get all assemblies of a particular genus, e.g. _Klebsiella_. If you did so, you would certainly get many _Klebsiella_ assemblies, but you would also get some _E. coli_ and _S. marcescens_ assemblies that were mislabelled as _Klebsiella_. Furthermore, you would miss some _Klebsiella_ assemblies that were mislabelled as something else, e.g. _Enterobacter_.
+[RefSeq](https://www.ncbi.nlm.nih.gov/refseq/) is a wonderful public repository that contains many bacterial genome assemblies, but unfortunately some of its assemblies are mislabelled. This means that you cannot simply use a tool like [ncbi-genome-download](https://github.com/kblin/ncbi-genome-download) to get all assemblies of a particular genus, e.g. _Klebsiella_. If you did so, you would certainly get many _Klebsiella_ assemblies, but you would also get some _E. coli_ and _S. marcescens_ assemblies that were mislabelled as _Klebsiella_. Furthermore, you would miss some _Klebsiella_ assemblies that were mislabelled as something else, e.g. _Enterobacter_.
 
-Bacsort is a collection of script to help you solve this problem. It assists in downloading assemblies and constructing a tree. Using this tree you can curate the species labels, resulting in a consistently named collection.
+Bacsort is a collection of script to help you solve this problem. It assists in downloading assemblies and constructing a tree, with which you can curate the species labels. The end result of Bacsort is a consistently named collection of bacterial genome assemblies.
 
 
 
@@ -27,6 +27,18 @@ Sometimes a group is not well studied and many samples are not yet named. Bacsor
 And sometimes a group is very inconsistently named. These are the toughest problems to fix! The best solution is to find an authoritative piece of literature that defines the species in question so you can apply that scheme to your assemblies:
 
 <p align="center"><img src="images/problem_4.png" alt="Problem 4" width="600"></p>
+
+
+
+
+## Uses for Bacsort
+
+Here are a few that come to mind:
+* Producing clean sets of genome assemblies for species-level analyses. E.g. if you wanted to analyse the pan-genome of `Citrobacter braakii`, you would want all `C. braakii` genomes and nothing but `C. braakii` genomes. Bacsort can help with that!
+* Producing curated species labels for the purpose of classifying new genomes. Bacsort can help you build better [Centrifuge](http://www.ccb.jhu.edu/software/centrifuge/) and [Kraken](http://ccb.jhu.edu/software/kraken/) databases (details below [here](#using-bacsort-with-centrifuge) and [here](#using-bacsort-with-kraken)).
+* Finding unnamed species in public genomes. For example, [what](https://www.ncbi.nlm.nih.gov/assembly/GCF_002918535.1/) [are](https://www.ncbi.nlm.nih.gov/assembly/GCF_002918555.1/) [these](https://www.ncbi.nlm.nih.gov/assembly/GCF_002918935.1/) [genomes](https://www.ncbi.nlm.nih.gov/assembly/GCF_002919495.1/)? They are labelled as _Citrobacter amalonaticus_, but a look at the tree reveals they are nowhere near the rest of _C. amalonaticus_. They seem to be a new species of _Citrobacter_, waiting for a name!
+* Analyses of larger-scale phylogenetic structure, e.g. trees of whole families or orders.
+
 
 
 
@@ -218,7 +230,7 @@ GCF_000711175   Edwardsiella anguillarum
 GCF_000800725   Edwardsiella anguillarum
 ```
 
-You may have to refer back to the `cluster_accessions` file to see exactly which assemblies are in a particular cluster and need to be renamed.
+You will have to refer back to the `cluster_accessions` file to see exactly which assemblies are in a particular cluster and need to be renamed.
 
 You can then run `find_species_clades.py` again to generate a new tree with your updated definitions. This process can be repeated (fix labels, make tree, fix labels, make tree, etc) until you have no more changes to make.
 
@@ -306,7 +318,7 @@ This should create `*.cf` files which comprise your new Centrifuge database - us
 
 ## Using Bacsort with Kraken
 
-Kraken is a similar tool to Centrifuge, and you can similarly build a database using Bacsorted assemblies. The assumptions stated above in the [Using Bacsort with Centrifuge](#using-bacsort-with-centrifuge) section apply here too.
+[Kraken](http://ccb.jhu.edu/software/kraken/) is a similar tool to Centrifuge, and you can similarly build a database using Bacsorted assemblies. The assumptions stated above in the [Using Bacsort with Centrifuge](#using-bacsort-with-centrifuge) section apply here too.
 
 First create a bacterial database as described in the [Kraken docs](http://ccb.jhu.edu/software/kraken/MANUAL.html#custom-databases):
 ```
