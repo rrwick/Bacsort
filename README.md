@@ -3,6 +3,29 @@
 
 ## Intro
 
+RefSeq is a wonderful public repository of bacterial genome assemblies, but unfortunately many of its assemblies are mislabelled. This means that you cannot simply use a tool like [ncbi-genome-download](https://github.com/kblin/ncbi-genome-download) to get all assemblies of a particular genus, e.g. _Klebsiella_. If you did so, you would certainly get many _Klebsiella_ assemblies, but you would also get some _E. coli_ and _S. marcescens_ assemblies that were mislabelled as _Klebsiella_. Furthermore, you would miss some _Klebsiella_ assemblies that were mislabelled as something else, e.g. _Enterobacter_.
+
+Bacsort is a collection of script to help you solve this problem. It assists in downloading assemblies and constructing a tree. Using this tree you can curate the species labels, resulting in a consistently named collection.
+
+
+## Types of problems
+
+RefSeq species mislabellings happen for a number of reasons, and Bacsort can help with each. Sometimes assemblies are just given completely wrong labels. These are usually quite easy to fix in Bacsort:
+
+<p align="center"><img src="images/problem_1.png" alt="Problem 1" width="600"></p>
+
+Sometimes a new species name has been coined for a group but hasn't yet fully caught on, leaving an awkward mix of the old and new names. Bacsort can bring that new name to the whole group:
+
+<p align="center"><img src="images/problem_2.png" alt="Problem 2" width="600"></p>
+
+Sometimes a group is not well studied and many species are not yet named. Bacsort can help to assign names to samples which are closely related to those already named:
+
+<p align="center"><img src="images/problem_3.png" alt="Problem 3" width="600"></p>
+
+And sometimes a group is very inconsistently named. These are the toughest problems to fix! The best solution is to find an authoritative piece of literature that defines the species in question so you can apply that scheme to your assemblies:
+
+<p align="center"><img src="images/problem_4.png" alt="Problem 4" width="600"></p>
+
 
 
 ## Requirements
@@ -70,6 +93,20 @@ download_genomes.sh "Citrobacter Klebsiella Salmonella Yersinia"
 
 ```
 cluster_genera.py assemblies
+```
+
+This script will make a new directory, `clusters` which contains assemblies with redundancy removed. For example, if there are 10 very similar assemblies, they will form one cluster and have only a single representative in `clusters`. Cluster representatives are chosen based on assembly N50 so more completed assemblies are preferred.
+
+This step also produces a file, `cluster_accessions`, which lists the cluster name, followed by a tab, followed by a comma-delimited list of the assemblies in that cluster, with the representative assembly marked with a `*`:
+```
+Edwardsiella_01	GCF_000020865.1.fna.gz,GCF_000146305.1.fna.gz,GCF_000711155.1.fna.gz,GCF_000804515.1.fna.gz,GCF_002075835.1.fna.gz*
+Edwardsiella_02	GCF_000022885.2.fna.gz*,GCF_000264785.1.fna.gz
+Edwardsiella_03	GCF_000163955.1.fna.gz*,GCF_000341505.1.fna.gz
+Edwardsiella_04	GCF_000264765.2.fna.gz*,GCF_000711175.1.fna.gz,GCF_000800725.1.fna.gz,GCF_000804575.1.fna.gz,GCF_000804595.1.fna.gz,GCF_000804615.1.fna.gz,GCF_001186215.1.fna.gz
+Edwardsiella_05	GCF_000264805.1.fna.gz*
+Edwardsiella_06	GCF_000264825.1.fna.gz*
+Edwardsiella_07	GCF_000348565.1.fna.gz*
+Edwardsiella_08	GCF_000474215.1.fna.gz*
 ```
 
 ### Step 3: distance matrix
@@ -156,14 +193,30 @@ Run this command to make a tree file which contains the species labels in the no
 find_species_clades.py
 ```
 
-It produces the tree in two formats: newick and PhyloXML. The PhyloXML tree is suitable for viewing in [Archaeopteryx](https://sites.google.com/site/cmzmasek/home/software/archaeopteryx). Clades which perfectly define a species (i.e. all instances of that species are in a clade which contains no other species) will be coloured in the tree. You can then focus on the uncoloured parts where mislabellings may occur.
+It produces the tree in two formats: newick and PhyloXML. The PhyloXML tree is suitable for viewing in [Archaeopteryx](https://sites.google.com/site/cmzmasek/home/software/archaeopteryx). Clades which perfectly define a species (i.e. all instances of that species are in a clade which contains no other species) will be coloured in the tree. 
 
-As you find species label errors, add them to the `species_definitions` file in this format:
+To illustrate, here an Archaeopteryx visualisation of the genus _Edwardsiella_, before any curation:
+
+<p align="center"><img src="images/Edwardsiella_before.png" alt="Edwardsiella before" width="100%"></p>
+
+Each tip on the tree is labelled with the cluster name (e.g. 'Edwardsiella_01') and the species contained in that cluster (e.g. '3 x Edwardsiella tarda, 2 x Edwardsiella piscicida'). The species _ictaluri_ and _hoshinae_ are coloured because they are in consistent clades, but the other species are not. _E. tarda_, for example, is mostly contained in the bottom clade, but cluster Edwardsiella_01 also contains three _E. tarda_ assemblies. Since a single clade cannot define that entire species, it is not consistent.
+
+You can then focus on the uncoloured parts where mislabellings may occur. As you find species label errors, add them to the `species_definitions` file in this format:
 ```
-GCF_000000000	Genus species
+GCF_000020865   Edwardsiella piscicida
+GCF_000146305   Edwardsiella piscicida
+GCF_000804515   Edwardsiella piscicida
+GCF_001186215   Edwardsiella anguillarum
+GCF_000711175   Edwardsiella anguillarum
+GCF_000800725   Edwardsiella anguillarum
 ```
+
+You may have to refer back to the `cluster_accessions` file to see exactly which assemblies are in a particular cluster and need to be renamed.
 
 You can then run `find_species_clades.py` again to generate a new tree with your updated definitions. This process can be repeated (fix labels, make tree, fix labels, make tree, etc) until you have no more changes to make.
+
+Here is the _Edwardsiella_ tree after curation, now with all consistent species:
+<p align="center"><img src="images/Edwardsiella_after.png" alt="Edwardsiella after" width="80%"></p>
 
 
 ### Step 6: copy assemblies and/or clusters to species directories
@@ -237,7 +290,7 @@ cat library/*/*.fna > input-sequences.fna
 centrifuge-build -p 16 --conversion-table seqid2taxid.map --taxonomy-tree taxonomy/nodes.dmp --name-table taxonomy/names.dmp input-sequences.fna bacsort
 ```
 
-This should create three files which comprise your new Centrifuge database: `bacsort.1.cf`, `bacsort.2.cf` and `bacsort.3.cf`. Use it like you would any other Centrifuge database! You can now delete all other files made along the way to save disk space.
+This should create `*.cf` files which comprise your new Centrifuge database - use it like you would any other Centrifuge database! You can now delete any other files made along the way to save disk space.
 
 
 
