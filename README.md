@@ -34,7 +34,7 @@ And sometimes a group is very inconsistently named. These are the toughest probl
 ## Uses for Bacsort
 
 Here are a few that come to mind:
-* Producing clean sets of genome assemblies for species-level analyses. E.g. if you wanted to analyse the pan-genome of `Citrobacter braakii`, you would want all `C. braakii` genomes and nothing but `C. braakii` genomes. Bacsort can help with that!
+* Producing clean sets of genome assemblies for species-level analyses. E.g. if you wanted to analyse the pan-genome of _Citrobacter braakii_, you would want all _C. braakii_ genomes and nothing but _C. braakii_ genomes. Bacsort can help with that!
 * Producing curated species labels for the purpose of classifying new genomes. Bacsort can help you build better [Centrifuge](http://www.ccb.jhu.edu/software/centrifuge/) and [Kraken](http://ccb.jhu.edu/software/kraken/) databases (details below [here](#using-bacsort-with-centrifuge) and [here](#using-bacsort-with-kraken)).
 * Finding unnamed species in public genomes. For example, [what](https://www.ncbi.nlm.nih.gov/assembly/GCF_002918535.1/) [are](https://www.ncbi.nlm.nih.gov/assembly/GCF_002918555.1/) [these](https://www.ncbi.nlm.nih.gov/assembly/GCF_002918935.1/) [genomes](https://www.ncbi.nlm.nih.gov/assembly/GCF_002919495.1/)? They are labelled as _Citrobacter amalonaticus_, but a look at the tree reveals they are nowhere near the rest of _C. amalonaticus_. They seem to be a new species of _Citrobacter_, waiting for a name!
 * Analyses of larger-scale phylogenetic structure, e.g. trees of whole families or orders.
@@ -47,7 +47,7 @@ Here are a few that come to mind:
 
 Running Bacsort requires that you have [Mash](http://mash.readthedocs.io/) installed and available in your PATH. If you can type `mash -h` into your terminal and not get an error, you should be good! There are multiple ways to build trees ([more info here](#step-4-build-tree)), but my recommended way requires [R](https://www.r-project.org/) with the [ape](https://cran.r-project.org/package=ape) and [phangorn](https://cran.r-project.org/package=phangorn) packages installed.
 
-You'll also need Python3 and [BioPython](http://biopython.org/). If `python3 -c "import Bio"` doesn't give you an error, you should be good! If you need to install BioPython, it's easiest to do with pip: `pip3 install biopython`
+You'll also need [Python 3](https://www.python.org/) and [BioPython](http://biopython.org/). If `python3 -c "import Bio"` doesn't give you an error, you should be good! If you need to install BioPython, it's easiest to do with pip: `pip3 install biopython`
 
 Finally, depending on how you want to compute pairwise distances, you may also need [FastANI](https://github.com/ParBLiSS/FastANI).
 
@@ -60,9 +60,10 @@ You don't need to install Bacsort - it's just a collection of independent script
 
 ```
 git clone https://github.com/rrwick/Bacsort
-export PATH=$(pwd)/Bacsort:"$PATH"  # Add this line to your .bashrc file (or equivalent) if needed
+export PATH=$(pwd)/Bacsort:"$PATH"
 ```
 
+If you want to run Bacsort a lot, I'd suggest adding it to your PATH in your `.bashrc` file (or equivalent) or copying its scripts to somewhere in your path (like `~/.local/bin/`).
 
 
 
