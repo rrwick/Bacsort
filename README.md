@@ -8,7 +8,9 @@ RefSeq is a wonderful public repository of bacterial genome assemblies, but unfo
 Bacsort is a collection of script to help you solve this problem. It assists in downloading assemblies and constructing a tree. Using this tree you can curate the species labels, resulting in a consistently named collection.
 
 
-## Types of problems
+
+
+## Problems Bacsort can fix
 
 RefSeq species mislabellings happen for a number of reasons, and Bacsort can help with each. Sometimes assemblies are just given completely wrong labels. These are usually quite easy to fix in Bacsort:
 
@@ -18,7 +20,7 @@ Sometimes a new species name has been coined for a group but hasn't yet fully ca
 
 <p align="center"><img src="images/problem_2.png" alt="Problem 2" width="600"></p>
 
-Sometimes a group is not well studied and many species are not yet named. Bacsort can help to assign names to samples which are closely related to those already named:
+Sometimes a group is not well studied and many samples are not yet named. Bacsort can assign names to samples which are closely related to those already named:
 
 <p align="center"><img src="images/problem_3.png" alt="Problem 3" width="600"></p>
 
@@ -28,27 +30,25 @@ And sometimes a group is very inconsistently named. These are the toughest probl
 
 
 
+
 ## Requirements
 
-Running Bacsort requires that you have [Mash](https://github.com/marbl/Mash) installed and available in your PATH. If you can type `mash -h` into your terminal and not get an error, you should be good! To build trees, you'll need either [Quicktree](https://github.com/khowe/quicktree) or [RapidNJ](http://birc.au.dk/software/rapidnj/).
+Running Bacsort requires that you have [Mash](http://mash.readthedocs.io/) installed and available in your PATH. If you can type `mash -h` into your terminal and not get an error, you should be good! There are multiple ways to build trees ([more info here](#step-4-build-tree)), but my recommended way requires [R](https://www.r-project.org/) with the [ape](https://cran.r-project.org/package=ape) and [phangorn](https://cran.r-project.org/package=phangorn) packages installed.
 
 You'll also need Python3 and [BioPython](http://biopython.org/). If `python3 -c "import Bio"` doesn't give you an error, you should be good! If you need to install BioPython, it's easiest to do with pip: `pip3 install biopython`
 
-Finally, depending on how you want to compute pairwise distances, you may need [FastANI](https://github.com/ParBLiSS/FastANI), [minimap2](https://github.com/lh3/minimap2) and/or the [edlib Python library](https://github.com/Martinsos/edlib/tree/master/bindings/python).
+Finally, depending on how you want to compute pairwise distances, you may also need [FastANI](https://github.com/ParBLiSS/FastANI).
 
 
 
 
 ## Installation
 
-You don't need to install Bacsort - it's just a collection of independent scripts which can be run directly. However, copying them to somewhere in your path (e.g. `~/.local/bin`) will make it easier to run:
+You don't need to install Bacsort - it's just a collection of independent scripts which can be run directly. However, adding the Bacsort directory to your PATH will make the scripts easier to run:
 
 ```
 git clone https://github.com/rrwick/Bacsort
-install_dir="$HOME"/.local/bin
-mkdir -p "$install_dir"
-cp Bacsort/*.sh Bacsort/*.py "$install_dir"
-export PATH="$install_dir":"$PATH"  # Add this line to your .bashrc file (or equivalent) if needed
+export PATH=$(pwd)/Bacsort:"$PATH"  # Add this line to your .bashrc file (or equivalent) if needed
 ```
 
 
@@ -56,7 +56,7 @@ export PATH="$install_dir":"$PATH"  # Add this line to your .bashrc file (or equ
 
 ## Bacsorting assemblies
 
-What follows are instructions for refining the species labels for one or more genera of interest. The end result will be assemblies organised into genus/species directories. For example:
+What follows are instructions for refining the species labels for one or more genera of interest. The end result will be RefSeq assemblies organised into genus/species directories. For example:
 ```
 Moraxella/
   atlantae/
@@ -85,17 +85,24 @@ Bacsort will download _all_ NCBI assemblies for your genera of interest, so make
 
 ### Step 1: download assemblies
 
+This script will use [ncbi-genome-download](https://github.com/kblin/ncbi-genome-download) to download assemblies for your genera of interest:
 ```
 download_genomes.sh "Citrobacter Klebsiella Salmonella Yersinia"
 ```
 
+It will also make [Mash](http://mash.readthedocs.io/) sketches of the assemblies in preparation for the next step.
+
+
+
 ### Step 2: cluster assemblies
+
+This script will make a new directory, `clusters` which contains assemblies with redundancy removed:
 
 ```
 cluster_genera.py assemblies
 ```
 
-This script will make a new directory, `clusters` which contains assemblies with redundancy removed. For example, if there are 10 very similar assemblies, they will form one cluster and have only a single representative in `clusters`. Cluster representatives are chosen based on assembly N50 so more completed assemblies are preferred.
+For example, if there are 10 very similar assemblies, they will form one cluster and have only a single representative in `clusters`. Cluster representatives are chosen based on assembly N50 so more completed assemblies are preferred.
 
 This step also produces a file, `cluster_accessions`, which lists the cluster name, followed by a tab, followed by a comma-delimited list of the assemblies in that cluster, with the representative assembly marked with a `*`:
 ```
@@ -109,9 +116,10 @@ Edwardsiella_07	GCF_000348565.1.fna.gz*
 Edwardsiella_08	GCF_000474215.1.fna.gz*
 ```
 
+
 ### Step 3: distance matrix
 
-As input for the neighbour joining tree algorithm, we need a matrix of all pairwise distances between clusters. There a few alternative ways to produce such a matrix: using Mash, FastANI or rMLST.
+As input for the neighbour joining tree algorithm, we need a matrix of all pairwise distances between clusters. There a few alternative ways to produce such a matrix: using [Mash](http://mash.readthedocs.io/), [FastANI](https://github.com/ParBLiSS/FastANI) or a combination of the two.
 
 #### Option 1: Mash
 
@@ -166,7 +174,6 @@ If you would like, you can use this script to combine FastANI distances (which a
 ```
 combine_distance_matrices.py tree/fastani.phylip tree/mash.phylip > tree/distances.phylip
 ```
-
 
 
 ### Step 4: build tree
@@ -237,9 +244,10 @@ This is the same as above, except that the redundancy-removed clusters are used 
 
 
 
+
 ## Classify new assemblies using Mash
 
-Mash can use your newly organised assemblies to query unknown assemblies and give the best match.
+[Mash](http://mash.readthedocs.io/) can use your newly organised assemblies to query unknown assemblies and give the best match.
 
 First, build a sketch of all your organised assemblies. You can do this either with `assemblies_binned` (all assemblies) or `clusters_binned` (redundancy-removed), but I'd recommend the latter for performance:
 ```
@@ -260,6 +268,7 @@ classify_assembly_using_mash.py sketches.msh query.fasta
 This script has some additional logic to help with classification:
 * The `--threshold` option controls how close the query must be to a reference to count as a match (default: 5%)
 * The `--contamination_threshold` option helps to spot contaminated assemblies. If the top two genera have matches closer than this (default: 2%), the assembly is considered contaminated. E.g. if your assembly is a strong match to both _Klebsiella_ and _Citrobacter_, then something is probably not right!
+
 
 
 
@@ -294,6 +303,7 @@ This should create `*.cf` files which comprise your new Centrifuge database - us
 
 
 
+
 ## Using Bacsort with Kraken
 
 Kraken is a similar tool to Centrifuge, and you can similarly build a database using Bacsorted assemblies. The assumptions stated above in the [Using Bacsort with Centrifuge](#using-bacsort-with-centrifuge) section apply here too.
@@ -320,6 +330,7 @@ Finally, we build the library (again, please read the [Kraken docs](http://ccb.j
 ```
 kraken-build --build --threads 16 --db bacsort
 ```
+
 
 
 
