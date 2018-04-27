@@ -1,7 +1,32 @@
 # Bacsort
 
+## Table of contents
 
-## Intro
+  * [Introduction](#introduction)
+      * [Problems Bacsort can fix](#problems-bacsort-can-fix)
+      * [Uses for Bacsort](#uses-for-bacsort)
+  * [Installation](#installation)
+     * [Software requirements](#software-requirements)
+  * [Instructions](#instructions)
+     * [Step 1: download assemblies](#step-1-download-assemblies)
+     * [Step 2: cluster assemblies](#step-2-cluster-assemblies)
+     * [Step 3: distance matrix](#step-3-distance-matrix)
+     * [Step 4: build tree](#step-4-build-tree)
+     * [Step 5: curate tree](#step-5-curate-tree)
+     * [Step 6: copy assemblies to species directories](#step-6-copy-assemblies-to-species-directories)
+  * [Downstream analyses](#downstream-analyses)
+     * [Classify new assemblies using Mash](#classify-new-assemblies-using-mash)
+     * [Using Bacsort with Centrifuge](#using-bacsort-with-centrifuge)
+     * [Using Bacsort with Kraken](#using-bacsort-with-kraken)
+  * [Tips](#tips)
+  * [FAQ](#faq)
+  * [Contributing](#contributing)
+  * [License](#license)
+
+
+
+
+## Introduction
 
 [RefSeq](https://www.ncbi.nlm.nih.gov/refseq/) is a wonderful public repository that contains many bacterial genome assemblies, but unfortunately some of its assemblies are mislabelled. This means that you cannot simply use a tool like [ncbi-genome-download](https://github.com/kblin/ncbi-genome-download) to get all assemblies of a particular genus, e.g. _Klebsiella_. If you did so, you would certainly get many _Klebsiella_ assemblies, but you would also get some _E. coli_ and _S. marcescens_ assemblies that were mislabelled as _Klebsiella_. Furthermore, you would miss some _Klebsiella_ assemblies that were mislabelled as something else, e.g. _Enterobacter_.
 
@@ -12,7 +37,7 @@ Bacsort is a collection of script to help you solve this problem. The figure bel
 Defining bacterial species is a complex topic, and there is often no perfect solution. Here are some interesting papers on the topic, if you'd like to learn more: [Doolittle 2006](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2006-7-9-116), [Bapteste 2009](https://biologydirect.biomedcentral.com/articles/10.1186/1745-6150-4-34), [Georgiades 2011](https://www.frontiersin.org/articles/10.3389/fmicb.2010.00151/full). But even though it can be a difficult problem, Bacsort can help us work towards a future where bacterial species are defined, if not perfectly, at least more consistently.
 
 
-## Problems Bacsort can fix
+### Problems Bacsort can fix
 
 RefSeq species mislabellings happen for a number of reasons, and Bacsort can help with each. Sometimes assemblies are just given completely wrong labels. These are usually quite easy to fix in Bacsort:
 
@@ -22,7 +47,7 @@ Sometimes a new species name has been coined for a group but hasn't yet fully ca
 
 <p align="center"><img src="images/problem_2.png" alt="Problem 2" width="500"></p>
 
-Sometimes a group is not well studied and many samples are not yet named. Bacsort can assign names to samples which are closely related to those already named:
+Sometimes a group is not well studied and many samples are not yet named. Bacsort can assign names to samples which are closely related to those with names:
 
 <p align="center"><img src="images/problem_3.png" alt="Problem 3" width="500"></p>
 
@@ -31,25 +56,13 @@ And sometimes a group is very inconsistently named. These are the toughest probl
 <p align="center"><img src="images/problem_4.png" alt="Problem 4" width="500"></p>
 
 
-
-
-## Uses for Bacsort
+### Uses for Bacsort
 
 * Producing clean sets of genome assemblies for species-level analyses. E.g. if you wanted to analyse the pan-genome of _Citrobacter braakii_, you would want all _C. braakii_ genomes and nothing but _C. braakii_ genomes. Bacsort can help with that!
 * Producing curated species labels for the purpose of classifying new genomes. Bacsort can help you build better [Centrifuge](http://www.ccb.jhu.edu/software/centrifuge/) and [Kraken](http://ccb.jhu.edu/software/kraken/) databases (details below [here](#using-bacsort-with-centrifuge) and [here](#using-bacsort-with-kraken)).
 * Finding unnamed species in public genomes. For example, [what](https://www.ncbi.nlm.nih.gov/assembly/GCF_002918535.1/) [are](https://www.ncbi.nlm.nih.gov/assembly/GCF_002918555.1/) [these](https://www.ncbi.nlm.nih.gov/assembly/GCF_002918935.1/) [genomes](https://www.ncbi.nlm.nih.gov/assembly/GCF_002919495.1/)? While they are labelled as _Citrobacter amalonaticus_, organising _Citrobacter_ assemblies with Bacsort shows them to be a new species of _Citrobacter_, waiting for a name!
 * Analyses of larger-scale phylogenetic structure, e.g. trees of whole families or orders.
 * Submitting revisions to RefSeq, and helping to improve the consistency of species names.
-
-
-
-
-## Software requirements
-
-* Running Bacsort requires that you have [Mash](http://mash.readthedocs.io/) installed and available in your PATH. If you can type `mash -h` into your terminal and not get an error, you should be good!
-* There are multiple ways to build trees ([more info here](#step-4-build-tree)), but my recommended way requires [R](https://www.r-project.org/) with the [ape](https://cran.r-project.org/package=ape) and [phangorn](https://cran.r-project.org/package=phangorn) packages installed.
-* You'll also need [Python 3](https://www.python.org/) and [BioPython](http://biopython.org/). If `python3 -c "import Bio"` doesn't give you an error, you should be good! If you need to install BioPython, it's easiest to do with pip: `pip3 install biopython`
-* Depending on how you want to compute pairwise distances, you may also need [FastANI](https://github.com/ParBLiSS/FastANI).
 
 
 
@@ -65,6 +78,12 @@ export PATH=$(pwd)/Bacsort:"$PATH"
 
 If you want to run Bacsort a lot, I'd suggest adding it to your PATH in your `.bashrc` file (or equivalent) or copying its scripts to somewhere in your path (like `~/.local/bin/`).
 
+### Software requirements
+
+* Running Bacsort requires that you have [Mash](http://mash.readthedocs.io/) installed and available in your PATH. If you can type `mash -h` into your terminal and not get an error, you should be good!
+* There are multiple ways to build trees ([more info here](#step-4-build-tree)), but my recommended way requires [R](https://www.r-project.org/) with the [ape](https://cran.r-project.org/package=ape) and [phangorn](https://cran.r-project.org/package=phangorn) packages installed.
+* You'll also need [Python 3](https://www.python.org/) and [BioPython](http://biopython.org/). If `python3 -c "import Bio"` doesn't give you an error, you should be good! If you need to install BioPython, it's easiest to do with pip: `pip3 install biopython`
+* Depending on how you want to compute pairwise distances, you may also need [FastANI](https://github.com/ParBLiSS/FastANI).
 
 
 ## Instructions
@@ -211,7 +230,7 @@ Here is the _Edwardsiella_ tree after curation, now with all consistent species:
 <p align="center"><img src="images/Edwardsiella_after.png" alt="Edwardsiella after" width="80%"></p>
 
 
-### Step 6: copy assemblies and/or clusters to species directories
+### Step 6: copy assemblies to species directories
 
 When you are happy with the species labels in the tree, you can run this command to copy assemblies into species directories:
 ```
@@ -246,7 +265,9 @@ This is the same as above, except that the redundancy-removed clusters are used 
 
 
 
-## Classify new assemblies using Mash
+## Downstream analyses
+
+### Classify new assemblies using Mash
 
 [Mash](http://mash.readthedocs.io/) can use your newly organised assemblies to query unknown assemblies and give the best match.
 
@@ -271,9 +292,7 @@ This script has some additional logic to help with classification:
 * The `--contamination_threshold` option helps to spot contaminated assemblies. If the top two genera have matches closer than this (default: 2%), the assembly is considered contaminated. E.g. if your assembly is a strong match to both _Klebsiella_ and _Citrobacter_, then something is probably not right!
 
 
-
-
-## Using Bacsort with Centrifuge
+### Using Bacsort with Centrifuge
 
 You can use Bacsort's assemblies to build a [Centrifuge](http://www.ccb.jhu.edu/software/centrifuge/) database which incorporates your revised species labels. For these instructions, I assume that you've only run Bacsort on _some_ bacterial genera, but you'd still like to include _all_ bacterial genera in the Centrifuge database. I also assume that you've already run all of the Bacsort steps above and produced a `clusters_binned` directory.
 
@@ -303,9 +322,7 @@ centrifuge-build -p 16 --conversion-table seqid2taxid.map --taxonomy-tree taxono
 This should create `*.cf` files which comprise your new Centrifuge database - use it like you would any other Centrifuge database! You can now delete any other files made along the way to save disk space.
 
 
-
-
-## Using Bacsort with Kraken
+### Using Bacsort with Kraken
 
 [Kraken](http://ccb.jhu.edu/software/kraken/) is a similar tool to Centrifuge, and you can similarly build a database using Bacsorted assemblies. The assumptions stated above in the [Using Bacsort with Centrifuge](#using-bacsort-with-centrifuge) section apply here too.
 
@@ -331,6 +348,45 @@ Finally, we build the library (again, please read the [Kraken docs](http://ccb.j
 ```
 kraken-build --build --threads 16 --db bacsort
 ```
+
+
+
+
+## Tips
+
+#### Updating a Bacsorted collection
+
+
+#### Excluding species
+
+
+## FAQ
+
+#### Do bacterial species really exist?
+
+Tough question. Yes and no. Check out the papers linked to in the intro. But humans love categorising things and assigning labels to groups of bacteria is undoubtedly useful. So even if the concept of a bacterial species can be a bit shaky, I think bacterial species names are here to stay!
+
+
+#### What average nucleotide identity (ANI) defines a species?
+
+[This preprint](https://www.biorxiv.org/content/early/2017/11/27/225342) suggests there is a clear answer to that question: 5% or less. However, Bacsort trees reveal that there is not a consistent amount of variation within a species. For example, genomes in _Klebsiella oxytoca_ tend to be about (low number)% divergent from each other. Genomes in _Photorhabdus luminescens_ are more like (medium number)% divergent. And _Buchnera aphidicola_ genomes are (high number)% divergent! Setting any single threshold would be incompatible with so many existing species labels, that I don't think it's realistic.
+
+
+#### What about horizontal gene transfer (HGT)?
+
+The more HGT present in a population of bacteria, the less appropriate it is to organise their genomes in a tree. I.e. HGT makes the genome relatedness more network-like and less tree-like. This is a shortcoming of Bacsort, which uses trees to organise genomes and assumes that a 'clade' is a real thing. Bacsort also builds trees using distance matrixes which, unlike alignment-based phylogenetics, have no good way to filter out the effect of HGT. However, I think that on the whole, HGT probably does not affect the large-scale structure of Bacsort's trees enough to be a problem. E.g. there may be enough HGT within a species, like _Klebsiella pneumoniae_, that you shouldn't take the Bacsort's tree structure within that species seriously. But the fact that _K. pneumoniae_ holds together as a clade distinct from other _Klebsiella_ species is true, despite the large amounts of HGT that is known to occur in that genus.
+
+
+#### What's the deal with _Shigella_?
+
+_Shigella_ species are all phylogenetically contained within _E. coli_ and I would argue they shouldn't really be separate species at all, let alone in a separate genus. I think it would be more accurate to consider these bacteria to be pathotypes of _E. coli_, not separate species. Read more about it here: [Johnson 2000](http://jmm.microbiologyresearch.org/content/journal/jmm/10.1099/0022-1317-49-7-583), [Robins-Browne 2016](https://www.frontiersin.org/articles/10.3389/fcimb.2016.00141/full). It does, however, raise the debate about how much phenotype should be a factor in species definitions. I would argue that phylogenetics is paramount, but others may disagree.
+
+
+
+
+## Contributing
+
+
 
 
 
