@@ -360,6 +360,8 @@ kraken-build --build --threads 16 --db bacsort
 #### Excluding species
 
 
+
+
 ## FAQ
 
 #### Do bacterial species really exist?
@@ -369,7 +371,7 @@ Tough question. Yes and no. Check out the papers linked to in the intro. But hum
 
 #### What average nucleotide identity (ANI) defines a species?
 
-[This preprint](https://www.biorxiv.org/content/early/2017/11/27/225342) suggests there is a clear answer to that question: 5% or less. However, Bacsort trees reveal that there is not a consistent amount of variation within a species. For example, genomes in _Klebsiella oxytoca_ tend to be about (low number)% divergent from each other. Genomes in _Photorhabdus luminescens_ are more like (medium number)% divergent. And _Buchnera aphidicola_ genomes are (high number)% divergent! Setting any single threshold would be incompatible with so many existing species labels, that I don't think it's realistic.
+[This preprint](https://www.biorxiv.org/content/early/2017/11/27/225342) suggests there is a clear answer to that question: 5% or less. But I'm sceptical that is compatible with species names as they are actually used. For example, genomes in _Klebsiella oxytoca_ tend to be about 1% divergent from each other. Genomes in _Photorhabdus luminescens_ are more like 5% divergent. And genomes labelled _Buchnera aphidicola_ are on average a whopping 18% divergent from each other! Setting any single threshold would be incompatible with so many existing species labels that I don't think it's realistic.
 
 
 #### What about horizontal gene transfer (HGT)?
