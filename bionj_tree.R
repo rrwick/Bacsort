@@ -1,5 +1,10 @@
 #!/usr/bin/env Rscript
 
+# Install ape and phangorn if they aren't already installed.
+list_of_packages <- c("ape", "phangorn")
+new_packages <- list_of_packages[!(list_of_packages %in% installed.packages()[,"Package"])]
+if(length(new_packages)) install.packages(new_packages)
+
 library(ape)
 library(phangorn)
 
@@ -21,4 +26,3 @@ tree <- bionj(distances)
 cat(" done\n")
 
 write.tree(tree, newick_tree_filename)
-
