@@ -5,51 +5,51 @@
 
 [RefSeq](https://www.ncbi.nlm.nih.gov/refseq/) is a wonderful public repository that contains many bacterial genome assemblies, but unfortunately some of its assemblies are mislabelled. This means that you cannot simply use a tool like [ncbi-genome-download](https://github.com/kblin/ncbi-genome-download) to get all assemblies of a particular genus, e.g. _Klebsiella_. If you did so, you would certainly get many _Klebsiella_ assemblies, but you would also get some _E. coli_ and _S. marcescens_ assemblies that were mislabelled as _Klebsiella_. Furthermore, you would miss some _Klebsiella_ assemblies that were mislabelled as something else, e.g. _Enterobacter_.
 
-Bacsort is a collection of script to help you solve this problem. It assists in downloading assemblies and constructing a tree, with which you can curate the species labels. The end result of Bacsort is a consistently named collection of bacterial genome assemblies.
+Bacsort is a collection of script to help you solve this problem. The figure below shows an overview of its method: A) downloading RefSeq genomes for genera of interest, B) clustering the genomes to remove redundancy, C) constructing a phylogenetic tree with species labels, D) manual curation of species labels, and E) a consistently named collection of bacterial genome assemblies, where (whenever possible) species are defined as clades on the tree.
 
+<p align="center"><img src="images/method.png" alt="Bacsort method" width="700"></p>
 
+Defining bacterial species is a complex topic, and there is often no perfect solution. Here are some interesting papers on the topic, if you'd like to learn more: [Doolittle 2006](https://genomebiology.biomedcentral.com/articles/10.1186/gb-2006-7-9-116), [Bapteste 2009](https://biologydirect.biomedcentral.com/articles/10.1186/1745-6150-4-34), [Georgiades 2011](https://www.frontiersin.org/articles/10.3389/fmicb.2010.00151/full). But even though it can be a difficult problem, Bacsort can help us work towards a future where bacterial species are defined, if not perfectly, at least more consistently.
 
 
 ## Problems Bacsort can fix
 
 RefSeq species mislabellings happen for a number of reasons, and Bacsort can help with each. Sometimes assemblies are just given completely wrong labels. These are usually quite easy to fix in Bacsort:
 
-<p align="center"><img src="images/problem_1.png" alt="Problem 1" width="600"></p>
+<p align="center"><img src="images/problem_1.png" alt="Problem 1" width="500"></p>
 
 Sometimes a new species name has been coined for a group but hasn't yet fully caught on, leaving an awkward mix of the old and new names. Bacsort can bring that new name to the whole group:
 
-<p align="center"><img src="images/problem_2.png" alt="Problem 2" width="600"></p>
+<p align="center"><img src="images/problem_2.png" alt="Problem 2" width="500"></p>
 
 Sometimes a group is not well studied and many samples are not yet named. Bacsort can assign names to samples which are closely related to those already named:
 
-<p align="center"><img src="images/problem_3.png" alt="Problem 3" width="600"></p>
+<p align="center"><img src="images/problem_3.png" alt="Problem 3" width="500"></p>
 
 And sometimes a group is very inconsistently named. These are the toughest problems to fix! The best solution is to find an authoritative piece of literature that defines the species in question so you can apply that scheme to your assemblies:
 
-<p align="center"><img src="images/problem_4.png" alt="Problem 4" width="600"></p>
+<p align="center"><img src="images/problem_4.png" alt="Problem 4" width="500"></p>
 
 
 
 
 ## Uses for Bacsort
 
-Here are a few that come to mind:
 * Producing clean sets of genome assemblies for species-level analyses. E.g. if you wanted to analyse the pan-genome of _Citrobacter braakii_, you would want all _C. braakii_ genomes and nothing but _C. braakii_ genomes. Bacsort can help with that!
 * Producing curated species labels for the purpose of classifying new genomes. Bacsort can help you build better [Centrifuge](http://www.ccb.jhu.edu/software/centrifuge/) and [Kraken](http://ccb.jhu.edu/software/kraken/) databases (details below [here](#using-bacsort-with-centrifuge) and [here](#using-bacsort-with-kraken)).
-* Finding unnamed species in public genomes. For example, [what](https://www.ncbi.nlm.nih.gov/assembly/GCF_002918535.1/) [are](https://www.ncbi.nlm.nih.gov/assembly/GCF_002918555.1/) [these](https://www.ncbi.nlm.nih.gov/assembly/GCF_002918935.1/) [genomes](https://www.ncbi.nlm.nih.gov/assembly/GCF_002919495.1/)? They are labelled as _Citrobacter amalonaticus_, but a look at the tree reveals they are nowhere near the rest of _C. amalonaticus_. They seem to be a new species of _Citrobacter_, waiting for a name!
+* Finding unnamed species in public genomes. For example, [what](https://www.ncbi.nlm.nih.gov/assembly/GCF_002918535.1/) [are](https://www.ncbi.nlm.nih.gov/assembly/GCF_002918555.1/) [these](https://www.ncbi.nlm.nih.gov/assembly/GCF_002918935.1/) [genomes](https://www.ncbi.nlm.nih.gov/assembly/GCF_002919495.1/)? While they are labelled as _Citrobacter amalonaticus_, organising _Citrobacter_ assemblies with Bacsort shows them to be a new species of _Citrobacter_, waiting for a name!
 * Analyses of larger-scale phylogenetic structure, e.g. trees of whole families or orders.
+* Submitting revisions to RefSeq, and helping to improve the consistency of species names.
 
 
 
 
+## Software requirements
 
-## Requirements
-
-Running Bacsort requires that you have [Mash](http://mash.readthedocs.io/) installed and available in your PATH. If you can type `mash -h` into your terminal and not get an error, you should be good! There are multiple ways to build trees ([more info here](#step-4-build-tree)), but my recommended way requires [R](https://www.r-project.org/) with the [ape](https://cran.r-project.org/package=ape) and [phangorn](https://cran.r-project.org/package=phangorn) packages installed.
-
-You'll also need [Python 3](https://www.python.org/) and [BioPython](http://biopython.org/). If `python3 -c "import Bio"` doesn't give you an error, you should be good! If you need to install BioPython, it's easiest to do with pip: `pip3 install biopython`
-
-Finally, depending on how you want to compute pairwise distances, you may also need [FastANI](https://github.com/ParBLiSS/FastANI).
+* Running Bacsort requires that you have [Mash](http://mash.readthedocs.io/) installed and available in your PATH. If you can type `mash -h` into your terminal and not get an error, you should be good!
+* There are multiple ways to build trees ([more info here](#step-4-build-tree)), but my recommended way requires [R](https://www.r-project.org/) with the [ape](https://cran.r-project.org/package=ape) and [phangorn](https://cran.r-project.org/package=phangorn) packages installed.
+* You'll also need [Python 3](https://www.python.org/) and [BioPython](http://biopython.org/). If `python3 -c "import Bio"` doesn't give you an error, you should be good! If you need to install BioPython, it's easiest to do with pip: `pip3 install biopython`
+* Depending on how you want to compute pairwise distances, you may also need [FastANI](https://github.com/ParBLiSS/FastANI).
 
 
 
@@ -67,26 +67,9 @@ If you want to run Bacsort a lot, I'd suggest adding it to your PATH in your `.b
 
 
 
-## Bacsorting assemblies
+## Instructions
 
-What follows are instructions for refining the species labels for one or more genera of interest. The end result will be RefSeq assemblies organised into genus/species directories. For example:
-```
-Moraxella/
-  atlantae/
-    GCF_001591265.fna.gz
-    GCF_001678995.fna.gz
-    GCF_001679065.fna.gz
-  boevrei/
-    GCF_000379845.fna.gz
-Psychrobacter/
-  faecalis/
-    GCF_001652315.fna.gz
-    GCF_002836335.fna.gz
-  glacincola/
-    GCF_001411745.fna.gz
-```
-
-All Bacsort commands need to be run in the same directory. They will create directories and files where it is run, so I would recommended running it from a new directory:
+What follows are instructions for using Bacsort to refine the species labels for one or more genera of interest. All Bacsort commands need to be run in the same directory. They will create directories and files where it is run, so I would recommended running it from a new directory:
 
 ```
 mkdir bacsort_results
@@ -192,12 +175,7 @@ I prefer the [BIONJ algorithm](https://academic.oup.com/mbe/article/14/7/685/111
 bionj_tree.R tree/distances.phylip tree/tree.newick
 ```
 
-Alternatively, there are plenty of other tools for building a Newick-format tree from a PHYLIP distance matrix:
-* [RapidNJ](http://birc.au.dk/software/rapidnj/) is a particularly fast tool using the neighbour-joining (NJ) algorithm.
-* [Quicktree](https://github.com/khowe/quicktree) is another NJ tool which produces similar results.
-* [BIONJ](http://www.atgc-montpellier.fr/bionj/download.php) is a commmand line tool for building BIONJ trees.
-* The [ape](http://ape-package.ird.fr/) and [phangorn](https://github.com/KlausVigo/phangorn) R packages have a number of tree-building algorithms, including UPGMA, NJ and BIONJ.
-* The [PHYLIP package](http://evolution.genetics.washington.edu/phylip.html) has a number of programs which may be relevant.
+Alternatively, there are plenty of other tools and packages for building a Newick-format tree from a PHYLIP distance matrix, including [RapidNJ](http://birc.au.dk/software/rapidnj/), [Quicktree](https://github.com/khowe/quicktree), [BIONJ](http://www.atgc-montpellier.fr/bionj/download.php), [ape](http://ape-package.ird.fr/)/[phangorn](https://github.com/KlausVigo/phangorn) and [PHYLIP](http://evolution.genetics.washington.edu/phylip.html).
 
 
 ### Step 5: curate tree
@@ -207,15 +185,15 @@ Run this command to make a tree file which contains the species labels in the no
 find_species_clades.py
 ```
 
-It produces the tree in two formats: newick and PhyloXML. The PhyloXML tree is suitable for viewing in [Archaeopteryx](https://sites.google.com/site/cmzmasek/home/software/archaeopteryx). Clades which perfectly define a species (i.e. all instances of that species are in a clade which contains no other species) will be coloured in the tree. 
+It produces the tree in two formats: Newick and PhyloXML. The PhyloXML tree is suitable for viewing in [Archaeopteryx](https://sites.google.com/site/cmzmasek/home/software/archaeopteryx). Clades which perfectly define a species (i.e. all instances of that species are in a clade which contains no other species) will be coloured in the tree (using a random colour) to make it clear which parts of the tree do and don't have consistent names.
 
-To illustrate, here an Archaeopteryx visualisation of the genus _Edwardsiella_, before any curation:
+To illustrate, here is an Archaeopteryx visualisation of _Edwardsiella_, before any curation:
 
 <p align="center"><img src="images/Edwardsiella_before.png" alt="Edwardsiella before" width="100%"></p>
 
-Each tip on the tree is labelled with the cluster name (e.g. 'Edwardsiella_01') and the species contained in that cluster (e.g. '3 x Edwardsiella tarda, 2 x Edwardsiella piscicida'). The species _ictaluri_ and _hoshinae_ are coloured because they are in consistent clades, but the other species are not. _E. tarda_, for example, is mostly contained in the bottom clade, but cluster Edwardsiella_01 also contains three _E. tarda_ assemblies. Since a single clade cannot define that entire species, it is not consistent.
+Each tip on the tree is labelled with the cluster name (e.g. 'Edwardsiella_01') and the species contained in that cluster (e.g. '3 x Edwardsiella tarda, 2 x Edwardsiella piscicida'). The clades for _E. ictaluri_ and _E. hoshinae_ are coloured because they are consistently named, but the other species are not.
 
-You can then focus on the uncoloured parts where mislabellings may occur. As you find species label errors, add them to the `species_definitions` file in this format:
+You can then focus on the uncoloured parts. As you find species label errors, add them to the `species_definitions` file like this:
 ```
 GCF_000020865   Edwardsiella piscicida
 GCF_000146305   Edwardsiella piscicida
@@ -225,9 +203,9 @@ GCF_000711175   Edwardsiella anguillarum
 GCF_000800725   Edwardsiella anguillarum
 ```
 
-You will have to refer back to the `cluster_accessions` file to see exactly which assemblies are in a particular cluster and need to be renamed.
+You will have to refer back to the `cluster_accessions` file (made back in step 2) to see exactly which assemblies are in a particular cluster and need to be renamed. You can make your own `species_definitions` file from scratch, or you can add to the [one in this repo](species_definitions) which has my redefinitions for Enterobacterales and Moraxellaceae.
 
-You can then run `find_species_clades.py` again to generate a new tree with your updated definitions. This process can be repeated (fix labels, make tree, fix labels, make tree, etc) until you have no more changes to make.
+You can then run `find_species_clades.py` again to generate a new tree with your updated definitions. This process can be repeated (fix labels, make tree, fix labels, make tree, etc.) until you have no more changes to make.
 
 Here is the _Edwardsiella_ tree after curation, now with all consistent species:
 <p align="center"><img src="images/Edwardsiella_after.png" alt="Edwardsiella after" width="80%"></p>
@@ -240,7 +218,23 @@ When you are happy with the species labels in the tree, you can run this command
 copy_assemblies.py
 ```
 
-It will make a directory titled `assemblies_binned` with subdirectories for each genus and then subdirectories for each species.
+It will make a directory titled `assemblies_binned` genus and species subdirectories like this:
+```
+Moraxella/
+    atlantae/
+        GCF_001591265.fna.gz
+        GCF_001678995.fna.gz
+        GCF_001679065.fna.gz
+    boevrei/
+        GCF_000379845.fna.gz
+Psychrobacter/
+    faecalis/
+        GCF_001652315.fna.gz
+        GCF_002836335.fna.gz
+    glacincola/
+        GCF_001411745.fna.gz
+```
+
 
 Alternatively, you can create a `clusters_binned` directory:
 ```
