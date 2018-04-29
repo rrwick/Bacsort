@@ -88,7 +88,7 @@ If you want to run Bacsort a lot, I'd suggest adding it to your PATH in your `.b
 
 ## Instructions
 
-What follows are instructions for using Bacsort to refine the species labels for one or more genera of interest. All Bacsort commands need to be run in the same directory. They will create directories and files where it is run, so I would recommended running it from a new directory:
+What follows are instructions for using Bacsort to refine the species labels for one or more genera of interest. All Bacsort commands need to be run in the same directory, which I'll call the 'base directory' for the remainder of these docs (or `bacsort_base_dir` in example paths). The scripts will create directories and files where it is run, so I would recommended running it from a new directory:
 
 ```
 mkdir bacsort_results
@@ -130,6 +130,9 @@ Edwardsiella_06	GCF_000264825.1.fna.gz*
 Edwardsiella_07	GCF_000348565.1.fna.gz*
 Edwardsiella_08	GCF_000474215.1.fna.gz*
 ```
+
+Before running this command, you may wish to prepare an `excluded_assemblies` file in your base directory ([read more here](#excluding-assemblies)).
+
 
 
 ### Step 3: distance matrix
@@ -273,18 +276,18 @@ This is the same as above, except that the redundancy-removed clusters are used 
 
 First, build a sketch of all your organised assemblies. You can do this either with `assemblies_binned` (all assemblies) or `clusters_binned` (redundancy-removed), but I'd recommend the latter for performance:
 ```
-cd clusters_binned
+cd bacsort_base_dir/clusters_binned
 mash sketch -o sketches -s 100000 -p 4 */*/*.fna.gz
 ```
 
 Now you can use Mash directly to find the distances between your query and all of your reference assemblies:
 ```
-mash dist -s 100000 -p 4 sketches.msh query.fasta | sort -gk3,3
+mash dist -s 100000 -p 4 bacsort_base_dir/clusters_binned/sketches.msh query.fasta | sort -gk3,3
 ```
 
 Or you can use this script with comes with Bacsort:
 ```
-classify_assembly_using_mash.py sketches.msh query.fasta
+classify_assembly_using_mash.py bacsort_base_dir/clusters_binned/sketches.msh query.fasta
 ```
 
 This script has some additional logic to help with classification:
@@ -306,7 +309,7 @@ centrifuge-download -o library -m -d bacteria refseq > seqid2taxid.map
 
 Now from the same directory, run this script to incorporate your Bacsorted genomes into the Centrifuge library:
 ```
-prepare_centrifuge_library.py /path/to/clusters_binned .
+prepare_centrifuge_library.py bacsort_base_dir/clusters_binned .
 ```
 
 This script does two things:
@@ -334,7 +337,7 @@ kraken-build --download-library bacteria --db bacsort
 
 Now run this script which does two things: 1) adjusts the taxonomy IDs in the Kraken database to match Bacsort's classifications, and 2) prepares additional Bacsorted assemblies for inclusion in the database:
 ```
-prepare_kraken_library.py /path/to/clusters_binned bacsort
+prepare_kraken_library.py bacsort_base_dir/clusters_binned bacsort
 ```
 
 Now we can add the remaining assemblies to the library:
@@ -356,8 +359,16 @@ kraken-build --build --threads 16 --db bacsort
 
 #### Updating a Bacsorted collection
 
+If you run Bacsort on some genera of interest, you will produce a `species_definitions` file (see [Step 5: curate tree](#step-5-curate-tree)). If you then come back in a few months and run it again, there will likely be new assemblies that were added to RefSeq in the intervening time. However, this re-run of Bacsort doesn't need to be as much work as the first time, as you can use your same `species_definitions` file so all of the previous renamings are applied right away. This way, you only need to concern yourself with renaming any new additions - hopefully a quick task!
 
-#### Excluding species
+
+#### Excluding assemblies
+
+Some assemblies should be excluded from Bacsort, usually for one of two reasons:
+1. There is something wrong with the assembly. For example, it is contaminated with sequences from a separate sample.
+2. The sample is a hybrid between two species. While nothing may be wrong with the assembly, the genome may be inappropriate for species definitions.
+
+The accessions for any assemblies you want to exclude can be put in a `excluded_assemblies` file (in your base directory), and Bacsort will skip them at the assembly clustering step. [A copy of this file](excluded_assemblies) in included in the Bacsort repo, which you can use as a starting point.
 
 
 
@@ -388,7 +399,11 @@ _Shigella_ species are all phylogenetically contained within _E. coli_ and I wou
 
 ## Contributing
 
+When you run Bacsort, you will produce a `species_definitions` file (see [Step 5: curate tree](#step-5-curate-tree)) that contains corrections for your genera of interest. If you would like to share these fixes with the world, please share them via an [issue](https://github.com/rrwick/Bacsort/issues) or [pull request](https://github.com/rrwick/Bacsort/pulls), and I'll incorporate them into the `species_definitions` file that is bundled with Bacsort.
 
+This invitation is especially extended to anyone who considers themselves an expert in a particular taxon. If you understand a particular group of bacteria better than anyone else, you should be the person who helps to define the species!
+
+Users are also welcome to modify/enhance the Bacsort code. If you do, please submit an [issue](https://github.com/rrwick/Bacsort/issues) or [pull request](https://github.com/rrwick/Bacsort/pulls).
 
 
 
