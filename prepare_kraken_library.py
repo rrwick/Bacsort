@@ -46,15 +46,13 @@ def main():
 
     names_to_ids, ids_to_nodes = get_ncbi_taxonomy(args.kraken_db_dir)
 
-    print('\nFinding contig taxIDs')
+    print('\nFinding assembly taxIDs')
     print('-------------------------------------------------------------------------------')
     print('This step looks at all assemblies that were binned by Bacsort and gets the\n'
-          'appropriate taxonomy ID for each contig.')
+          'appropriate taxonomy ID for each assembly.')
     print('-------------------------------------------------------------------------------')
 
-    assemblies_to_contigs = {}
     assemblies_to_taxids = {}
-    contigs_to_taxids = {}
 
     for genus in genera:
         genus_dir = bin_dir / pathlib.Path(genus)
@@ -92,70 +90,80 @@ def main():
             assemblies = sorted(x for x in species_dir.iterdir()
                                 if x.is_file() and str(x).endswith('.fna.gz'))
             for assembly in assemblies:
-                contig_names = load_contig_names(str(assembly))
-                assemblies_to_contigs[str(assembly)] = contig_names
                 assemblies_to_taxids[str(assembly)] = tax_id
-                for contig_name in contig_names:
-                    contigs_to_taxids[contig_name] = tax_id
 
-    print('\nReplacing taxIDs in Kraken library')
+    print('\nCleaning Kraken library')
     print('-------------------------------------------------------------------------------')
-    print('This step goes through the large library.fna file and replaces taxIDs for\n'
-          'contigs which are in Bacsorted assemblies.')
+    print('This step goes through the existing Kraken library and removes any contigs')
+    print('which are covered by Bacsort\'s genera.')
     print('-------------------------------------------------------------------------------')
+    ids_to_remove = set()
+
+    # For the purposes of Bacsort, Shigella is part of E. coli.
+    if 'Escherichia' in genera and 'Shigella' not in genera:
+        genera.append('Shigella')
+        genera = sorted(genera)
+
+    for genus in genera:
+        if genus not in names_to_ids:
+            continue
+        tax_id = get_taxid(genus, names_to_ids, ids_to_nodes, 'genus')
+        if tax_id is None:
+            print('WARNING: {} is ambiguous, cannot use'.format(genus))
+            continue
+        ids_to_remove.add(tax_id)
+        genus_node = ids_to_nodes[tax_id]
+        descendant_ids = genus_node.get_descendant_ids(ids_to_nodes)
+        for descendant_id in descendant_ids:
+            ids_to_remove.add(descendant_id)
+        id_str = ','.join(str(x) for x in sorted([tax_id] + descendant_ids))
+        print('Excluding {} tax IDs: {}'.format(genus, id_str))
+
     library_dir = pathlib.Path(args.kraken_db_dir) / 'library' / 'bacteria'
     original_library = str(library_dir / 'library_original.fna')
     new_library = str(library_dir / 'library.fna')
     os.rename(new_library, original_library)
-
-    contigs_in_library = set()
     with open(original_library, 'rt') as original:
         with open(new_library, 'wt') as new:
+            include_contig = True
             for line in original:
                 if line.startswith('>'):
                     parts = line.split(' ')[0].split('|')
                     assert parts[0] == '>kraken:taxid'
                     tax_id = int(parts[1])
                     contig_id = parts[2]
-                    contigs_in_library.add(contig_id)
-                    if contig_id in contigs_to_taxids:
-                        old_taxid = '|' + str(tax_id) + '|'
-                        new_taxid = '|' + str(contigs_to_taxids[contig_id]) + '|'
-                        new.write(line.replace(old_taxid, new_taxid))
-                        print('.', end='', flush=True)
-                    else:
-                        new.write(line)
-                else:
+                    include_contig = tax_id not in ids_to_remove
+                    if not include_contig:
+                        print('Excluding contig: {}'.format(contig_id))
+                if include_contig:
                     new.write(line)
     print()
 
     print('\nAdding new assemblies to Kraken library')
     print('-------------------------------------------------------------------------------')
-    print('This step prepares Bacsorted assemblies for the Kraken library if they are not\n'
-          'already in it.')
+    print('This step prepares Bacsorted assemblies for the Kraken library by adding the')
+    print('necessary taxonomic information.')
     print('-------------------------------------------------------------------------------')
     if not pathlib.Path('additional_assemblies').is_dir():
         os.makedirs('additional_assemblies')
-    for assembly, contigs in assemblies_to_contigs.items():
+    for assembly, tax_id in assemblies_to_taxids.items():
         assembly_name = assembly.split('/')[-1].replace('.gz', '')
-        if not any(x in contigs_in_library for x in contigs):
-            print(assembly_name)
-            tax_id = str(assemblies_to_taxids[assembly])
-            new_assembly_filename = 'additional_assemblies/' + assembly_name
-            if not new_assembly_filename.endswith('.fna'):
-                new_assembly_filename += '.fna'
-            open_func = get_open_function(assembly)
-            with open_func(assembly, 'rt') as original:
-                with open(new_assembly_filename, 'wt') as new:
-                    for line in original:
-                        if line.startswith('>'):
-                            new.write('>')
-                            new.write('kraken:taxid|')
-                            new.write(tax_id)
-                            new.write('|')
-                            new.write(line[1:])
-                        else:
-                            new.write(line)
+        print(assembly_name)
+        new_assembly_filename = 'additional_assemblies/' + assembly_name
+        if not new_assembly_filename.endswith('.fna'):
+            new_assembly_filename += '.fna'
+        fasta_seqs = load_fasta(assembly)
+        with open(new_assembly_filename, 'wt') as new:
+            for contig_name, seq in fasta_seqs:
+                if len(seq) > args.min_contig_len:
+                    new.write('>')
+                    new.write('kraken:taxid|')
+                    new.write(str(tax_id))
+                    new.write('|')
+                    new.write(contig_name)
+                    new.write('\n')
+                    new.write(seq)
+                    new.write('\n')
 
 
 def get_taxid(name, names_to_ids, ids_to_nodes, rank):
@@ -261,20 +269,28 @@ def get_open_function(filename):
         return open
 
 
-def load_contig_names(filename):
-    contig_names = set()
+def load_fasta(filename):
+    fasta_seqs = []
     open_func = get_open_function(filename)
     with open_func(filename, 'rt') as fasta_file:
+        name = ''
+        sequence = ''
         for line in fasta_file:
             line = line.strip()
             if not line:
                 continue
             if line[0] == '>':  # Header line = start of new contig
-                contig_name = line[1:].split()[0]
-                if contig_name in contig_names:
-                    sys.exit('Error: duplicate contig names in {}'.format(filename))
-                contig_names.add(contig_name)
-    return sorted(contig_names)
+                if name:
+                    contig_name = name.split()[0]
+                    fasta_seqs.append((contig_name, sequence))
+                    sequence = ''
+                name = line[1:]
+            else:
+                sequence += line
+        if name:
+            contig_name = name.split()[0]
+            fasta_seqs.append((contig_name, sequence))
+    return fasta_seqs
 
 
 if __name__ == '__main__':
