@@ -146,9 +146,9 @@ Advantage: simple and fast.
 
 Disadvantage: possibly less accurate and more affected by accessory genes like the presence/absence of plasmids.
 
-This one script will take care of running Mash and converting its output to a PHYLIP distance matrix. Run it with no arguments in your working Bacsort directory.
+This one script will take care of running Mash and converting its output to a PHYLIP distance matrix. Run it in your base directory with one argument specifying the number of threads:
 ```
-mash_distance_matrix.sh
+mash_distance_matrix.sh 16
 ```
 
 #### Option 2: FastANI
@@ -411,7 +411,7 @@ While I haven't explored this much, I suspect you'll run into difficulties in bo
 
 When you run Bacsort, you will produce a `species_definitions` file (see [step 5](#step-5-curate-tree)) that contains corrections for your genera of interest. If you would like to share these fixes with the world, please share them via an [issue](https://github.com/rrwick/Bacsort/issues) or [pull request](https://github.com/rrwick/Bacsort/pulls), and I'll incorporate them into the `species_definitions` file that is bundled with Bacsort.
 
-This invitation is especially extended to anyone who considers themselves an expert in a particular taxon. If you understand a particular group of bacteria better than anyone else, you should be the person who helps to define the species!
+This invitation is especially extended to anyone who considers themselves an expert in a particular taxon. If you understand a group of bacteria better than anyone else, then you should be the person who helps to define the species!
 
 Users are also welcome to modify/enhance the Bacsort code. If you do, please submit an [issue](https://github.com/rrwick/Bacsort/issues) or [pull request](https://github.com/rrwick/Bacsort/pulls).
 

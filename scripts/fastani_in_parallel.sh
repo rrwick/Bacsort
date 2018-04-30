@@ -3,8 +3,8 @@
 # Copyright 2018 Ryan Wick (rrwick@gmail.com)
 # https://github.com/rrwick/Bacsort
 
-# This script runs FastANI in parallel to build a distance matrix between all assemblies. It takes
-# one argument: the number of threads.
+# This script runs FastANI in parallel to build a distance matrix between all assembly clusters. It
+# takes one argument: the number of threads.
 
 # This file is part of Bacsort. Bacsort is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the Free Software Foundation,
