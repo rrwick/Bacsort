@@ -3,8 +3,8 @@
 # Copyright 2018 Ryan Wick (rrwick@gmail.com)
 # https://github.com/rrwick/Bacsort
 
-# This script is the third step of Bacsort. It takes no arguments. When run, it uses FastANI to
-# build a distance matrix between all assemblies.
+# This script runs FastANI in parallel to build a distance matrix between all assemblies. It takes
+# one argument: the number of threads.
 
 # This file is part of Bacsort. Bacsort is free software: you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the Free Software Foundation,
@@ -42,4 +42,4 @@ done
 
 cd ..
 cat tree/fastani_output_* > tree/fastani_output
-rm tree/fastani_output_*
+rm tree/fastani_output_* tree/fastani_stdout_*

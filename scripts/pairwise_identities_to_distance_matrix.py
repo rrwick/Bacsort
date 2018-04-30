@@ -76,6 +76,7 @@ def main():
                 distance = args.max_dist
             print('%.6f' % distance, end='')
         print()
+    print('', file=sys.stderr)
 
 
 def add_distance(distances, cluster_1, cluster_2, distance):
