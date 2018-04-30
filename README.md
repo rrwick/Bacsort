@@ -359,7 +359,7 @@ kraken-build --build --threads 16 --db bacsort
 
 #### Updating a Bacsorted collection
 
-If you run Bacsort on some genera of interest, you will produce a `species_definitions` file (see [Step 5: curate tree](#step-5-curate-tree)). If you then come back in a few months and run it again, there will likely be new assemblies that were added to RefSeq in the intervening time. However, this re-run of Bacsort doesn't need to be as much work as the first time, as you can use your same `species_definitions` file so all of the previous corrections are applied right away. This way, you only need to concern yourself with renaming any new additions - hopefully a quick task!
+If you run Bacsort on some genera of interest, you will produce a `species_definitions` file (see [step 5](#step-5-curate-tree)). If you then come back in a few months and run it again, there will likely be new assemblies that were added to RefSeq in the intervening time. However, this re-run of Bacsort doesn't need to be as much work as the first time, as you can use your same `species_definitions` file so all of the previous corrections are applied right away. This way, you only need to concern yourself with renaming any new additions - hopefully a quick task!
 
 
 #### Excluding assemblies
@@ -397,11 +397,18 @@ _Shigella_ species are all phylogenetically contained within _E. coli_ and I wou
 This raises the debate about how much phenotype should be a factor in species definitions. I would argue that phylogenetics is paramount, but others may disagree.
 
 
+#### What about other taxonomic ranks?
+
+Bacsort focuses on the species-level distinction, and assumes that a bacterial species forms a clade in its larger phylogenetic tree. What about higher ranks - do genera form nice clades? Or lower ranks - subspecies?
+
+While I haven't explored this much, I suspect you'll run into difficulties in both directions. Higher ranks often do not form clades (e.g. the genus _Klebsiella_ is not a clade unless you also include _Raoultella_), and the concept of a tree probably breaks down with more distant relationships (see [Dagan 2006](https://doi.org/10.1186/gb-2006-7-10-118)). For lower ranks, the issues caused by HGT ([see more here](#what-about-horizontal-gene-transfer-hgt)) may become even more pronounced, as HGT within a species can be common.
+
+
 
 
 ## Contributing
 
-When you run Bacsort, you will produce a `species_definitions` file (see [Step 5: curate tree](#step-5-curate-tree)) that contains corrections for your genera of interest. If you would like to share these fixes with the world, please share them via an [issue](https://github.com/rrwick/Bacsort/issues) or [pull request](https://github.com/rrwick/Bacsort/pulls), and I'll incorporate them into the `species_definitions` file that is bundled with Bacsort.
+When you run Bacsort, you will produce a `species_definitions` file (see [step 5](#step-5-curate-tree)) that contains corrections for your genera of interest. If you would like to share these fixes with the world, please share them via an [issue](https://github.com/rrwick/Bacsort/issues) or [pull request](https://github.com/rrwick/Bacsort/pulls), and I'll incorporate them into the `species_definitions` file that is bundled with Bacsort.
 
 This invitation is especially extended to anyone who considers themselves an expert in a particular taxon. If you understand a particular group of bacteria better than anyone else, you should be the person who helps to define the species!
 
