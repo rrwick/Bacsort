@@ -30,7 +30,7 @@
 
 [RefSeq](https://www.ncbi.nlm.nih.gov/refseq/) is a wonderful public repository that contains many bacterial genome assemblies, but unfortunately some of its assemblies are mislabelled. This means that you cannot simply use a tool like [ncbi-genome-download](https://github.com/kblin/ncbi-genome-download) to get all assemblies of a particular genus, e.g. _Klebsiella_. If you did so, you would certainly get many _Klebsiella_ assemblies, but you would also get some _E. coli_ and _S. marcescens_ assemblies that were mislabelled as _Klebsiella_. Furthermore, you would miss some _Klebsiella_ assemblies that were mislabelled as something else, e.g. _Enterobacter_.
 
-Bacsort is a collection of script to help you solve this problem. The figure below shows an overview of its method: A) downloading RefSeq genomes for genera of interest, B) clustering the genomes to remove redundancy, C) constructing a phylogenetic tree with species labels, D) manual curation of species labels, and E) a consistently named collection of bacterial genome assemblies, where (whenever possible) species are defined as clades on the tree.
+Bacsort is a collection of scripts to help you solve this problem. The figure below shows an overview of its method: A) downloading RefSeq genomes for genera of interest, B) clustering the genomes to remove redundancy, C) constructing a phylogenetic tree with species labels, D) manual curation of species labels, and E) a consistently named collection of bacterial genome assemblies, where (whenever possible) species are defined as clades on the tree.
 
 <p align="center"><img src="images/method.png" alt="Bacsort method" width="700"></p>
 
@@ -73,10 +73,11 @@ You don't need to install Bacsort - it's just a collection of independent script
 
 ```
 git clone https://github.com/rrwick/Bacsort
-export PATH=$(pwd)/Bacsort:"$PATH"
+export PATH=$(pwd)/Bacsort/scripts:"$PATH"
 ```
 
-If you want to run Bacsort a lot, I'd suggest adding it to your PATH in your `.bashrc` file (or equivalent) or copying its scripts to somewhere in your path (like `~/.local/bin/`).
+If you want to run Bacsort a lot, I'd suggest adding its `scripts` directory to your PATH in your `.bashrc` file (or equivalent) or copying its scripts to somewhere in your path (like `~/.local/bin/`).
+
 
 ### Software requirements
 
