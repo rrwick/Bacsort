@@ -39,19 +39,19 @@ Defining bacterial species is a complex topic, and there is often no perfect sol
 
 ### Problems Bacsort can fix
 
-RefSeq species mislabellings happen for a number of reasons, and Bacsort can help with each. Sometimes assemblies are just given completely wrong labels. These are usually quite easy to fix in Bacsort:
+RefSeq genomes can be mislabelled for a number of reasons, and Bacsort can help with each. Sometimes genomes are just given an utterly wrong species. These are usually quite easy to fix:
 
 <p align="center"><img src="images/problem_1.png" alt="Problem 1" width="500"></p>
 
-Sometimes a new species name has been coined for a group but hasn't yet fully caught on, leaving an awkward mix of the old and new names. Bacsort can bring that new name to the whole group:
+Sometimes a new species name has been coined for a group but hasn't yet fully caught on, leaving an awkward mix of the old and new names. That new name can be brought to the whole group:
 
 <p align="center"><img src="images/problem_2.png" alt="Problem 2" width="500"></p>
 
-Sometimes a group is not well studied and many samples are not yet named. Bacsort can assign names to samples which are closely related to those with names:
+Sometimes a group is not well studied, and many samples are not yet named. Bacsort can assign names to samples which are closely related to those with names:
 
 <p align="center"><img src="images/problem_3.png" alt="Problem 3" width="500"></p>
 
-And sometimes a group is very inconsistently named. These are the toughest problems to fix! The best solution is to find an authoritative piece of literature that defines the species in question so you can apply that scheme to your assemblies:
+And sometimes a group is very inconsistently named. These are the toughest problems to fix! The best solution is to find an authoritative piece of literature that defines the species in question, so you can apply that scheme to your assemblies:
 
 <p align="center"><img src="images/problem_4.png" alt="Problem 4" width="500"></p>
 
@@ -60,9 +60,9 @@ And sometimes a group is very inconsistently named. These are the toughest probl
 
 * Producing clean sets of genome assemblies for species-level analyses. E.g. if you wanted to analyse the pan-genome of _Citrobacter braakii_, you would want all _C. braakii_ genomes and nothing but _C. braakii_ genomes. Bacsort can help with that!
 * Producing curated species labels for the purpose of classifying new genomes. Bacsort can help you build better [Centrifuge](http://www.ccb.jhu.edu/software/centrifuge/) and [Kraken](http://ccb.jhu.edu/software/kraken/) databases (details below [here](#using-bacsort-with-centrifuge) and [here](#using-bacsort-with-kraken)).
+* Delineate species boundaries and make/refine species definitions.
 * Finding unnamed species in public genomes. For example, [what](https://www.ncbi.nlm.nih.gov/assembly/GCF_002918535.1/) [are](https://www.ncbi.nlm.nih.gov/assembly/GCF_002918555.1/) [these](https://www.ncbi.nlm.nih.gov/assembly/GCF_002918935.1/) [genomes](https://www.ncbi.nlm.nih.gov/assembly/GCF_002919495.1/)? While they are labelled as _Citrobacter amalonaticus_, organising _Citrobacter_ assemblies with Bacsort shows them to be a new species of _Citrobacter_, waiting for a name!
-* Analyses of larger-scale phylogenetic structure, e.g. trees of whole families or orders.
-* Submitting revisions to RefSeq, and helping to improve the consistency of species names.
+* Submitting revisions to RefSeq, helping to improve that collection's taxonomic consistency.
 
 
 
@@ -88,7 +88,7 @@ If you want to run Bacsort a lot, I'd suggest adding it to your PATH in your `.b
 
 ## Instructions
 
-What follows are instructions for using Bacsort to refine the species labels for one or more genera of interest. All Bacsort commands need to be run in the same directory, which I'll call the 'base directory' for the remainder of these docs (or `bacsort_base_dir` in example paths). The scripts will create directories and files where it is run, so I would recommended running it from a new directory:
+What follows are instructions for using Bacsort to refine the species labels for one or more genera of interest. All Bacsort commands need to be run in the same directory, which I'll call the 'base directory' for the remainder of these docs (or `bacsort_base_dir` in example paths). The scripts will create directories and files in the base directory, so I would recommend creating a new directory for this purpose:
 
 ```
 mkdir bacsort_results
@@ -143,7 +143,7 @@ As input for the neighbour joining tree algorithm, we need a matrix of all pairw
 
 Advantage: simple and fast.
 
-Disadvantage: possibly less accurate and more affected by accessory genes like the presence/absense of plasmids.
+Disadvantage: possibly less accurate and more affected by accessory genes like the presence/absence of plasmids.
 
 This one script will take care of running Mash and converting its output to a PHYLIP distance matrix. Run it with no arguments in your working Bacsort directory.
 ```
@@ -359,7 +359,7 @@ kraken-build --build --threads 16 --db bacsort
 
 #### Updating a Bacsorted collection
 
-If you run Bacsort on some genera of interest, you will produce a `species_definitions` file (see [Step 5: curate tree](#step-5-curate-tree)). If you then come back in a few months and run it again, there will likely be new assemblies that were added to RefSeq in the intervening time. However, this re-run of Bacsort doesn't need to be as much work as the first time, as you can use your same `species_definitions` file so all of the previous renamings are applied right away. This way, you only need to concern yourself with renaming any new additions - hopefully a quick task!
+If you run Bacsort on some genera of interest, you will produce a `species_definitions` file (see [Step 5: curate tree](#step-5-curate-tree)). If you then come back in a few months and run it again, there will likely be new assemblies that were added to RefSeq in the intervening time. However, this re-run of Bacsort doesn't need to be as much work as the first time, as you can use your same `species_definitions` file so all of the previous corrections are applied right away. This way, you only need to concern yourself with renaming any new additions - hopefully a quick task!
 
 
 #### Excluding assemblies
@@ -377,22 +377,24 @@ The accessions for any assemblies you want to exclude can be put in a `excluded_
 
 #### Do bacterial species really exist?
 
-Tough question. Yes and no. Check out the papers linked to in the intro. But humans love categorising things and assigning labels to groups of bacteria is undoubtedly useful. So even if the concept of a bacterial species can be a bit shaky, I think bacterial species names are here to stay!
+Tough question. Yes and no. Check out the papers linked to in the intro. Regardless of your stance on the matter, humans love to categorise things, so even if the concept of a bacterial species can be a bit shaky, I think bacterial species names are here to stay!
 
 
 #### What average nucleotide identity (ANI) defines a species?
 
-[This preprint](https://www.biorxiv.org/content/early/2017/11/27/225342) suggests there is a clear answer to that question: 5% or less. But I'm sceptical that is compatible with species names as they are actually used. For example, genomes in _Klebsiella oxytoca_ tend to be about 1% divergent from each other. Genomes in _Photorhabdus luminescens_ are more like 5% divergent. And genomes labelled _Buchnera aphidicola_ are on average a whopping 18% divergent from each other! Setting any single threshold would be incompatible with so many existing species labels that I don't think it's realistic.
+[This preprint](https://www.biorxiv.org/content/early/2017/11/27/225342) suggests there is a clear answer to that question: 5% or less. But I'm sceptical that is compatible with species names as they are actually used. For example, genomes in _Klebsiella oxytoca_ tend to be about 1% divergent from each other. Genomes in _Photorhabdus luminescens_ are more like 5% divergent. And genomes labelled _Buchnera aphidicola_ are on average a whopping 18% divergent from each other! Setting any single threshold would be incompatible with so many existing species names that I don't think it's realistic.
 
 
 #### What about horizontal gene transfer (HGT)?
 
-The more HGT present in a population of bacteria, the less appropriate it is to organise their genomes in a tree. I.e. HGT makes the genome relatedness more network-like and less tree-like. This is a shortcoming of Bacsort, which uses trees to organise genomes and assumes that a 'clade' is a real thing. Bacsort also builds trees using distance matrixes which, unlike alignment-based phylogenetics, have no good way to filter out the effect of HGT. However, I think that on the whole, HGT probably does not affect the large-scale structure of Bacsort's trees enough to be a problem. E.g. there may be enough HGT within a species, like _Klebsiella pneumoniae_, that you shouldn't take the Bacsort's tree structure within that species seriously. But the fact that _K. pneumoniae_ holds together as a clade distinct from other _Klebsiella_ species is true, despite the large amounts of HGT that is known to occur in that genus.
+The more HGT present in a population of bacteria, the less appropriate it is to organise their genomes in a tree, i.e. HGT makes the phylogeny more network-like and less tree-like. This is a shortcoming of Bacsort, which uses trees to organise genomes and assumes that a 'clade' is a real thing. Bacsort also builds trees using distance matrixes which, unlike alignment-based phylogenetics, have no good way to filter out the effect of HGT. However, I think that on the whole, HGT probably does not affect the structure of Bacsort's trees enough to be a problem, at least not when making species-level distinctions. If you disagree with that statement, please let me know - I'd be interest to hear your views!
 
 
 #### What's the deal with _Shigella_?
 
-_Shigella_ species are all phylogenetically contained within _E. coli_ and I would argue they shouldn't really be separate species at all, let alone in a separate genus. I think it would be more accurate to consider these bacteria to be pathotypes of _E. coli_, not separate species. Read more about it here: [Johnson 2000](http://jmm.microbiologyresearch.org/content/journal/jmm/10.1099/0022-1317-49-7-583), [Robins-Browne 2016](https://www.frontiersin.org/articles/10.3389/fcimb.2016.00141/full). It does, however, raise the debate about how much phenotype should be a factor in species definitions. I would argue that phylogenetics is paramount, but others may disagree.
+_Shigella_ species are all phylogenetically contained within _E. coli_ and I would argue they shouldn't really be separate species at all, let alone in a separate genus. I think it would be more accurate to consider these bacteria to be pathotypes of _E. coli_, not separate species. Read more about it here: [Johnson 2000](http://jmm.microbiologyresearch.org/content/journal/jmm/10.1099/0022-1317-49-7-583), [Robins-Browne 2016](https://www.frontiersin.org/articles/10.3389/fcimb.2016.00141/full). For the purposes of Bacsort, I consider _Shigella_ to be part of _E. coli_, and Bacsort will put _Shigella_ assemblies in the `Escherichia/coli` directory.
+
+This raises the debate about how much phenotype should be a factor in species definitions. I would argue that phylogenetics is paramount, but others may disagree.
 
 
 
