@@ -2242,3 +2242,35 @@ GCF_001836655	Pseudomonas aeruginosa
 GCF_001836665	Pseudomonas aeruginosa
 GCF_001837545	Pseudomonas aeruginosa
 GCF_001837685	Pseudomonas aeruginosa
+
+
+# In late April 2018, I downloaded Enterobacterales again to get the newest
+# assemblies, some of which needed to be renamed.
+GCF_003065045	Klebsiella quasipneumoniae
+GCF_003010595	Klebsiella quasipneumoniae
+GCF_003063705	Klebsiella quasipneumoniae
+GCF_002946635	Citrobacter portucalensis
+GCF_003007795	Citrobacter freundii
+GCF_003064065	Escherichia coli
+GCF_003027595	Escherichia marmotae
+GCF_003018295	Escherichia clade-1
+GCF_003018335	Escherichia clade-1
+GCF_003027815	Escherichia clade-3
+GCF_003046645	Escherichia clade-3
+GCF_003051885	Lelliottia nimipressuralis
+GCF_003053755	Enterobacter hormaechei
+GCF_003054635	Enterobacter hormaechei
+GCF_003056905	Enterobacter hormaechei
+GCF_003057395	Enterobacter hormaechei
+GCF_003054595	Enterobacter hormaechei
+GCF_003054605	Enterobacter hormaechei
+GCF_900322725	Enterobacter hormaechei
+GCF_003056785	Enterobacter hormaechei
+GCF_003057135	Enterobacter hormaechei
+GCF_003010695	Enterobacter ludwigii
+GCF_003046225	Enterobacter unknown
+GCF_003058295	Enterobacter kobei
+GCF_003028445	Kosakonia radicincitans
+GCF_003028515	Phytobacter diazotrophicus
+GCF_003028435	Serratia marcescens
+GCF_003010515	Yersinia wautersii
