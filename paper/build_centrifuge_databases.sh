@@ -13,6 +13,8 @@ centrifuge-download -o library -m -d "bacteria" refseq > seqid2taxid.map
 cat library/*/*.fna > input-sequences.fna
 centrifuge-build -p 16 --conversion-table seqid2taxid.map --taxonomy-tree taxonomy/nodes.dmp --name-table taxonomy/names.dmp input-sequences.fna $db_1 > "$db_1"_build.out 2>&1
 
+# Clean up 
+rm input-sequences.fna
 
 
 
@@ -39,5 +41,6 @@ rm input-sequences.fna
 cat library/*/*.fna > input-sequences.fna
 centrifuge-build -p 16 --conversion-table seqid2taxid.map --taxonomy-tree taxonomy/nodes.dmp --name-table taxonomy/names.dmp input-sequences.fna $db_2
 
-# Clean up 
-rm input-sequences.fna
+# Clean up
+rm input-sequences.fna seqid2taxid.map
+rm -r library taxonomy

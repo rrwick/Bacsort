@@ -33,6 +33,8 @@ Here are the scripts, and the order is important, as later scripts sometimes ass
 * Classifying genomes:
   * [`classify_reads_with_kraken.sh`](classify_reads_with_kraken.sh): Run Kraken on the test reads, using both the RefSeq and the Bacsort databases.
   * [`classify_reads_with_centrifuge.sh`](classify_reads_with_centrifuge.sh): Same as above, but for Centrifuge.
+  * [`classify_assemblies_with_mash.sh`](classify_assemblies_with_mash.sh): Uses Mash find the Bacsorted assembly which best matches each test genome assembly.
+  * [`classify_reads_with_mash.sh`](classify_reads_with_mash.sh): Same as above, but uses test genome reads instead of assemblies.
 
 
 

@@ -19,7 +19,7 @@ for db_name in bacteria bacsort; do
     # WAIT HERE FOR THE SLURM JOBS TO FINISH
 
     # Get top species
-    for sample in $sample_names; do
+    for sample in $(echo $sample_names); do
         printf $sample"\t"
         "$BACSORT"/paper/get_top_kraken_species.py "$sample".report
     done
