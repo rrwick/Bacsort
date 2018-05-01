@@ -226,7 +226,7 @@ GCF_000711175   Edwardsiella anguillarum
 GCF_000800725   Edwardsiella anguillarum
 ```
 
-You will have to refer back to the `cluster_accessions` file (made back in step 2) to see exactly which assemblies are in a particular cluster and need to be renamed. You can make your own `species_definitions` file from scratch, or you can add to the [one in this repo](species_definitions) which has my redefinitions for Enterobacterales and Moraxellaceae.
+You may have to refer back to the `cluster_accessions` file (made back in step 2) to see exactly which assemblies are in a particular cluster and need to be renamed or else use the `get_cluster_accession_species.py` script ([see more here]((#finding-assemblies-to-relabel))). You can make your own `species_definitions` file from scratch, or you can add to the [one in this repo](species_definitions) which has my redefinitions for Enterobacterales and Moraxellaceae.
 
 You can then run `find_species_clades.py` again to generate a new tree with your updated definitions. This process can be repeated (fix labels, make tree, fix labels, make tree, etc.) until you have no more changes to make.
 
@@ -370,6 +370,29 @@ Some assemblies should be excluded from Bacsort, usually for one of two reasons:
 2. The sample is a hybrid between two species. While nothing may be wrong with the assembly, the genome may be inappropriate for species definitions.
 
 The accessions for any assemblies you want to exclude can be put in a `excluded_assemblies` file (in your base directory), and Bacsort will skip them at the assembly clustering step. [A copy of this file](excluded_assemblies) in included in the Bacsort repo, which you can use as a starting point.
+
+
+#### Finding assemblies to relabel
+
+Let's imagine you're on the [curation step](#step-5-curate-tree) of Bacsort, and you see this cluster in the _E. hormaechei_ clade:<br>
+`Enterobacter_051 (4 x Enterobacter hormaechei, 1 x Enterobacter cloacae)`
+
+This cluster has 5 assemblies, one of which is misnamed as _E. cloacae_ and will need to be corrected in the `species_definitions` file. But which one?! The `get_cluster_accession_species.py` script exists for this very purpose. Run it from your base directory like this:
+```
+get_cluster_accession_species.py Enterobacter_051
+```
+And you should see an output like this:
+```
+GCF_002751815 Enterobacter hormaechei
+GCF_002925805 Enterobacter hormaechei
+GCF_003057395 Enterobacter cloacae
+GCF_900075465 Enterobacter hormaechei
+GCF_900076955 Enterobacter hormaechei
+```
+
+There's our answer: it's GCF_003057395 that must be renamed!
+
+
 
 
 
