@@ -63,7 +63,7 @@ with open(sys.argv[1], 'rt') as kraken_results:
             else:
                 existing_indent = len(species) - len(species.lstrip(' '))
                 new_indent = len(parts[5]) - len(parts[5].lstrip(' '))
-                if new_indent < existing_indent:
+                if new_indent > existing_indent:
                     species = parts[5]
                 else:
                     break
