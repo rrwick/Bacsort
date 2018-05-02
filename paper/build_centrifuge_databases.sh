@@ -16,31 +16,12 @@ centrifuge-build -p 16 --conversion-table seqid2taxid.map --taxonomy-tree taxono
 # Clean up 
 rm input-sequences.fna
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Now we make Bacsort's modifications and build again.
 rm input-sequences.fna
-"$BACSORT"/prepare_centrifuge_library.py ../bacsorted_assemblies .
+"$BACSORT"/scripts/prepare_centrifuge_library.py ../bacsorted_assemblies .
 cat library/*/*.fna > input-sequences.fna
-centrifuge-build -p 16 --conversion-table seqid2taxid.map --taxonomy-tree taxonomy/nodes.dmp --name-table taxonomy/names.dmp input-sequences.fna $db_2
+centrifuge-build -p 16 --conversion-table seqid2taxid.map --taxonomy-tree taxonomy/nodes.dmp --name-table taxonomy/names.dmp input-sequences.fna $db_2 > "$db_2"_build.out 2>&1
 
 # Clean up
-rm input-sequences.fna seqid2taxid.map
-rm -r library taxonomy
+rm input-sequences.fna seqid2taxid.map seqid2taxid_original.map
+rm -rf library taxonomy

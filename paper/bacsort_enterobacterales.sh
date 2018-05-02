@@ -65,7 +65,8 @@ cp "$BACSORT"/species_definitions .
 "$BACSORT"/scripts/copy_assemblies.py
 "$BACSORT"/scripts/copy_clusters.py
 
-# Run genome painter on bins with enough (5 or more) assemblies.
+# Run Genome Painter (https://github.com/scwatts/genome_painter) on assemblies
+# to identify contaminated assemblies and cross-species hybrids to exclude.
 mkdir -p genome_painter
 cd genome_painter
 mkdir -p counts database results
@@ -74,16 +75,13 @@ for d in ../assemblies_binned/*/*; do
     species=$(echo "$d" | sed 's|../assemblies_binned/||' | sed -r 's|.+/||')
     if [ "$species" != "unknown" ]; then
         count=$(ls ../assemblies_binned/"$genus"/"$species"/*.fna.gz | wc -l)
-        if (( $count >= 5)); then
+        if (( $count >= 5)); then  # Only use bins with 5+ assemblies to keep db size down
             echo $genus $species": "$count" assemblies"
             count_kmers --threads 16 --genome_fps "$d"/*.fna.gz --output_fp counts/"$genus"_"$species".tsv
         fi
     fi
 done
-
-# Only generate the database using species with 10 or more assemblies.
-generate_database --alpha 0.0 --threshold 0.99 --count_fps counts/Buchnera_aphidicola.tsv counts/Citrobacter_amalonaticus.tsv counts/Citrobacter_braakii.tsv counts/Citrobacter_freundii.tsv counts/Citrobacter_koseri.tsv counts/Citrobacter_portucalensis.tsv counts/Cronobacter_dublinensis.tsv counts/Cronobacter_malonaticus.tsv counts/Cronobacter_sakazakii.tsv counts/Dickeya_solani.tsv counts/Dickeya_zeae.tsv counts/Enterobacter_asburiae.tsv counts/Enterobacter_bugandensis.tsv counts/Enterobacter_cloacae.tsv counts/Enterobacter_cloacae-IV.tsv counts/Enterobacter_hormaechei.tsv counts/Enterobacter_kobei.tsv counts/Enterobacter_ludwigii.tsv counts/Erwinia_amylovora.tsv counts/Escherichia_albertii.tsv counts/Escherichia_clade-1.tsv counts/Escherichia_coli.tsv counts/Escherichia_fergusonii.tsv counts/Escherichia_marmotae.tsv counts/Hafnia_alvei.tsv counts/Klebsiella_aerogenes.tsv counts/Klebsiella_grimontii.tsv counts/Klebsiella_Kp5.tsv counts/Klebsiella_michiganensis.tsv counts/Klebsiella_oxytoca.tsv counts/Klebsiella_pneumoniae.tsv counts/Klebsiella_quasipneumoniae.tsv counts/Klebsiella_variicola.tsv counts/Morganella_morganii.tsv counts/Pantoea_agglomerans.tsv counts/Pantoea_ananatis.tsv counts/Pantoea_dispersa.tsv counts/Pantoea_stewartii.tsv counts/Pectobacterium_carotovorum.tsv counts/Photorhabdus_luminescens.tsv counts/Pluralibacter_gergoviae.tsv counts/Proteus_mirabilis.tsv counts/Providencia_alcalifaciens.tsv counts/Providencia_stuartii.tsv counts/Raoultella_ornithinolytica.tsv counts/Raoultella_planticola.tsv counts/Salmonella_bongori.tsv counts/Salmonella_enterica.tsv counts/Serratia_fonticola.tsv counts/Serratia_marcescens.tsv counts/Serratia_plymuthica.tsv counts/Xenorhabdus_bovienii.tsv counts/Yersinia_enterocolitica.tsv counts/Yersinia_frederiksenii.tsv counts/Yersinia_intermedia.tsv counts/Yersinia_kristensenii.tsv counts/Yersinia_massiliensis.tsv counts/Yersinia_mollaretii.tsv counts/Yersinia_pestis.tsv counts/Yersinia_pseudotuberculosis.tsv counts/Yersinia_ruckeri.tsv --output_fp database/painter_database.bin
-
+generate_database --alpha 0.0 --threshold 0.99 --count_fps counts/*.tsv --output_fp database/painter_database.bin
 for d in ../assemblies_binned/*/*; do
     genus=$(echo "$d" | sed 's|../assemblies_binned/||' | sed -r 's|/.+||')
     species=$(echo "$d" | sed 's|../assemblies_binned/||' | sed -r 's|.+/||')

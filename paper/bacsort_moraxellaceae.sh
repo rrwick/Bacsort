@@ -33,7 +33,8 @@ cp "$BACSORT"/species_definitions .
 "$BACSORT"/scripts/copy_assemblies.py
 "$BACSORT"/scripts/copy_clusters.py
 
-# Run genome painter on bins with enough (5 or more) assemblies.
+# Run Genome Painter (https://github.com/scwatts/genome_painter) on assemblies
+# to identify contaminated assemblies and cross-species hybrids to exclude.
 mkdir -p genome_painter
 cd genome_painter
 mkdir -p counts database results
@@ -42,7 +43,7 @@ for d in ../assemblies_binned/*/*; do
     species=$(echo "$d" | sed 's|../assemblies_binned/||' | sed -r 's|.+/||')
     if [ "$species" != "unknown" ]; then
         count=$(ls ../assemblies_binned/"$genus"/"$species"/*.fna.gz | wc -l)
-        if (( $count >= 5)); then
+        if (( $count >= 5)); then  # Only use bins with 5+ assemblies to keep db size down
             echo $genus $species": "$count" assemblies"
             count_kmers --threads 16 --genome_fps "$d"/*.fna.gz --output_fp counts/"$genus"_"$species".tsv
         fi

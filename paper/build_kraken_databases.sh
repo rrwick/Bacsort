@@ -34,23 +34,17 @@ cd taxonomy
 rm accmap.dlflag citations.dmp delnodes.dmp division.dmp gc.prt gencode.dmp merged.dmp nucl_est.accession2taxid nucl_gb.accession2taxid nucl_gss.accession2taxid nucl_wgs.accession2taxid prelim_map.txt readme.txt taxdump.dlflag taxdump.tar.gz taxdump.untarflag
 cd ../..
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Now make the Bacsort modifications and build the second.
 "$BACSORT"/prepare_kraken_library.py ../bacsorted_assemblies $db_2
 for f in additional_assemblies/*.fna; do
-    kraken-build --add-to-library $f --db $DBNAME
+    kraken-build --add-to-library $f --db $db_2
 done
-kraken-build --build --max-db-size 64 --db $db_2
+kraken-build --build --max-db-size 64 --threads 16 --db $db_2 > "$db_2"_build.out 2>&1
+
+# Clean up.
+rm -r additional_assemblies
+cd $db_2
+rm accmap_file.tmp database.jdb database.jdb.big lca.complete seqid2taxid.map
+rm -r library
+cd taxonomy
+rm accmap.dlflag citations.dmp delnodes.dmp division.dmp gc.prt gencode.dmp merged.dmp nucl_est.accession2taxid nucl_gb.accession2taxid nucl_gss.accession2taxid nucl_wgs.accession2taxid prelim_map.txt readme.txt taxdump.dlflag taxdump.tar.gz taxdump.untarflag

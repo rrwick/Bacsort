@@ -5,7 +5,7 @@ cd "$CLASSIFICATION"/mash/reads
 sample_names=$(for f in "$TEST_READS"/*_1.fastq.gz; do echo ${f##*/} | sed 's/_1.fastq.gz//'; done)
 
 # Run Mash
-sketch="$DATABASES"/bacsorted_assemblies/all_sketches.msh
+sketch="$DATABASES"/bacsorted_assemblies/mash_sketches.msh
 for sample in $(echo $sample_names); do
     r1="$TEST_READS"/"$sample"_1.fastq.gz
     r2="$TEST_READS"/"$sample"_2.fastq.gz

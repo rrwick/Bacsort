@@ -53,27 +53,23 @@ not, see <http://www.gnu.org/licenses/>.
 
 import sys
 
-# Gather up all the taxa labels in the first group of lines that are designated 'S' (for species).
-top_species = []
+species = None
 with open(sys.argv[1], 'rt') as kraken_results:
     for line in kraken_results:
         parts = line.split('\t')
-        if parts[3] != 'S':
-            if not top_species:
-                continue
+        if parts[3] == 'S':
+            if species is None:
+                species = parts[5]
             else:
+                existing_indent = len(species) - len(species.lstrip(' '))
+                new_indent = len(parts[5]) - len(parts[5].lstrip(' '))
+                if new_indent < existing_indent:
+                    species = parts[5]
+                else:
+                    break
+        else:
+            if species is not None:
                 break
-        top_species.append(parts[5])
 
-# Find the depth of the deepest level in this group.
-max_indent = 0
-for species in top_species:
-    indent = len(species) - len(species.lstrip(' '))
-    max_indent = max(max_indent, indent)
-
-# Return the first species in the group with the maximum indent.
-for species in top_species:
-    indent = len(species) - len(species.lstrip(' '))
-    if indent == max_indent:
-        print(species.strip())
-        sys.exit(0)
+print(species.strip())
+sys.exit(0)

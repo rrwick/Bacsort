@@ -25,14 +25,87 @@ def main():
     accession_species_before = load_accession_species(False)
     accession_species_after = load_accession_species(True)
     cluster_files = sorted(str(x) for x in pathlib.Path.cwd().glob('clusters/*.fna.gz'))
+    total_count = 0
     for cluster_file in cluster_files:
         cluster_name = os.path.basename(cluster_file)[:-7]
         accessions = cluster_accessions[cluster_name]
         for accession in accessions:
             before_species = accession_species_before[accession]
             after_species = accession_species_after[accession]
-            if before_species != after_species:
-                print('\t'.join([accession, before_species, after_species]))
+            total_count += 1
+            category = get_rename_type(before_species, after_species)
+            if category != 'match':
+                print('\t'.join([accession, before_species, after_species,
+                                 category]))
+    print('total:', total_count)
+
+
+def get_rename_type(before, after):
+    before_genus, before_species = before.split(' ')[0:2]
+    after_genus, after_species = after.split(' ')[0:2]
+
+    # Shigella counts as E. coli.
+    if before_genus == 'Shigella':
+        before_genus, before_species = 'Escherichia', 'coli'
+
+    unknown_before_genus = (before_genus.endswith('aceae') or before_genus.endswith('ales'))
+    unknown_after_genus = (after_genus == 'Unknown')
+
+    unknown_before_species = (before_species == 'sp.' or before_species == 'bacterium' or
+                              before_species == 'symbiont' or before_species == 'endosymbiont')
+    unknown_after_species = (after_species == 'unknown')
+
+    # If the previous name was something like 'Enterobacter cloacae complex sp. GN04826', then that
+    # counts as an unknown species.
+    try:
+        if before.split(' ')[2] == 'complex':
+            unknown_before_species = True
+    except IndexError:
+        pass
+
+    if unknown_before_genus:
+        assert unknown_before_species
+    if unknown_after_genus:
+        assert unknown_after_species
+
+    # Check for matches.
+    if before == after:
+        return 'match'
+    if unknown_before_genus and unknown_after_genus:
+        return 'match'
+    if before_genus == after_genus:
+        if unknown_before_species and unknown_after_species:
+            return 'match'
+        if before_species == after_species and (not unknown_before_species) and \
+                (not unknown_after_species):
+            return 'match'
+
+    if unknown_before_genus:
+        if unknown_after_species:
+            return 'given genus, no species'
+        else:
+            return 'given genus and species'
+    if unknown_after_genus:
+        return 'removed genus'
+
+    assert (not unknown_before_genus) and (not unknown_after_genus)
+
+    if before_genus == after_genus:
+        if unknown_before_species:
+            return 'same genus, given species'
+        elif unknown_after_species:
+            return 'same genus, removed species'
+        else:
+            return 'same genus, changed species'
+    else:
+        if unknown_before_species and unknown_after_species:
+            return 'different genus, no species'
+        elif unknown_before_species:
+            return 'different genus, given species'
+        elif unknown_after_species:
+            return 'different genus, removed species'
+        else:
+            return 'different genus, changed species'
 
 
 def load_all_cluster_accessions():
@@ -58,19 +131,6 @@ def load_accession_species(use_species_definitions_file):
                     continue
                 accession = parts[0][:13]
                 species = parts[9]
-                species_parts = species.split(' ')[0:2]
-
-                # Some 'species names' aren't really species names.
-                if species_parts[1] == 'sp.':
-                    species_parts[1] = 'unknown'
-                elif species_parts[1] == 'bacterium':
-                    species_parts[1] = 'unknown'
-                elif species_parts[1] == 'symbiont':
-                    species_parts[1] = 'unknown'
-                elif species_parts[1] == 'endosymbiont':
-                    species_parts[1] = 'unknown'
-
-                species = ' '.join(species_parts)
                 accession_species[accession] = species
 
     # ...and then load from the user-defined file, so they can overwrite NCBI species.
@@ -86,11 +146,6 @@ def load_accession_species(use_species_definitions_file):
                     continue
                 accession, species = parts[0][:13], parts[1]
                 accession_species[accession] = species
-
-    # Shigella and E. coli are grouped together.
-    for accession, species in accession_species.items():
-        if species == 'Escherichia coli' or species.startswith('Shigella '):
-            accession_species[accession] = 'Escherichia coli / Shigella'
 
     return accession_species
 
