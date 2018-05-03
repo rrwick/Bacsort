@@ -404,9 +404,18 @@ There's our answer: it's GCF_003057395 that must be renamed!
 Tough question. Yes and no. Check out the papers linked to in the intro. Regardless of your stance on the matter, humans love to categorise things, so even if the concept of a bacterial species can be a bit shaky, I think bacterial species names are here to stay!
 
 
-#### What average nucleotide identity (ANI) defines a species?
+#### What level of divergence defines a species?
 
-[This preprint](https://www.biorxiv.org/content/early/2017/11/27/225342) suggests there is a clear answer to that question: 5% or less. But I'm sceptical that is compatible with species names as they are actually used. For example, genomes in _Klebsiella oxytoca_ tend to be about 1% divergent from each other. Genomes in _Photorhabdus luminescens_ are more like 5% divergent. And genomes labelled _Buchnera aphidicola_ are on average a whopping 18% divergent from each other! Setting any single threshold would be incompatible with so many existing species names that I don't think it's realistic.
+There are two issues here: whether there is a correct answer to this question, and whether existing species names are compatible with that answer.
+
+[This paper](https://www.biorxiv.org/content/early/2017/11/27/225342) suggests there is an answer: 5% average nucleotide identity or less. That may in fact be good for many taxa, but not all. Consider this toy example:
+<p align="center"><img src="images/thresholds.png" alt="Thresholds" width="400"></p>
+
+The tree on the left makes it obvious where to draw the thresholds, and changing the threshold values a bit wouldn't make any difference. The tree on the right is much tougher. It has 3 genera and 12 species with the current thresholds, but adjusting the thresholds even a little could change that. So setting a species threshold of 5% average nucleotide identity might work very well for some groups but not others.
+
+The second issue is that if we set a threshold, regardless of the value we choose, it would be incompatible with many existing species names. For example, genomes in _Klebsiella oxytoca_ tend to be about 1% divergent from each other. Genomes in _Photorhabdus luminescens_ are more like 5% divergent. And genomes labelled _Buchnera aphidicola_ are on average a whopping 18% divergent from each other!
+
+For these reasons, Bacsort is only concerned with whether or not a species is monophyletic, not the amount of diversity in a species. Where to draw the lines is up to the user when they curate the tree.
 
 
 #### What about horizontal gene transfer (HGT)?
@@ -418,7 +427,7 @@ The more HGT present in a population of bacteria, the less appropriate it is to 
 
 _Shigella_ species are all phylogenetically contained within _E. coli_ and I would argue they shouldn't really be separate species at all, let alone in a separate genus. I think it would be more accurate to consider these bacteria to be pathotypes of _E. coli_, not separate species. Read more about it here: [Johnson 2000](http://jmm.microbiologyresearch.org/content/journal/jmm/10.1099/0022-1317-49-7-583), [Robins-Browne 2016](https://www.frontiersin.org/articles/10.3389/fcimb.2016.00141/full). For the purposes of Bacsort, I consider _Shigella_ to be part of _E. coli_, and Bacsort will put _Shigella_ assemblies in the `Escherichia/coli` directory.
 
-This raises the debate about how much phenotype should be a factor in species definitions. I would argue that phylogenetics is paramount, but others may disagree.
+This raises the debate about how much phenotype should be a factor in species definitions. I would argue that phylogenetics is paramount: _Shigella_ genomes should be reclassified as _E. coli_, _Y. pestis_ genomes should be reclassified as _Y. pseudotuberculosis_, etc. But others may disagree!
 
 
 #### What about other taxonomic ranks?
