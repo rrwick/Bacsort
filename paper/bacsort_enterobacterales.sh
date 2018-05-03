@@ -23,6 +23,11 @@ mash sketch -p 16 -o mash -s 10000 *.fna.gz
 mash dist -p 16 mash.msh mash.msh > mash_distances
 cd ../..
 
+# One assembly from a distant clade was downloaded:
+# GCF_003046625 (Mangrovibacterium marinum)
+# It isn't in Enterobacterales, so I deleted it.
+rm assemblies/Mangrovibacter/GCF_003046625.1.fna.gz
+
 # Copy my previous exclusions and definitions files so they will be used.
 cp "$BACSORT"/excluded_assemblies .
 cp "$BACSORT"/species_definitions .
@@ -33,19 +38,6 @@ cp "$BACSORT"/species_definitions .
 # Distance matrices
 "$BACSORT"/scripts/mash_distance_matrix.sh 80
 "$BACSORT"/scripts/fastani_in_parallel.sh 80
-
-
-
-
-
-
-
-
-
-
-
-
-
 "$BACSORT"/scripts/pairwise_identities_to_distance_matrix.py tree/fastani_output > tree/fastani.phylip
 "$BACSORT"/scripts/combine_distance_matrices.py tree/fastani.phylip tree/mash.phylip > tree/combined.phylip
 
