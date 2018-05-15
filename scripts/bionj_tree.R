@@ -25,4 +25,5 @@ cat("Building BIONJ tree...")
 tree <- bionj(distances)
 cat(" done\n")
 
+tree <- midpoint(tree)
 write.tree(tree, newick_tree_filename)
