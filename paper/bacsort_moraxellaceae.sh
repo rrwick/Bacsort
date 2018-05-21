@@ -2,7 +2,7 @@ mkdir -p "$BACSORT_GENOMES"/moraxellaceae
 cd "$BACSORT_GENOMES"/moraxellaceae
 
 # Download genomes.
-"$BACSORT"/download_genomes.sh "Acinetobacter Alkanindiges Cavicella Faucicola Fluviicoccus Moraxella Paraperlucidibaca Perlucidibaca Psychrobacter" > download.out 2>&1
+"$BACSORT"/scripts/download_genomes.sh "Acinetobacter Alkanindiges Cavicella Faucicola Fluviicoccus Moraxella Paraperlucidibaca Perlucidibaca Psychrobacter" > download.out 2>&1
 
 # Copy my previous exclusions and definitions files so they will be used.
 cp "$BACSORT"/excluded_assemblies .
@@ -18,7 +18,7 @@ cp "$BACSORT"/species_definitions .
 "$BACSORT"/scripts/combine_distance_matrices.py tree/fastani.phylip tree/mash.phylip > tree/combined.phylip
 
 # Build the tree.
-"$BACSORT"/bionj_tree.R tree/combined.phylip tree/tree.newick
+"$BACSORT"/scripts/bionj_tree.R tree/combined.phylip tree/tree.newick
 
 # Annotate species in the tree.
 # This script assumes an input file of tree/tree.newick
