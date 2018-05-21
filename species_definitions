@@ -2277,3 +2277,28 @@ GCF_003010515	Yersinia wautersii
 GCF_003023805	Kluyvera unknown
 GCF_003057675	Pantoea eucrina
 GCF_003049805	Dickeya fangzhongdai
+
+
+# For Haemophilus, I decided to leave H. aegyptius as its own species, even
+# though it was in the middle of the H. influenzae clade. This makes H.
+# influenzae paraphyletic.
+GCF_000197875	Haemophilus aegyptius
+GCF_000200475	Haemophilus aegyptius
+GCF_001811665	Haemophilus influenzae
+GCF_001837655	Haemophilus influenzae
+GCF_001054455	Haemophilus parainfluenzae
+GCF_001055565	Haemophilus parainfluenzae
+GCF_001059125	Haemophilus parainfluenzae
+GCF_001058575	Haemophilus parainfluenzae
+GCF_001679485	Haemophilus parainfluenzae
+GCF_001810345	Haemophilus parainfluenzae
+GCF_001810545	Haemophilus parainfluenzae
+GCF_001811025	Haemophilus parainfluenzae
+GCF_001814055	Haemophilus parainfluenzae
+GCF_001815355	Haemophilus parainfluenzae
+GCF_001838615	Haemophilus parainfluenzae
+GCF_001838635	Haemophilus parainfluenzae
+GCF_000222085	Haemophilus quentini
+GCF_000242295	Haemophilus haemolyticus
+GCF_001059185	Haemophilus unknown
+GCF_000222025	Haemophilus unknown
