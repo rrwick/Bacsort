@@ -30,7 +30,7 @@
 
 [RefSeq](https://www.ncbi.nlm.nih.gov/refseq/) is a wonderful public repository that contains many bacterial genome assemblies, but unfortunately some of its assemblies are mislabelled. This means that you cannot simply use a tool like [ncbi-genome-download](https://github.com/kblin/ncbi-genome-download) to get all assemblies of a particular genus, e.g. _Klebsiella_. If you did so, you would certainly get many _Klebsiella_ assemblies, but you would also get some _E. coli_ and _S. marcescens_ assemblies that were mislabelled as _Klebsiella_. Furthermore, you would miss some _Klebsiella_ assemblies that were mislabelled as something else, e.g. _Enterobacter_.
 
-Bacsort is a collection of scripts to help you solve this problem. The figure below shows an overview of its method: A) downloading RefSeq genomes for genera of interest, B) clustering the genomes to remove redundancy, C) constructing a phylogenetic tree with species labels, D) manual curation of species labels, and E) a consistently named collection of bacterial genome assemblies, where (whenever possible) species are defined as clades on the tree.
+Bacsort is a collection of scripts to help you solve this problem. The figure below shows an overview of its method: A) downloading RefSeq genomes for genera of interest, B) clustering the genomes to remove redundancy, C) constructing a phylogenetic tree with species labels, D) manual curation of species labels, and E) a consistently named collection of bacterial genome assemblies, where (whenever possible) species are defined monophyletically: as clades on the tree.
 
 <p align="center"><img src="images/method.png" alt="Bacsort method" width="700"></p>
 
@@ -83,8 +83,14 @@ If you want to run Bacsort a lot, I'd suggest adding its `scripts` directory to 
 
 * Running Bacsort requires that you have [Mash](http://mash.readthedocs.io/) installed and available in your PATH. If you can type `mash -h` into your terminal and not get an error, you should be good!
 * There are multiple ways to build trees ([more info here](#step-4-build-tree)), but my recommended way requires [R](https://www.r-project.org/) with the [ape](https://cran.r-project.org/package=ape) and [phangorn](https://cran.r-project.org/package=phangorn) packages installed.
-* You'll also need [Python 3](https://www.python.org/) and [BioPython](http://biopython.org/). If `python3 -c "import Bio"` doesn't give you an error, you should be good! If you need to install BioPython, it's easiest to do with pip: `pip3 install biopython`
 * Depending on how you want to compute pairwise distances, you may also need [FastANI](https://github.com/ParBLiSS/FastANI).
+* If you're using a Mac, you'll need to make sure you have GNU grep installed (as Macs come with the slightly different FreeBSD grep). [See here for instructions.](https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x/)
+* You'll also need [Python 3](https://www.python.org/) and a few packages:
+   * [BioPython](http://biopython.org/), [appdirs](https://github.com/ActiveState/appdirs) and [requests](http://docs.python-requests.org/en/master/)
+   * Installation is probably easiest with pip: `pip3 install biopython appdirs requests`
+   * If `python3 -c "import Bio; import appdirs; import requests"` doesn't give you an error, you should be good!
+
+
 
 
 ## Instructions
@@ -226,7 +232,7 @@ GCF_000711175   Edwardsiella anguillarum
 GCF_000800725   Edwardsiella anguillarum
 ```
 
-You may have to refer back to the `cluster_accessions` file (made back in step 2) to see exactly which assemblies are in a particular cluster and need to be renamed or else use the `get_cluster_accession_species.py` script ([see more here]((#finding-assemblies-to-relabel))). You can make your own `species_definitions` file from scratch, or you can add to the [one in this repo](species_definitions) which has my redefinitions for Enterobacterales and Moraxellaceae.
+You may have to refer back to the `cluster_accessions` file (made back in step 2) to see exactly which assemblies are in a particular cluster and need to be renamed or else use the `get_cluster_accession_species.py` script ([see more here](#finding-assemblies-to-relabel)). You can make your own `species_definitions` file from scratch, or you can add to the [one in this repo](species_definitions) which has my redefinitions for Enterobacterales and Moraxellaceae.
 
 You can then run `find_species_clades.py` again to generate a new tree with your updated definitions. This process can be repeated (fix labels, make tree, fix labels, make tree, etc.) until you have no more changes to make.
 

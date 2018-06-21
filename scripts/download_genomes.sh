@@ -43,6 +43,21 @@ fi
 download=$(pwd)/ncbi-genome-download/ncbi-genome-download-runner.py
 
 
+# Check to make sure the user has the right kind of grep (better to check
+# now than after all the time spent downloading).
+printf "Checking grep... "
+echo "test_string" > temp_grep_check_file
+if grep -oP "test" temp_grep_check_file > /dev/null; then
+    rm temp_grep_check_file
+    echo "good"
+else
+    rm temp_grep_check_file
+    printf "\n"
+    echo "Error: you need to install GNU grep to use this script"
+    exit 1
+fi
+
+
 for genus in $genera; do
     printf "\n"
     echo "Downloading genomes from "$genus
