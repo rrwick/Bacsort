@@ -84,7 +84,7 @@ If you want to run Bacsort a lot, I'd suggest adding its `scripts` directory to 
 * Running Bacsort requires that you have [Mash](http://mash.readthedocs.io/) installed and available in your PATH. If you can type `mash -h` into your terminal and not get an error, you should be good!
 * There are multiple ways to build trees ([more info here](#step-4-build-tree)), but my recommended way requires [R](https://www.r-project.org/) with the [ape](https://cran.r-project.org/package=ape) and [phangorn](https://cran.r-project.org/package=phangorn) packages installed.
 * Depending on how you want to compute pairwise distances, you may also need [FastANI](https://github.com/ParBLiSS/FastANI).
-* If you're using a Mac, you'll need to make sure you have GNU grep installed (as Macs come with the slightly different FreeBSD grep). [See here for instructions.](https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x/)
+* If you're using a Mac, you'll need to make sure you have GNU grep and shuf installed (as Macs come with the slightly different FreeBSD tools). [See here for instructions.](https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x/)
 * You'll also need [Python 3](https://www.python.org/) and a few packages:
    * [BioPython](http://biopython.org/), [appdirs](https://github.com/ActiveState/appdirs) and [requests](http://docs.python-requests.org/en/master/)
    * Installation is probably easiest with pip: `pip3 install biopython appdirs requests`
