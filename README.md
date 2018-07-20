@@ -69,7 +69,7 @@ And sometimes a group is very inconsistently named. These are the toughest probl
 
 ## Installation
 
-You don't need to install Bacsort - it's just a collection of independent scripts which can be run directly. However, adding the Bacsort directory to your PATH will make the scripts easier to run:
+You don't need to install Bacsort – it's just a collection of independent scripts which can be run directly. However, adding the Bacsort directory to your PATH will make the scripts easier to run:
 
 ```
 git clone https://github.com/rrwick/Bacsort
@@ -329,7 +329,7 @@ cat library/*/*.fna > input-sequences.fna
 centrifuge-build -p 16 --conversion-table seqid2taxid.map --taxonomy-tree taxonomy/nodes.dmp --name-table taxonomy/names.dmp input-sequences.fna bacsort
 ```
 
-This should create `*.cf` files which comprise your new Centrifuge database - use it like you would any other Centrifuge database! You can now delete any other files made along the way to save disk space.
+This should create `*.cf` files which comprise your new Centrifuge database – use it like you would any other Centrifuge database! You can now delete any other files made along the way to save disk space.
 
 
 ### Using Bacsort with Kraken
@@ -366,7 +366,7 @@ kraken-build --build --threads 16 --db bacsort
 
 #### Updating a Bacsorted collection
 
-If you run Bacsort on some genera of interest, you will produce a `species_definitions` file (see [step 5](#step-5-curate-tree)). If you then come back in a few months and run it again, there will likely be new assemblies that were added to RefSeq in the intervening time. However, this re-run of Bacsort doesn't need to be as much work as the first time, as you can use your same `species_definitions` file so all of the previous corrections are applied right away. This way, you only need to concern yourself with renaming any new additions - hopefully a quick task!
+If you run Bacsort on some genera of interest, you will produce a `species_definitions` file (see [step 5](#step-5-curate-tree)). If you then come back in a few months and run it again, there will likely be new assemblies that were added to RefSeq in the intervening time. However, this re-run of Bacsort doesn't need to be as much work as the first time, as you can use your same `species_definitions` file so all of the previous corrections are applied right away. This way, you only need to concern yourself with renaming any new additions – hopefully a quick task!
 
 
 #### Excluding assemblies
@@ -407,7 +407,7 @@ There's our answer: it's GCF_003057395 that must be renamed!
 
 #### Do bacterial species really exist?
 
-Tough question. Yes and no. Check out the papers linked to in the intro. Regardless of your stance on the matter, humans love to categorise things, so even if the concept of a bacterial species can be a bit shaky, I think bacterial species names are here to stay!
+Tough question. Yes and no. Check out the papers linked in the intro. Regardless of your stance on the matter, humans love to categorise things, so even if the concept of a bacterial species can be a bit shaky, I think bacterial species names are here to stay!
 
 
 #### What level of divergence defines a species?
@@ -415,7 +415,7 @@ Tough question. Yes and no. Check out the papers linked to in the intro. Regardl
 There are two issues here: whether there is a correct answer to this question, and whether existing species names are compatible with that answer.
 
 [This paper](https://www.biorxiv.org/content/early/2017/11/27/225342) suggests there is an answer: 5% average nucleotide identity or less. That may in fact be good for many taxa, but not all. Consider this toy example:
-<p align="center"><img src="images/thresholds.png" alt="Thresholds" width="400"></p>
+<p align="center"><img src="images/thresholds.png" alt="Thresholds" width="450"></p>
 
 The tree on the left makes it obvious where to draw the thresholds, and changing the threshold values a bit wouldn't make any difference. The tree on the right is much tougher. It has 3 genera and 12 species with the current thresholds, but adjusting the thresholds even a little could change that. So setting a species threshold of 5% average nucleotide identity might work very well for some groups but not others.
 
@@ -426,7 +426,7 @@ For these reasons, Bacsort is only concerned with whether or not a species is mo
 
 #### What about horizontal gene transfer (HGT)?
 
-The more HGT present in a population of bacteria, the less appropriate it is to organise their genomes in a tree, i.e. HGT makes the phylogeny more network-like and less tree-like. This is a shortcoming of Bacsort, which uses trees to organise genomes and assumes that a 'clade' is a real thing. Bacsort also builds trees using distance matrixes which, unlike alignment-based phylogenetics, have no good way to filter out the effect of HGT. However, I think that on the whole, HGT probably does not affect the structure of Bacsort's trees enough to be a problem, at least not when making species-level distinctions. If you disagree with that statement, please let me know - I'd be interest to hear your views!
+The more HGT present in a population of bacteria, the less appropriate it is to organise their genomes in a tree, i.e. HGT makes the phylogeny more network-like and less tree-like. This is a shortcoming of Bacsort, which uses trees to organise genomes and assumes that a 'clade' is a real thing. Bacsort also builds trees using distance matrixes which, unlike alignment-based phylogenetics, have no good way to filter out the effect of HGT. However, I think that on the whole, HGT probably does not affect the structure of Bacsort's trees enough to be a problem, at least not when making species-level distinctions. If you disagree with that statement, please let me know – I'd be interested to hear your views!
 
 
 #### What's the deal with _Shigella_?
@@ -438,7 +438,7 @@ This raises the debate about how much phenotype should be a factor in species de
 
 #### What about other taxonomic ranks?
 
-Bacsort focuses on the species-level distinction, and assumes that a bacterial species forms a clade in its larger phylogenetic tree. What about higher ranks - do genera form nice clades? Or lower ranks - subspecies?
+Bacsort focuses on the species-level distinction, and assumes that a bacterial species forms a clade in its larger phylogenetic tree. What about higher ranks – do genera form nice clades? Or lower ranks – subspecies?
 
 While I haven't explored this much, I suspect you'll run into difficulties in both directions. Higher ranks often do not form clades (e.g. the genus _Klebsiella_ is not a clade unless you also include _Raoultella_), and the concept of a tree probably breaks down with more distant relationships (see [Dagan 2006](https://doi.org/10.1186/gb-2006-7-10-118)). For lower ranks, the issues caused by HGT ([see more here](#what-about-horizontal-gene-transfer-hgt)) may become even more pronounced, as HGT within a species can be common.
 
