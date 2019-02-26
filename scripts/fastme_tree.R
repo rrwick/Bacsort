@@ -21,8 +21,8 @@ cat("Loading distance matrix...")
 distances <- readDist(distance_matrix_filename)
 cat(" done\n")
 
-cat("Building BIONJ tree...")
-tree <- bionj(distances)
+cat("Building FastME tree...")
+tree <- fastme.bal(distances)
 cat(" done\n")
 
 tree$edge.length <- pmax(tree$edge.length, 0.0)  # set any negative branch lengths to zero
