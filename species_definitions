@@ -5,7 +5,7 @@
 need to be included in the accession.
 
 # Example:
-GCF_000000000	Genus species
+# GCF_000000000	Genus species
 
 
 # What follows are my species redefinitions of assemblies in Enterobacterales.
@@ -744,7 +744,8 @@ GCF_001188495	Trabulsiella unknown
 
 
 # Enterobacter is a particularly messy genus. I used Paauw 2008 to guide my
-# species assignments for the Enterobacter cloacae complex
+# species assignments for the Enterobacter cloacae complex. E roggenkapii was
+# a newer name I got from Sutton 2018.
 #
 #   Paauw       Hoffmann
 #   cluster     clusters     species
@@ -755,7 +756,7 @@ GCF_001188495	Trabulsiella unknown
 #   4           5            E. ludwigii
 #   5           1            E. asburiae
 #   6           2            E. kobei
-#   7           4            E. cloacae-IV
+#   7           4            E. roggenkampii
 #
 # These are the Hoffmann groups not represented in Paauw 2008:
 #
@@ -764,7 +765,7 @@ GCF_001188495	Trabulsiella unknown
 #   ?           10           Lelliottia nimipressuralis
 #
 # So according to this scheme, the 'real' E. cloacae are Hoffmann groups 11
-# and 12, and cloacae-IV probably needs a new name.
+# and 12.
 
 
 
@@ -1375,73 +1376,73 @@ GCF_900075815	Enterobacter bugandensis
 GCF_900078165	Enterobacter bugandensis
 GCF_002848105	Enterobacter bugandensis
 GCF_002860705	Enterobacter bugandensis
-GCF_000286655	Enterobacter cloacae-IV
-GCF_000467655	Enterobacter cloacae-IV
-GCF_000492435	Enterobacter cloacae-IV
-GCF_000492895	Enterobacter cloacae-IV
-GCF_000493175	Enterobacter cloacae-IV
-GCF_000534155	Enterobacter cloacae-IV
-GCF_000612205	Enterobacter cloacae-IV
-GCF_000692295	Enterobacter cloacae-IV
-GCF_000692335	Enterobacter cloacae-IV
-GCF_000805795	Enterobacter cloacae-IV
-GCF_000807415	Enterobacter cloacae-IV
-GCF_000812425	Enterobacter cloacae-IV
-GCF_000956965	Enterobacter cloacae-IV
-GCF_000957195	Enterobacter cloacae-IV
-GCF_000957315	Enterobacter cloacae-IV
-GCF_000957415	Enterobacter cloacae-IV
-GCF_000958015	Enterobacter cloacae-IV
-GCF_001022415	Enterobacter cloacae-IV
-GCF_001023175	Enterobacter cloacae-IV
-GCF_001471995	Enterobacter cloacae-IV
-GCF_002151855	Enterobacter cloacae-IV
-GCF_000957765	Enterobacter cloacae-IV
-GCF_000958425	Enterobacter cloacae-IV
-GCF_001472715	Enterobacter cloacae-IV
-GCF_000968725	Enterobacter cloacae-IV
-GCF_001011955	Enterobacter cloacae-IV
-GCF_001022655	Enterobacter cloacae-IV
-GCF_001022755	Enterobacter cloacae-IV
-GCF_001052055	Enterobacter cloacae-IV
-GCF_001052605	Enterobacter cloacae-IV
-GCF_001052895	Enterobacter cloacae-IV
-GCF_001054835	Enterobacter cloacae-IV
-GCF_001056255	Enterobacter cloacae-IV
-GCF_001076175	Enterobacter cloacae-IV
-GCF_900078045	Enterobacter cloacae-IV
-GCF_001317055	Enterobacter cloacae-IV
-GCF_001472305	Enterobacter cloacae-IV
-GCF_001472995	Enterobacter cloacae-IV
-GCF_001518455	Enterobacter cloacae-IV
-GCF_001518535	Enterobacter cloacae-IV
-GCF_001631035	Enterobacter cloacae-IV
-GCF_002007805	Enterobacter cloacae-IV
-GCF_002211685	Enterobacter cloacae-IV
-GCF_001631535	Enterobacter cloacae-IV
-GCF_001631695	Enterobacter cloacae-IV
-GCF_001631745	Enterobacter cloacae-IV
-GCF_001675835	Enterobacter cloacae-IV
-GCF_001729805	Enterobacter cloacae-IV
-GCF_001807145	Enterobacter cloacae-IV
-GCF_001858135	Enterobacter cloacae-IV
-GCF_001858285	Enterobacter cloacae-IV
-GCF_002162415	Enterobacter cloacae-IV
-GCF_002184675	Enterobacter cloacae-IV
-GCF_002266365	Enterobacter cloacae-IV
-GCF_002278335	Enterobacter cloacae-IV
-GCF_002278385	Enterobacter cloacae-IV
-GCF_002785615	Enterobacter cloacae-IV
-GCF_002785665	Enterobacter cloacae-IV
-GCF_002785885	Enterobacter cloacae-IV
-GCF_002897075	Enterobacter cloacae-IV
-GCF_002918755	Enterobacter cloacae-IV
-GCF_003000605	Enterobacter cloacae-IV
-GCF_900076285	Enterobacter cloacae-IV
-GCF_900076485	Enterobacter cloacae-IV
-GCF_900076715	Enterobacter cloacae-IV
-GCF_900077305	Enterobacter cloacae-IV
-GCF_001875645	Enterobacter cloacae-IV
+GCF_000286655	Enterobacter roggenkampii
+GCF_000467655	Enterobacter roggenkampii
+GCF_000492435	Enterobacter roggenkampii
+GCF_000492895	Enterobacter roggenkampii
+GCF_000493175	Enterobacter roggenkampii
+GCF_000534155	Enterobacter roggenkampii
+GCF_000612205	Enterobacter roggenkampii
+GCF_000692295	Enterobacter roggenkampii
+GCF_000692335	Enterobacter roggenkampii
+GCF_000805795	Enterobacter roggenkampii
+GCF_000807415	Enterobacter roggenkampii
+GCF_000812425	Enterobacter roggenkampii
+GCF_000956965	Enterobacter roggenkampii
+GCF_000957195	Enterobacter roggenkampii
+GCF_000957315	Enterobacter roggenkampii
+GCF_000957415	Enterobacter roggenkampii
+GCF_000958015	Enterobacter roggenkampii
+GCF_001022415	Enterobacter roggenkampii
+GCF_001023175	Enterobacter roggenkampii
+GCF_001471995	Enterobacter roggenkampii
+GCF_002151855	Enterobacter roggenkampii
+GCF_000957765	Enterobacter roggenkampii
+GCF_000958425	Enterobacter roggenkampii
+GCF_001472715	Enterobacter roggenkampii
+GCF_000968725	Enterobacter roggenkampii
+GCF_001011955	Enterobacter roggenkampii
+GCF_001022655	Enterobacter roggenkampii
+GCF_001022755	Enterobacter roggenkampii
+GCF_001052055	Enterobacter roggenkampii
+GCF_001052605	Enterobacter roggenkampii
+GCF_001052895	Enterobacter roggenkampii
+GCF_001054835	Enterobacter roggenkampii
+GCF_001056255	Enterobacter roggenkampii
+GCF_001076175	Enterobacter roggenkampii
+GCF_900078045	Enterobacter roggenkampii
+GCF_001317055	Enterobacter roggenkampii
+GCF_001472305	Enterobacter roggenkampii
+GCF_001472995	Enterobacter roggenkampii
+GCF_001518455	Enterobacter roggenkampii
+GCF_001518535	Enterobacter roggenkampii
+GCF_001631035	Enterobacter roggenkampii
+GCF_002007805	Enterobacter roggenkampii
+GCF_002211685	Enterobacter roggenkampii
+GCF_001631535	Enterobacter roggenkampii
+GCF_001631695	Enterobacter roggenkampii
+GCF_001631745	Enterobacter roggenkampii
+GCF_001675835	Enterobacter roggenkampii
+GCF_001729805	Enterobacter roggenkampii
+GCF_001807145	Enterobacter roggenkampii
+GCF_001858135	Enterobacter roggenkampii
+GCF_001858285	Enterobacter roggenkampii
+GCF_002162415	Enterobacter roggenkampii
+GCF_002184675	Enterobacter roggenkampii
+GCF_002266365	Enterobacter roggenkampii
+GCF_002278335	Enterobacter roggenkampii
+GCF_002278385	Enterobacter roggenkampii
+GCF_002785615	Enterobacter roggenkampii
+GCF_002785665	Enterobacter roggenkampii
+GCF_002785885	Enterobacter roggenkampii
+GCF_002897075	Enterobacter roggenkampii
+GCF_002918755	Enterobacter roggenkampii
+GCF_003000605	Enterobacter roggenkampii
+GCF_900076285	Enterobacter roggenkampii
+GCF_900076485	Enterobacter roggenkampii
+GCF_900076715	Enterobacter roggenkampii
+GCF_900077305	Enterobacter roggenkampii
+GCF_001875645	Enterobacter roggenkampii
 
 
 
@@ -1463,10 +1464,6 @@ GCF_002278205	Enterobacter unknown
 GCF_002278245	Enterobacter unknown
 GCF_002278305	Enterobacter unknown
 GCF_002939185	Enterobacter unknown
-GCF_000692275	Enterobacter unknown
-GCF_000965885	Enterobacter unknown
-GCF_001984825	Enterobacter unknown
-GCF_002145455	Enterobacter unknown
 GCF_000958265	Enterobacter unknown
 GCF_000958285	Enterobacter unknown
 GCF_001022525	Enterobacter unknown
@@ -1496,11 +1493,6 @@ GCF_001052295	Enterobacter unknown
 GCF_001053955	Enterobacter unknown
 GCF_900048055	Enterobacter unknown
 GCF_900113755	Enterobacter unknown
-GCF_000493015	Enterobacter unknown
-GCF_000733275	Enterobacter unknown
-GCF_900075425	Enterobacter unknown
-GCF_900077695	Enterobacter unknown
-GCF_002072125	Enterobacter unknown
 GCF_001562175	Enterobacter unknown
 
 
@@ -2146,8 +2138,6 @@ GCF_002919775	Enterobacter kobei
 GCF_002919705	Enterobacter asburiae
 GCF_002919725	Enterobacter asburiae
 GCF_002918705	Pseudescherichia unknown
-GCF_002915515	Unknown unknown
-GCF_002915575	Unknown unknown
 GCF_002922915	Lelliottia jeotgali
 GCF_002923025	Lelliottia jeotgali
 GCF_002923085	Lelliottia jeotgali
@@ -2166,15 +2156,6 @@ GCF_002920115	Serratia marcescens
 GCF_002918955	Serratia marcescens
 GCF_002920095	Serratia marcescens
 GCF_002920145	Serratia marcescens
-
-
-
-# These three assemblies were labelled Pectobacterium carotovorum, but they
-# are different enough from the rest of carotovorum that I think they belong
-# in their own species.
-GCF_000803315	Pectobacterium unknown
-GCF_001984525	Pectobacterium unknown
-GCF_001984535	Pectobacterium unknown
 
 
 
@@ -2302,3 +2283,326 @@ GCF_000222085	Haemophilus quentini
 GCF_000242295	Haemophilus haemolyticus
 GCF_001059185	Haemophilus unknown
 GCF_000222025	Haemophilus unknown
+
+
+# These are a late-February 2019 update! Some highlights:
+#   * I boldly chose to assign less commonly used species names to
+#     Pectobacterium, e.g. what is usually called 'Pectobacterium catorovorum
+#     subsp. brasiliensis' I called 'Pectobacterium brasiliensis'.
+#   * There were some interesting new species names in Enterobacter (e.g.
+#     roggenkampii) which helped a bit.
+#   * I used Machado 2018 to help clean up Photorhabdus.
+GCF_003675305	Buttiauxella ferragutiae
+GCF_900079785	Citrobacter amalonaticus
+GCF_900079795	Citrobacter amalonaticus
+GCF_900449345	Citrobacter braakii
+GCF_900446875	Citrobacter braakii
+GCF_003114935	Citrobacter braakii
+GCF_900448175	Citrobacter gillenii
+GCF_900451665	Citrobacter koseri
+GCF_003725895	Citrobacter portucalensis
+GCF_003255895	Citrobacter portucalensis
+GCF_003937345	Citrobacter portucalensis
+GCF_004024405	Citrobacter portucalensis
+GCF_900636015	Citrobacter portucalensis
+GCF_003204265	Citrobacter werkmanii
+GCF_003665575	Citrobacter youngae
+GCF_900446835	Citrobacter youngae
+GCF_003400395	Citrobacter youngae
+GCF_003598255	Citrobacter youngae
+GCF_003201495	Dickeya zeae
+GCF_003354245	Edwardsiella piscicida
+GCF_000493015	Enterobacter asburiae
+GCF_000733275	Enterobacter asburiae
+GCF_004151605	Enterobacter asburiae
+GCF_003144775	Enterobacter asburiae
+GCF_003688535	Enterobacter asburiae
+GCF_003688655	Enterobacter asburiae
+GCF_900075425	Enterobacter asburiae
+GCF_900077695	Enterobacter asburiae
+GCF_000692275	Enterobacter chengduensis
+GCF_000965885	Enterobacter chengduensis
+GCF_001984825	Enterobacter chengduensis
+GCF_002145455	Enterobacter chengduensis
+GCF_002072125	Enterobacter chuandaensis
+GCF_003965585	Enterobacter cloacae
+GCF_900493335	Enterobacter cloacae
+GCF_900493505	Enterobacter hormaechei
+GCF_003175745	Enterobacter hormaechei
+GCF_003176535	Enterobacter hormaechei
+GCF_003176125	Enterobacter hormaechei
+GCF_900447525	Enterobacter hormaechei
+GCF_002142555	Enterobacter hormaechei
+GCF_003444755	Enterobacter hormaechei
+GCF_003175235	Enterobacter hormaechei
+GCF_003173495	Enterobacter hormaechei
+GCF_004011415	Enterobacter hormaechei
+GCF_004011435	Enterobacter hormaechei
+GCF_003176055	Enterobacter hormaechei
+GCF_003176615	Enterobacter hormaechei
+GCF_003288475	Enterobacter hormaechei
+GCF_003175375	Enterobacter hormaechei
+GCF_003204095	Enterobacter hormaechei
+GCF_900447375	Enterobacter hormaechei
+GCF_900447645	Enterobacter hormaechei
+GCF_004136685	Enterobacter hormaechei
+GCF_004136775	Enterobacter hormaechei
+GCF_004136785	Enterobacter hormaechei
+GCF_004136855	Enterobacter hormaechei
+GCF_003264955	Enterobacter hormaechei
+GCF_900447465	Enterobacter hormaechei
+GCF_003850715	Enterobacter hormaechei
+GCF_900447335	Enterobacter hormaechei
+GCF_004011355	Enterobacter hormaechei
+GCF_004146255	Enterobacter hormaechei
+GCF_004136675	Enterobacter hormaechei
+GCF_900635705	Enterobacter hormaechei
+GCF_004137705	Enterobacter hormaechei
+GCF_004136695	Enterobacter hormaechei
+GCF_004136795	Enterobacter hormaechei
+GCF_004136875	Enterobacter hormaechei
+GCF_004136725	Enterobacter hormaechei
+GCF_004136745	Enterobacter hormaechei
+GCF_004136805	Enterobacter hormaechei
+GCF_003186415	Enterobacter hormaechei
+GCF_003186565	Enterobacter hormaechei
+GCF_003719615	Enterobacter hormaechei
+GCF_004103945	Enterobacter hormaechei
+GCF_003434465	Enterobacter kobei
+GCF_003225955	Enterobacter kobei
+GCF_003071645	Enterobacter ludwigii
+GCF_000333635	Enterobacter mori
+GCF_003606205	Enterobacter mori
+GCF_000390385	Enterobacter roggenkampii
+GCF_003331015	Enterobacter roggenkampii
+GCF_004024525	Enterobacter roggenkampii
+GCF_003427235	Enterobacter roggenkampii
+GCF_004024005	Enterobacter roggenkampii
+GCF_004024265	Enterobacter roggenkampii
+GCF_004024455	Enterobacter roggenkampii
+GCF_004135955	Enterobacter roggenkampii
+GCF_004193715	Enterobacter unknown
+GCF_004024425	Enterobacter unknown
+GCF_004126455	Enterobacter unknown
+GCF_004024335	Enterobacter unknown
+GCF_003401145	Enterobacter unknown
+GCF_003289825	Enterobacter unknown
+GCF_003289275	Enterobacter unknown
+GCF_003384785	Enterobacter unknown
+GCF_003289715	Enterobacter unknown
+GCF_900499355	Escherichia clade-1
+GCF_004115955	Escherichia clade-1
+GCF_004138245	Escherichia clade-1
+GCF_003731295	Escherichia clade-1
+GCF_000208585	Escherichia clade-4
+GCF_003145355	Escherichia clade-4
+GCF_003409875	Escherichia coli
+GCF_003382475	Escherichia coli
+GCF_900636405	Escherichia marmotae
+GCF_900637015	Escherichia marmotae
+GCF_900499915	Escherichia marmotae
+GCF_000980985	Hafnia alvei
+GCF_003301495	Klebsiella aerogenes
+GCF_003339485	Klebsiella grimontii
+GCF_003416995	Klebsiella grimontii
+GCF_003417005	Klebsiella grimontii
+GCF_003417035	Klebsiella grimontii
+GCF_003261575	Klebsiella huaxiensis
+GCF_003201885	Klebsiella huaxiensis
+GCF_003261535	Klebsiella Ko4
+GCF_003812845	Klebsiella Ko4
+GCF_900407165	Klebsiella michiganensis
+GCF_900407255	Klebsiella michiganensis
+GCF_003121425	Klebsiella pneumoniae
+GCF_900636455	Klebsiella pneumoniae
+GCF_900451275	Klebsiella pneumoniae
+GCF_900635995	Klebsiella pneumoniae
+GCF_900451285	Klebsiella pneumoniae
+GCF_000529815	Klebsiella pneumoniae
+GCF_900607715	Klebsiella quasipneumoniae
+GCF_003253555	Klebsiella quasipneumoniae
+GCF_003815095	Klebsiella quasipneumoniae
+GCF_900492995	Klebsiella quasipneumoniae
+GCF_900493245	Klebsiella quasipneumoniae
+GCF_900635945	Klebsiella quasipneumoniae
+GCF_900492905	Klebsiella quasipneumoniae
+GCF_900496825	Klebsiella quasipneumoniae
+GCF_900451245	Klebsiella quasipneumoniae
+GCF_900451875	Klebsiella quasipneumoniae
+GCF_004010915	Klebsiella quasipneumoniae
+GCF_900493485	Klebsiella quasipneumoniae
+GCF_900635925	Klebsiella quasipneumoniae
+GCF_900493385	Klebsiella quasipneumoniae
+GCF_900494135	Klebsiella quasipneumoniae
+GCF_003176195	Klebsiella quasipneumoniae
+GCF_003711965	Klebsiella quasipneumoniae
+GCF_004024275	Klebsiella quasipneumoniae
+GCF_004024245	Klebsiella quasipneumoniae
+GCF_003176335	Klebsiella quasipneumoniae
+GCF_900493045	Klebsiella quasipneumoniae
+GCF_900492755	Klebsiella quasipneumoniae
+GCF_900493065	Klebsiella quasipneumoniae
+GCF_900608345	Klebsiella quasipneumoniae
+GCF_003688735	Klebsiella quasipneumoniae
+GCF_900494265	Klebsiella variicola
+GCF_900636185	Klebsiella variicola
+GCF_003175335	Klebsiella variicola
+GCF_003175595	Klebsiella variicola
+GCF_900607545	Klebsiella variicola
+GCF_900452335	Klebsiella variicola
+GCF_003790505	Klebsiella variicola
+GCF_003097195	Klebsiella variicola
+GCF_003864115	Kosakonia cowanii
+GCF_003336325	Leclercia unknown
+GCF_003336345	Leclercia unknown
+GCF_003024485	Leclercia unknown
+GCF_003752235	Lelliottia nimipressuralis
+GCF_003269835	Lonsdalea populi
+GCF_003269815	Lonsdalea populi
+GCF_003149005	Pantoea agglomerans
+GCF_003182295	Pantoea ananatis
+GCF_003634335	Pantoea ananatis
+GCF_000333515	Pantoea ananatis
+GCF_003236725	Pantoea anthophila
+GCF_003203695	Pantoea eucalypti
+GCF_003313015	Pantoea eucrina
+GCF_003201175	Pantoea stewartii
+GCF_003201065	Pantoea vagans
+GCF_003612015	Pantoea unknown
+GCF_001984525	Pectobacterium actinidiae
+GCF_001984535	Pectobacterium actinidiae
+GCF_002869945	Pectobacterium aquaticum
+GCF_000173135	Pectobacterium brasiliensis
+GCF_000754695	Pectobacterium brasiliensis
+GCF_001429565	Pectobacterium brasiliensis
+GCF_000294535	Pectobacterium brasiliensis
+GCF_000738105	Pectobacterium brasiliensis
+GCF_000738115	Pectobacterium brasiliensis
+GCF_000738125	Pectobacterium brasiliensis
+GCF_000754705	Pectobacterium brasiliensis
+GCF_000808115	Pectobacterium brasiliensis
+GCF_000808145	Pectobacterium brasiliensis
+GCF_000808195	Pectobacterium brasiliensis
+GCF_000808235	Pectobacterium brasiliensis
+GCF_000808245	Pectobacterium brasiliensis
+GCF_000808255	Pectobacterium brasiliensis
+GCF_000808295	Pectobacterium brasiliensis
+GCF_000808315	Pectobacterium brasiliensis
+GCF_000808335	Pectobacterium brasiliensis
+GCF_000808355	Pectobacterium brasiliensis
+GCF_000808375	Pectobacterium brasiliensis
+GCF_000808385	Pectobacterium brasiliensis
+GCF_000808455	Pectobacterium brasiliensis
+GCF_001038675	Pectobacterium brasiliensis
+GCF_001238575	Pectobacterium brasiliensis
+GCF_001932635	Pectobacterium brasiliensis
+GCF_002068115	Pectobacterium brasiliensis
+GCF_002250215	Pectobacterium brasiliensis
+GCF_002250255	Pectobacterium brasiliensis
+GCF_002764035	Pectobacterium brasiliensis
+GCF_002930535	Pectobacterium brasiliensis
+GCF_002930555	Pectobacterium brasiliensis
+GCF_003186045	Pectobacterium brasiliensis
+GCF_003594975	Pectobacterium brasiliensis
+GCF_003595115	Pectobacterium brasiliensis
+GCF_003990515	Pectobacterium brasiliensis
+GCF_003595055	Pectobacterium brasiliensis
+GCF_002983505	Pectobacterium maceratum
+GCF_003031305	Pectobacterium maceratum
+GCF_003096475	Pectobacterium maceratum
+GCF_003121765	Pectobacterium maceratum
+GCF_003402555	Pectobacterium maceratum
+GCF_003571485	Pectobacterium maceratum
+GCF_003594995	Pectobacterium maceratum
+GCF_003595065	Pectobacterium maceratum
+GCF_003595135	Pectobacterium maceratum
+GCF_003932035	Pectobacterium maceratum
+GCF_003990505	Pectobacterium maceratum
+GCF_000754715	Pectobacterium odoriferum
+GCF_002904005	Pectobacterium odoriferum
+GCF_002904025	Pectobacterium odoriferum
+GCF_002904105	Pectobacterium odoriferum
+GCF_002904185	Pectobacterium odoriferum
+GCF_002904195	Pectobacterium odoriferum
+GCF_002904255	Pectobacterium odoriferum
+GCF_002904045	Pectobacterium odoriferum
+GCF_002904055	Pectobacterium odoriferum
+GCF_002904085	Pectobacterium odoriferum
+GCF_002904125	Pectobacterium odoriferum
+GCF_002904225	Pectobacterium odoriferum
+GCF_002904145	Pectobacterium odoriferum
+GCF_900195285	Pectobacterium polaris
+GCF_900195295	Pectobacterium polaris
+GCF_000767775	Photorhabdus akhurstii
+GCF_000798635	Photorhabdus akhurstii
+GCF_000931955	Photorhabdus akhurstii
+GCF_002969055	Photorhabdus akhurstii
+GCF_000612035	Photorhabdus akhurstii
+GCF_000826725	Photorhabdus akhurstii
+GCF_002968975	Photorhabdus akhurstii
+GCF_002968995	Photorhabdus akhurstii
+GCF_002969005	Photorhabdus akhurstii
+GCF_003287635	Photorhabdus kayaii
+GCF_001854735	Photorhabdus khanii
+GCF_003287585	Photorhabdus kleinii
+GCF_003287715	Photorhabdus kleinii
+GCF_003287725	Photorhabdus kleinii
+GCF_003287555	Photorhabdus laumondii
+GCF_003287565	Photorhabdus laumondii
+GCF_003287645	Photorhabdus laumondii
+GCF_003287655	Photorhabdus laumondii
+GCF_003287665	Photorhabdus laumondii
+GCF_003201505	Phytobacter diazotrophicus
+GCF_003925915	Phytobacter diazotrophicus
+GCF_003073275	Phytobacter diazotrophicus
+GCF_003363055	Phytobacter ursingii
+GCF_003144375	Proteus genomosp-4
+GCF_003144505	Proteus genomosp-6
+GCF_003144445	Proteus penneri
+GCF_003144335	Proteus terrae
+GCF_001743005	Proteus unknown
+GCF_900455035	Proteus unknown
+GCF_003144555	Proteus unknown
+GCF_003751485	Providencia rettgeri
+GCF_003263515	Rahnella inusitata
+GCF_003263545	Rahnella variigena
+GCF_003316255	Rahnella variigena
+GCF_003590485	Rahnella victoriana
+GCF_003573465	Rahnella unknown
+GCF_003635145	Rahnella unknown
+GCF_003956145	Rahnella unknown
+GCF_003956105	Rahnella unknown
+GCF_003956125	Rahnella unknown
+GCF_003323835	Raoultella ornithinolytica
+GCF_900635915	Raoultella ornithinolytica
+GCF_900636135	Raoultella ornithinolytica
+GCF_004010735	Salmonella enterica
+GCF_003689515	Salmonella enterica
+GCF_004010755	Salmonella enterica
+GCF_003598265	Salmonella enterica
+GCF_003641105	Serratia ficaria
+GCF_003668775	Serratia fonticola
+GCF_004217345	Serratia grimesii
+GCF_900457085	Serratia liquefaciens
+GCF_003691565	Serratia liquefaciens
+GCF_003812745	Serratia marcescens
+GCF_003719595	Serratia marcescens
+GCF_002844245	Serratia marcescens
+GCF_003591175	Serratia plymuthica
+GCF_900456965	Serratia proteamaculans
+GCF_004153785	Serratia quinivorans
+GCF_002966855	Serratia rubidaea
+GCF_002915515	Superficieibacter electus
+GCF_002915575	Superficieibacter electus
+GCF_003634395	Yersinia entomophaga
+GCF_004100405	Yersinia frederiksenii
+GCF_900460685	Yersinia wautersii
+GCF_003208195	Unknown unknown
+GCF_003935895	Unknown unknown
+GCF_003332275	Unknown unknown
+GCF_900156955	Unknown unknown
+GCF_003628475	Unknown unknown
+GCF_900161835	Unknown unknown
+GCF_004011885	Unknown unknown
+GCF_003751845	Unknown unknown
+GCF_003752525	Unknown unknown

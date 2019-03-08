@@ -158,7 +158,7 @@ def load_accession_species():
                 'need to be included in the accession.\n' \
                 '\n' \
                 '# Example:\n' \
-                'GCF_000000000	Genus species\n'
+                'GCF_000000000\tGenus species\n'
             user_species.write(t)
 
     # Shigella and E. coli are grouped together.

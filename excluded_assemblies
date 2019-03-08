@@ -49,3 +49,16 @@ GCF_002200575
 # This assembly is grossly mislabelled as Psychrobacter immobilis, when it is
 # actually Neisseria meningitidis.
 GCF_900203135
+
+
+# These looked a bit funny in the tree - might be hybrids. Excluding to be on
+# the safe side.
+GCF_900505875
+GCF_004127495
+GCF_004127515
+GCF_004127575
+GCF_004127695
+GCF_004127705
+GCF_900509715
+GCF_003400775
+GCF_900510925
