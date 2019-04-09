@@ -1719,15 +1719,6 @@ GCF_001222425	Yersinia pseudotuberculosis
 
 
 
-# While Shi 2016 put strain LC20 in enterocolitica, I found it as distant from
-# the rest of enterocolitica as kristensenii and frederiksenii, so I'm calling
-# this strain (and its close relative) 'unknown' because I think they need
-# their own species name.
-GCF_000597945	Yersinia unknown
-GCF_002188895	Yersinia unknown
-
-
-
 # I went with the newly proposed wautersii species, but it was unclear whether
 # one isolate (GCF_001244855.1) belonged in this species. It moved around a
 # bit, depending on the tree-building method, so I opted to exclude it and
@@ -2606,3 +2597,10 @@ GCF_900161835	Unknown unknown
 GCF_004011885	Unknown unknown
 GCF_003751845	Unknown unknown
 GCF_003752525	Unknown unknown
+
+
+
+# Nguyen 2019 defined a new species of Yersinia, so I'm including that:
+GCF_004124235	Yersinia hibernica
+GCF_000597945	Yersinia hibernica
+GCF_002188895	Yersinia hibernica
