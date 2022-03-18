@@ -14,6 +14,15 @@
 # more details. You should have received a copy of the GNU General Public License along with
 # Bacsort. If not, see <http://www.gnu.org/licenses/>.
 
+# Check for fastANI
+if command -v fastANI >/dev/null 2>&1 ; then
+    echo "fastANI found"
+    echo "version: $(fastANI -v)"
+else
+    echo "Error: fastANI not found - please install fastANI and try again"
+    exit
+fi
+
 group_count=32
 
 mkdir -p tree
